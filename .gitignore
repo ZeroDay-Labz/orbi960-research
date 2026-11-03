@@ -1,0 +1,50 @@
+# ---- Local, device-specific, and sensitive (never commit) ----
+# real device identifiers (MACs / addresses / key paths / TLS pins)
+orbi_local_config.json
+*_local_config.json
+# raw capture notes, scratch, and any local-only notes
+info_gather.txt
+*.local.md
+notes_local*
+
+# ---- SSH keys / certs (defensive; none should ever live here) ----
+*.pem
+*.key
+id_rsa*
+*_rsa
+*.ppk
+known_hosts
+
+# ---- Vendor firmware and extraction artifacts (copyright + bulk) ----
+firmware_analysis/extracted/
+firmware_analysis/headers/
+firmware_analysis/logs/
+*.chk
+*.fit
+*.img
+*.ubi
+*.ubifs
+*.squashfs
+*.zip
+*.tar
+*.tar.*
+*.tgz
+*.bin
+
+# ---- Tool runtime state ----
+.orbi_satellite_ssh/
+audit-*.log
+backups/
+
+# ---- Python ----
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# ---- Editor / IDE / OS ----
+.idea/
+.vscode/
+*.swp
+.DS_Store

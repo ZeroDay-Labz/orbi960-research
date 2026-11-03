@@ -1,0 +1,13 @@
+{
+  "_comment": "Copy to orbi_local_config.json (git-ignored) and fill in your real device identifiers. orbi_satellite_ssh.py loads that file if present; otherwise it uses the placeholder defaults below and discovery will not match your satellites by MAC.",
+  "master": {
+    "ip": "routerlogin.net",
+    "ssh_user": "root",
+    "ssh_key": "~/.ssh/orbi_rbre960_rsa"
+  },
+  "owner_pubkey": "~/.ssh/orbi_rbre960_rsa.pub",
+  "satellites": {
+    "1": {"name": "Satellite1", "model": "RBSE960", "mac": "02:00:00:00:00:01"},
+    "2": {"name": "Satellite2", "model": "RBSE960", "mac": "02:00:00:00:00:02"}
+  }
+}
