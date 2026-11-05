@@ -1,0 +1,37 @@
+#!/bin/sh
+# First-boot bootstrap for orbi-owner-agent.
+# Called by /etc/init.d/boot's uci-defaults runner; its return value triggers
+# removal of this file once successful. Idempotent.
+
+uci -q batch <<EOF
+set orbi-owner-agent.main=agent
+set orbi-owner-agent.main.enabled=1
+set orbi-owner-agent.main.max_tail_lines=500
+set orbi-owner-agent.main.audit_log=/tmp/orbi-owner-agent.log
+set orbi-owner-agent.main.audit_max_bytes=262144
+EOF
+
+# add_list is idempotent only if the value is not already present.
+if ! uci -q get orbi-owner-agent.main.allowed_bridge 2>/dev/null | grep -q '\<br-lan\>'; then
+    uci -q add_list orbi-owner-agent.main.allowed_bridge=br-lan
+fi
+
+uci -q batch <<EOF
+set orbi-owner-agent.vlan=policy
+set orbi-owner-agent.vlan.enabled=1
+set orbi-owner-agent.vlan.min_id=2
+set orbi-owner-agent.vlan.max_id=4094
+EOF
+
+for rid in 1 4093 4094; do
+    if ! uci -q get orbi-owner-agent.vlan.reserved_id 2>/dev/null | grep -q "\<$rid\>"; then
+        uci -q add_list "orbi-owner-agent.vlan.reserved_id=$rid"
+    fi
+done
+
+uci -q commit orbi-owner-agent
+
+/etc/init.d/orbi-owner-agent enable >/dev/null 2>&1 || true
+/etc/init.d/orbi-owner-agent start  >/dev/null 2>&1 || true
+
+exit 0

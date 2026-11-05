@@ -1,0 +1,15 @@
+config agent 'main'
+	option enabled '1'
+	option max_tail_lines '500'
+	option audit_log '/tmp/orbi-owner-agent.log'
+	option audit_max_bytes '262144'
+	list allowed_bridge 'br-lan'
+
+config policy 'vlan'
+	option enabled '1'
+	option min_id '2'
+	option max_id '4094'
+	# Vendor-reserved mesh VLANs — DO NOT allow the owner to collide here.
+	list reserved_id '1'
+	list reserved_id '4093'
+	list reserved_id '4094'

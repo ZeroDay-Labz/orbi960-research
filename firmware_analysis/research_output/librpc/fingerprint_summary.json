@@ -1,0 +1,10 @@
+{
+  "anon_a_count": 60,
+  "anon_b_count": 60,
+  "anon_common_fp_count": 56,
+  "anon_only_in_a": [],
+  "anon_only_in_b": [],
+  "named_changed": [],
+  "named_common": 130,
+  "named_identical": 130
+}

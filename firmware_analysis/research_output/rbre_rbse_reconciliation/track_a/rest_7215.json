@@ -1,0 +1,1213 @@
+{
+  "header": {
+    "version": "5.1",
+    "format": 0,
+    "endian": "<",
+    "sizeof_int": 4,
+    "sizeof_size_t": 4,
+    "sizeof_instruction": 4,
+    "sizeof_number": 8,
+    "lua_number_is_int": 4
+  },
+  "main": {
+    "source": "",
+    "line_defined": 0,
+    "last_line_defined": 0,
+    "nups": 0,
+    "numparams": 0,
+    "is_vararg": 2,
+    "maxstack": 34,
+    "constants": [
+      [
+        "str",
+        "require"
+      ],
+      [
+        "str",
+        "third_party/rxi-json-lua"
+      ],
+      [
+        "str",
+        "third_party/router"
+      ],
+      [
+        "str",
+        "seal-development"
+      ],
+      [
+        "str",
+        "seal-io"
+      ],
+      [
+        "str",
+        "seal-services"
+      ],
+      [
+        "str",
+        "seal-log"
+      ],
+      [
+        "str",
+        "seal-environ"
+      ],
+      [
+        "str",
+        "/api/v1"
+      ],
+      [
+        "str",
+        "new"
+      ],
+      [
+        "str",
+        "match"
+      ],
+      [
+        "str",
+        "GET"
+      ],
+      [
+        "str",
+        "/services/:service_name"
+      ],
+      [
+        "str",
+        "/services/:service_name/token"
+      ],
+      [
+        "str",
+        "/services"
+      ],
+      [
+        "str",
+        "POST"
+      ],
+      [
+        "str",
+        "/install/:service_name"
+      ],
+      [
+        "str",
+        "/uninstall/:service_name"
+      ],
+      [
+        "str",
+        "/services/:service_name/state"
+      ],
+      [
+        "str",
+        "/services/:service_name/webapp/:webapp_version"
+      ],
+      [
+        "str",
+        "/services/:service_name/webapp"
+      ],
+      [
+        "str",
+        "/services/:service_name/validateToken"
+      ],
+      [
+        "str",
+        "/enable_ssh"
+      ],
+      [
+        "str",
+        "Root"
+      ],
+      [
+        "str",
+        "os"
+      ],
+      [
+        "str",
+        "getenv"
+      ],
+      [
+        "str",
+        "DOCUMENT_ROOT"
+      ],
+      [
+        "str",
+        "Method"
+      ],
+      [
+        "str",
+        "REQUEST_METHOD"
+      ],
+      [
+        "str",
+        "Uri"
+      ],
+      [
+        "str",
+        "REQUEST_URI"
+      ],
+      [
+        "str",
+        "ContentLength"
+      ],
+      [
+        "str",
+        "tonumber"
+      ],
+      [
+        "str",
+        "HTTP_CONTENT_LENGTH"
+      ],
+      [
+        "str",
+        "0"
+      ],
+      [
+        "str",
+        "RawContent"
+      ],
+      [
+        "str",
+        "HTTP_CONTENT"
+      ],
+      [
+        "str",
+        ""
+      ],
+      [
+        "str",
+        "HostAddr"
+      ],
+      [
+        "str",
+        "HTTP_X_HOST"
+      ],
+      [
+        "str",
+        "HttpXForwardedFor"
+      ],
+      [
+        "str",
+        "HTTP_X_FORWARDED_FOR"
+      ],
+      [
+        "str",
+        "query"
+      ],
+      [
+        "str",
+        "QUERY_STRING"
+      ],
+      [
+        "str",
+        "RelativeUri"
+      ],
+      [
+        "nil",
+        null
+      ],
+      [
+        "str",
+        "ApiVersion"
+      ],
+      [
+        "str",
+        "print"
+      ],
+      [
+        "str",
+        "Running in local test mode..."
+      ],
+      [
+        "str",
+        "To test this code in a remote context, run the test script located in seal/bootstrap/scripts/test-rest-api.sh"
+      ],
+      [
+        "str",
+        "/www-seal"
+      ],
+      [
+        "str",
+        "/api/v1/services/armor-bd/webapp/"
+      ],
+      [
+        "int",
+        0
+      ],
+      [
+        "str",
+        "string"
+      ],
+      [
+        "str",
+        "gsub"
+      ],
+      [
+        "str",
+        "^"
+      ],
+      [
+        "str",
+        "/"
+      ],
+      [
+        "str",
+        "^//"
+      ],
+      [
+        "str",
+        "?.*"
+      ],
+      [
+        "str",
+        "^/api/(v%d)/.+"
+      ],
+      [
+        "str",
+        "%1"
+      ],
+      [
+        "str",
+        "io"
+      ],
+      [
+        "str",
+        "read"
+      ],
+      [
+        "str",
+        "pcall"
+      ],
+      [
+        "int",
+        400
+      ],
+      [
+        "str",
+        "Bad Request - Message body is not valid JSON"
+      ],
+      [
+        "str",
+        "getbool"
+      ],
+      [
+        "str",
+        "SDE_LIGHTTPD_APIS"
+      ],
+      [
+        "str",
+        "file_exists"
+      ],
+      [
+        "str",
+        "/debugEnable"
+      ],
+      [
+        "str",
+        "127.0.0.1"
+      ],
+      [
+        "str",
+        "localhost"
+      ],
+      [
+        "str",
+        "ServerAddr"
+      ],
+      [
+        "int",
+        500
+      ],
+      [
+        "str",
+        "Server Error"
+      ],
+      [
+        "str",
+        "log"
+      ],
+      [
+        "str",
+        "LogLevel"
+      ],
+      [
+        "str",
+        "Error"
+      ],
+      [
+        "str",
+        "rest.lua"
+      ],
+      [
+        "str",
+        "Lua error in rest.lua. Message was:"
+      ],
+      [
+        "str",
+        "debug"
+      ]
+    ],
+    "n_code": 284,
+    "protos": [
+      {
+        "source": "",
+        "line_defined": 28,
+        "last_line_defined": 31,
+        "nups": 2,
+        "numparams": 1,
+        "is_vararg": 0,
+        "maxstack": 5,
+        "constants": [
+          [
+            "str",
+            "list"
+          ],
+          [
+            "str",
+            "print"
+          ],
+          [
+            "str",
+            "encode"
+          ]
+        ],
+        "n_code": 10,
+        "protos": []
+      },
+      {
+        "source": "",
+        "line_defined": 37,
+        "last_line_defined": 41,
+        "nups": 2,
+        "numparams": 1,
+        "is_vararg": 0,
+        "maxstack": 5,
+        "constants": [
+          [
+            "str",
+            "details"
+          ],
+          [
+            "str",
+            "service_name"
+          ],
+          [
+            "str",
+            "encode"
+          ],
+          [
+            "str",
+            "print"
+          ]
+        ],
+        "n_code": 12,
+        "protos": []
+      },
+      {
+        "source": "",
+        "line_defined": 44,
+        "last_line_defined": 54,
+        "nups": 2,
+        "numparams": 1,
+        "is_vararg": 0,
+        "maxstack": 6,
+        "constants": [
+          [
+            "str",
+            "1.0"
+          ],
+          [
+            "str",
+            "api_versions"
+          ],
+          [
+            "str",
+            "seal_version"
+          ],
+          [
+            "str",
+            "encode"
+          ],
+          [
+            "str",
+            "print"
+          ]
+        ],
+        "n_code": 17,
+        "protos": []
+      },
+      {
+        "source": "",
+        "line_defined": 56,
+        "last_line_defined": 66,
+        "nups": 0,
+        "numparams": 2,
+        "is_vararg": 0,
+        "maxstack": 6,
+        "constants": [
+          [
+            "str",
+            "type"
+          ],
+          [
+            "str",
+            "string"
+          ],
+          [
+            "str",
+            ""
+          ],
+          [
+            "str",
+            "number"
+          ],
+          [
+            "int",
+            500
+          ],
+          [
+            "str",
+            "Error sending return code: ("
+          ],
+          [
+            "str",
+            "tostring"
+          ],
+          [
+            "str",
+            ") "
+          ],
+          [
+            "str",
+            "print"
+          ],
+          [
+            "str",
+            "Status: "
+          ],
+          [
+            "str",
+            "\r"
+          ]
+        ],
+        "n_code": 35,
+        "protos": []
+      },
+      {
+        "source": "",
+        "line_defined": 68,
+        "last_line_defined": 74,
+        "nups": 0,
+        "numparams": 1,
+        "is_vararg": 0,
+        "maxstack": 8,
+        "constants": [
+          [
+            "str",
+            "gmatch"
+          ],
+          [
+            "str",
+            "([^&=?]-)=([^&=?]+)"
+          ]
+        ],
+        "n_code": 10,
+        "protos": []
+      },
+      {
+        "source": "",
+        "line_defined": 77,
+        "last_line_defined": 95,
+        "nups": 2,
+        "numparams": 2,
+        "is_vararg": 0,
+        "maxstack": 11,
+        "constants": [
+          [
+            "str",
+            "get_webapp"
+          ],
+          [
+            "str",
+            "service_name"
+          ],
+          [
+            "str",
+            "query"
+          ],
+          [
+            "str",
+            "service_version"
+          ],
+          [
+            "str",
+            "webapp_version"
+          ],
+          [
+            "int",
+            200
+          ],
+          [
+            "str",
+            "io"
+          ],
+          [
+            "str",
+            "open"
+          ],
+          [
+            "str",
+            "r"
+          ],
+          [
+            "str",
+            "read"
+          ],
+          [
+            "str",
+            "*a"
+          ],
+          [
+            "str",
+            "close"
+          ],
+          [
+            "str",
+            "print"
+          ],
+          [
+            "str",
+            "Content-Type: application/octet-stream"
+          ],
+          [
+            "str",
+            "Content-Disposition: "
+          ],
+          [
+            "str",
+            "attachment;filename=\""
+          ],
+          [
+            "str",
+            "\""
+          ],
+          [
+            "str",
+            "Content-Length: "
+          ],
+          [
+            "str",
+            "\r"
+          ],
+          [
+            "str",
+            "stdout"
+          ],
+          [
+            "str",
+            "write"
+          ],
+          [
+            "str",
+            "flush"
+          ]
+        ],
+        "n_code": 52,
+        "protos": []
+      },
+      {
+        "source": "",
+        "line_defined": 99,
+        "last_line_defined": 105,
+        "nups": 1,
+        "numparams": 1,
+        "is_vararg": 0,
+        "maxstack": 4,
+        "constants": [
+          [
+            "str",
+            "encode"
+          ],
+          [
+            "str",
+            "received"
+          ],
+          [
+            "str",
+            "action"
+          ],
+          [
+            "str",
+            "password"
+          ],
+          [
+            "str",
+            "print"
+          ]
+        ],
+        "n_code": 12,
+        "protos": []
+      },
+      {
+        "source": "",
+        "line_defined": 109,
+        "last_line_defined": 113,
+        "nups": 2,
+        "numparams": 1,
+        "is_vararg": 0,
+        "maxstack": 6,
+        "constants": [
+          [
+            "str",
+            "state"
+          ],
+          [
+            "str",
+            ""
+          ],
+          [
+            "str",
+            "service_action_handler"
+          ],
+          [
+            "str",
+            "service_name"
+          ],
+          [
+            "str",
+            "print"
+          ],
+          [
+            "str",
+            "encode"
+          ]
+        ],
+        "n_code": 16,
+        "protos": []
+      },
+      {
+        "source": "",
+        "line_defined": 117,
+        "last_line_defined": 123,
+        "nups": 1,
+        "numparams": 1,
+        "is_vararg": 0,
+        "maxstack": 5,
+        "constants": [
+          [
+            "str",
+            "io"
+          ],
+          [
+            "str",
+            "read"
+          ],
+          [
+            "str",
+            "*a"
+          ],
+          [
+            "str",
+            ""
+          ],
+          [
+            "str",
+            "encode"
+          ],
+          [
+            "str",
+            "received"
+          ],
+          [
+            "str",
+            "print"
+          ]
+        ],
+        "n_code": 16,
+        "protos": []
+      },
+      {
+        "source": "",
+        "line_defined": 125,
+        "last_line_defined": 138,
+        "nups": 2,
+        "numparams": 1,
+        "is_vararg": 0,
+        "maxstack": 8,
+        "constants": [
+          [
+            "str",
+            "username"
+          ],
+          [
+            "str",
+            ""
+          ],
+          [
+            "str",
+            "password"
+          ],
+          [
+            "str",
+            "pubkey"
+          ],
+          [
+            "str",
+            "enable_ssh"
+          ],
+          [
+            "int",
+            200
+          ],
+          [
+            "str",
+            "OK"
+          ],
+          [
+            "int",
+            418
+          ],
+          [
+            "str",
+            "I'm a teapot"
+          ]
+        ],
+        "n_code": 30,
+        "protos": []
+      },
+      {
+        "source": "",
+        "line_defined": 141,
+        "last_line_defined": 161,
+        "nups": 0,
+        "numparams": 0,
+        "is_vararg": 0,
+        "maxstack": 9,
+        "constants": [
+          [
+            "int",
+            48
+          ],
+          [
+            "int",
+            57
+          ],
+          [
+            "int",
+            1
+          ],
+          [
+            "str",
+            "table"
+          ],
+          [
+            "str",
+            "insert"
+          ],
+          [
+            "str",
+            "string"
+          ],
+          [
+            "str",
+            "char"
+          ],
+          [
+            "int",
+            65
+          ],
+          [
+            "int",
+            90
+          ],
+          [
+            "int",
+            97
+          ],
+          [
+            "int",
+            122
+          ],
+          [
+            "str",
+            "io"
+          ],
+          [
+            "str",
+            "popen"
+          ],
+          [
+            "str",
+            "head /dev/urandom | tr -dc \"0123456789\" | head -c8"
+          ],
+          [
+            "str",
+            "read"
+          ],
+          [
+            "str",
+            "*a"
+          ],
+          [
+            "str",
+            "close"
+          ],
+          [
+            "str",
+            "math"
+          ],
+          [
+            "str",
+            "randomseed"
+          ],
+          [
+            "str",
+            "tonumber"
+          ],
+          [
+            "str",
+            "os"
+          ],
+          [
+            "str",
+            "clock"
+          ],
+          [
+            "int",
+            5
+          ],
+          [
+            "int",
+            32
+          ]
+        ],
+        "n_code": 68,
+        "protos": [
+          {
+            "source": "",
+            "line_defined": 154,
+            "last_line_defined": 159,
+            "nups": 2,
+            "numparams": 1,
+            "is_vararg": 0,
+            "maxstack": 6,
+            "constants": [
+              [
+                "int",
+                0
+              ],
+              [
+                "str",
+                ""
+              ],
+              [
+                "int",
+                1
+              ],
+              [
+                "str",
+                "math"
+              ],
+              [
+                "str",
+                "random"
+              ]
+            ],
+            "n_code": 20,
+            "protos": []
+          }
+        ]
+      },
+      {
+        "source": "",
+        "line_defined": 165,
+        "last_line_defined": 195,
+        "nups": 4,
+        "numparams": 1,
+        "is_vararg": 0,
+        "maxstack": 8,
+        "constants": [
+          [
+            "str",
+            "/var/media/reserved2/service_uppers/"
+          ],
+          [
+            "str",
+            "service_name"
+          ],
+          [
+            "str",
+            "/upper/"
+          ],
+          [
+            "str",
+            "service-token"
+          ],
+          [
+            "str",
+            "is_directory"
+          ],
+          [
+            "int",
+            404
+          ],
+          [
+            "str",
+            "message"
+          ],
+          [
+            "str",
+            "Service Not Found"
+          ],
+          [
+            "str",
+            "status"
+          ],
+          [
+            "str",
+            "errorCode"
+          ],
+          [
+            "int",
+            5347404
+          ],
+          [
+            "str",
+            "encode"
+          ],
+          [
+            "str",
+            "print"
+          ],
+          [
+            "str",
+            "file_exists"
+          ],
+          [
+            "str",
+            "read_all_from_file"
+          ],
+          [
+            "str",
+            "write_to_file"
+          ]
+        ],
+        "n_code": 59,
+        "protos": []
+      },
+      {
+        "source": "",
+        "line_defined": 198,
+        "last_line_defined": 239,
+        "nups": 2,
+        "numparams": 1,
+        "is_vararg": 0,
+        "maxstack": 11,
+        "constants": [
+          [
+            "str",
+            "service_name"
+          ],
+          [
+            "str",
+            ""
+          ],
+          [
+            "str",
+            "service-token"
+          ],
+          [
+            "str",
+            "/var/media/reserved2/service_uppers/"
+          ],
+          [
+            "str",
+            "/upper/"
+          ],
+          [
+            "str",
+            "404"
+          ],
+          [
+            "str",
+            "Missing service-token in JSON payload"
+          ],
+          [
+            "str",
+            "is_directory"
+          ],
+          [
+            "str",
+            "Service Not Found"
+          ],
+          [
+            "str",
+            "file_exists"
+          ],
+          [
+            "str",
+            "Token Not Found"
+          ],
+          [
+            "str",
+            "read_all_from_file"
+          ],
+          [
+            "str",
+            "string"
+          ],
+          [
+            "str",
+            "gsub"
+          ],
+          [
+            "str",
+            "\n"
+          ],
+          [
+            "str",
+            "tostring"
+          ],
+          [
+            "str",
+            "200"
+          ],
+          [
+            "str",
+            "Invalid"
+          ],
+          [
+            "str",
+            "Valid"
+          ]
+        ],
+        "n_code": 78,
+        "protos": [
+          {
+            "source": "",
+            "line_defined": 200,
+            "last_line_defined": 207,
+            "nups": 1,
+            "numparams": 2,
+            "is_vararg": 0,
+            "maxstack": 5,
+            "constants": [
+              [
+                "str",
+                "encode"
+              ],
+              [
+                "str",
+                "Status"
+              ],
+              [
+                "str",
+                "validationStatus"
+              ],
+              [
+                "str",
+                "print"
+              ]
+            ],
+            "n_code": 11,
+            "protos": []
+          }
+        ]
+      },
+      {
+        "source": "",
+        "line_defined": 332,
+        "last_line_defined": 339,
+        "nups": 2,
+        "numparams": 0,
+        "is_vararg": 0,
+        "maxstack": 7,
+        "constants": [
+          [
+            "str",
+            "decode"
+          ],
+          [
+            "str",
+            "RawContent"
+          ],
+          [
+            "str",
+            "pairs"
+          ],
+          [
+            "nil",
+            null
+          ]
+        ],
+        "n_code": 18,
+        "protos": []
+      },
+      {
+        "source": "",
+        "line_defined": 388,
+        "last_line_defined": 411,
+        "nups": 6,
+        "numparams": 0,
+        "is_vararg": 0,
+        "maxstack": 6,
+        "constants": [
+          [
+            "str",
+            "Uri"
+          ],
+          [
+            "str",
+            "/api/meta/"
+          ],
+          [
+            "str",
+            "/api/meta"
+          ],
+          [
+            "str",
+            "v1"
+          ],
+          [
+            "str",
+            "ApiVersion"
+          ],
+          [
+            "int",
+            400
+          ],
+          [
+            "str",
+            "print"
+          ],
+          [
+            "str",
+            "Unexpected API version: "
+          ],
+          [
+            "str",
+            "Expected: "
+          ],
+          [
+            "str",
+            "execute"
+          ],
+          [
+            "str",
+            "Method"
+          ],
+          [
+            "str",
+            "RelativeUri"
+          ],
+          [
+            "int",
+            404
+          ],
+          [
+            "str",
+            "Invalid request - API endpoint not found: "
+          ]
+        ],
+        "n_code": 63,
+        "protos": []
+      }
+    ]
+  }
+}

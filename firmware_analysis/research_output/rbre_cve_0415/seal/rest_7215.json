@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/home/echo/PycharmProjects/orbi_test/firmware_analysis/research_output/rbre_cve_0415/scripts/lua51_dump.py", line 187, in <module>
+    parsed = parse(p)
+  File "/home/echo/PycharmProjects/orbi_test/firmware_analysis/research_output/rbre_cve_0415/scripts/lua51_dump.py", line 147, in parse
+    main = rd_function(r)
+  File "/home/echo/PycharmProjects/orbi_test/firmware_analysis/research_output/rbre_cve_0415/scripts/lua51_dump.py", line 98, in rd_function
+    else: raise RuntimeError(f"unknown const type {t}")
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: unknown const type 9

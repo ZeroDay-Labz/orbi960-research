@@ -1,0 +1,161 @@
+{
+  "task": "Track A — validate master→satellite MAC-derived auth credential claim from report 33",
+  "date": "2026-11-04",
+  "binaries": {
+    "master_soapc": {
+      "path": "firmware_analysis/extracted/rbre_7215/rootfs/usr/sbin/soapc",
+      "sha256": "531b932b0488a4d60d38cd575d0d1b44f7f4285f40eafe5593a3c8d975f74a7b",
+      "version": "V7.2.7.15"
+    },
+    "sat_configd_7215": {
+      "path": "firmware_analysis/extracted/rbse_7215/rootfs/usr/sbin/configd",
+      "sha256": "6caa0acf8a1c741e34bb8d64c755758845396ef6fb51222cf1abf5ec56190979",
+      "version": "V7.2.7.15"
+    },
+    "sat_configd_7288": {
+      "path": "firmware_analysis/extracted/rbse_7288/rootfs/usr/sbin/configd",
+      "sha256": "a8a1dad56aa2f1166a39e07d337b6bf919fd9c8f2cc0d40b6bab9bf1feed7e7c",
+      "version": "V7.2.8.8"
+    },
+    "sat_soap_agent_7215": {
+      "path": "firmware_analysis/extracted/rbse_7215/rootfs/usr/sbin/cgi-bin/soap_agent",
+      "sha256": "a3ee8ac93b41ac52de17e53051b9569f3b063deca0cd585de6337cb1dcf12502",
+      "version": "V7.2.7.15"
+    }
+  },
+  "evidence": [
+    {
+      "id": "A1",
+      "topic": "Master-side credential construction",
+      "file": "master_soapc",
+      "function": "FUN_0001f228 (getAuthPassword handler)",
+      "entry_address": "0x1f228",
+      "body_range": "0x1f228-0x1f393",
+      "note": "snprintf(local_120,0x101,\"%s%s%s%s%s\",\"NETGEAR_Orbi_\",g_soapc_mac1,\"_\",g_soapc_mac2,\"_password\") then FUN_00029ce4 (MD5-hex-lowercase). Result copied to param_3 and also written to NVRAM soap_Authenticate_old_password. ALSO logged plaintext to /tmp/soapc_log.",
+      "classification": "CONFIRMED"
+    },
+    {
+      "id": "A2",
+      "topic": "Master-side MD5 implementation",
+      "file": "master_soapc",
+      "function": "FUN_00029ce4",
+      "entry_address": "0x29ce4",
+      "note": "MD5Init / MD5Update / MD5Final (OpenSSL libcrypto), then snprintf(__s,0x21,\"%02x\" x 16, ...) → lowercase hex, 32 chars + null.",
+      "classification": "CONFIRMED"
+    },
+    {
+      "id": "A3",
+      "topic": "Master-side mac1 provenance (NOT a satellite field)",
+      "file": "master_soapc",
+      "function": "FUN_00028408",
+      "entry_address": "0x28408",
+      "note": "Reads NVRAM lan_ifname; get_eth_mac() on that interface → master's OWN LAN MAC; ether_etoa → \"XX:XX:XX:XX:XX:XX\"; sscanf splits 6 bytes; snprintf(local_7c,0x20,\"%02X_%02X_%02X\",byte3,byte4,byte5) → stored into g_soapc_mac1. The lower 3 bytes of the MASTER'S own LAN MAC.",
+      "classification": "CONFIRMED",
+      "correction": "Corrects report 33 which left g_soapc_mac1 provenance ambiguous; it is NOT a satellite field."
+    },
+    {
+      "id": "A4",
+      "topic": "Master-side mac2 provenance (satellite field)",
+      "file": "master_soapc",
+      "function": "FUN_0002864c",
+      "entry_address": "0x2864c",
+      "note": "snprintf key name \"soapc_sat_%d_mac\" with eventIndex, acosNvramConfig_get, sscanf, snprintf \"%02X_%02X_%02X\" of lower 3 bytes → g_soapc_mac2.",
+      "classification": "CONFIRMED",
+      "matches_report_33": true
+    },
+    {
+      "id": "A5",
+      "topic": "Composed template",
+      "file": "master_soapc",
+      "note": "Concat of \"NETGEAR_Orbi_\" + <master-lower3-formatted-with-underscores> + \"_\" + <sat-lower3-formatted-with-underscores> + \"_password\". Final shape: NETGEAR_Orbi_XX_XX_XX_YY_YY_YY_password where XX*3 are master and YY*3 are sat. SIX hex pairs total but drawn from TWO devices, not one.",
+      "classification": "CONFIRMED",
+      "correction": "Corrects report 35's wire-credential description (\"MAC-derived\"): it is a MIXED-MAC template, half master and half sat, not a single MAC."
+    },
+    {
+      "id": "A6",
+      "topic": "Master-side username",
+      "file": "master_soapc",
+      "note": "Hardcoded literal \"orbi\" in SOAP envelope at 0x5d433 (uses getAuthPassword) and 0x5d242 (uses getNewAuthPassword). TWO authenticate templates exist in soapc.",
+      "classification": "CONFIRMED",
+      "new_finding": "Second template getNewAuthPassword exists at 0x2c8b2/0x2d8b3 — purpose not fully traced in this pass but likely fires during an admin-password-rotation sync."
+    },
+    {
+      "id": "A7",
+      "topic": "Satellite-side validation — dynamic derivation (NOT NVRAM compare)",
+      "file": "sat_configd_7215",
+      "function": "authenticate_satellite_1_svc",
+      "entry_address": "0x24b1c",
+      "md5_template_use_address": "0x24fe0",
+      "template_rodata_address": "0x35efb",
+      "template_literal": "NETGEAR_Orbi_%02X_%02X_%02X_%02X_%02X_%02X_password",
+      "note": "Sat does NOT compare incoming password to NVRAM http.password/http.passwordHash (as report 31 claimed). It (1) gets router.mac from nvram, (2) gets boarddata.mac0 from nvram (sat's own MAC), (3) converts both string→byte arrays, (4) snprintf's the template using bytes 3,4,5 of each (OUI-less lower half), (5) MD5s the result, (6) hex-encodes lowercase, (7) memcmp against the incoming password field.",
+      "classification": "CONFIRMED",
+      "correction": "Material correction to report 31's claim that http.password/http.passwordHash is the compare target for satellite management auth. Those NVRAM keys exist but are used for a different auth context (likely admin web UI session, not this RPC-server entrypoint)."
+    },
+    {
+      "id": "A8",
+      "topic": "Satellite-side router.mac auto-update via unauthenticated hyt pipeline",
+      "file": "sat_configd_7215",
+      "function": "authenticate_satellite_1_svc",
+      "note": "Inside the auth handler, BEFORE deriving the expected password, the sat runs: popen(\"(echo \\\"td s\\\"; usleep 500000) | hyt | grep \\\"Network relaying device\\\" | awk ... | cut -d ',' -f 1\", \"r\"). If the fgets'd MAC differs from stored NVRAM router.mac, the sat does nvram_set(\"router.mac=%s\") and nvram_commit(). hyt is the mesh daemon query; its response is not authenticated at this call site. An on-mesh attacker who can inject into the hyt dataset could cause the sat to rebase its expected-password router-side half.",
+      "classification": "CONFIRMED",
+      "psirt_worthy": true,
+      "severity_note": "This is NOT a direct auth bypass — the attacker would still need to know (or discover) the sat's boarddata.mac0 lower-3 bytes. But it collapses the master-side mystery to zero: an on-mesh attacker who can speak to hyt effectively sets the master-half of the template they will later present."
+    },
+    {
+      "id": "A9",
+      "topic": "Satellite-side alternate auth: backhaul-passphrase direct compare",
+      "file": "sat_configd_7215",
+      "function": "authenticate_satellite_1_svc",
+      "note": "BEFORE the MD5 path, the sat reads NVRAM BhSta2.ssid+BhSta2.passphrase (falls back to BhSta5.*). If BhSta?.passphrase strlen==0x40 and all isxdigit, the sat snprintfs it into a buffer and compares (FUN_0001f8b8) against the incoming password. If they match, auth succeeds without going through the MD5 path. The backhaul passphrase is therefore a SECOND valid credential for this entrypoint.",
+      "classification": "CONFIRMED",
+      "psirt_worthy": true,
+      "severity_note": "Not previously documented. Any party that learns the 802.11 backhaul passphrase (which is passed to the sat in-band during pairing and stored in NVRAM) can authenticate as the master."
+    },
+    {
+      "id": "A10",
+      "topic": "7215 → 7288 behavior changes in authenticate_satellite_1_svc",
+      "file": "sat_configd_7288",
+      "function": "authenticate_satellite_1_svc",
+      "entry_address": "0x24ba8",
+      "note": "(1) Username check memcmp-via-FUN_0001f7f8 replaced with strncasecmp → case-insensitive. (2) Success path now writes NVRAM legacy_auth_done=yes and commits; a prior `legacy_auth_done` sets a returned state code of 2 vs 0. (3) MD5 derivation logic itself is unchanged. These are relevant to CVE-0415's auth-relaxation surface but are not themselves a credential-derivation finding.",
+      "classification": "CONFIRMED",
+      "cve_relevance": "Possible CVE-0415-adjacent (strncasecmp was a RELAXATION per report 34, not a tightening). Not conclusive."
+    },
+    {
+      "id": "A11",
+      "topic": "Steady-state vs provisioning scope",
+      "note": "In soapc, every SOAP envelope template references either getAuthPassword or getNewAuthPassword. Both resolve into FUN_0001f228 (NETGEAR_Orbi_ template) — the only in-code auth-password producer. There is no code path in soapc that uses a stored admin-password hash from NVRAM. Therefore the MAC-derived credential is the credential for EVERY master→sat management call in steady state, not just pre-pairing or provisioning.",
+      "classification": "CONFIRMED",
+      "correction": "Upgrades report 31's \"factory-default/pre-pairing fallback\" framing to \"primary steady-state credential\", matching report 33's claim and extending it."
+    },
+    {
+      "id": "A12",
+      "topic": "Master-side TLS verification (sanity check of report 33's second PSIRT finding)",
+      "note": "Not re-verified in this pass — orthogonal to Track A's credential-flow scope. Validation deferred to Track B.",
+      "classification": "OUT_OF_SCOPE_THIS_TRACK"
+    },
+    {
+      "id": "A13",
+      "topic": "NVRAM key soap_Authenticate_old_password",
+      "file": "master_soapc",
+      "note": "FUN_0001f228 writes the computed MD5 hex string to this NVRAM key on every call via acosNvramConfig_set. This means a live master's NVRAM carries the current MAC-derived credential for the most-recently-addressed satellite. Readable via normal NVRAM introspection (Seal / nvram show on owner-rooted master).",
+      "classification": "CONFIRMED",
+      "psirt_worthy": true,
+      "severity_note": "Credential-material-at-rest finding. Not a bypass by itself but reduces attacker work if they ever gain master read-access."
+    }
+  ],
+  "verdict": "CONFIRMED",
+  "one_line_verdict": "The master DOES send a MAC-derived credential in every satellite-management SOAP call, AND the satellite independently derives the same credential at validation time. The derivation is MD5-hex-lowercase(\"NETGEAR_Orbi_\" + master-lower-3-bytes + \"_\" + sat-lower-3-bytes + \"_password\"), username literal \"orbi\". Materially corrects report 31's http.password compare-target claim and report 33's g_soapc_mac1 provenance.",
+  "material_corrections_to_prior_reports": [
+    "Report 31 §3: sat auth validates against NVRAM http.password/http.passwordHash — WRONG for authenticate_satellite_1_svc. That function dynamically derives the expected MD5 at every call from NVRAM router.mac + boarddata.mac0. http.password/http.passwordHash are used by a different code path (admin web UI session via M1:Authenticate → soap_agent, not the authenticate_satellite_1_svc RPC server).",
+    "Report 33: g_soapc_mac1 provenance not stated — in fact it is the master's OWN LAN MAC lower-3-bytes, not a sat field. The composed credential is a MIXED-MAC template, not a sat-MAC template.",
+    "Report 31 §3 default-admin-password-derivation PSIRT: framed as a factory-fresh / pre-pairing fallback. In fact it is the PRIMARY steady-state credential for every master→sat management call."
+  ],
+  "new_psirt_findings_surfaced": [
+    "Sat reads router MAC via unauthenticated popen of a hyt pipeline and auto-updates its NVRAM router.mac from it — potential mesh-level poisoning vector.",
+    "Backhaul passphrase (BhSta2.passphrase / BhSta5.passphrase, 64-hex-char Z→Z format) is a SECOND valid credential for authenticate_satellite_1_svc.",
+    "Computed credential is written to NVRAM soap_Authenticate_old_password on every call (credential-at-rest).",
+    "Computed credential is written plaintext to /tmp/soapc_log (credential in debug log)."
+  ]
+}

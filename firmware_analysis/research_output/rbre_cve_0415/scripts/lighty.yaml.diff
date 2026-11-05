@@ -1,0 +1,51 @@
+--- firmware_analysis/extracted/rbre_7215/rootfs/etc/startup.d.in/lighty.yaml	2024-11-14 13:15:17.000000000 -0700
++++ firmware_analysis/extracted/rbre_7288/rootfs/etc/startup.d.in/lighty.yaml	2026-07-20 05:52:04.000000000 -0700
+@@ -16,21 +16,33 @@
+         chmod 0755 "${newdir}"
+     }
+     gen_self_signed_ssl_certificate() {
+-      cert_path="/opt/cache/system/etc/lighttpd/ssl"
+-      domain="routerlogin.net"
+-      pem_file="$cert_path/$domain.pem"
+-      (cd "$cert_path" && check_self_signed_certificate.sh "$domain") && {
+-          logger -s -t "wsm" "Using existing self-signed certificate for HTTPS"
+-          return 0
+-      }
+-      logger -s -t "wsm" "Self-signed SSL certificate not valid. Generating one!"
+-      mkdir -p "$cert_path"
+-      (cd "$cert_path" && create_self_signed_certificate.sh "$domain") || {
+-        logger -s -t "wsm" "Failure! Unable to create $pem_file."
+-        return 1
+-      }
+-      logger -s -t "wsm" "Success. Created at $pem_file"
+-      return 0
++        cert_path="/opt/cache/system/etc/lighttpd/ssl"
++        domain="routerlogin.net"
++        pem_file="$cert_path/$domain.pem"
++        key_file="$cert_path/$domain.key"
++
++        # Validate existing certificate
++        (cd "$cert_path" && check_self_signed_certificate.sh "$domain") && {
++            # Check key size only if cert exist
++            if [ -f "$pem_file" ]; then
++                KEY_SIZE=$(openssl x509 -in "$pem_file" -noout -text 2>/dev/null | grep "Public-Key" | awk '{gsub(/[()]/,"",$2); print $2}')
++                if [ "$KEY_SIZE" = "2048" ]; then
++                    logger -s -t "wsm" "Using existing valid 2048-bit certificate for HTTPS"
++                    return 0
++                fi
++                logger -s -t "wsm" "Key size $KEY_SIZE-bit is weak. Regenerating..."
++            fi
++        }
++
++        logger -s -t "wsm" "Regenerating SSL certificate..."
++        mkdir -p "$cert_path"
++        (cd "$cert_path" && create_self_signed_certificate.sh "$domain") || {
++            logger -s -t "wsm" "Failure! Unable to create $pem_file"
++            return 1
++        }
++
++        logger -s -t "wsm" "Success. Created new 2048-bit cert at $pem_file"
++        return 0
+     }
+     wsm_watch_stop() {
+         if [ -e "/var/run/wsm_watch.pid" ] ; then

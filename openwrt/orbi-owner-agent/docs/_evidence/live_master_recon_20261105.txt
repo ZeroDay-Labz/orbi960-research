@@ -1,0 +1,284 @@
+# Live RBRE960 read-only diagnostic — 2026-11-05
+
+Owner-authorized read-only SSH session; no mutations. Captures the two
+targeted probes requested in directive 705a (b): full 0–127 swconfig
+VLAN slot enumeration, and complete HYD UCI + generated-conf dump.
+
+================================================================================
+ALL 128 SWITCH VLAN SLOTS (swconfig view)
+================================================================================
+
+  for V in $(seq 0 127); do
+    VID="$(swconfig dev switch0 vlan "$V" get vid 2>/dev/null)"
+    PORTS="$(swconfig dev switch0 vlan "$V" get ports 2>/dev/null)"
+    echo "slot=$V vid=[$VID] ports=[$PORTS]"
+  done
+
+Result (verbatim, truncated for brevity in this file; identical pattern for
+all slots in [0..127]):
+
+  slot=0   vid=[0] ports=[]
+  slot=1   vid=[0] ports=[]
+  ...
+  slot=126 vid=[0] ports=[]
+  slot=127 vid=[0] ports=[]
+
+All 128 slots returned VID 0 and empty port membership through the
+swconfig interface.
+
+Important interpretation note:
+
+- This proves only that the stock vendor firmware does not program VLAN
+  slots through the legacy swconfig surface.
+- QCA HPPE is managed by the SSDK/NSS stack in practice. Hardware VLAN
+  state may be programmed through `ssdk_sh` or NSS-internal APIs and
+  not be visible through `swconfig vlan N get vid/ports`.
+- We did NOT run `ssdk_sh` queries or other vendor-native queries that
+  would surface hardware-programmed VLAN state not visible to swconfig.
+
+Therefore: "swconfig view shows all 128 slots unprogrammed" is a
+SUPPORTED claim; "no VLAN state is programmed in the HPPE" is NOT.
+
+================================================================================
+HYD UCI CONFIG — ALL VLAN-RELATED KEYS
+================================================================================
+
+  uci show hyd | grep -Ei \
+    'SwitchInterface|SwitchLanVid|Vlanid|Map2TrafficSepEnabled|NumberOfVLANSupported|VlanIDNw|Map8021QPCP'
+
+Verbatim:
+
+  hyd.config.SwitchInterface='auto'
+  hyd.config.SwitchLanVid='1'
+  hyd.@Vlanid[0]=Vlanid
+  hyd.@Vlanid[0].ifname='eth1'
+  hyd.@Vlanid[0].vid='4094'
+  hyd.@Vlanid[1]=Vlanid
+  hyd.@Vlanid[1].ifname='eth0'
+  hyd.@Vlanid[1].vid='4093'
+  hyd.MultiAP.NumberOfVLANSupported='0'
+  hyd.MultiAP.Map2TrafficSepEnabled='0'
+  hyd.MultiAP.Map8021QPCP='0'
+  hyd.MultiAP.VlanIDNwPrimary='0'
+  hyd.MultiAP.VlanIDNwOne='0'
+  hyd.MultiAP.VlanIDNwTwo='0'
+  hyd.MultiAP.VlanIDNwThree='0'
+
+Key schema observations:
+
+- `@Vlanid[0]` = eth1:4094 and `@Vlanid[1]` = eth0:4093 are the two
+  mesh/backhaul/guest VLAN entries HYD knows about. These are the
+  reserved VIDs; no third entry exists.
+- All MultiAP VLAN knobs are currently 0 / disabled:
+    NumberOfVLANSupported=0, Map2TrafficSepEnabled=0, Map8021QPCP=0,
+    VlanIDNwPrimary=VlanIDNwOne=VlanIDNwTwo=VlanIDNwThree=0.
+- The schema shows these options EXIST; the live values show the
+  Multi-AP VLAN separation feature is NOT currently active.
+
+================================================================================
+HYD GENERATED CONFIG FILES — /tmp/hyd-lan.conf and /tmp/hyd-guest.conf
+================================================================================
+
+  grep -inE 'vlan|vid|switch|traffic.?sep|multi.?ap|bridge' \
+    /tmp/hyd-lan.conf /tmp/hyd-guest.conf
+
+/tmp/hyd-lan.conf (relevant lines, verbatim):
+
+  27:HybridBridgeInterfaceName=br-lan
+  28:ManagedInterfacesList=ath1@wifi1&lan:WLAN,ath0@wifi0&lan:WLAN,ath3@wifi3&lan:WLAN,ath13@wifi1&lan:WLAN,ath31@wifi3&lan:WLAN,eth0&lan:ETHER,eth1&lan:ETHER,eth2&lan:ETHER,eth3&lan:ETHER,ath11.4094@wifi1&lan:WLAN_VLAN,ath2.4094@wifi2&lan:WLAN_VLAN
+  30:SwitchLanVid=1
+  31:SwitchCpuPort=
+  32:SwitchDeviceId=0
+  33:VlanIds=eth1.4094,eth0.4093
+  131:EnableBadLinkStatsSwitchFlow=0
+  233:NumberOfVLANSupported=0
+  234:Map2TrafficSepEnabled=0
+  236:VlanIDNwPrimary=0
+  237:VlanIDNwOne=0
+  238:VlanIDNwTwo=0
+  239:VlanIDNwThree=0
+  556:LogLevelMultiAP=2
+
+/tmp/hyd-guest.conf (relevant lines, verbatim):
+
+  27:HybridBridgeInterfaceName=br-guest
+  28:ManagedInterfacesList=eth0.4093&guest:ETHER,eth1.4093&guest:ETHER,eth2.4093&guest:ETHER,eth3.4093&guest:ETHER,ath11.4093@wifi1&guest:WLAN_VLAN,ath2.4093@wifi2&guest:WLAN_VLAN
+  30:SwitchLanVid=1
+  31:SwitchCpuPort=
+  32:SwitchDeviceId=0
+  33:VlanIds=eth1.4094,eth0.4093
+  131:EnableBadLinkStatsSwitchFlow=0
+  233:NumberOfVLANSupported=0
+  234:Map2TrafficSepEnabled=0
+  236:VlanIDNwPrimary=0
+  237:VlanIDNwOne=0
+  238:VlanIDNwTwo=0
+  239:VlanIDNwThree=0
+  556:LogLevelMultiAP=2
+
+Key interpretation:
+
+- The generated configs confirm the UCI→HYD translator is producing
+  only the reserved-VLAN (4093/4094) wiring that the stock mesh
+  requires.
+- `ManagedInterfacesList` on br-lan labels backhaul interfaces
+  `ath11.4094@wifi1&lan:WLAN_VLAN` and `ath2.4094@wifi2&lan:WLAN_VLAN`
+  — the `WLAN_VLAN` role is how HYD tags a VLAN-carrying wireless
+  sub-interface. The guest config does the same with .4093.
+- The MultiAP VLAN separation knobs are all 0 in both generated files
+  — consistent with the UCI dump. The feature is schema-defined but
+  NOT ACTIVE.
+- VlanIds=eth1.4094,eth0.4093 is identical across both generated
+  files — the global VLAN list HYD knows about.
+
+Therefore:
+
+- The HYD stack has a schema for Multi-AP SSID-to-VLAN separation
+  (NumberOfVLANSupported/Map2TrafficSepEnabled/VlanIDNw{Primary,One,
+  Two,Three}/Map8021QPCP), confirmed by both the UCI schema and by the
+  generated conf files that include these keys.
+- That schema is currently inactive. All related values are 0.
+- The UCI-to-generated-conf translator code (likely in
+  /lib/wifi/*.sh or NETGEAR vendor scripts; not inspected this turn)
+  must be reverse-engineered before any owner-added SSID-to-VLAN
+  wiring can be driven through this surface.
+
+================================================================================
+HYD VLAN HELPER IMPLEMENTATIONS — UCI→HYD TRANSLATOR (part 2 of diagnostic)
+================================================================================
+
+  grep -n -A40 -B8 -E \
+    'hyfi_get_iface_vlanids|__hyfi_get_switch_lan_vid|__hyfi_get_switch_cpu_port' \
+    /lib/functions/hyfi-network.sh /lib/functions/hyfi-iface.sh /etc/init.d/hyd
+
+Key helper functions in /lib/functions/hyfi-iface.sh:
+
+  __hyfi_get_iface_vlanids()  { # L73
+      config_get loc_iface "$config" ifname
+      config_get loc_vid   "$config" vid
+      if [ "$loc_iface" -a "$loc_vid" ]; then
+          IFACE_VLANIDS="${IFACE_VLANIDS}${IFACE_VLANIDS:+","}${loc_iface}.${loc_vid}"
+      fi
+  }
+
+  hyfi_get_iface_vlanids()    { # L85
+      IFACE_VLANIDS=""
+      config_load $MAP
+      config_foreach __hyfi_get_iface_vlanids Vlanid
+      eval "$1='${IFACE_VLANIDS}'"
+  }
+
+  __hyfi_get_switch_lan_vid() { # L313
+      config_load hyd
+      config_get loc_lan_vid config SwitchLanVid ""
+      eval "$1='$loc_lan_vid'"
+  }
+
+  __hyfi_get_switch_cpu_port(){ # L332
+      local lan_vid
+      __hyfi_get_switch_lan_vid lan_vid
+      config_load network
+      config_foreach __hyfi_get_switch_cpu_port_iterate switch_vlan $lan_vid
+      eval "$1='$switch_cpu_port'"
+  }
+
+Call site in /etc/init.d/hyd (lines 318–332):
+
+  __hyfi_get_switch_lan_vid switch_lan_vid
+  __hyfi_get_switch_cpu_port switch_cpu_root_port
+  __hyfi_get_switch_iface switch_iface eswitch_support switch_device_id switch_present
+
+  __hyd_cfg_append 'SwitchLanVid='"$switch_lan_vid" $configfile
+  __hyd_cfg_append 'SwitchCpuPort='"$switch_cpu_root_port" $configfile
+  __hyd_cfg_append 'SwitchDeviceId='"$switch_device_id" $configfile
+
+  local iface_vlanids
+  hyfi_get_iface_vlanids iface_vlanids
+  __hyd_cfg_append 'VlanIds='"$iface_vlanids" $configfile
+
+Reverse-engineered UCI→HYD VLAN translator (CONFIRMED):
+
+  UCI /etc/config/hyd:                    Generated hyd conf:
+  --------------------------------        -------------------------------
+  @Vlanid[N].ifname = <iface>             VlanIds = <iface1>.<vid1>,
+  @Vlanid[N].vid    = <vid>                         <iface2>.<vid2>, ...
+  config.SwitchLanVid = <lan_vid>         SwitchLanVid = <lan_vid>
+                                           SwitchCpuPort = <from switch_vlan
+                                                            section in
+                                                            /etc/config/network
+                                                            matching lan_vid>
+
+This matches the live example byte-for-byte:
+  @Vlanid[0] eth1:4094 + @Vlanid[1] eth0:4093 + SwitchLanVid=1
+  → VlanIds=eth1.4094,eth0.4093 + SwitchLanVid=1
+
+Implication for the owner-agent:
+
+- To introduce an owner VLAN at the HYD layer, one would add a new
+  `config Vlanid` section to `/etc/config/hyd` with `ifname` and `vid`,
+  then restart hyd. No MULTI-AP SSID-to-VLAN wiring is required for
+  this ifname.vid list; those two mechanisms are independent.
+- MAP/Multi-AP SSID-to-VLAN wiring (the NumberOfVLANSupported,
+  Map2TrafficSepEnabled, VlanIDNwPrimary/One/Two/Three knobs) is a
+  SEPARATE subsystem and is currently disabled (all zeros). That is
+  the part of the capability matrix that remains deferred, not the
+  `@Vlanid[*]` → VlanIds path.
+- This clarifies the Phase-B investigation scope: the UCI→HYD
+  translator for ifname.vid is NOW UNDERSTOOD; the SSID-to-VLAN MAP
+  path is NOT (requires hostapd + MAP + repacd integration study).
+
+================================================================================
+KERNEL VLAN DEVICE TABLE (/proc/net/vlan/config)
+================================================================================
+
+  cat /proc/net/vlan/config
+
+Verbatim:
+
+  VLAN Dev name    | VLAN ID
+  Name-Type: VLAN_NAME_TYPE_RAW_PLUS_VID_NO_PAD
+  eth0.4093      | 4093  | eth0
+  eth1.4093      | 4093  | eth1
+  eth2.4093      | 4093  | eth2
+  eth3.4093      | 4093  | eth3
+  ath11.4093     | 4093  | ath11
+  ath11.4094     | 4094  | ath11
+  ath2.4093      | 4093  | ath2
+  ath2.4094      | 4094  | ath2
+
+Interpretation: exactly 8 kernel 802.1Q sub-interfaces are present.
+Only VIDs 4093 and 4094 are in use (the reserved mesh/guest VIDs).
+No owner-created VLANs are present (as expected — none have been
+installed).
+
+================================================================================
+PER-INTERFACE DETAIL (ip -d link show on each VLAN sub-interface)
+================================================================================
+
+Wired VLAN sub-interfaces (all eth*.4093):
+  - `vlan protocol 802.1Q id 4093 <REORDER_HDR>`
+  - master: br-guest
+  - state: LOWERLAYERDOWN (no carrier on physical eth interfaces;
+    bridge_slave state disabled; expected with no cable connected)
+
+Wireless VLAN sub-interfaces:
+  - ath11.4093 → master br-guest, VLAN 4093, state UP, forwarding
+  - ath11.4094 → master br-lan,   VLAN 4094, state UP, forwarding
+  - ath2.4093  → master br-guest, VLAN 4093, state UP, forwarding
+  - ath2.4094  → master br-lan,   VLAN 4094, state UP, forwarding
+
+All have `vlan protocol 802.1Q id <vid> <REORDER_HDR>` — plain Linux
+8021q with REORDER_HDR tagging (tag inserted/stripped in SKB headers,
+transparent to upper layers).
+
+This is the stock vendor mesh/guest pattern: wired ports carry VLAN
+4093 (guest) when a cable is up; wireless `ath11.*` and `ath2.*`
+carry VLANs 4093 (guest) and 4094 (mesh backhaul) on the two backhaul-
+capable radios.
+
+Confirms: the owner-agent's `vlan_create` would produce an identical
+structural result (software 802.1Q sub-interface + bridge_slave of a
+chosen bridge), using the vendor's own precedent.
+
+================================================================================
+End of 2026-11-05 live diagnostic.

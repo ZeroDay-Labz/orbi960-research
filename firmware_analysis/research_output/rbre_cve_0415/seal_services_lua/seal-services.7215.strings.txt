@@ -1,0 +1,127 @@
+     1	#!/usr/bin/env lua
+     2	LuaQ
+     3	_version
+     4	0.1.0
+     5	require
+     6	seal-environ
+     7	posix.glob
+     8	glob
+     9	xagent-evsinkd2
+    10	xagent
+    11	catalog
+    12	armor-bd-ash
+    13	spc-circle-csh
+    14	details
+    15	get_webapp
+    16	list
+    17	seal_version
+    18	install
+    19	uninstall
+    20	enabled
+    21	ACTIVATE
+    22	disabled
+    23	DEACTIVATE
+    24	service_action_handler
+    25	ipairs
+    26	ntgr-dal-bst - v2.0.4-9-g138944ea
+    27	            ntgr-dal-dalh - v2.0.6-1-gc0609a1a
+    28	            ntgr-seal-launchService - v0.4.7-0-gff356211
+    29	            seal-service-armor-bd-ash - v2.0.15-0-g14d6be2d
+    30	            seal-service-spc-circle - 3.17.1.5-20201218_182754
+    31	            seal-support-tinyproxy - 1.10.0-129-g8ec74825-1
+    32	is_orbi
+    33	popen
+    34	seal version
+    35	read
+    36	close
+    37	string
+    38	gmatch
+    39	%s*([%w-]+) %- ([%.%w%d%-_]+)
+    40	gsub
+    41	seal%-service%-([%w%-]+)
+    42	table
+    43	insert
+    44	popen
+    45	opkg status seal-service-
+    46	 | grep '^Status: ' | awk '{printf "%s", $4}'
+    47	read
+    48	installed
+    49	armor-bd
+    50	armor-bd-ash
+    51	spc-circle
+    52	spc-circle-csh
+    53	execute
+    54	ssvc status 
+    55	>/dev/null 2>&1
+    56	armor-bd
+    57	popen
+    58	seal version -s | grep armor-bd | awk '{printf "%s", $2}'
+    59	read
+    60	spc-circle
+    61	seal version -s | grep spc-circle | awk '{printf "%s", $2}'
+    62	opkg status seal-service-
+    63	 | grep Version | awk '{printf "%s", $2}'
+    64	string
+    65	match
+    66	[^-]+
+    67	get_webapp
+    68	type
+    69	webapp
+    70	version
+    71	installable
+    72	native
+    73	name
+    74	service
+    75	installed
+    76	running
+    77	active
+    78	enabled
+    79	popen
+    80	 2>&1
+    81	read
+    82	close
+    83	find
+    84	No such file or directory
+    85	popen
+    86	echo ~
+    87	read
+    88	gsub
+    89	close
+    90	/test-webapp.zip
+    91	print
+    92	looking for file in 
+    93	execute
+    94	stat 
+    95	 > /dev/null
+    96	Test file does not exist at '
+    97	'. Please create a file there to test with.
+    98	exit
+    99	is_orbi
+   100	/opt/services/
+   101	/*.zip
+   102	ipairs
+   103	details
+   104	table
+   105	insert
+   106	/usr/bin/seal version --short | /bin/grep 'seal:' | /usr/bin/awk '{printf "%s", $2}'
+   107	popen
+   108	read
+   109	close
+   110	popen
+   111	opkg install 
+   112	read
+   113	close
+   114	popen
+   115	opkg remove 
+   116	read
+   117	close
+   118	dumaos
+   119	Invalid Service
+   120	Invalid Option
+   121	popen
+   122	/usr/bin/nsh.sh argument 0 
+   123	read
+   124	close
+   125	statusCode
+   126	message
+   127	Success

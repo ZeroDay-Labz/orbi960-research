@@ -1,0 +1,26 @@
+{
+  "count": 3,
+  "mismatches": [
+    {
+      "method": "telnet_status",
+      "note": "method name not found as string in any rpcd/*.so",
+      "object": "netgear.log",
+      "role": "netgear",
+      "section": "read"
+    },
+    {
+      "method": "telnet_disable",
+      "note": "method name not found as string in any rpcd/*.so",
+      "object": "netgear.log",
+      "role": "netgear",
+      "section": "write"
+    },
+    {
+      "method": "telnet_enable",
+      "note": "method name not found as string in any rpcd/*.so",
+      "object": "netgear.log",
+      "role": "netgear",
+      "section": "write"
+    }
+  ]
+}

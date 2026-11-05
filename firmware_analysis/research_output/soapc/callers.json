@@ -1,0 +1,118 @@
+{
+  "subject": "/usr/sbin/soapc",
+  "invocation_format": "/usr/sbin/soapc <eventIndex>  (single integer argv, range 1000..9998; usage string: 'Usage: soapc <eventIndex>')",
+  "central_launcher": {
+    "file": "usr/lib/libacos_shared.so",
+    "functions": [
+      "hook_soapc",
+      "check_set_soapc",
+      "check_soapc_index_running"
+    ],
+    "guard_string": "same soapc %s is running, ignore this call!!",
+    "logic": "check_set_soapc guards against concurrent duplicate invocations; hook_soapc spawns /usr/sbin/soapc with event id; check_soapc_index_running polls via ps."
+  },
+  "callers": [
+    {
+      "file": "usr/sbin/heartbeat",
+      "role": "periodic sat-state synchronizer",
+      "functions_hinted": [
+        "check_set_soapc",
+        "hook_soapc",
+        "soapc_router_event_trigger",
+        "soap_agent_routine"
+      ],
+      "nvram_trigger_keys": [
+        "soapc_sat_router_fire",
+        "soapc_sat_wifi_fire",
+        "soapc_sat_checkfw_fire",
+        "soapc_sat_access_count"
+      ],
+      "classification": "VERIFIED"
+    },
+    {
+      "file": "usr/sbin/httpd",
+      "role": "web-UI triggered sync",
+      "functions_hinted": [
+        "call soapc_sat_router_fire",
+        "check_soapc_index_running",
+        "hook_soapc",
+        "killall soapc"
+      ],
+      "notes": "sets nvram soapc_sat_router_fire=6 or 7 to request sync (comment: 'Notify Satellites to sync')",
+      "classification": "VERIFIED"
+    },
+    {
+      "file": "usr/sbin/acos_wd",
+      "role": "watchdog \u2014 kills stuck or over-count soapc processes",
+      "evidence_strings": [
+        "ps | grep 'soapc' | grep -v grep | wc -l",
+        "[acos_wd] soapc number is more then 15, killall first",
+        "[acos_wd] soapc pid %s run over %d seconds",
+        "killall soapc"
+      ],
+      "classification": "VERIFIED"
+    },
+    {
+      "file": "sbin/acos_service",
+      "role": "service lifecycle: starts abFifo for soapc log, resets soapc running flag",
+      "evidence_strings": [
+        "abFifo /tmp/soapc_log /tmp/soapc_log_tmp 1024 &",
+        "killall -9 soapc",
+        "rm /tmp/soap/soapc_running"
+      ],
+      "classification": "VERIFIED"
+    },
+    {
+      "file": "usr/sbin/check_fw",
+      "role": "firmware upgrade coordinator \u2014 reads soapc sat response NVRAM to decide upgrade",
+      "nvram_read_keys": [
+        "soapc_pass",
+        "soapc_sat_access_count",
+        "soapc_sat_%d_mac",
+        "soapc_sat_%d_ip",
+        "soapc_sat_%d_DeviceInfo_GetInfo_ModelName",
+        "soapc_sat_%d_DeviceInfo_GetInfo_Firmwareversion",
+        "soapc_sat_%d_new_firmware_available",
+        "soapc_sat_%d_need_updatefirmware2"
+      ],
+      "notes": "check_fw is the only master-side reader of the string soapc_pass. soapc itself does not read or write soapc_pass. Paste warning stands: existence of the string does not prove the nvram key is populated.",
+      "classification": "VERIFIED"
+    },
+    {
+      "file": "usr/sbin/device_detect",
+      "role": "attached-device tracker \u2014 merges satellite-side device lists into master",
+      "nvram_read_keys": [
+        "soapc_sat_access_count",
+        "soapc_sat_%d_mac",
+        "soapc_sat_%d_DeviceInfo_GetAttachDevice_NewAttachDevice",
+        "soapc_sat_%d_ParentMac",
+        "soapc_sat_%d_DeviceInfo_GetCurrentSatellitesWIFIinfo_BHParentMAC",
+        "soapc_sat_%d_DeviceInfo_GetCurrentSatellitesWIFIinfo_BHRSSI"
+      ],
+      "signal_received": "SIGUSR2 \u2014 soapc sends 'killall -SIGUSR2 device_detect' after NVRAM updates to prompt re-read",
+      "classification": "VERIFIED"
+    },
+    {
+      "file": "usr/sbin/scheact",
+      "role": "schedule-action engine \u2014 triggers wifi fire via nvram",
+      "nvram_write_keys": [
+        "soapc_sat_wifi_fire"
+      ],
+      "classification": "VERIFIED"
+    }
+  ],
+  "log_fifo": {
+    "fifo_binary": "/usr/sbin/abFifo",
+    "launched_by": "sbin/acos_service",
+    "command": "abFifo /tmp/soapc_log /tmp/soapc_log_tmp 1024 &",
+    "purpose": "bounded ring-buffer of soapc_log (prevents disk fill)",
+    "classification": "VERIFIED"
+  },
+  "process_lifecycle": {
+    "spawn": "libacos_shared.so::hook_soapc fork+exec /usr/sbin/soapc <N>",
+    "daemon": "soapc daemons via daemon(1,1); writes PID at /var/run/soapd.pid",
+    "running_flag": "/tmp/soap/soapc_running \u2014 removed on exit",
+    "exit_cleanup": "unlink /var/run/soapd.pid, unlink /tmp/soap/soapc_running, acosNvramConfig_save, dil_uninit",
+    "classification": "VERIFIED"
+  }
+}

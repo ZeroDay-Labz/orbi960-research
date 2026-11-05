@@ -1,0 +1,191 @@
+     1	#!/usr/bin/env lua
+     2	LuaQ
+     3	require
+     4	third_party/rxi-json-lua
+     5	third_party/router
+     6	seal-development
+     7	seal-io
+     8	seal-services
+     9	seal-log
+    10	seal-environ
+    11	/api/v1
+    12	match
+    13	/services/:service_name
+    14	/services/:service_name/token
+    15	/services
+    16	POST
+    17	/install/:service_name
+    18	/uninstall/:service_name
+    19	/services/:service_name/state
+    20	/services/:service_name/webapp/:webapp_version
+    21	/services/:service_name/webapp
+    22	/services/:service_name/validateToken
+    23	/enable_ssh
+    24	Root
+    25	getenv
+    26	DOCUMENT_ROOT
+    27	Method
+    28	REQUEST_METHOD
+    29	REQUEST_URI
+    30	ContentLength
+    31	tonumber
+    32	HTTP_CONTENT_LENGTH
+    33	RawContent
+    34	HTTP_CONTENT
+    35	ProxyInternal
+    36	HTTP_X_SEAL_INTERNAL
+    37	query
+    38	QUERY_STRING
+    39	RelativeUri
+    40	ApiVersion
+    41	print
+    42	Running in local test mode...
+    43	To test this code in a remote context, run the test script located in seal/bootstrap/scripts/test-rest-api.sh
+    44	/www-seal
+    45	/api/v1/services/armor-bd/webapp/
+    46	string
+    47	gsub
+    48	^/api/(v%d)/.+
+    49	read
+    50	pcall
+    51	Bad Request - Message body is not valid JSON
+    52	getbool
+    53	SDE_LIGHTTPD_APIS
+    54	file_exists
+    55	/debugEnable
+    56	Bad Request
+    57	LogLevel
+    58	Error
+    59	rest.lua
+    60	Lua error in rest.lua. Message was:
+    61	debug
+    62	type
+    63	string
+    64	match
+    65	^[A-Za-z0-9_-]+$
+    66	find
+    67	%.%.
+    68	type
+    69	string
+    70	number
+    71	Error sending return code: (
+    72	tostring
+    73	print
+    74	Status: 
+    75	list
+    76	print
+    77	encode
+    78	service_name
+    79	Invalid request
+    80	details
+    81	encode
+    82	print
+    83	api_versions
+    84	seal_version
+    85	encode
+    86	print
+    87	gmatch
+    88	([^&=?]-)=([^&=?]+)
+    89	service_name
+    90	Invalid request
+    91	get_webapp
+    92	query
+    93	service_version
+    94	webapp_version
+    95	open
+    96	read
+    97	close
+    98	print
+    99	Content-Type: application/octet-stream
+   100	Content-Disposition: 
+   101	attachment;filename="
+   102	Content-Length: 
+   103	stdout
+   104	write
+   105	flush
+   106	service_name
+   107	Invalid request
+   108	encode
+   109	received
+   110	action
+   111	password
+   112	print
+   113	service_name
+   114	Invalid request
+   115	state
+   116	service_action_handler
+   117	print
+   118	encode
+   119	service_name
+   120	Invalid request
+   121	read
+   122	encode
+   123	received
+   124	print
+   125	username
+   126	password
+   127	pubkey
+   128	enable_ssh
+   129	I'm a teapot
+   130	table
+   131	insert
+   132	string
+   133	char
+   134	popen
+   135	head /dev/urandom | tr -dc "0123456789" | head -c8
+   136	read
+   137	close
+   138	math
+   139	randomseed
+   140	tonumber
+   141	clock
+   142	math
+   143	random
+   144	service_name
+   145	Invalid request
+   146	/var/media/reserved2/service_uppers/
+   147	/upper/
+   148	service-token
+   149	is_directory
+   150	message
+   151	Service Not Found
+   152	status
+   153	errorCode
+   154	encode
+   155	print
+   156	file_exists
+   157	read_all_from_file
+   158	write_to_file
+   159	service_name
+   160	Invalid request
+   161	service-token
+   162	/var/media/reserved2/service_uppers/
+   163	/upper/
+   164	Missing service-token in JSON payload
+   165	is_directory
+   166	Service Not Found
+   167	file_exists
+   168	Token Not Found
+   169	read_all_from_file
+   170	string
+   171	gsub
+   172	tostring
+   173	Invalid
+   174	Valid
+   175	encode
+   176	Status
+   177	validationStatus
+   178	print
+   179	decode
+   180	RawContent
+   181	pairs
+   182	/api/meta/
+   183	/api/meta
+   184	ApiVersion
+   185	print
+   186	Unexpected API version: 
+   187	Expected: 
+   188	execute
+   189	Method
+   190	RelativeUri
+   191	Invalid request - API endpoint not found: 

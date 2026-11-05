@@ -1,0 +1,2876 @@
+{
+  "binary": "rbre_7215/usr/sbin/soapc",
+  "sha256": "531b932b0488a4d60d38cd575d0d1b44f7f4285f40eafe5593a3c8d975f74a7b",
+  "all_events": [
+    {
+      "i": 0,
+      "service_ptr": "0x7",
+      "event_id": 74,
+      "event_id_hex": "0x4a",
+      "flag_or_tag": 1,
+      "pad": 316467
+    },
+    {
+      "i": 1,
+      "service_ptr": "0x7",
+      "event_id": 75,
+      "event_id_hex": "0x4b",
+      "flag_or_tag": 1,
+      "pad": 315970
+    },
+    {
+      "i": 2,
+      "service_ptr": "0x0",
+      "event_id": 17,
+      "event_id_hex": "0x11",
+      "flag_or_tag": 0,
+      "pad": 290244
+    },
+    {
+      "i": 3,
+      "service_ptr": "0x0",
+      "event_id": 142,
+      "event_id_hex": "0x8e",
+      "flag_or_tag": 0,
+      "pad": 230017
+    },
+    {
+      "i": 4,
+      "service_ptr": "0x0",
+      "event_id": 16,
+      "event_id_hex": "0x10",
+      "flag_or_tag": 0,
+      "pad": 290678
+    },
+    {
+      "i": 5,
+      "service_ptr": "0x0",
+      "event_id": 213,
+      "event_id_hex": "0xd5",
+      "flag_or_tag": 0,
+      "pad": 311994
+    },
+    {
+      "i": 6,
+      "service_ptr": "0x1",
+      "event_id": 184,
+      "event_id_hex": "0xb8",
+      "flag_or_tag": 0,
+      "pad": 315572
+    },
+    {
+      "i": 7,
+      "service_ptr": "0x1",
+      "event_id": 18,
+      "event_id_hex": "0x12",
+      "flag_or_tag": 1,
+      "pad": 315118
+    },
+    {
+      "i": 8,
+      "service_ptr": "0x1",
+      "event_id": 122,
+      "event_id_hex": "0x7a",
+      "flag_or_tag": 1,
+      "pad": 314643
+    },
+    {
+      "i": 9,
+      "service_ptr": "0x1",
+      "event_id": 123,
+      "event_id_hex": "0x7b",
+      "flag_or_tag": 1,
+      "pad": 314186
+    },
+    {
+      "i": 10,
+      "service_ptr": "0x1",
+      "event_id": 57,
+      "event_id_hex": "0x39",
+      "flag_or_tag": 1,
+      "pad": 313672
+    },
+    {
+      "i": 11,
+      "service_ptr": "0x1",
+      "event_id": 58,
+      "event_id_hex": "0x3a",
+      "flag_or_tag": 1,
+      "pad": 313138
+    },
+    {
+      "i": 12,
+      "service_ptr": "0x1",
+      "event_id": 185,
+      "event_id_hex": "0xb9",
+      "flag_or_tag": 1,
+      "pad": 0
+    },
+    {
+      "i": 13,
+      "service_ptr": "0x1",
+      "event_id": 105,
+      "event_id_hex": "0x69",
+      "flag_or_tag": 1,
+      "pad": 311514
+    },
+    {
+      "i": 14,
+      "service_ptr": "0x1",
+      "event_id": 109,
+      "event_id_hex": "0x6d",
+      "flag_or_tag": 1,
+      "pad": 311038
+    },
+    {
+      "i": 15,
+      "service_ptr": "0x1",
+      "event_id": 167,
+      "event_id_hex": "0xa7",
+      "flag_or_tag": 1,
+      "pad": 310650
+    },
+    {
+      "i": 16,
+      "service_ptr": "0x1",
+      "event_id": 107,
+      "event_id_hex": "0x6b",
+      "flag_or_tag": 1,
+      "pad": 310118
+    },
+    {
+      "i": 17,
+      "service_ptr": "0x1",
+      "event_id": 205,
+      "event_id_hex": "0xcd",
+      "flag_or_tag": 1,
+      "pad": 309577
+    },
+    {
+      "i": 18,
+      "service_ptr": "0x1",
+      "event_id": 206,
+      "event_id_hex": "0xce",
+      "flag_or_tag": 1,
+      "pad": 308954
+    },
+    {
+      "i": 19,
+      "service_ptr": "0x1",
+      "event_id": 207,
+      "event_id_hex": "0xcf",
+      "flag_or_tag": 1,
+      "pad": 308489
+    },
+    {
+      "i": 20,
+      "service_ptr": "0x1",
+      "event_id": 208,
+      "event_id_hex": "0xd0",
+      "flag_or_tag": 1,
+      "pad": 308030
+    },
+    {
+      "i": 21,
+      "service_ptr": "0x1",
+      "event_id": 210,
+      "event_id_hex": "0xd2",
+      "flag_or_tag": 0,
+      "pad": 307614
+    },
+    {
+      "i": 22,
+      "service_ptr": "0x1",
+      "event_id": 209,
+      "event_id_hex": "0xd1",
+      "flag_or_tag": 0,
+      "pad": 307190
+    },
+    {
+      "i": 23,
+      "service_ptr": "0x5",
+      "event_id": 165,
+      "event_id_hex": "0xa5",
+      "flag_or_tag": 1,
+      "pad": 306753
+    },
+    {
+      "i": 24,
+      "service_ptr": "0x5",
+      "event_id": 166,
+      "event_id_hex": "0xa6",
+      "flag_or_tag": 1,
+      "pad": 306310
+    },
+    {
+      "i": 25,
+      "service_ptr": "0x5",
+      "event_id": 39,
+      "event_id_hex": "0x27",
+      "flag_or_tag": 1,
+      "pad": 305880
+    },
+    {
+      "i": 26,
+      "service_ptr": "0x5",
+      "event_id": 113,
+      "event_id_hex": "0x71",
+      "flag_or_tag": 1,
+      "pad": 305446
+    },
+    {
+      "i": 27,
+      "service_ptr": "0x5",
+      "event_id": 37,
+      "event_id_hex": "0x25",
+      "flag_or_tag": 1,
+      "pad": 304984
+    },
+    {
+      "i": 28,
+      "service_ptr": "0x5",
+      "event_id": 67,
+      "event_id_hex": "0x43",
+      "flag_or_tag": 1,
+      "pad": 304514
+    },
+    {
+      "i": 29,
+      "service_ptr": "0x5",
+      "event_id": 32,
+      "event_id_hex": "0x20",
+      "flag_or_tag": 1,
+      "pad": 304068
+    },
+    {
+      "i": 30,
+      "service_ptr": "0x5",
+      "event_id": 35,
+      "event_id_hex": "0x23",
+      "flag_or_tag": 1,
+      "pad": 303606
+    },
+    {
+      "i": 31,
+      "service_ptr": "0x5",
+      "event_id": 172,
+      "event_id_hex": "0xac",
+      "flag_or_tag": 1,
+      "pad": 302822
+    },
+    {
+      "i": 32,
+      "service_ptr": "0x5",
+      "event_id": 173,
+      "event_id_hex": "0xad",
+      "flag_or_tag": 1,
+      "pad": 302243
+    },
+    {
+      "i": 33,
+      "service_ptr": "0x5",
+      "event_id": 175,
+      "event_id_hex": "0xaf",
+      "flag_or_tag": 1,
+      "pad": 301758
+    },
+    {
+      "i": 34,
+      "service_ptr": "0x5",
+      "event_id": 177,
+      "event_id_hex": "0xb1",
+      "flag_or_tag": 1,
+      "pad": 301345
+    },
+    {
+      "i": 35,
+      "service_ptr": "0x5",
+      "event_id": 176,
+      "event_id_hex": "0xb0",
+      "flag_or_tag": 1,
+      "pad": 300854
+    },
+    {
+      "i": 36,
+      "service_ptr": "0x5",
+      "event_id": 178,
+      "event_id_hex": "0xb2",
+      "flag_or_tag": 1,
+      "pad": 300437
+    },
+    {
+      "i": 37,
+      "service_ptr": "0x1",
+      "event_id": 183,
+      "event_id_hex": "0xb7",
+      "flag_or_tag": 1,
+      "pad": 299956
+    },
+    {
+      "i": 38,
+      "service_ptr": "0x1",
+      "event_id": 251,
+      "event_id_hex": "0xfb",
+      "flag_or_tag": 1,
+      "pad": 299465
+    },
+    {
+      "i": 39,
+      "service_ptr": "0x1",
+      "event_id": 204,
+      "event_id_hex": "0xcc",
+      "flag_or_tag": 1,
+      "pad": 298568
+    },
+    {
+      "i": 40,
+      "service_ptr": "0x1",
+      "event_id": 19,
+      "event_id_hex": "0x13",
+      "flag_or_tag": 1,
+      "pad": 299020
+    },
+    {
+      "i": 41,
+      "service_ptr": "0x0",
+      "event_id": 0,
+      "event_id_hex": "0x0",
+      "flag_or_tag": 0,
+      "pad": 298208
+    },
+    {
+      "i": 42,
+      "service_ptr": "0x1",
+      "event_id": 199,
+      "event_id_hex": "0xc7",
+      "flag_or_tag": 0,
+      "pad": 297806
+    },
+    {
+      "i": 43,
+      "service_ptr": "0x1",
+      "event_id": 200,
+      "event_id_hex": "0xc8",
+      "flag_or_tag": 0,
+      "pad": 297282
+    },
+    {
+      "i": 44,
+      "service_ptr": "0x1",
+      "event_id": 201,
+      "event_id_hex": "0xc9",
+      "flag_or_tag": 0,
+      "pad": 296743
+    },
+    {
+      "i": 45,
+      "service_ptr": "0x1",
+      "event_id": 86,
+      "event_id_hex": "0x56",
+      "flag_or_tag": 1,
+      "pad": 296359
+    },
+    {
+      "i": 46,
+      "service_ptr": "0x5",
+      "event_id": 88,
+      "event_id_hex": "0x58",
+      "flag_or_tag": 1,
+      "pad": 295666
+    },
+    {
+      "i": 47,
+      "service_ptr": "0x5",
+      "event_id": 186,
+      "event_id_hex": "0xba",
+      "flag_or_tag": 1,
+      "pad": 294102
+    },
+    {
+      "i": 48,
+      "service_ptr": "0x5",
+      "event_id": 179,
+      "event_id_hex": "0xb3",
+      "flag_or_tag": 1,
+      "pad": 292587
+    },
+    {
+      "i": 49,
+      "service_ptr": "0x5",
+      "event_id": 180,
+      "event_id_hex": "0xb4",
+      "flag_or_tag": 1,
+      "pad": 291048
+    },
+    {
+      "i": 50,
+      "service_ptr": "0x1",
+      "event_id": 90,
+      "event_id_hex": "0x5a",
+      "flag_or_tag": 1,
+      "pad": 265999
+    },
+    {
+      "i": 51,
+      "service_ptr": "0x1",
+      "event_id": 91,
+      "event_id_hex": "0x5b",
+      "flag_or_tag": 1,
+      "pad": 265465
+    },
+    {
+      "i": 52,
+      "service_ptr": "0x1",
+      "event_id": 211,
+      "event_id_hex": "0xd3",
+      "flag_or_tag": 1,
+      "pad": 289792
+    },
+    {
+      "i": 53,
+      "service_ptr": "0x9",
+      "event_id": 215,
+      "event_id_hex": "0xd7",
+      "flag_or_tag": 1,
+      "pad": 289309
+    },
+    {
+      "i": 54,
+      "service_ptr": "0x0",
+      "event_id": 216,
+      "event_id_hex": "0xd8",
+      "flag_or_tag": 0,
+      "pad": 287905
+    },
+    {
+      "i": 55,
+      "service_ptr": "0x9",
+      "event_id": 217,
+      "event_id_hex": "0xd9",
+      "flag_or_tag": 0,
+      "pad": 288860
+    },
+    {
+      "i": 56,
+      "service_ptr": "0x9",
+      "event_id": 218,
+      "event_id_hex": "0xda",
+      "flag_or_tag": 1,
+      "pad": 288354
+    },
+    {
+      "i": 57,
+      "service_ptr": "0x1",
+      "event_id": 221,
+      "event_id_hex": "0xdd",
+      "flag_or_tag": 1,
+      "pad": 287443
+    },
+    {
+      "i": 58,
+      "service_ptr": "0x1",
+      "event_id": 222,
+      "event_id_hex": "0xde",
+      "flag_or_tag": 0,
+      "pad": 278860
+    },
+    {
+      "i": 59,
+      "service_ptr": "0x1",
+      "event_id": 223,
+      "event_id_hex": "0xdf",
+      "flag_or_tag": 0,
+      "pad": 278389
+    },
+    {
+      "i": 60,
+      "service_ptr": "0x1",
+      "event_id": 224,
+      "event_id_hex": "0xe0",
+      "flag_or_tag": 0,
+      "pad": 277940
+    },
+    {
+      "i": 61,
+      "service_ptr": "0x1",
+      "event_id": 225,
+      "event_id_hex": "0xe1",
+      "flag_or_tag": 1,
+      "pad": 277272
+    },
+    {
+      "i": 62,
+      "service_ptr": "0x1",
+      "event_id": 226,
+      "event_id_hex": "0xe2",
+      "flag_or_tag": 1,
+      "pad": 276710
+    },
+    {
+      "i": 63,
+      "service_ptr": "0x1",
+      "event_id": 227,
+      "event_id_hex": "0xe3",
+      "flag_or_tag": 1,
+      "pad": 276209
+    },
+    {
+      "i": 64,
+      "service_ptr": "0x1",
+      "event_id": 228,
+      "event_id_hex": "0xe4",
+      "flag_or_tag": 1,
+      "pad": 274248
+    },
+    {
+      "i": 65,
+      "service_ptr": "0x1",
+      "event_id": 229,
+      "event_id_hex": "0xe5",
+      "flag_or_tag": 1,
+      "pad": 273653
+    },
+    {
+      "i": 66,
+      "service_ptr": "0x1",
+      "event_id": 230,
+      "event_id_hex": "0xe6",
+      "flag_or_tag": 1,
+      "pad": 273106
+    },
+    {
+      "i": 67,
+      "service_ptr": "0xa",
+      "event_id": 232,
+      "event_id_hex": "0xe8",
+      "flag_or_tag": 1,
+      "pad": 286029
+    },
+    {
+      "i": 68,
+      "service_ptr": "0xa",
+      "event_id": 233,
+      "event_id_hex": "0xe9",
+      "flag_or_tag": 0,
+      "pad": 285645
+    },
+    {
+      "i": 69,
+      "service_ptr": "0xa",
+      "event_id": 234,
+      "event_id_hex": "0xea",
+      "flag_or_tag": 0,
+      "pad": 285196
+    },
+    {
+      "i": 70,
+      "service_ptr": "0xa",
+      "event_id": 235,
+      "event_id_hex": "0xeb",
+      "flag_or_tag": 0,
+      "pad": 280906
+    },
+    {
+      "i": 71,
+      "service_ptr": "0xa",
+      "event_id": 237,
+      "event_id_hex": "0xed",
+      "flag_or_tag": 1,
+      "pad": 284687
+    },
+    {
+      "i": 72,
+      "service_ptr": "0xa",
+      "event_id": 238,
+      "event_id_hex": "0xee",
+      "flag_or_tag": 1,
+      "pad": 283739
+    },
+    {
+      "i": 73,
+      "service_ptr": "0xa",
+      "event_id": 239,
+      "event_id_hex": "0xef",
+      "flag_or_tag": 1,
+      "pad": 283208
+    },
+    {
+      "i": 74,
+      "service_ptr": "0xa",
+      "event_id": 240,
+      "event_id_hex": "0xf0",
+      "flag_or_tag": 1,
+      "pad": 282527
+    },
+    {
+      "i": 75,
+      "service_ptr": "0xa",
+      "event_id": 241,
+      "event_id_hex": "0xf1",
+      "flag_or_tag": 1,
+      "pad": 281800
+    },
+    {
+      "i": 76,
+      "service_ptr": "0xa",
+      "event_id": 242,
+      "event_id_hex": "0xf2",
+      "flag_or_tag": 1,
+      "pad": 281351
+    },
+    {
+      "i": 77,
+      "service_ptr": "0xb",
+      "event_id": 236,
+      "event_id_hex": "0xec",
+      "flag_or_tag": 0,
+      "pad": 284253
+    },
+    {
+      "i": 78,
+      "service_ptr": "0xa",
+      "event_id": 243,
+      "event_id_hex": "0xf3",
+      "flag_or_tag": 1,
+      "pad": 280345
+    },
+    {
+      "i": 79,
+      "service_ptr": "0xa",
+      "event_id": 244,
+      "event_id_hex": "0xf4",
+      "flag_or_tag": 1,
+      "pad": 279794
+    },
+    {
+      "i": 80,
+      "service_ptr": "0xa",
+      "event_id": 245,
+      "event_id_hex": "0xf5",
+      "flag_or_tag": 1,
+      "pad": 279322
+    },
+    {
+      "i": 81,
+      "service_ptr": "0x0",
+      "event_id": 231,
+      "event_id_hex": "0xe7",
+      "flag_or_tag": 0,
+      "pad": 272712
+    },
+    {
+      "i": 82,
+      "service_ptr": "0x1",
+      "event_id": 246,
+      "event_id_hex": "0xf6",
+      "flag_or_tag": 1,
+      "pad": 272260
+    },
+    {
+      "i": 83,
+      "service_ptr": "0x1",
+      "event_id": 247,
+      "event_id_hex": "0xf7",
+      "flag_or_tag": 1,
+      "pad": 271406
+    },
+    {
+      "i": 84,
+      "service_ptr": "0x0",
+      "event_id": 248,
+      "event_id_hex": "0xf8",
+      "flag_or_tag": 0,
+      "pad": 271866
+    },
+    {
+      "i": 85,
+      "service_ptr": "0x1",
+      "event_id": 249,
+      "event_id_hex": "0xf9",
+      "flag_or_tag": 1,
+      "pad": 265024
+    },
+    {
+      "i": 86,
+      "service_ptr": "0x1",
+      "event_id": 250,
+      "event_id_hex": "0xfa",
+      "flag_or_tag": 1,
+      "pad": 286989
+    },
+    {
+      "i": 87,
+      "event_id": -1,
+      "terminator": true
+    }
+  ],
+  "s_Event": [
+    {
+      "i": 0,
+      "event_id": 0,
+      "event_id_hex": "0x0",
+      "name_ptr": "0x213a7",
+      "name": "GetInfo"
+    },
+    {
+      "i": 1,
+      "event_id": 2,
+      "event_id_hex": "0x2",
+      "name_ptr": "0x213af",
+      "name": "GetConnectionTypeInfo"
+    },
+    {
+      "i": 2,
+      "event_id": 3,
+      "event_id_hex": "0x3",
+      "name_ptr": "0x213c5",
+      "name": "GetDNSLookUpStatus"
+    },
+    {
+      "i": 3,
+      "event_id": 4,
+      "event_id_hex": "0x4",
+      "name_ptr": "0x213d8",
+      "name": "GetPPPConnStatus"
+    },
+    {
+      "i": 4,
+      "event_id": 5,
+      "event_id_hex": "0x5",
+      "name_ptr": "0x213e9",
+      "name": "GetEthernetLinkStatus"
+    },
+    {
+      "i": 5,
+      "event_id": 6,
+      "event_id_hex": "0x6",
+      "name_ptr": "0x213ff",
+      "name": "GetWEPSecurityKeys"
+    },
+    {
+      "i": 6,
+      "event_id": 7,
+      "event_id_hex": "0x7",
+      "name_ptr": "0x21412",
+      "name": "GetWPASecurityKeys"
+    },
+    {
+      "i": 7,
+      "event_id": 8,
+      "event_id_hex": "0x8",
+      "name_ptr": "0x21425",
+      "name": "GetSSID"
+    },
+    {
+      "i": 8,
+      "event_id": 9,
+      "event_id_hex": "0x9",
+      "name_ptr": "0x2142d",
+      "name": "Get5GSSID"
+    },
+    {
+      "i": 9,
+      "event_id": 10,
+      "event_id_hex": "0xa",
+      "name_ptr": "0x21437",
+      "name": "GetRegion"
+    },
+    {
+      "i": 10,
+      "event_id": 11,
+      "event_id_hex": "0xb",
+      "name_ptr": "0x21441",
+      "name": "GetChannelInfo"
+    },
+    {
+      "i": 11,
+      "event_id": 12,
+      "event_id_hex": "0xc",
+      "name_ptr": "0x21450",
+      "name": "Get5GChannelInfo"
+    },
+    {
+      "i": 12,
+      "event_id": 13,
+      "event_id_hex": "0xd",
+      "name_ptr": "0x21461",
+      "name": "GetWirelessMode"
+    },
+    {
+      "i": 13,
+      "event_id": 14,
+      "event_id_hex": "0xe",
+      "name_ptr": "0x21471",
+      "name": "GetSSIDBroadcast"
+    },
+    {
+      "i": 14,
+      "event_id": 15,
+      "event_id_hex": "0xf",
+      "name_ptr": "0x21482",
+      "name": "GetWPSMode"
+    },
+    {
+      "i": 15,
+      "event_id": 16,
+      "event_id_hex": "0x10",
+      "name_ptr": "0x2148d",
+      "name": "GetSysUpTime"
+    },
+    {
+      "i": 16,
+      "event_id": 17,
+      "event_id_hex": "0x11",
+      "name_ptr": "0x2149a",
+      "name": "GetAttachDevice"
+    },
+    {
+      "i": 17,
+      "event_id": 18,
+      "event_id_hex": "0x12",
+      "name_ptr": "0x214aa",
+      "name": "ConfigurationStarted"
+    },
+    {
+      "i": 18,
+      "event_id": 19,
+      "event_id_hex": "0x13",
+      "name_ptr": "0x214bf",
+      "name": "ConfigurationFinished"
+    },
+    {
+      "i": 19,
+      "event_id": 20,
+      "event_id_hex": "0x14",
+      "name_ptr": "0x213a7",
+      "name": "GetInfo"
+    },
+    {
+      "i": 20,
+      "event_id": 21,
+      "event_id_hex": "0x15",
+      "name_ptr": "0x213a7",
+      "name": "GetInfo"
+    },
+    {
+      "i": 21,
+      "event_id": 22,
+      "event_id_hex": "0x16",
+      "name_ptr": "0x213a7",
+      "name": "GetInfo"
+    },
+    {
+      "i": 22,
+      "event_id": 23,
+      "event_id_hex": "0x17",
+      "name_ptr": "0x213a7",
+      "name": "GetInfo"
+    },
+    {
+      "i": 23,
+      "event_id": 24,
+      "event_id_hex": "0x18",
+      "name_ptr": "0x214d5",
+      "name": "AddStaticRoute"
+    },
+    {
+      "i": 24,
+      "event_id": 25,
+      "event_id_hex": "0x19",
+      "name_ptr": "0x214e4",
+      "name": "DelStaticRoute"
+    },
+    {
+      "i": 25,
+      "event_id": 26,
+      "event_id_hex": "0x1a",
+      "name_ptr": "0x214f3",
+      "name": "GetStaticRouteTbl"
+    },
+    {
+      "i": 26,
+      "event_id": 27,
+      "event_id_hex": "0x1b",
+      "name_ptr": "0x21505",
+      "name": "GetConfigInfo"
+    },
+    {
+      "i": 27,
+      "event_id": 28,
+      "event_id_hex": "0x1c",
+      "name_ptr": "0x21513",
+      "name": "GetBlockSiteInfo"
+    },
+    {
+      "i": 28,
+      "event_id": 29,
+      "event_id_hex": "0x1d",
+      "name_ptr": "0x21524",
+      "name": "GetWPSPINInfo"
+    },
+    {
+      "i": 29,
+      "event_id": 30,
+      "event_id_hex": "0x1e",
+      "name_ptr": "0x21532",
+      "name": "GetTimeZoneInfo"
+    },
+    {
+      "i": 30,
+      "event_id": 31,
+      "event_id_hex": "0x1f",
+      "name_ptr": "0x21542",
+      "name": "GetPortMappingInfo"
+    },
+    {
+      "i": 31,
+      "event_id": 32,
+      "event_id_hex": "0x20",
+      "name_ptr": "0x21555",
+      "name": "SetWLANNoSecurity"
+    },
+    {
+      "i": 32,
+      "event_id": 33,
+      "event_id_hex": "0x21",
+      "name_ptr": "0x21567",
+      "name": "SetWLANWEPByKeys"
+    },
+    {
+      "i": 33,
+      "event_id": 34,
+      "event_id_hex": "0x22",
+      "name_ptr": "0x21578",
+      "name": "SetWLANWEPByPassphrase"
+    },
+    {
+      "i": 34,
+      "event_id": 35,
+      "event_id_hex": "0x23",
+      "name_ptr": "0x2158f",
+      "name": "SetWLANWPAPSKByPassphrase"
+    },
+    {
+      "i": 35,
+      "event_id": 36,
+      "event_id_hex": "0x24",
+      "name_ptr": "0x215a9",
+      "name": "SetSSID"
+    },
+    {
+      "i": 36,
+      "event_id": 37,
+      "event_id_hex": "0x25",
+      "name_ptr": "0x215b1",
+      "name": "SetSSIDBroadcast"
+    },
+    {
+      "i": 37,
+      "event_id": 38,
+      "event_id_hex": "0x26",
+      "name_ptr": "0x215c2",
+      "name": "SetChannel"
+    },
+    {
+      "i": 38,
+      "event_id": 39,
+      "event_id_hex": "0x27",
+      "name_ptr": "0x215cd",
+      "name": "SetEnable"
+    },
+    {
+      "i": 39,
+      "event_id": 40,
+      "event_id_hex": "0x28",
+      "name_ptr": "0x215d7",
+      "name": "SetConnectionType"
+    },
+    {
+      "i": 40,
+      "event_id": 41,
+      "event_id_hex": "0x29",
+      "name_ptr": "0x215e9",
+      "name": "SetConnection2Type"
+    },
+    {
+      "i": 41,
+      "event_id": 42,
+      "event_id_hex": "0x2a",
+      "name_ptr": "0x215fc",
+      "name": "SetSmartWizardDetection"
+    },
+    {
+      "i": 42,
+      "event_id": 43,
+      "event_id_hex": "0x2b",
+      "name_ptr": "0x21614",
+      "name": "SetIPInterfaceInfo"
+    },
+    {
+      "i": 43,
+      "event_id": 44,
+      "event_id_hex": "0x2c",
+      "name_ptr": "0x21627",
+      "name": "SetMACAddress"
+    },
+    {
+      "i": 44,
+      "event_id": 45,
+      "event_id_hex": "0x2d",
+      "name_ptr": "0x21635",
+      "name": "SetMaxMTUSize"
+    },
+    {
+      "i": 45,
+      "event_id": 46,
+      "event_id_hex": "0x2e",
+      "name_ptr": "0x21643",
+      "name": "SetConfiguration"
+    },
+    {
+      "i": 46,
+      "event_id": 47,
+      "event_id_hex": "0x2f",
+      "name_ptr": "0x21654",
+      "name": "SetConfigLANSubnet"
+    },
+    {
+      "i": 47,
+      "event_id": 49,
+      "event_id_hex": "0x31",
+      "name_ptr": "0x21667",
+      "name": "SetConfigLANIP"
+    },
+    {
+      "i": 48,
+      "event_id": 50,
+      "event_id_hex": "0x32",
+      "name_ptr": "0x21676",
+      "name": "SetConfigDHCPEnabled"
+    },
+    {
+      "i": 49,
+      "event_id": 51,
+      "event_id_hex": "0x33",
+      "name_ptr": "0x2168b",
+      "name": "SetConfigLAN"
+    },
+    {
+      "i": 50,
+      "event_id": 48,
+      "event_id_hex": "0x30",
+      "name_ptr": "0x21698",
+      "name": "SetConfigPassword"
+    },
+    {
+      "i": 51,
+      "event_id": 52,
+      "event_id_hex": "0x34",
+      "name_ptr": "0x216aa",
+      "name": "SetWPSMode"
+    },
+    {
+      "i": 52,
+      "event_id": 53,
+      "event_id_hex": "0x35",
+      "name_ptr": "0x216b5",
+      "name": "SetWANRelease"
+    },
+    {
+      "i": 53,
+      "event_id": 54,
+      "event_id_hex": "0x36",
+      "name_ptr": "0x216c3",
+      "name": "SetWANRenew"
+    },
+    {
+      "i": 54,
+      "event_id": 55,
+      "event_id_hex": "0x37",
+      "name_ptr": "0x216cf",
+      "name": "SetBlockSiteEnable"
+    },
+    {
+      "i": 55,
+      "event_id": 56,
+      "event_id_hex": "0x38",
+      "name_ptr": "0x216e2",
+      "name": "SetBlockSiteName"
+    },
+    {
+      "i": 56,
+      "event_id": 57,
+      "event_id_hex": "0x39",
+      "name_ptr": "0x216f3",
+      "name": "SetTimeZone"
+    },
+    {
+      "i": 57,
+      "event_id": 58,
+      "event_id_hex": "0x3a",
+      "name_ptr": "0x216ff",
+      "name": "SetTimeZoneByIndex"
+    },
+    {
+      "i": 58,
+      "event_id": 59,
+      "event_id_hex": "0x3b",
+      "name_ptr": "0x21712",
+      "name": "SetFirmware"
+    },
+    {
+      "i": 59,
+      "event_id": 60,
+      "event_id_hex": "0x3c",
+      "name_ptr": "0x205b4",
+      "name": "Loaddefault"
+    },
+    {
+      "i": 60,
+      "event_id": 61,
+      "event_id_hex": "0x3d",
+      "name_ptr": "0x2171e",
+      "name": "SetGUILanguage"
+    },
+    {
+      "i": 61,
+      "event_id": 62,
+      "event_id_hex": "0x3e",
+      "name_ptr": "0x2172d",
+      "name": "AddPortMapping"
+    },
+    {
+      "i": 62,
+      "event_id": 63,
+      "event_id_hex": "0x3f",
+      "name_ptr": "0x2173c",
+      "name": "DeletePortMapping"
+    },
+    {
+      "i": 63,
+      "event_id": 64,
+      "event_id_hex": "0x40",
+      "name_ptr": "0x2174e",
+      "name": "SetBlockServices"
+    },
+    {
+      "i": 64,
+      "event_id": 65,
+      "event_id_hex": "0x41",
+      "name_ptr": "0x2175f",
+      "name": "Set5GSSID"
+    },
+    {
+      "i": 65,
+      "event_id": 66,
+      "event_id_hex": "0x42",
+      "name_ptr": "0x21769",
+      "name": "Set5GChannel"
+    },
+    {
+      "i": 66,
+      "event_id": 67,
+      "event_id_hex": "0x43",
+      "name_ptr": "0x21776",
+      "name": "Set5GSSIDBroadcast"
+    },
+    {
+      "i": 67,
+      "event_id": 68,
+      "event_id_hex": "0x44",
+      "name_ptr": "0x21789",
+      "name": "GetAllMACAddresses"
+    },
+    {
+      "i": 68,
+      "event_id": 69,
+      "event_id_hex": "0x45",
+      "name_ptr": "0x2179c",
+      "name": "EnableParentalControl"
+    },
+    {
+      "i": 69,
+      "event_id": 70,
+      "event_id_hex": "0x46",
+      "name_ptr": "0x217b2",
+      "name": "SetDNSMasqDeviceID"
+    },
+    {
+      "i": 70,
+      "event_id": 71,
+      "event_id_hex": "0x47",
+      "name_ptr": "0x217c5",
+      "name": "GetDNSMasqDeviceID"
+    },
+    {
+      "i": 71,
+      "event_id": 72,
+      "event_id_hex": "0x48",
+      "name_ptr": "0x217d8",
+      "name": "DeleteMACAddress"
+    },
+    {
+      "i": 72,
+      "event_id": 73,
+      "event_id_hex": "0x49",
+      "name_ptr": "0x217e9",
+      "name": "GetEnableStatus"
+    },
+    {
+      "i": 73,
+      "event_id": 74,
+      "event_id_hex": "0x4a",
+      "name_ptr": "0x1c399",
+      "name": "Authenticate"
+    },
+    {
+      "i": 74,
+      "event_id": 75,
+      "event_id_hex": "0x4b",
+      "name_ptr": "0x1c399",
+      "name": "Authenticate"
+    },
+    {
+      "i": 75,
+      "event_id": 76,
+      "event_id_hex": "0x4c",
+      "name_ptr": "0x217f9",
+      "name": "PressWPSPBC"
+    },
+    {
+      "i": 76,
+      "event_id": 77,
+      "event_id_hex": "0x4d",
+      "name_ptr": "0x21805",
+      "name": "GetGuestAccessEnabled"
+    },
+    {
+      "i": 77,
+      "event_id": 78,
+      "event_id_hex": "0x4e",
+      "name_ptr": "0x2181b",
+      "name": "GetGuestAccessNetworkInfo"
+    },
+    {
+      "i": 78,
+      "event_id": 79,
+      "event_id_hex": "0x4f",
+      "name_ptr": "0x21835",
+      "name": "SetGuestAccessNetwork"
+    },
+    {
+      "i": 79,
+      "event_id": 80,
+      "event_id_hex": "0x50",
+      "name_ptr": "0x2184b",
+      "name": "EnableTrafficMeter"
+    },
+    {
+      "i": 80,
+      "event_id": 81,
+      "event_id_hex": "0x51",
+      "name_ptr": "0x2185e",
+      "name": "SetTrafficMeterOptions"
+    },
+    {
+      "i": 81,
+      "event_id": 82,
+      "event_id_hex": "0x52",
+      "name_ptr": "0x21875",
+      "name": "GetTrafficMeterStatistics"
+    },
+    {
+      "i": 82,
+      "event_id": 84,
+      "event_id_hex": "0x54",
+      "name_ptr": "0x2188f",
+      "name": "GetTrafficMeterOptions"
+    },
+    {
+      "i": 83,
+      "event_id": 83,
+      "event_id_hex": "0x53",
+      "name_ptr": "0x218a6",
+      "name": "GetTrafficMeterEnabled"
+    },
+    {
+      "i": 84,
+      "event_id": 85,
+      "event_id_hex": "0x55",
+      "name_ptr": "0x218bd",
+      "name": "CheckNewFirmware"
+    },
+    {
+      "i": 85,
+      "event_id": 86,
+      "event_id_hex": "0x56",
+      "name_ptr": "0x218ce",
+      "name": "UpdateNewFirmware2"
+    },
+    {
+      "i": 86,
+      "event_id": 87,
+      "event_id_hex": "0x57",
+      "name_ptr": "0x218e1",
+      "name": "UpdateNewFirmware"
+    },
+    {
+      "i": 87,
+      "event_id": 88,
+      "event_id_hex": "0x58",
+      "name_ptr": "0x218f3",
+      "name": "SetGuestAccessEnabled2"
+    },
+    {
+      "i": 88,
+      "event_id": 89,
+      "event_id_hex": "0x59",
+      "name_ptr": "0x2190a",
+      "name": "SetGuestAccessEnabled"
+    },
+    {
+      "i": 89,
+      "event_id": 90,
+      "event_id_hex": "0x5a",
+      "name_ptr": "0x21920",
+      "name": "Reboot"
+    },
+    {
+      "i": 90,
+      "event_id": 91,
+      "event_id_hex": "0x5b",
+      "name_ptr": "0x21927",
+      "name": "ResetToFactoryDefault"
+    },
+    {
+      "i": 91,
+      "event_id": 92,
+      "event_id_hex": "0x5c",
+      "name_ptr": "0x2193d",
+      "name": "IsDLNASupported"
+    },
+    {
+      "i": 92,
+      "event_id": 93,
+      "event_id_hex": "0x5d",
+      "name_ptr": "0x2194d",
+      "name": "IsDLNAEnabled"
+    },
+    {
+      "i": 93,
+      "event_id": 94,
+      "event_id_hex": "0x5e",
+      "name_ptr": "0x2195b",
+      "name": "SetDLNAStatus"
+    },
+    {
+      "i": 94,
+      "event_id": 95,
+      "event_id_hex": "0x5f",
+      "name_ptr": "0x21969",
+      "name": "Is5GSupported"
+    },
+    {
+      "i": 95,
+      "event_id": 96,
+      "event_id_hex": "0x60",
+      "name_ptr": "0x21977",
+      "name": "Set5GWLANNoSecurity"
+    },
+    {
+      "i": 96,
+      "event_id": 97,
+      "event_id_hex": "0x61",
+      "name_ptr": "0x2198b",
+      "name": "Set5GWLANWEPByKeys"
+    },
+    {
+      "i": 97,
+      "event_id": 98,
+      "event_id_hex": "0x62",
+      "name_ptr": "0x2199e",
+      "name": "Set5GWLANWEPByPassphrase"
+    },
+    {
+      "i": 98,
+      "event_id": 99,
+      "event_id_hex": "0x63",
+      "name_ptr": "0x219b7",
+      "name": "Set5GWLANWPAPSKByPassphrase"
+    },
+    {
+      "i": 99,
+      "event_id": 100,
+      "event_id_hex": "0x64",
+      "name_ptr": "0x219d3",
+      "name": "Get5GWirelessMode"
+    },
+    {
+      "i": 100,
+      "event_id": 101,
+      "event_id_hex": "0x65",
+      "name_ptr": "0x219e5",
+      "name": "Get5GWPASecurityKeys"
+    },
+    {
+      "i": 101,
+      "event_id": 102,
+      "event_id_hex": "0x66",
+      "name_ptr": "0x219fa",
+      "name": "Get5GWEPSecurityKeys"
+    },
+    {
+      "i": 102,
+      "event_id": 103,
+      "event_id_hex": "0x67",
+      "name_ptr": "0x21a0f",
+      "name": "Get5GInfo"
+    },
+    {
+      "i": 103,
+      "event_id": 104,
+      "event_id_hex": "0x68",
+      "name_ptr": "0x21a19",
+      "name": "GetInternetPortInfo"
+    },
+    {
+      "i": 104,
+      "event_id": 105,
+      "event_id_hex": "0x69",
+      "name_ptr": "0x21a2d",
+      "name": "SetBlockDeviceEnable"
+    },
+    {
+      "i": 105,
+      "event_id": 106,
+      "event_id_hex": "0x6a",
+      "name_ptr": "0x21a42",
+      "name": "EnableBlockDeviceForAll"
+    },
+    {
+      "i": 106,
+      "event_id": 107,
+      "event_id_hex": "0x6b",
+      "name_ptr": "0x21a5a",
+      "name": "SetBlockDeviceByMAC"
+    },
+    {
+      "i": 107,
+      "event_id": 108,
+      "event_id_hex": "0x6c",
+      "name_ptr": "0x21a6e",
+      "name": "GetBlockDeviceStateByDefault"
+    },
+    {
+      "i": 108,
+      "event_id": 109,
+      "event_id_hex": "0x6d",
+      "name_ptr": "0x21a8b",
+      "name": "SetBlockDeviceStateByDefault"
+    },
+    {
+      "i": 109,
+      "event_id": 110,
+      "event_id_hex": "0x6e",
+      "name_ptr": "0x21aa8",
+      "name": "GetBlockDeviceEnableStatus"
+    },
+    {
+      "i": 110,
+      "event_id": 111,
+      "event_id_hex": "0x6f",
+      "name_ptr": "0x21ac3",
+      "name": "GetDeviceListByMode"
+    },
+    {
+      "i": 111,
+      "event_id": 112,
+      "event_id_hex": "0x70",
+      "name_ptr": "0x21ad7",
+      "name": "DeleteBlockDeviceByMAC"
+    },
+    {
+      "i": 112,
+      "event_id": 113,
+      "event_id_hex": "0x71",
+      "name_ptr": "0x21aee",
+      "name": "Set5GEnable"
+    },
+    {
+      "i": 113,
+      "event_id": 114,
+      "event_id_hex": "0x72",
+      "name_ptr": "0x21afa",
+      "name": "Get5GGuestAccessEnabled"
+    },
+    {
+      "i": 114,
+      "event_id": 115,
+      "event_id_hex": "0x73",
+      "name_ptr": "0x21b12",
+      "name": "Set5GGuestAccessEnabled"
+    },
+    {
+      "i": 115,
+      "event_id": 116,
+      "event_id_hex": "0x74",
+      "name_ptr": "0x21b2a",
+      "name": "Set5GGuestAccessEnabled2"
+    },
+    {
+      "i": 116,
+      "event_id": 117,
+      "event_id_hex": "0x75",
+      "name_ptr": "0x21b43",
+      "name": "Set5GGuestAccessNetwork"
+    },
+    {
+      "i": 117,
+      "event_id": 118,
+      "event_id_hex": "0x76",
+      "name_ptr": "0x21b5b",
+      "name": "Get5GGuestAccessNetworkInfo"
+    },
+    {
+      "i": 118,
+      "event_id": 119,
+      "event_id_hex": "0x77",
+      "name_ptr": "0x21b77",
+      "name": "GetRemoteManagementEnableStatus"
+    },
+    {
+      "i": 119,
+      "event_id": 120,
+      "event_id_hex": "0x78",
+      "name_ptr": "0x21b97",
+      "name": "SetRemoteManagementEnable"
+    },
+    {
+      "i": 120,
+      "event_id": 121,
+      "event_id_hex": "0x79",
+      "name_ptr": "0x21bb1",
+      "name": "GetSystemLogs"
+    },
+    {
+      "i": 121,
+      "event_id": 122,
+      "event_id_hex": "0x7a",
+      "name_ptr": "0x21bbf",
+      "name": "UpdateAdminPasswordHashed"
+    },
+    {
+      "i": 122,
+      "event_id": 123,
+      "event_id_hex": "0x7b",
+      "name_ptr": "0x21bd9",
+      "name": "UpdateAdminPassword"
+    },
+    {
+      "i": 123,
+      "event_id": 124,
+      "event_id_hex": "0x7c",
+      "name_ptr": "0x21bed",
+      "name": "GetDeviceListAll"
+    },
+    {
+      "i": 124,
+      "event_id": 125,
+      "event_id_hex": "0x7d",
+      "name_ptr": "0x21bfe",
+      "name": "GetAvailableChannel"
+    },
+    {
+      "i": 125,
+      "event_id": 126,
+      "event_id_hex": "0x7e",
+      "name_ptr": "0x21c12",
+      "name": "Get5GAvailableChannel"
+    },
+    {
+      "i": 126,
+      "event_id": 127,
+      "event_id_hex": "0x7f",
+      "name_ptr": "0x21c28",
+      "name": "GetSupportMode"
+    },
+    {
+      "i": 127,
+      "event_id": 128,
+      "event_id_hex": "0x80",
+      "name_ptr": "0x21c37",
+      "name": "Get5GSupportMode"
+    },
+    {
+      "i": 128,
+      "event_id": 129,
+      "event_id_hex": "0x81",
+      "name_ptr": "0x21c48",
+      "name": "GetSystemInfo"
+    },
+    {
+      "i": 129,
+      "event_id": 130,
+      "event_id_hex": "0x82",
+      "name_ptr": "0x21c56",
+      "name": "SetQoSEnableStatus"
+    },
+    {
+      "i": 130,
+      "event_id": 131,
+      "event_id_hex": "0x83",
+      "name_ptr": "0x21c69",
+      "name": "GetQoSEnableStatus"
+    },
+    {
+      "i": 131,
+      "event_id": 132,
+      "event_id_hex": "0x84",
+      "name_ptr": "0x21c7c",
+      "name": "GetQoSRules"
+    },
+    {
+      "i": 132,
+      "event_id": 133,
+      "event_id_hex": "0x85",
+      "name_ptr": "0x21c88",
+      "name": "UpdateQoSPriority"
+    },
+    {
+      "i": 133,
+      "event_id": 134,
+      "event_id_hex": "0x86",
+      "name_ptr": "0x21c9a",
+      "name": "AddQoSRule"
+    },
+    {
+      "i": 134,
+      "event_id": 135,
+      "event_id_hex": "0x87",
+      "name_ptr": "0x21ca5",
+      "name": "DeleteQoSRule"
+    },
+    {
+      "i": 135,
+      "event_id": 136,
+      "event_id_hex": "0x88",
+      "name_ptr": "0x21cb3",
+      "name": "GetBandwidthControlEnableStatus"
+    },
+    {
+      "i": 136,
+      "event_id": 137,
+      "event_id_hex": "0x89",
+      "name_ptr": "0x21cd3",
+      "name": "SetBandwidthControlEnableStatus"
+    },
+    {
+      "i": 137,
+      "event_id": 138,
+      "event_id_hex": "0x8a",
+      "name_ptr": "0x21cf3",
+      "name": "AddQoSRuleByMAC"
+    },
+    {
+      "i": 138,
+      "event_id": 139,
+      "event_id_hex": "0x8b",
+      "name_ptr": "0x21d03",
+      "name": "AddQoSRuleByEthernetPort"
+    },
+    {
+      "i": 139,
+      "event_id": 141,
+      "event_id_hex": "0x8d",
+      "name_ptr": "0x21d1c",
+      "name": "GetSupportFeatureList"
+    },
+    {
+      "i": 140,
+      "event_id": 142,
+      "event_id_hex": "0x8e",
+      "name_ptr": "0x21d32",
+      "name": "GetAttachDevice2"
+    },
+    {
+      "i": 141,
+      "event_id": 143,
+      "event_id_hex": "0x8f",
+      "name_ptr": "0x21d43",
+      "name": "SetDeviceNameIconByMac"
+    },
+    {
+      "i": 142,
+      "event_id": 144,
+      "event_id_hex": "0x90",
+      "name_ptr": "0x21c69",
+      "name": "GetQoSEnableStatus"
+    },
+    {
+      "i": 143,
+      "event_id": 145,
+      "event_id_hex": "0x91",
+      "name_ptr": "0x21c56",
+      "name": "SetQoSEnableStatus"
+    },
+    {
+      "i": 144,
+      "event_id": 146,
+      "event_id_hex": "0x92",
+      "name_ptr": "0x21d5a",
+      "name": "SetBandwidthControlOption"
+    },
+    {
+      "i": 145,
+      "event_id": 147,
+      "event_id_hex": "0x93",
+      "name_ptr": "0x21d74",
+      "name": "GetBandwidthControlOptions"
+    },
+    {
+      "i": 146,
+      "event_id": 148,
+      "event_id_hex": "0x94",
+      "name_ptr": "0x21d8f",
+      "name": "SetOOKLASpeedTestStart"
+    },
+    {
+      "i": 147,
+      "event_id": 149,
+      "event_id_hex": "0x95",
+      "name_ptr": "0x21da6",
+      "name": "GetOOKLASpeedTestResult"
+    },
+    {
+      "i": 148,
+      "event_id": 150,
+      "event_id_hex": "0x96",
+      "name_ptr": "0x21dbe",
+      "name": "SetDevicePriorityByMAC"
+    },
+    {
+      "i": 149,
+      "event_id": 151,
+      "event_id_hex": "0x97",
+      "name_ptr": "0x21dd5",
+      "name": "GetDevicePriorityByMAC"
+    },
+    {
+      "i": 150,
+      "event_id": 152,
+      "event_id_hex": "0x98",
+      "name_ptr": "0x21dec",
+      "name": "GetCurrentDeviceBandwidth"
+    },
+    {
+      "i": 151,
+      "event_id": 153,
+      "event_id_hex": "0x99",
+      "name_ptr": "0x21e06",
+      "name": "GetCurrentBandwidthByMAC"
+    },
+    {
+      "i": 152,
+      "event_id": 154,
+      "event_id_hex": "0x9a",
+      "name_ptr": "0x21e1f",
+      "name": "GetCurrentAppBandwidth"
+    },
+    {
+      "i": 153,
+      "event_id": 155,
+      "event_id_hex": "0x9b",
+      "name_ptr": "0x21e36",
+      "name": "GetCurrentAppBandwidthByMAC"
+    },
+    {
+      "i": 154,
+      "event_id": 165,
+      "event_id_hex": "0xa5",
+      "name_ptr": "0x21e52",
+      "name": "SetWMMEnable"
+    },
+    {
+      "i": 155,
+      "event_id": 166,
+      "event_id_hex": "0xa6",
+      "name_ptr": "0x21e5f",
+      "name": "Set5GWMMEnable"
+    },
+    {
+      "i": 156,
+      "event_id": 167,
+      "event_id_hex": "0xa7",
+      "name_ptr": "0x21e6e",
+      "name": "DeleteBlockDeviceAll"
+    },
+    {
+      "i": 157,
+      "event_id": 168,
+      "event_id_hex": "0xa8",
+      "name_ptr": "0x21e83",
+      "name": "SetEmailNotification"
+    },
+    {
+      "i": 158,
+      "event_id": 169,
+      "event_id_hex": "0xa9",
+      "name_ptr": "0x21e98",
+      "name": "SetClearLog"
+    },
+    {
+      "i": 159,
+      "event_id": 171,
+      "event_id_hex": "0xab",
+      "name_ptr": "0x21ea4",
+      "name": "SetLogsOptions"
+    },
+    {
+      "i": 160,
+      "event_id": 172,
+      "event_id_hex": "0xac",
+      "name_ptr": "0x21eb3",
+      "name": "SetAdvancedWirelessSettings"
+    },
+    {
+      "i": 161,
+      "event_id": 173,
+      "event_id_hex": "0xad",
+      "name_ptr": "0x21ecf",
+      "name": "Set5GBackhaulPassphrase"
+    },
+    {
+      "i": 162,
+      "event_id": 174,
+      "event_id_hex": "0xae",
+      "name_ptr": "0x21ee7",
+      "name": "SetImplicitBeamforming"
+    },
+    {
+      "i": 163,
+      "event_id": 175,
+      "event_id_hex": "0xaf",
+      "name_ptr": "0x21efe",
+      "name": "SetTurnWirelessOffBySchedule"
+    },
+    {
+      "i": 164,
+      "event_id": 176,
+      "event_id_hex": "0xb0",
+      "name_ptr": "0x21f1b",
+      "name": "Set5GTurnWirelessOffBySchedule"
+    },
+    {
+      "i": 165,
+      "event_id": 177,
+      "event_id_hex": "0xb1",
+      "name_ptr": "0x21f3a",
+      "name": "DeleteTurnWirelessOffPeriodAll"
+    },
+    {
+      "i": 166,
+      "event_id": 178,
+      "event_id_hex": "0xb2",
+      "name_ptr": "0x21f59",
+      "name": "Delete5GTurnWirelessOffPeriodAll"
+    },
+    {
+      "i": 167,
+      "event_id": 179,
+      "event_id_hex": "0xb3",
+      "name_ptr": "0x21f7a",
+      "name": "SetTurnWirelessOffPeriod"
+    },
+    {
+      "i": 168,
+      "event_id": 180,
+      "event_id_hex": "0xb4",
+      "name_ptr": "0x21f93",
+      "name": "Set5GTurnWirelessOffPeriod"
+    },
+    {
+      "i": 169,
+      "event_id": 181,
+      "event_id_hex": "0xb5",
+      "name_ptr": "0x21fae",
+      "name": "DeleteTurnWirelessOffPeriodByIndex"
+    },
+    {
+      "i": 170,
+      "event_id": 182,
+      "event_id_hex": "0xb6",
+      "name_ptr": "0x21fd1",
+      "name": "Delete5GTurnWirelessOffPeriodByIndex"
+    },
+    {
+      "i": 171,
+      "event_id": 183,
+      "event_id_hex": "0xb7",
+      "name_ptr": "0x21ff6",
+      "name": "SetConfigurationTimestamp"
+    },
+    {
+      "i": 172,
+      "event_id": 251,
+      "event_id_hex": "0xfb",
+      "name_ptr": "0x21ff6",
+      "name": "SetConfigurationTimestamp"
+    },
+    {
+      "i": 173,
+      "event_id": 184,
+      "event_id_hex": "0xb8",
+      "name_ptr": "0x1c2cd",
+      "name": "GetConfigurationTimestamp"
+    },
+    {
+      "i": 174,
+      "event_id": 185,
+      "event_id_hex": "0xb9",
+      "name_ptr": "0x1dd01",
+      "name": "SetOrbiDevName"
+    },
+    {
+      "i": 175,
+      "event_id": 186,
+      "event_id_hex": "0xba",
+      "name_ptr": "0x22010",
+      "name": "SetAllGuestAccessEnabled"
+    },
+    {
+      "i": 176,
+      "event_id": 187,
+      "event_id_hex": "0xbb",
+      "name_ptr": "0x22029",
+      "name": "Set5G1Enable"
+    },
+    {
+      "i": 177,
+      "event_id": 188,
+      "event_id_hex": "0xbc",
+      "name_ptr": "0x22036",
+      "name": "Set5G1Channel"
+    },
+    {
+      "i": 178,
+      "event_id": 189,
+      "event_id_hex": "0xbd",
+      "name_ptr": "0x22044",
+      "name": "Set5G1SSID"
+    },
+    {
+      "i": 179,
+      "event_id": 190,
+      "event_id_hex": "0xbe",
+      "name_ptr": "0x2204f",
+      "name": "Set5G1WLANNoSecurity"
+    },
+    {
+      "i": 180,
+      "event_id": 191,
+      "event_id_hex": "0xbf",
+      "name_ptr": "0x22064",
+      "name": "Set5G1WLANWPAPSKByPassphrase"
+    },
+    {
+      "i": 181,
+      "event_id": 192,
+      "event_id_hex": "0xc0",
+      "name_ptr": "0x22081",
+      "name": "Get5G1GuestAccessNetworkInfo"
+    },
+    {
+      "i": 182,
+      "event_id": 193,
+      "event_id_hex": "0xc1",
+      "name_ptr": "0x2209e",
+      "name": "Set5G1GuestAccessNetwork"
+    },
+    {
+      "i": 183,
+      "event_id": 194,
+      "event_id_hex": "0xc2",
+      "name_ptr": "0x220b7",
+      "name": "Is60Gsupported"
+    },
+    {
+      "i": 184,
+      "event_id": 164,
+      "event_id_hex": "0xa4",
+      "name_ptr": "0x220c6",
+      "name": "CheckAppNewFirmware"
+    },
+    {
+      "i": 185,
+      "event_id": 195,
+      "event_id_hex": "0xc3",
+      "name_ptr": "0x220da",
+      "name": "GetCurrentSatellites"
+    },
+    {
+      "i": 186,
+      "event_id": 196,
+      "event_id_hex": "0xc4",
+      "name_ptr": "0x220ef",
+      "name": "GetMissingSatellites"
+    },
+    {
+      "i": 187,
+      "event_id": 197,
+      "event_id_hex": "0xc5",
+      "name_ptr": "0x22104",
+      "name": "RecoverAdminPassword"
+    },
+    {
+      "i": 188,
+      "event_id": 198,
+      "event_id_hex": "0xc6",
+      "name_ptr": "0x22119",
+      "name": "CheckAndDownloadNewFirmwareAll"
+    },
+    {
+      "i": 189,
+      "event_id": 199,
+      "event_id_hex": "0xc7",
+      "name_ptr": "0x1c095",
+      "name": "CheckAndDownloadNewFirmware"
+    },
+    {
+      "i": 190,
+      "event_id": 200,
+      "event_id_hex": "0xc8",
+      "name_ptr": "0x1c050",
+      "name": "CheckAndDownloadNewFirmwareByUrl"
+    },
+    {
+      "i": 191,
+      "event_id": 201,
+      "event_id_hex": "0xc9",
+      "name_ptr": "0x1c071",
+      "name": "CheckAndDownloadNewFirmwareByFolder"
+    },
+    {
+      "i": 192,
+      "event_id": 202,
+      "event_id_hex": "0xca",
+      "name_ptr": "0x22138",
+      "name": "GetWPSStatus"
+    },
+    {
+      "i": 193,
+      "event_id": 203,
+      "event_id_hex": "0xcb",
+      "name_ptr": "0x22145",
+      "name": "GetSecurityQuestions"
+    },
+    {
+      "i": 194,
+      "event_id": 204,
+      "event_id_hex": "0xcc",
+      "name_ptr": "0x214bf",
+      "name": "ConfigurationFinished"
+    },
+    {
+      "i": 195,
+      "event_id": 205,
+      "event_id_hex": "0xcd",
+      "name_ptr": "0x2215a",
+      "name": "SetBlockDevicebyGroup"
+    },
+    {
+      "i": 196,
+      "event_id": 206,
+      "event_id_hex": "0xce",
+      "name_ptr": "0x22170",
+      "name": "AddAttachDeviceGroup"
+    },
+    {
+      "i": 197,
+      "event_id": 207,
+      "event_id_hex": "0xcf",
+      "name_ptr": "0x22185",
+      "name": "DeleteAttachDeviceGroup"
+    },
+    {
+      "i": 198,
+      "event_id": 208,
+      "event_id_hex": "0xd0",
+      "name_ptr": "0x2219d",
+      "name": "EditAttachDeviceGroup"
+    },
+    {
+      "i": 199,
+      "event_id": 209,
+      "event_id_hex": "0xd1",
+      "name_ptr": "0x221b3",
+      "name": "GetAttachDeviceGroupFull"
+    },
+    {
+      "i": 200,
+      "event_id": 210,
+      "event_id_hex": "0xd2",
+      "name_ptr": "0x221cc",
+      "name": "GetAttachDeviceGroup"
+    },
+    {
+      "i": 201,
+      "event_id": 211,
+      "event_id_hex": "0xd3",
+      "name_ptr": "0x221e1",
+      "name": "SetDaisyChainEnable"
+    },
+    {
+      "i": 202,
+      "event_id": 212,
+      "event_id_hex": "0xd4",
+      "name_ptr": "0x217f9",
+      "name": "PressWPSPBC"
+    },
+    {
+      "i": 203,
+      "event_id": 213,
+      "event_id_hex": "0xd5",
+      "name_ptr": "0x221f5",
+      "name": "SetDeviceInfoByMAC"
+    },
+    {
+      "i": 204,
+      "event_id": 214,
+      "event_id_hex": "0xd6",
+      "name_ptr": "0x22208",
+      "name": "SetNetgearDeviceName"
+    },
+    {
+      "i": 205,
+      "event_id": 215,
+      "event_id_hex": "0xd7",
+      "name_ptr": "0x2221d",
+      "name": "SetOOKLASpeedTestStartByMAC"
+    },
+    {
+      "i": 206,
+      "event_id": 216,
+      "event_id_hex": "0xd8",
+      "name_ptr": "0x22239",
+      "name": "GetCurrentSatellitesWIFIinfo"
+    },
+    {
+      "i": 207,
+      "event_id": 217,
+      "event_id_hex": "0xd9",
+      "name_ptr": "0x22256",
+      "name": "GetOOKLASpeedTestResultByMAC"
+    },
+    {
+      "i": 208,
+      "event_id": 218,
+      "event_id_hex": "0xda",
+      "name_ptr": "0x2221d",
+      "name": "SetOOKLASpeedTestStartByMAC"
+    },
+    {
+      "i": 209,
+      "event_id": 221,
+      "event_id_hex": "0xdd",
+      "name_ptr": "0x22273",
+      "name": "SetNTP"
+    },
+    {
+      "i": 210,
+      "event_id": 232,
+      "event_id_hex": "0xe8",
+      "name_ptr": "0x2227a",
+      "name": "SetAvsAuthData"
+    },
+    {
+      "i": 211,
+      "event_id": 233,
+      "event_id_hex": "0xe9",
+      "name_ptr": "0x22289",
+      "name": "GetVoiceControlAll"
+    },
+    {
+      "i": 212,
+      "event_id": 234,
+      "event_id_hex": "0xea",
+      "name_ptr": "0x2229c",
+      "name": "GetVoiceControlStatus"
+    },
+    {
+      "i": 213,
+      "event_id": 235,
+      "event_id_hex": "0xeb",
+      "name_ptr": "0x222b2",
+      "name": "GetAvsCodeChallenge"
+    },
+    {
+      "i": 214,
+      "event_id": 236,
+      "event_id_hex": "0xec",
+      "name_ptr": "0x1c104",
+      "name": "GetAvsAnalytic"
+    },
+    {
+      "i": 215,
+      "event_id": 237,
+      "event_id_hex": "0xed",
+      "name_ptr": "0x222c6",
+      "name": "SetVoiceControlVolume"
+    },
+    {
+      "i": 216,
+      "event_id": 238,
+      "event_id_hex": "0xee",
+      "name_ptr": "0x222dc",
+      "name": "SetVoiceControlMuteMic"
+    },
+    {
+      "i": 217,
+      "event_id": 239,
+      "event_id_hex": "0xef",
+      "name_ptr": "0x222f3",
+      "name": "SetVoiceControlMuteSpeaker"
+    },
+    {
+      "i": 218,
+      "event_id": 240,
+      "event_id_hex": "0xf0",
+      "name_ptr": "0x2230e",
+      "name": "SetVoiceControlEQ"
+    },
+    {
+      "i": 219,
+      "event_id": 241,
+      "event_id_hex": "0xf1",
+      "name_ptr": "0x22320",
+      "name": "SetVoiceControlTriggerLanguage"
+    },
+    {
+      "i": 220,
+      "event_id": 242,
+      "event_id_hex": "0xf2",
+      "name_ptr": "0x2233f",
+      "name": "SetVoiceControlLogoff"
+    },
+    {
+      "i": 221,
+      "event_id": 243,
+      "event_id_hex": "0xf3",
+      "name_ptr": "0x22355",
+      "name": "SetVoiceControlRequestSoundStart"
+    },
+    {
+      "i": 222,
+      "event_id": 244,
+      "event_id_hex": "0xf4",
+      "name_ptr": "0x22376",
+      "name": "SetVoiceControlRequestSoundEnd"
+    },
+    {
+      "i": 223,
+      "event_id": 245,
+      "event_id_hex": "0xf5",
+      "name_ptr": "0x22395",
+      "name": "SetVoiceControlOOBLanguage"
+    },
+    {
+      "i": 224,
+      "event_id": 222,
+      "event_id_hex": "0xde",
+      "name_ptr": "0x1c3da",
+      "name": "GetCurrentLightingLEDStatus"
+    },
+    {
+      "i": 225,
+      "event_id": 223,
+      "event_id_hex": "0xdf",
+      "name_ptr": "0x223b0",
+      "name": "GetCurrentLightingLEDScheduleAll"
+    },
+    {
+      "i": 226,
+      "event_id": 224,
+      "event_id_hex": "0xe0",
+      "name_ptr": "0x223d1",
+      "name": "GetHWSyncButtonStatus"
+    },
+    {
+      "i": 227,
+      "event_id": 225,
+      "event_id_hex": "0xe1",
+      "name_ptr": "0x223e7",
+      "name": "SetLightingLEDSettings"
+    },
+    {
+      "i": 228,
+      "event_id": 226,
+      "event_id_hex": "0xe2",
+      "name_ptr": "0x223fe",
+      "name": "SetLightingLEDsOnBySchedule"
+    },
+    {
+      "i": 229,
+      "event_id": 227,
+      "event_id_hex": "0xe3",
+      "name_ptr": "0x2241a",
+      "name": "DeleteLightingLEDOnAllPeriod"
+    },
+    {
+      "i": 230,
+      "event_id": 228,
+      "event_id_hex": "0xe4",
+      "name_ptr": "0x22437",
+      "name": "SetLightingLEDOnPeriodByIndex"
+    },
+    {
+      "i": 231,
+      "event_id": 229,
+      "event_id_hex": "0xe5",
+      "name_ptr": "0x22455",
+      "name": "DeleteLightingLEDOnPeriodByIndex"
+    },
+    {
+      "i": 232,
+      "event_id": 230,
+      "event_id_hex": "0xe6",
+      "name_ptr": "0x22476",
+      "name": "SetHWSyncButtonStatus"
+    },
+    {
+      "i": 233,
+      "event_id": 231,
+      "event_id_hex": "0xe7",
+      "name_ptr": "0x1c2e7",
+      "name": "GetSupportFeatureListXML"
+    },
+    {
+      "i": 234,
+      "event_id": 246,
+      "event_id_hex": "0xf6",
+      "name_ptr": "0x2248c",
+      "name": "Set5G2FronhaulEnable"
+    },
+    {
+      "i": 235,
+      "event_id": 247,
+      "event_id_hex": "0xf7",
+      "name_ptr": "0x224a1",
+      "name": "Set6GSepFronthaulEnable"
+    },
+    {
+      "i": 236,
+      "event_id": 248,
+      "event_id_hex": "0xf8",
+      "name_ptr": "0x1c0e3",
+      "name": "GetCurrentSatellitesInfo"
+    },
+    {
+      "i": 237,
+      "event_id": 249,
+      "event_id_hex": "0xf9",
+      "name_ptr": "0x224b9",
+      "name": "SetApModeEnable"
+    },
+    {
+      "i": 238,
+      "event_id": 250,
+      "event_id_hex": "0xfa",
+      "name_ptr": "0x224c9",
+      "name": "SetRoamingAggressive"
+    }
+  ],
+  "events_array": [
+    {
+      "i": 0,
+      "pre": 222108,
+      "event_id": 1000,
+      "event_id_hex": "0x3e8",
+      "flag": 0
+    },
+    {
+      "i": 1,
+      "pre": 222240,
+      "event_id": 1001,
+      "event_id_hex": "0x3e9",
+      "flag": 1
+    },
+    {
+      "i": 2,
+      "pre": 222284,
+      "event_id": 1002,
+      "event_id_hex": "0x3ea",
+      "flag": 1
+    },
+    {
+      "i": 3,
+      "pre": 222284,
+      "event_id": 1052,
+      "event_id_hex": "0x41c",
+      "flag": 1
+    },
+    {
+      "i": 4,
+      "pre": 222432,
+      "event_id": 1008,
+      "event_id_hex": "0x3f0",
+      "flag": 1
+    },
+    {
+      "i": 5,
+      "pre": 222308,
+      "event_id": 1003,
+      "event_id_hex": "0x3eb",
+      "flag": 0
+    },
+    {
+      "i": 6,
+      "pre": 222328,
+      "event_id": 1004,
+      "event_id_hex": "0x3ec",
+      "flag": 0
+    },
+    {
+      "i": 7,
+      "pre": 222328,
+      "event_id": 1024,
+      "event_id_hex": "0x400",
+      "flag": 0
+    },
+    {
+      "i": 8,
+      "pre": 222356,
+      "event_id": 1005,
+      "event_id_hex": "0x3ed",
+      "flag": 0
+    },
+    {
+      "i": 9,
+      "pre": 222380,
+      "event_id": 1006,
+      "event_id_hex": "0x3ee",
+      "flag": 1
+    },
+    {
+      "i": 10,
+      "pre": 222412,
+      "event_id": 1007,
+      "event_id_hex": "0x3ef",
+      "flag": 0
+    },
+    {
+      "i": 11,
+      "pre": 222464,
+      "event_id": 1009,
+      "event_id_hex": "0x3f1",
+      "flag": 0
+    },
+    {
+      "i": 12,
+      "pre": 222492,
+      "event_id": 1010,
+      "event_id_hex": "0x3f2",
+      "flag": 0
+    },
+    {
+      "i": 13,
+      "pre": 222520,
+      "event_id": 1011,
+      "event_id_hex": "0x3f3",
+      "flag": 1
+    },
+    {
+      "i": 14,
+      "pre": 222548,
+      "event_id": 1012,
+      "event_id_hex": "0x3f4",
+      "flag": 1
+    },
+    {
+      "i": 15,
+      "pre": 222584,
+      "event_id": 1013,
+      "event_id_hex": "0x3f5",
+      "flag": 0
+    },
+    {
+      "i": 16,
+      "pre": 222632,
+      "event_id": 1014,
+      "event_id_hex": "0x3f6",
+      "flag": 0
+    },
+    {
+      "i": 17,
+      "pre": 222672,
+      "event_id": 1015,
+      "event_id_hex": "0x3f7",
+      "flag": 0
+    },
+    {
+      "i": 18,
+      "pre": 222704,
+      "event_id": 1051,
+      "event_id_hex": "0x41b",
+      "flag": 0
+    },
+    {
+      "i": 19,
+      "pre": 222740,
+      "event_id": 1016,
+      "event_id_hex": "0x3f8",
+      "flag": 0
+    },
+    {
+      "i": 20,
+      "pre": 222784,
+      "event_id": 1017,
+      "event_id_hex": "0x3f9",
+      "flag": 0
+    },
+    {
+      "i": 21,
+      "pre": 222816,
+      "event_id": 1018,
+      "event_id_hex": "0x3fa",
+      "flag": 0
+    },
+    {
+      "i": 22,
+      "pre": 222952,
+      "event_id": 1019,
+      "event_id_hex": "0x3fb",
+      "flag": 1
+    },
+    {
+      "i": 23,
+      "pre": 222984,
+      "event_id": 1020,
+      "event_id_hex": "0x3fc",
+      "flag": 0
+    },
+    {
+      "i": 24,
+      "pre": 223000,
+      "event_id": 1021,
+      "event_id_hex": "0x3fd",
+      "flag": 0
+    },
+    {
+      "i": 25,
+      "pre": 223020,
+      "event_id": 1022,
+      "event_id_hex": "0x3fe",
+      "flag": 0
+    },
+    {
+      "i": 26,
+      "pre": 223052,
+      "event_id": 1023,
+      "event_id_hex": "0x3ff",
+      "flag": 0
+    },
+    {
+      "i": 27,
+      "pre": 223076,
+      "event_id": 1025,
+      "event_id_hex": "0x401",
+      "flag": 0
+    },
+    {
+      "i": 28,
+      "pre": 223128,
+      "event_id": 1027,
+      "event_id_hex": "0x403",
+      "flag": 0
+    },
+    {
+      "i": 29,
+      "pre": 223168,
+      "event_id": 1028,
+      "event_id_hex": "0x404",
+      "flag": 0
+    },
+    {
+      "i": 30,
+      "pre": 223200,
+      "event_id": 1029,
+      "event_id_hex": "0x405",
+      "flag": 0
+    },
+    {
+      "i": 31,
+      "pre": 223232,
+      "event_id": 1039,
+      "event_id_hex": "0x40f",
+      "flag": 0
+    },
+    {
+      "i": 32,
+      "pre": 223516,
+      "event_id": 1030,
+      "event_id_hex": "0x406",
+      "flag": 0
+    },
+    {
+      "i": 33,
+      "pre": 223268,
+      "event_id": 1041,
+      "event_id_hex": "0x411",
+      "flag": 0
+    },
+    {
+      "i": 34,
+      "pre": 223252,
+      "event_id": 1031,
+      "event_id_hex": "0x407",
+      "flag": 0
+    },
+    {
+      "i": 35,
+      "pre": 223300,
+      "event_id": 1038,
+      "event_id_hex": "0x40e",
+      "flag": 0
+    },
+    {
+      "i": 36,
+      "pre": 223316,
+      "event_id": 1040,
+      "event_id_hex": "0x410",
+      "flag": 0
+    },
+    {
+      "i": 37,
+      "pre": 223332,
+      "event_id": 1032,
+      "event_id_hex": "0x408",
+      "flag": 0
+    },
+    {
+      "i": 38,
+      "pre": 223364,
+      "event_id": 1033,
+      "event_id_hex": "0x409",
+      "flag": 0
+    },
+    {
+      "i": 39,
+      "pre": 223396,
+      "event_id": 1034,
+      "event_id_hex": "0x40a",
+      "flag": 0
+    },
+    {
+      "i": 40,
+      "pre": 223428,
+      "event_id": 1035,
+      "event_id_hex": "0x40b",
+      "flag": 0
+    },
+    {
+      "i": 41,
+      "pre": 223460,
+      "event_id": 1036,
+      "event_id_hex": "0x40c",
+      "flag": 0
+    },
+    {
+      "i": 42,
+      "pre": 223492,
+      "event_id": 1037,
+      "event_id_hex": "0x40d",
+      "flag": 0
+    },
+    {
+      "i": 43,
+      "pre": 223540,
+      "event_id": 1043,
+      "event_id_hex": "0x413",
+      "flag": 0
+    },
+    {
+      "i": 44,
+      "pre": 223564,
+      "event_id": 1044,
+      "event_id_hex": "0x414",
+      "flag": 0
+    },
+    {
+      "i": 45,
+      "pre": 223588,
+      "event_id": 1045,
+      "event_id_hex": "0x415",
+      "flag": 0
+    },
+    {
+      "i": 46,
+      "pre": 223796,
+      "event_id": 1048,
+      "event_id_hex": "0x418",
+      "flag": 0
+    },
+    {
+      "i": 47,
+      "pre": 223684,
+      "event_id": 1050,
+      "event_id_hex": "0x41a",
+      "flag": 0
+    },
+    {
+      "i": 48,
+      "pre": 223748,
+      "event_id": 1053,
+      "event_id_hex": "0x41d",
+      "flag": 0
+    },
+    {
+      "i": 49,
+      "pre": 223772,
+      "event_id": 1054,
+      "event_id_hex": "0x41e",
+      "flag": 0
+    },
+    {
+      "i": 50,
+      "terminator": true,
+      "event_id": 9999
+    }
+  ],
+  "HTTP_ERROR_CODE": [
+    {
+      "i": 0,
+      "code": 400,
+      "needle": "400 Bad Request"
+    },
+    {
+      "i": 1,
+      "code": 401,
+      "needle": "401 Unauthorized"
+    },
+    {
+      "i": 2,
+      "code": 403,
+      "needle": "403 Forbidden"
+    },
+    {
+      "i": 3,
+      "code": 404,
+      "needle": "404 Not Found"
+    },
+    {
+      "i": 4,
+      "code": 405,
+      "needle": "405 Method Not Allowed"
+    },
+    {
+      "i": 5,
+      "code": 406,
+      "needle": "406 Not Acceptable"
+    },
+    {
+      "i": 6,
+      "code": 407,
+      "needle": "407 Proxy Authentication Required"
+    },
+    {
+      "i": 7,
+      "code": 408,
+      "needle": "408 Request Timeout"
+    },
+    {
+      "i": 8,
+      "code": 409,
+      "needle": "409 Conflict"
+    },
+    {
+      "i": 9,
+      "code": 410,
+      "needle": "410 Gone"
+    },
+    {
+      "i": 10,
+      "code": 411,
+      "needle": "411 Length Required"
+    },
+    {
+      "i": 11,
+      "code": 412,
+      "needle": "412 Precondition Failed"
+    },
+    {
+      "i": 12,
+      "code": 413,
+      "needle": "413 Request Entity Too Large"
+    },
+    {
+      "i": 13,
+      "code": 414,
+      "needle": "414 Request-URI Too Long"
+    },
+    {
+      "i": 14,
+      "code": 415,
+      "needle": "415 Unsupported Media Type"
+    },
+    {
+      "i": 15,
+      "code": 416,
+      "needle": "416 Requested Range Not Satisfiable"
+    },
+    {
+      "i": 16,
+      "code": 417,
+      "needle": "417 Expectation Failed"
+    },
+    {
+      "i": 17,
+      "code": 500,
+      "needle": "500 Internal Server Error"
+    },
+    {
+      "i": 18,
+      "code": 501,
+      "needle": "501 Not Implemented"
+    },
+    {
+      "i": 19,
+      "code": 502,
+      "needle": "502 Bad Gateway"
+    },
+    {
+      "i": 20,
+      "code": 503,
+      "needle": "503 Service Unavailable"
+    },
+    {
+      "i": 21,
+      "code": 504,
+      "needle": "504 Gateway Timeout"
+    },
+    {
+      "i": 22,
+      "code": 505,
+      "needle": "505 HTTP Version Not Supported"
+    },
+    {
+      "i": 23,
+      "terminator": true
+    }
+  ],
+  "service_type_database": [
+    {
+      "i": 0,
+      "service_id": 1769366852,
+      "name": ""
+    },
+    {
+      "i": 1,
+      "service_id": 28518,
+      "name": ""
+    },
+    {
+      "i": 2,
+      "terminator": true
+    }
+  ]
+}

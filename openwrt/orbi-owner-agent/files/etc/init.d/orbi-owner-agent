@@ -1,0 +1,37 @@
+#!/bin/sh /etc/rc.common
+# procd service control for orbi-owner-agent.
+# The agent is per-call via rpcd; there is no long-running daemon.
+
+USE_PROCD=1
+START=99
+STOP=01
+
+BIN=/usr/libexec/rpcd/orbi-owner-agent
+ACL=/usr/share/rpcd/acl.d/orbi-owner-agent.json
+LOG=/tmp/orbi-owner-agent.log
+
+start_service() {
+    # Validate install, make sure audit log exists at the right path/mode.
+    [ -x "$BIN" ] || return 1
+    [ -r "$ACL" ] || return 1
+    touch "$LOG" 2>/dev/null || true
+    chmod 0640 "$LOG" 2>/dev/null || true
+    # Ask rpcd to pick up any ACL changes.
+    [ -x /etc/init.d/rpcd ] && /etc/init.d/rpcd reload >/dev/null 2>&1 || true
+    return 0
+}
+
+stop_service() {
+    # Nothing to stop. Rpcd continues to run.
+    return 0
+}
+
+reload_service() {
+    # Re-reads UCI by virtue of the plugin reading UCI on each call.
+    [ -x /etc/init.d/rpcd ] && /etc/init.d/rpcd reload >/dev/null 2>&1 || true
+    return 0
+}
+
+service_triggers() {
+    procd_add_reload_trigger "orbi-owner-agent"
+}

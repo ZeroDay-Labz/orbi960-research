@@ -1,0 +1,895 @@
+{
+  "header": {
+    "version": "5.1",
+    "format": 0,
+    "endian": "<",
+    "sizeof_int": 4,
+    "sizeof_size_t": 4,
+    "sizeof_instruction": 4,
+    "sizeof_number": 8,
+    "lua_number_is_int": 4
+  },
+  "main": {
+    "source": "",
+    "line_defined": 0,
+    "last_line_defined": 0,
+    "nups": 0,
+    "numparams": 0,
+    "is_vararg": 2,
+    "maxstack": 16,
+    "constants": [
+      [
+        "str",
+        "_version"
+      ],
+      [
+        "str",
+        "0.1.0"
+      ],
+      [
+        "str",
+        "require"
+      ],
+      [
+        "str",
+        "seal-environ"
+      ],
+      [
+        "str",
+        "posix.glob"
+      ],
+      [
+        "str",
+        "glob"
+      ],
+      [
+        "str",
+        "xagent-evsinkd2"
+      ],
+      [
+        "str",
+        "xagent"
+      ],
+      [
+        "str",
+        "catalog"
+      ],
+      [
+        "str",
+        "armor-bd-ash"
+      ],
+      [
+        "str",
+        "spc-circle-csh"
+      ],
+      [
+        "str",
+        "details"
+      ],
+      [
+        "str",
+        "get_webapp"
+      ],
+      [
+        "str",
+        "list"
+      ],
+      [
+        "str",
+        "seal_version"
+      ],
+      [
+        "str",
+        "install"
+      ],
+      [
+        "str",
+        "uninstall"
+      ],
+      [
+        "str",
+        "enabled"
+      ],
+      [
+        "str",
+        "ACTIVATE"
+      ],
+      [
+        "str",
+        "disabled"
+      ],
+      [
+        "str",
+        "DEACTIVATE"
+      ],
+      [
+        "str",
+        "service_action_handler"
+      ]
+    ],
+    "n_code": 62,
+    "protos": [
+      {
+        "source": "",
+        "line_defined": 20,
+        "last_line_defined": 27,
+        "nups": 1,
+        "numparams": 1,
+        "is_vararg": 0,
+        "maxstack": 7,
+        "constants": [
+          [
+            "str",
+            "ipairs"
+          ]
+        ],
+        "n_code": 13,
+        "protos": []
+      },
+      {
+        "source": "",
+        "line_defined": 29,
+        "last_line_defined": 36,
+        "nups": 0,
+        "numparams": 0,
+        "is_vararg": 0,
+        "maxstack": 2,
+        "constants": [
+          [
+            "str",
+            "ntgr-dal-bst - v2.0.4-9-g138944ea\n            ntgr-dal-dalh - v2.0.6-1-gc0609a1a\n            ntgr-seal-launchService - v0.4.7-0-gff356211\n            seal-service-armor-bd-ash - v2.0.15-0-g14d6be2d\n            seal-service-spc-circle - 3.17.1.5-20201218_182754\n            seal-support-tinyproxy - 1.10.0-129-g8ec74825-1"
+          ]
+        ],
+        "n_code": 3,
+        "protos": []
+      },
+      {
+        "source": "",
+        "line_defined": 39,
+        "last_line_defined": 47,
+        "nups": 2,
+        "numparams": 0,
+        "is_vararg": 0,
+        "maxstack": 4,
+        "constants": [
+          [
+            "str",
+            "is_orbi"
+          ],
+          [
+            "str",
+            "io"
+          ],
+          [
+            "str",
+            "popen"
+          ],
+          [
+            "str",
+            "seal version"
+          ],
+          [
+            "str",
+            "read"
+          ],
+          [
+            "str",
+            "*a"
+          ],
+          [
+            "str",
+            "close"
+          ]
+        ],
+        "n_code": 18,
+        "protos": []
+      },
+      {
+        "source": "",
+        "line_defined": 50,
+        "last_line_defined": 65,
+        "nups": 1,
+        "numparams": 1,
+        "is_vararg": 0,
+        "maxstack": 14,
+        "constants": [
+          [
+            "str",
+            "string"
+          ],
+          [
+            "str",
+            "gmatch"
+          ],
+          [
+            "str",
+            "[^\n]+"
+          ],
+          [
+            "str",
+            "%s*([%w-]+) %- ([%.%w%d%-_]+)"
+          ],
+          [
+            "str",
+            "gsub"
+          ],
+          [
+            "str",
+            "%1"
+          ],
+          [
+            "str",
+            "seal%-service%-([%w%-]+)"
+          ],
+          [
+            "int",
+            0
+          ],
+          [
+            "str",
+            "table"
+          ],
+          [
+            "str",
+            "insert"
+          ]
+        ],
+        "n_code": 41,
+        "protos": []
+      },
+      {
+        "source": "",
+        "line_defined": 68,
+        "last_line_defined": 75,
+        "nups": 0,
+        "numparams": 1,
+        "is_vararg": 0,
+        "maxstack": 5,
+        "constants": [
+          [
+            "str",
+            "io"
+          ],
+          [
+            "str",
+            "popen"
+          ],
+          [
+            "str",
+            "opkg status seal-service-"
+          ],
+          [
+            "str",
+            " | grep '^Status: ' | awk '{printf \"%s\", $4}'"
+          ],
+          [
+            "str",
+            "read"
+          ],
+          [
+            "str",
+            "*a"
+          ],
+          [
+            "str",
+            "installed"
+          ]
+        ],
+        "n_code": 18,
+        "protos": []
+      },
+      {
+        "source": "",
+        "line_defined": 79,
+        "last_line_defined": 87,
+        "nups": 0,
+        "numparams": 1,
+        "is_vararg": 0,
+        "maxstack": 5,
+        "constants": [
+          [
+            "str",
+            "armor-bd"
+          ],
+          [
+            "str",
+            "armor-bd-ash"
+          ],
+          [
+            "str",
+            "spc-circle"
+          ],
+          [
+            "str",
+            "spc-circle-csh"
+          ],
+          [
+            "int",
+            0
+          ],
+          [
+            "str",
+            "os"
+          ],
+          [
+            "str",
+            "execute"
+          ],
+          [
+            "str",
+            "ssvc status "
+          ],
+          [
+            "str",
+            ">/dev/null 2>&1"
+          ]
+        ],
+        "n_code": 24,
+        "protos": []
+      },
+      {
+        "source": "",
+        "line_defined": 90,
+        "last_line_defined": 101,
+        "nups": 0,
+        "numparams": 1,
+        "is_vararg": 0,
+        "maxstack": 6,
+        "constants": [
+          [
+            "str",
+            "armor-bd"
+          ],
+          [
+            "str",
+            "io"
+          ],
+          [
+            "str",
+            "popen"
+          ],
+          [
+            "str",
+            "seal version -s | grep armor-bd | awk '{printf \"%s\", $2}'"
+          ],
+          [
+            "str",
+            "read"
+          ],
+          [
+            "str",
+            "*a"
+          ],
+          [
+            "str",
+            "spc-circle"
+          ],
+          [
+            "str",
+            "seal version -s | grep spc-circle | awk '{printf \"%s\", $2}'"
+          ],
+          [
+            "str",
+            "opkg status seal-service-"
+          ],
+          [
+            "str",
+            " | grep Version | awk '{printf \"%s\", $2}'"
+          ],
+          [
+            "str",
+            "string"
+          ],
+          [
+            "str",
+            "match"
+          ],
+          [
+            "str",
+            "[^-]+"
+          ]
+        ],
+        "n_code": 40,
+        "protos": []
+      },
+      {
+        "source": "",
+        "line_defined": 104,
+        "last_line_defined": 137,
+        "nups": 4,
+        "numparams": 1,
+        "is_vararg": 0,
+        "maxstack": 8,
+        "constants": [
+          [
+            "str",
+            "get_webapp"
+          ],
+          [
+            "int",
+            200
+          ],
+          [
+            "str",
+            "type"
+          ],
+          [
+            "str",
+            "webapp"
+          ],
+          [
+            "str",
+            "version"
+          ],
+          [
+            "str",
+            "installable"
+          ],
+          [
+            "bool",
+            true
+          ],
+          [
+            "str",
+            "native"
+          ],
+          [
+            "bool",
+            false
+          ],
+          [
+            "str",
+            "name"
+          ],
+          [
+            "str",
+            "service"
+          ],
+          [
+            "str",
+            "installed"
+          ],
+          [
+            "str",
+            "running"
+          ],
+          [
+            "str",
+            "active"
+          ],
+          [
+            "str",
+            "enabled"
+          ],
+          [
+            "str",
+            "app"
+          ]
+        ],
+        "n_code": 39,
+        "protos": []
+      },
+      {
+        "source": "",
+        "line_defined": 139,
+        "last_line_defined": 144,
+        "nups": 0,
+        "numparams": 1,
+        "is_vararg": 0,
+        "maxstack": 6,
+        "constants": [
+          [
+            "str",
+            "io"
+          ],
+          [
+            "str",
+            "popen"
+          ],
+          [
+            "str",
+            "ls "
+          ],
+          [
+            "str",
+            " 2>&1"
+          ],
+          [
+            "str",
+            "read"
+          ],
+          [
+            "str",
+            "*a"
+          ],
+          [
+            "str",
+            "close"
+          ],
+          [
+            "str",
+            "find"
+          ],
+          [
+            "str",
+            "No such file or directory"
+          ]
+        ],
+        "n_code": 18,
+        "protos": []
+      },
+      {
+        "source": "",
+        "line_defined": 147,
+        "last_line_defined": 152,
+        "nups": 0,
+        "numparams": 0,
+        "is_vararg": 0,
+        "maxstack": 5,
+        "constants": [
+          [
+            "str",
+            "io"
+          ],
+          [
+            "str",
+            "popen"
+          ],
+          [
+            "str",
+            "echo ~"
+          ],
+          [
+            "str",
+            "r"
+          ],
+          [
+            "str",
+            "read"
+          ],
+          [
+            "str",
+            "*a"
+          ],
+          [
+            "str",
+            "gsub"
+          ],
+          [
+            "str",
+            "\n"
+          ],
+          [
+            "str",
+            ""
+          ],
+          [
+            "str",
+            "close"
+          ]
+        ],
+        "n_code": 16,
+        "protos": []
+      },
+      {
+        "source": "",
+        "line_defined": 154,
+        "last_line_defined": 163,
+        "nups": 1,
+        "numparams": 0,
+        "is_vararg": 0,
+        "maxstack": 6,
+        "constants": [
+          [
+            "str",
+            "/test-webapp.zip"
+          ],
+          [
+            "str",
+            "print"
+          ],
+          [
+            "str",
+            "looking for file in "
+          ],
+          [
+            "str",
+            "os"
+          ],
+          [
+            "str",
+            "execute"
+          ],
+          [
+            "str",
+            "stat "
+          ],
+          [
+            "str",
+            " > /dev/null"
+          ],
+          [
+            "int",
+            0
+          ],
+          [
+            "str",
+            "Test file does not exist at '"
+          ],
+          [
+            "str",
+            "'. Please create a file there to test with."
+          ],
+          [
+            "str",
+            "exit"
+          ],
+          [
+            "int",
+            1
+          ]
+        ],
+        "n_code": 34,
+        "protos": []
+      },
+      {
+        "source": "",
+        "line_defined": 169,
+        "last_line_defined": 194,
+        "nups": 4,
+        "numparams": 3,
+        "is_vararg": 0,
+        "maxstack": 8,
+        "constants": [
+          [
+            "str",
+            "is_orbi"
+          ],
+          [
+            "int",
+            200
+          ],
+          [
+            "str",
+            "/opt/services/"
+          ],
+          [
+            "int",
+            404
+          ],
+          [
+            "str",
+            "/*.zip"
+          ],
+          [
+            "int",
+            0
+          ],
+          [
+            "nil",
+            null
+          ],
+          [
+            "int",
+            1
+          ],
+          [
+            "int",
+            500
+          ]
+        ],
+        "n_code": 40,
+        "protos": []
+      },
+      {
+        "source": "",
+        "line_defined": 197,
+        "last_line_defined": 208,
+        "nups": 3,
+        "numparams": 0,
+        "is_vararg": 0,
+        "maxstack": 12,
+        "constants": [
+          [
+            "str",
+            "ipairs"
+          ],
+          [
+            "str",
+            "details"
+          ],
+          [
+            "str",
+            "table"
+          ],
+          [
+            "str",
+            "insert"
+          ]
+        ],
+        "n_code": 23,
+        "protos": []
+      },
+      {
+        "source": "",
+        "line_defined": 211,
+        "last_line_defined": 217,
+        "nups": 0,
+        "numparams": 0,
+        "is_vararg": 0,
+        "maxstack": 5,
+        "constants": [
+          [
+            "str",
+            "/usr/bin/seal version --short | /bin/grep 'seal:' | /usr/bin/awk '{printf \"%s\", $2}'"
+          ],
+          [
+            "str",
+            "io"
+          ],
+          [
+            "str",
+            "popen"
+          ],
+          [
+            "str",
+            "read"
+          ],
+          [
+            "str",
+            "*a"
+          ],
+          [
+            "str",
+            "close"
+          ]
+        ],
+        "n_code": 12,
+        "protos": []
+      },
+      {
+        "source": "",
+        "line_defined": 223,
+        "last_line_defined": 230,
+        "nups": 0,
+        "numparams": 1,
+        "is_vararg": 0,
+        "maxstack": 5,
+        "constants": [
+          [
+            "str",
+            "io"
+          ],
+          [
+            "str",
+            "popen"
+          ],
+          [
+            "str",
+            "opkg install "
+          ],
+          [
+            "str",
+            "read"
+          ],
+          [
+            "str",
+            "*a"
+          ],
+          [
+            "str",
+            "close"
+          ]
+        ],
+        "n_code": 13,
+        "protos": []
+      },
+      {
+        "source": "",
+        "line_defined": 236,
+        "last_line_defined": 243,
+        "nups": 0,
+        "numparams": 1,
+        "is_vararg": 0,
+        "maxstack": 5,
+        "constants": [
+          [
+            "str",
+            "io"
+          ],
+          [
+            "str",
+            "popen"
+          ],
+          [
+            "str",
+            "opkg remove "
+          ],
+          [
+            "str",
+            "read"
+          ],
+          [
+            "str",
+            "*a"
+          ],
+          [
+            "str",
+            "close"
+          ]
+        ],
+        "n_code": 13,
+        "protos": []
+      },
+      {
+        "source": "",
+        "line_defined": 252,
+        "last_line_defined": 278,
+        "nups": 1,
+        "numparams": 2,
+        "is_vararg": 0,
+        "maxstack": 6,
+        "constants": [
+          [
+            "str",
+            "dumaos"
+          ],
+          [
+            "str",
+            "Invalid Service"
+          ],
+          [
+            "nil",
+            null
+          ],
+          [
+            "str",
+            "Invalid Option"
+          ],
+          [
+            "str",
+            "io"
+          ],
+          [
+            "str",
+            "popen"
+          ],
+          [
+            "str",
+            "/usr/bin/nsh.sh argument 0 "
+          ],
+          [
+            "str",
+            "read"
+          ],
+          [
+            "str",
+            "*a"
+          ],
+          [
+            "str",
+            "close"
+          ],
+          [
+            "str",
+            "statusCode"
+          ],
+          [
+            "int",
+            200
+          ],
+          [
+            "str",
+            "message"
+          ],
+          [
+            "str",
+            "Success"
+          ]
+        ],
+        "n_code": 27,
+        "protos": []
+      }
+    ]
+  }
+}

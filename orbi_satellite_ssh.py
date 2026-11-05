@@ -34,6 +34,7 @@ import argparse
 import datetime as _dt
 import getpass
 import hashlib
+import http.cookiejar
 import json
 import os
 import re
@@ -266,11 +267,17 @@ class UbusClient:
         self.use_https = use_https
         self.session = self.NULL_SESSION
         self._id = 0
+        # lighttpd on the sat sets a `sid` HttpOnly cookie on session.login and
+        # expects it on every subsequent /ubus call. Carry cookies via a jar.
+        self.cookies = http.cookiejar.CookieJar()
+        handlers = [urllib.request.HTTPCookieProcessor(self.cookies)]
         if use_https:
             self.fp = pinned_tls_check(ip, log)
             self.ctx = ssl.create_default_context()
             self.ctx.check_hostname = False
             self.ctx.verify_mode = ssl.CERT_NONE  # pinned above by fingerprint
+            handlers.append(urllib.request.HTTPSHandler(context=self.ctx))
+        self.opener = urllib.request.build_opener(*handlers)
         self.base = f"{'https' if use_https else 'http'}://{ip}/ubus"
 
     def _call_raw(self, method: str, params: list) -> dict:
@@ -282,10 +289,7 @@ class UbusClient:
             self.base, data=payload, method="POST",
             headers={"Content-Type": "application/json"},
         )
-        kwargs = {"timeout": DEFAULT_TIMEOUT}
-        if self.use_https:
-            kwargs["context"] = self.ctx
-        with urllib.request.urlopen(req, **kwargs) as resp:  # noqa: S310
+        with self.opener.open(req, timeout=DEFAULT_TIMEOUT) as resp:  # noqa: S310
             return json.loads(resp.read().decode("utf-8", "replace") or "{}")
 
     def login(self, username: str, password: str) -> bool:
@@ -294,10 +298,16 @@ class UbusClient:
         Note: this is a single, deliberate authentication with the owner's
         admin credentials - NOT a guessing loop. Caller must not retry.
         """
+        password_hash = hashlib.sha256(
+            password.encode("utf-8")
+        ).hexdigest().upper()
+        password = None
+
         resp = self._call_raw("call", [
             self.NULL_SESSION, "session", "login",
-            {"username": username, "password": password, "timeout": 300},
+            {"username": username, "password": password_hash, "timeout": 300},
         ])
+        password_hash = None
         try:
             result = resp["result"]
             if result[0] != 0:

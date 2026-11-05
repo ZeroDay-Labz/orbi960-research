@@ -1,0 +1,389 @@
+{
+  "binary": "usr/sbin/cgi-bin/soap_agent",
+  "classification_counts": {
+    "pre_auth": 1,
+    "read_only": 8,
+    "state": 38
+  },
+  "disclaimer": "Classification is heuristic (name prefix). 'pre_auth' is set only for 'Authenticate'. Confirm boundaries with Ghidra/REA call-graph.",
+  "fw_key": "rbse_7215",
+  "method_count": 47,
+  "methods": [
+    {
+      "classification": "pre_auth",
+      "m1_offset": 84256,
+      "name": "Authenticate",
+      "note": "pre-auth: establishes session",
+      "response_offset": 75190,
+      "response_present": true
+    },
+    {
+      "classification": "read_only",
+      "m1_offset": 84928,
+      "name": "CheckAndDownloadNewFirmwareByFolder",
+      "note": "",
+      "response_offset": 75467,
+      "response_present": true
+    },
+    {
+      "classification": "state",
+      "m1_offset": 84424,
+      "name": "ConfigurationFinished",
+      "note": "",
+      "response_offset": 75244,
+      "response_present": true
+    },
+    {
+      "classification": "state",
+      "m1_offset": 84340,
+      "name": "ConfigurationStarted",
+      "note": "",
+      "response_offset": 75213,
+      "response_present": true
+    },
+    {
+      "classification": "state",
+      "m1_offset": 85768,
+      "name": "DeleteBlockDeviceAll",
+      "note": "",
+      "response_offset": 75839,
+      "response_present": true
+    },
+    {
+      "classification": "read_only",
+      "m1_offset": 87616,
+      "name": "Get6GWirelessMode",
+      "note": "",
+      "response_offset": 76407,
+      "response_present": true
+    },
+    {
+      "classification": "read_only",
+      "m1_offset": 84844,
+      "name": "GetAttachDevice",
+      "note": "",
+      "response_offset": 75441,
+      "response_present": true
+    },
+    {
+      "classification": "read_only",
+      "m1_offset": 84508,
+      "name": "GetConfigurationTimestamp",
+      "note": "",
+      "response_offset": 75276,
+      "response_present": true
+    },
+    {
+      "classification": "read_only",
+      "m1_offset": 87280,
+      "name": "GetCurrentSatellitesInfo",
+      "note": "",
+      "response_offset": 70819,
+      "response_present": true
+    },
+    {
+      "classification": "read_only",
+      "m1_offset": 86440,
+      "name": "GetCurrentSatellitesWIFIinfo",
+      "note": "",
+      "response_offset": 70780,
+      "response_present": true
+    },
+    {
+      "classification": "read_only",
+      "m1_offset": 84760,
+      "name": "GetInfo",
+      "note": "",
+      "response_offset": 75383,
+      "response_present": true
+    },
+    {
+      "classification": "read_only",
+      "m1_offset": 84676,
+      "name": "GetSupportFeatureListXML",
+      "note": "",
+      "response_offset": 75348,
+      "response_present": true
+    },
+    {
+      "classification": "state",
+      "m1_offset": 86272,
+      "name": "Reboot",
+      "note": "",
+      "response_offset": 76012,
+      "response_present": true
+    },
+    {
+      "classification": "state",
+      "m1_offset": 86356,
+      "name": "ResetToFactoryDefault",
+      "note": "",
+      "response_offset": 76029,
+      "response_present": true
+    },
+    {
+      "classification": "state",
+      "m1_offset": 88120,
+      "name": "Set5G2FronhaulEnable",
+      "note": "",
+      "response_offset": 76582,
+      "response_present": true
+    },
+    {
+      "classification": "state",
+      "m1_offset": 86944,
+      "name": "Set5GBackhaulPassphrase",
+      "note": "",
+      "response_offset": 76171,
+      "response_present": true
+    },
+    {
+      "classification": "state",
+      "m1_offset": 86860,
+      "name": "Set5GEnable",
+      "note": "",
+      "response_offset": 76149,
+      "response_present": true
+    },
+    {
+      "classification": "state",
+      "m1_offset": 85096,
+      "name": "Set5GSSIDBroadcast",
+      "note": "",
+      "response_offset": 75589,
+      "response_present": true
+    },
+    {
+      "classification": "state",
+      "m1_offset": 86020,
+      "name": "Set5GWMMEnable",
+      "note": "",
+      "response_offset": 75934,
+      "response_present": true
+    },
+    {
+      "classification": "state",
+      "m1_offset": 88036,
+      "name": "Set6GSepFronthaulEnable",
+      "note": "",
+      "response_offset": 76548,
+      "response_present": true
+    },
+    {
+      "classification": "state",
+      "m1_offset": 87532,
+      "name": "Set6GWLANWPAPSKByPassphrase",
+      "note": "",
+      "response_offset": 76369,
+      "response_present": true
+    },
+    {
+      "classification": "state",
+      "m1_offset": 85432,
+      "name": "SetAdvancedWirelessSettings",
+      "note": "",
+      "response_offset": 75701,
+      "response_present": true
+    },
+    {
+      "classification": "state",
+      "m1_offset": 87364,
+      "name": "SetAllGuestAccessEnabled",
+      "note": "",
+      "response_offset": 76298,
+      "response_present": true
+    },
+    {
+      "classification": "state",
+      "m1_offset": 87028,
+      "name": "SetBackhaulPassphrase",
+      "note": "",
+      "response_offset": 76205,
+      "response_present": true
+    },
+    {
+      "classification": "state",
+      "m1_offset": 85684,
+      "name": "SetBlockDeviceByMAC",
+      "note": "",
+      "response_offset": 75809,
+      "response_present": true
+    },
+    {
+      "classification": "state",
+      "m1_offset": 85516,
+      "name": "SetBlockDeviceEnable",
+      "note": "",
+      "response_offset": 75739,
+      "response_present": true
+    },
+    {
+      "classification": "state",
+      "m1_offset": 85600,
+      "name": "SetBlockDeviceStateByDefault",
+      "note": "",
+      "response_offset": 75770,
+      "response_present": true
+    },
+    {
+      "classification": "state",
+      "m1_offset": 84592,
+      "name": "SetConfigurationTimestamp",
+      "note": "",
+      "response_offset": 75312,
+      "response_present": true
+    },
+    {
+      "classification": "state",
+      "m1_offset": 87112,
+      "name": "SetDaisyChainEnable",
+      "note": "",
+      "response_offset": 76237,
+      "response_present": true
+    },
+    {
+      "classification": "state",
+      "m1_offset": 87700,
+      "name": "SetDeviceInfoByMAC",
+      "note": "",
+      "response_offset": 76435,
+      "response_present": true
+    },
+    {
+      "classification": "state",
+      "m1_offset": 86776,
+      "name": "SetEnable",
+      "note": "",
+      "response_offset": 76129,
+      "response_present": true
+    },
+    {
+      "classification": "state",
+      "m1_offset": 86524,
+      "name": "SetNTP",
+      "note": "",
+      "response_offset": 76061,
+      "response_present": true
+    },
+    {
+      "classification": "state",
+      "m1_offset": 85264,
+      "name": "SetNetgearDeviceName",
+      "note": "",
+      "response_offset": 75645,
+      "response_present": true
+    },
+    {
+      "classification": "state",
+      "m1_offset": 85348,
+      "name": "SetOrbiDevName",
+      "note": "",
+      "response_offset": 75676,
+      "response_present": true
+    },
+    {
+      "classification": "state",
+      "m1_offset": 87196,
+      "name": "SetRoamingAggressive",
+      "note": "",
+      "response_offset": 76267,
+      "response_present": true
+    },
+    {
+      "classification": "state",
+      "m1_offset": 85180,
+      "name": "SetSSIDBroadcast",
+      "note": "",
+      "response_offset": 75618,
+      "response_present": true
+    },
+    {
+      "classification": "state",
+      "m1_offset": 86608,
+      "name": "SetTimeZone",
+      "note": "",
+      "response_offset": 76078,
+      "response_present": true
+    },
+    {
+      "classification": "state",
+      "m1_offset": 86692,
+      "name": "SetTimeZoneByIndex",
+      "note": "",
+      "response_offset": 76100,
+      "response_present": true
+    },
+    {
+      "classification": "state",
+      "m1_offset": 85852,
+      "name": "SetWLANNoSecurity",
+      "note": "",
+      "response_offset": 75870,
+      "response_present": true
+    },
+    {
+      "classification": "state",
+      "m1_offset": 85936,
+      "name": "SetWLANWPAPSKByPassphrase",
+      "note": "",
+      "response_offset": 75898,
+      "response_present": true
+    },
+    {
+      "classification": "state",
+      "m1_offset": 86104,
+      "name": "SetWMMEnable",
+      "note": "",
+      "response_offset": 75959,
+      "response_present": true
+    },
+    {
+      "classification": "state",
+      "m1_offset": 87952,
+      "name": "TputMeasureGetResult",
+      "note": "",
+      "response_offset": 76517,
+      "response_present": true
+    },
+    {
+      "classification": "state",
+      "m1_offset": 87784,
+      "name": "TputMeasureStart",
+      "note": "",
+      "response_offset": 76464,
+      "response_present": true
+    },
+    {
+      "classification": "state",
+      "m1_offset": 87868,
+      "name": "TputMeasureStop",
+      "note": "",
+      "response_offset": 76491,
+      "response_present": true
+    },
+    {
+      "classification": "state",
+      "m1_offset": 86188,
+      "name": "UpdateAdminPassword",
+      "note": "",
+      "response_offset": 75982,
+      "response_present": true
+    },
+    {
+      "classification": "state",
+      "m1_offset": 87448,
+      "name": "UpdateAdminPasswordHashed",
+      "note": "",
+      "response_offset": 76333,
+      "response_present": true
+    },
+    {
+      "classification": "state",
+      "m1_offset": 85012,
+      "name": "UpdateNewFirmware2",
+      "note": "",
+      "response_offset": 75513,
+      "response_present": true
+    }
+  ]
+}

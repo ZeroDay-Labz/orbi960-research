@@ -1,0 +1,33 @@
+--- firmware_analysis/extracted/rbre_7215/rootfs/usr/bin/seallog_save.sh	2024-11-14 13:15:17.000000000 -0700
++++ firmware_analysis/extracted/rbre_7288/rootfs/usr/bin/seallog_save.sh	2026-07-20 05:52:04.000000000 -0700
+@@ -19,13 +19,14 @@
+ done
+ 
+ # Disable and remove the seal processes logs
+-/usr/bin/setlogLevelForDAL.sh dal_ash LOG_DEBUG false false; rm /tmp/services/armor-bd/dal_ash.log
+-/usr/bin/setlogLevelForDAL.sh csh LOG_DEBUG false false; rm /tmp/services/spc-circle/csh.log
+-/usr/bin/setlogLevelForDAL.sh upagent LOG_DEBUG false false; rm /tmp/UpAgent.log
+-/usr/bin/setlogLevelForDAL.sh fing_dil LOG_DEBUG false false; rm /tmp/fing_dil.log
+-/usr/bin/setlogLevelForDAL.sh dalh LOG_DEBUG false false; rm /tmp/dalh.log
+-/usr/bin/setlogLevelForDAL.sh ra LOG_DEBUG false false; rm /tmp/Ra.log
+-/usr/bin/setlogLevelForDAL.sh cob LOG_DEBUG false false; rm /tmp/Cob.log
++# We truncate dal_ash.log because the logging is not handled by DAL and the file is not auto created during runtime
++/usr/bin/setlogLevelForDAL.sh dal_ash LOG_DEBUG false false; printf "" > /tmp/services/armor-bd/dal_ash.log
++/usr/bin/setlogLevelForDAL.sh csh LOG_DEBUG false false; printf "" > /tmp/services/spc-circle/csh.log
++/usr/bin/setlogLevelForDAL.sh upagent LOG_DEBUG false false; printf "" > /tmp/UpAgent.log
++/usr/bin/setlogLevelForDAL.sh fing_dil LOG_DEBUG false false; printf "" > /tmp/fing_dil.log
++/usr/bin/setlogLevelForDAL.sh dalh LOG_DEBUG false false; printf "" > /tmp/dalh.log
++/usr/bin/setlogLevelForDAL.sh ra LOG_DEBUG false false; printf "" > /tmp/Ra.log
++/usr/bin/setlogLevelForDAL.sh cob LOG_DEBUG false false; printf "" > /tmp/Cob.log
+ 
+ # Copy xagent.log
+ find /tmp -name ntgrlog -prune -o -name xagent.log -exec cp {} /tmp/ntgrlog/log_seal \;
+@@ -33,7 +34,7 @@
+ # Copy genie logs
+ find /tmp -name ntgrlog -prune -o -name 'genie_*.log' -exec cp {} /tmp/ntgrlog/log_seal \;
+ 
+-# Copy Circle configuration i.e. dumpsm logs                                                           
++# Copy Circle configuration i.e. dumpsm logs
+ export LD_LIBRARY_PATH=/opt/services/spc-circle/shares/usr/lib
+ 
+ circle_version=$(lxc-attach spc-circle -- /usr/bin/circlectl version | grep "Circle Agent Version" | cut -d ":" -f2)

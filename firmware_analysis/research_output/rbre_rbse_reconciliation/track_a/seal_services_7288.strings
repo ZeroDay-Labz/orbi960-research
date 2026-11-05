@@ -1,0 +1,137 @@
+#!/usr/bin/env lua
+LuaQ
+	@@
+_version
+0.1.0
+require
+seal-environ
+posix.glob
+glob
+xagent-evsinkd2
+xagent
+catalog
+armor-bd-ash
+spc-circle-csh
+details
+get_webapp
+list
+seal_version
+install
+uninstall
+enabled
+ACTIVATE
+disabled
+DEACTIVATE
+service_action_handler
+type
+string
+match
+^[A-Za-z0-9_-]+$
+find
+%.%.
+ipairs
+ntgr-dal-bst - v2.0.4-9-g138944ea
+            ntgr-dal-dalh - v2.0.6-1-gc0609a1a
+            ntgr-seal-launchService - v0.4.7-0-gff356211
+            seal-service-armor-bd-ash - v2.0.15-0-g14d6be2d
+            seal-service-spc-circle - 3.17.1.5-20201218_182754
+            seal-support-tinyproxy - 1.10.0-129-g8ec74825-1
+is_orbi
+popen
+seal version
+read
+close
+string
+gmatch
+%s*([%w-]+) %- ([%.%w%d%-_]+)
+gsub
+seal%-service%-([%w%-]+)
+table
+insert
+popen
+opkg status seal-service-
+ | grep '^Status: ' | awk '{printf "%s", $4}'
+read
+installed
+armor-bd
+armor-bd-ash
+spc-circle
+spc-circle-csh
+execute
+ssvc status 
+>/dev/null 2>&1
+armor-bd
+popen
+seal version -s | grep armor-bd | awk '{printf "%s", $2}'
+read
+spc-circle
+seal version -s | grep spc-circle | awk '{printf "%s", $2}'
+opkg status seal-service-
+ | grep Version | awk '{printf "%s", $2}'
+string
+match
+[^-]+
+get_webapp
+type
+webapp
+version
+installable
+native
+name
+service
+installed
+running
+active
+enabled
+app
+popen
+ls 
+ 2>&1
+read
+close
+find
+No such file or directory
+popen
+echo ~
+read
+gsub
+close
+/test-webapp.zip
+print
+looking for file in 
+execute
+stat 
+ > /dev/null
+Test file does not exist at '
+'. Please create a file there to test with.
+exit
+is_orbi
+/opt/services/
+/*.zip
+ipairs
+details
+table
+insert
+/usr/bin/seal version --short | /bin/grep 'seal:' | /usr/bin/awk '{printf "%s", $2}'
+popen
+read
+close
+popen
+opkg install 
+read
+close
+popen
+opkg remove 
+read
+close
+	AC
+dumaos
+Invalid Service
+Invalid Option
+popen
+/usr/bin/nsh.sh argument 0 
+read
+close
+statusCode
+message
+Success

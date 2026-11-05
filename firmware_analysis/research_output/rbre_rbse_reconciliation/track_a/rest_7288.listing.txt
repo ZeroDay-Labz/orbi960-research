@@ -1,0 +1,1237 @@
+# firmware_analysis/extracted/rbre_7288/rootfs/www-seal/rest/rest.lua  header={'version': '5.1', 'format': 0, 'endian': '<', 'sizeof_int': 4, 'sizeof_size_t': 4, 'sizeof_instruction': 4, 'sizeof_number': 8, 'lua_number_is_int': 4}
+== fn MAIN  line 0-0  nparams=0 nups=0 vararg=2 maxstack=35 nconst=77 nproto=16 ==
+constants:
+  K0  str  'require'
+  K1  str  'third_party/rxi-json-lua'
+  K2  str  'third_party/router'
+  K3  str  'seal-development'
+  K4  str  'seal-io'
+  K5  str  'seal-services'
+  K6  str  'seal-log'
+  K7  str  'seal-environ'
+  K8  str  '/api/v1'
+  K9  str  'new'
+  K10  str  'match'
+  K11  str  'GET'
+  K12  str  '/services/:service_name'
+  K13  str  '/services/:service_name/token'
+  K14  str  '/services'
+  K15  str  'POST'
+  K16  str  '/install/:service_name'
+  K17  str  '/uninstall/:service_name'
+  K18  str  '/services/:service_name/state'
+  K19  str  '/services/:service_name/webapp/:webapp_version'
+  K20  str  '/services/:service_name/webapp'
+  K21  str  '/services/:service_name/validateToken'
+  K22  str  '/enable_ssh'
+  K23  str  'Root'
+  K24  str  'os'
+  K25  str  'getenv'
+  K26  str  'DOCUMENT_ROOT'
+  K27  str  'Method'
+  K28  str  'REQUEST_METHOD'
+  K29  str  'Uri'
+  K30  str  'REQUEST_URI'
+  K31  str  'ContentLength'
+  K32  str  'tonumber'
+  K33  str  'HTTP_CONTENT_LENGTH'
+  K34  str  '0'
+  K35  str  'RawContent'
+  K36  str  'HTTP_CONTENT'
+  K37  str  ''
+  K38  str  'ProxyInternal'
+  K39  str  'HTTP_X_SEAL_INTERNAL'
+  K40  str  'query'
+  K41  str  'QUERY_STRING'
+  K42  str  'RelativeUri'
+  K43  nil  None
+  K44  str  'ApiVersion'
+  K45  str  'print'
+  K46  str  'Running in local test mode...'
+  K47  str  'To test this code in a remote context, run the test script located in seal/bootstrap/scripts/test-rest-api.sh'
+  K48  str  '/www-seal'
+  K49  str  '/api/v1/services/armor-bd/webapp/'
+  K50  int  0
+  K51  str  'string'
+  K52  str  'gsub'
+  K53  str  '^'
+  K54  str  '/'
+  K55  str  '^//'
+  K56  str  '?.*'
+  K57  str  '^/api/(v%d)/.+'
+  K58  str  '%1'
+  K59  str  'io'
+  K60  str  'read'
+  K61  str  'pcall'
+  K62  int  400
+  K63  str  'Bad Request - Message body is not valid JSON'
+  K64  str  'getbool'
+  K65  str  'SDE_LIGHTTPD_APIS'
+  K66  str  'file_exists'
+  K67  str  '/debugEnable'
+  K68  str  '1'
+  K69  int  404
+  K70  str  'Bad Request'
+  K71  str  'log'
+  K72  str  'LogLevel'
+  K73  str  'Error'
+  K74  str  'rest.lua'
+  K75  str  'Lua error in rest.lua. Message was:'
+  K76  str  'debug'
+code:
+  [  0] L0    GETGLOBAL  A=0 B=0 C=0 Bx=0 sBx=-131071  ; K0="require"
+  [  1] L0    LOADK      A=1 B=0 C=1 Bx=1 sBx=-131070  ; K1="third_party/rxi-json-lua"
+  [  2] L0    CALL       A=0 B=2 C=2 Bx=1026 sBx=-130045
+  [  3] L0    GETGLOBAL  A=1 B=0 C=0 Bx=0 sBx=-131071  ; K0="require"
+  [  4] L0    LOADK      A=2 B=0 C=2 Bx=2 sBx=-131069  ; K2="third_party/router"
+  [  5] L0    CALL       A=1 B=2 C=2 Bx=1026 sBx=-130045
+  [  6] L0    GETGLOBAL  A=2 B=0 C=0 Bx=0 sBx=-131071  ; K0="require"
+  [  7] L0    LOADK      A=3 B=0 C=3 Bx=3 sBx=-131068  ; K3="seal-development"
+  [  8] L0    CALL       A=2 B=2 C=2 Bx=1026 sBx=-130045
+  [  9] L0    GETGLOBAL  A=3 B=0 C=0 Bx=0 sBx=-131071  ; K0="require"
+  [ 10] L0    LOADK      A=4 B=0 C=4 Bx=4 sBx=-131067  ; K4="seal-io"
+  [ 11] L0    CALL       A=3 B=2 C=2 Bx=1026 sBx=-130045
+  [ 12] L0    GETGLOBAL  A=4 B=0 C=0 Bx=0 sBx=-131071  ; K0="require"
+  [ 13] L0    LOADK      A=5 B=0 C=5 Bx=5 sBx=-131066  ; K5="seal-services"
+  [ 14] L0    CALL       A=4 B=2 C=2 Bx=1026 sBx=-130045
+  [ 15] L0    GETGLOBAL  A=5 B=0 C=0 Bx=0 sBx=-131071  ; K0="require"
+  [ 16] L0    LOADK      A=6 B=0 C=6 Bx=6 sBx=-131065  ; K6="seal-log"
+  [ 17] L0    CALL       A=5 B=2 C=2 Bx=1026 sBx=-130045
+  [ 18] L0    GETGLOBAL  A=6 B=0 C=0 Bx=0 sBx=-131071  ; K0="require"
+  [ 19] L0    LOADK      A=7 B=0 C=7 Bx=7 sBx=-131064  ; K7="seal-environ"
+  [ 20] L0    CALL       A=6 B=2 C=2 Bx=1026 sBx=-130045
+  [ 21] L0    CLOSURE    A=7 B=0 C=0 Bx=0 sBx=-131071  ; K0=proto
+  [ 22] L0    CLOSURE    A=8 B=0 C=1 Bx=1 sBx=-131070  ; K1=proto
+  [ 23] L0    CLOSURE    A=9 B=0 C=2 Bx=2 sBx=-131069  ; K2=proto
+  [ 24] L0    MOVE       A=0 B=4 C=0 Bx=2048 sBx=-129023
+  [ 25] L0    MOVE       A=0 B=0 C=0 Bx=0 sBx=-131071
+  [ 26] L0    CLOSURE    A=10 B=0 C=3 Bx=3 sBx=-131068  ; K3=proto
+  [ 27] L0    MOVE       A=0 B=7 C=0 Bx=3584 sBx=-127487
+  [ 28] L0    MOVE       A=0 B=8 C=0 Bx=4096 sBx=-126975
+  [ 29] L0    MOVE       A=0 B=4 C=0 Bx=2048 sBx=-129023
+  [ 30] L0    MOVE       A=0 B=0 C=0 Bx=0 sBx=-131071
+  [ 31] L0    CLOSURE    A=11 B=0 C=4 Bx=4 sBx=-131067  ; K4=proto
+  [ 32] L0    MOVE       A=0 B=4 C=0 Bx=2048 sBx=-129023
+  [ 33] L0    MOVE       A=0 B=0 C=0 Bx=0 sBx=-131071
+  [ 34] L0    CLOSURE    A=12 B=0 C=5 Bx=5 sBx=-131066  ; K5=proto
+  [ 35] L0    CLOSURE    A=13 B=0 C=6 Bx=6 sBx=-131065  ; K6=proto
+  [ 36] L0    MOVE       A=0 B=7 C=0 Bx=3584 sBx=-127487
+  [ 37] L0    MOVE       A=0 B=8 C=0 Bx=4096 sBx=-126975
+  [ 38] L0    MOVE       A=0 B=4 C=0 Bx=2048 sBx=-129023
+  [ 39] L0    CLOSURE    A=14 B=0 C=7 Bx=7 sBx=-131064  ; K7=proto
+  [ 40] L0    MOVE       A=0 B=7 C=0 Bx=3584 sBx=-127487
+  [ 41] L0    MOVE       A=0 B=8 C=0 Bx=4096 sBx=-126975
+  [ 42] L0    MOVE       A=0 B=0 C=0 Bx=0 sBx=-131071
+  [ 43] L0    CLOSURE    A=15 B=0 C=8 Bx=8 sBx=-131063  ; K8=proto
+  [ 44] L0    MOVE       A=0 B=7 C=0 Bx=3584 sBx=-127487
+  [ 45] L0    MOVE       A=0 B=8 C=0 Bx=4096 sBx=-126975
+  [ 46] L0    MOVE       A=0 B=4 C=0 Bx=2048 sBx=-129023
+  [ 47] L0    MOVE       A=0 B=0 C=0 Bx=0 sBx=-131071
+  [ 48] L0    CLOSURE    A=16 B=0 C=9 Bx=9 sBx=-131062  ; K9=proto
+  [ 49] L0    MOVE       A=0 B=7 C=0 Bx=3584 sBx=-127487
+  [ 50] L0    MOVE       A=0 B=8 C=0 Bx=4096 sBx=-126975
+  [ 51] L0    MOVE       A=0 B=0 C=0 Bx=0 sBx=-131071
+  [ 52] L0    CLOSURE    A=17 B=0 C=10 Bx=10 sBx=-131061  ; K10=proto
+  [ 53] L0    MOVE       A=0 B=2 C=0 Bx=1024 sBx=-130047
+  [ 54] L0    MOVE       A=0 B=8 C=0 Bx=4096 sBx=-126975
+  [ 55] L0    CLOSURE    A=18 B=0 C=11 Bx=11 sBx=-131060  ; K11=proto
+  [ 56] L0    CLOSURE    A=19 B=0 C=12 Bx=12 sBx=-131059  ; K12=proto
+  [ 57] L0    MOVE       A=0 B=7 C=0 Bx=3584 sBx=-127487
+  [ 58] L0    MOVE       A=0 B=8 C=0 Bx=4096 sBx=-126975
+  [ 59] L0    MOVE       A=0 B=3 C=0 Bx=1536 sBx=-129535
+  [ 60] L0    MOVE       A=0 B=0 C=0 Bx=0 sBx=-131071
+  [ 61] L0    MOVE       A=0 B=18 C=0 Bx=9216 sBx=-121855
+  [ 62] L0    CLOSURE    A=20 B=0 C=13 Bx=13 sBx=-131058  ; K13=proto
+  [ 63] L0    MOVE       A=0 B=7 C=0 Bx=3584 sBx=-127487
+  [ 64] L0    MOVE       A=0 B=8 C=0 Bx=4096 sBx=-126975
+  [ 65] L0    MOVE       A=0 B=0 C=0 Bx=0 sBx=-131071
+  [ 66] L0    MOVE       A=0 B=3 C=0 Bx=1536 sBx=-129535
+  [ 67] L0    LOADK      A=21 B=0 C=8 Bx=8 sBx=-131063  ; K8="/api/v1"
+  [ 68] L0    GETTABLE   A=22 B=1 C=265 Bx=777 sBx=-130294  ; B=R1  C=K9="new"
+  [ 69] L0    CALL       A=22 B=1 C=2 Bx=514 sBx=-130557
+  [ 70] L0    SELF       A=23 B=22 C=266 Bx=11530 sBx=-119541  ; B=R22  C=K10="match"
+  [ 71] L0    NEWTABLE   A=25 B=0 C=2 Bx=2 sBx=-131069
+  [ 72] L0    NEWTABLE   A=26 B=0 C=3 Bx=3 sBx=-131068
+  [ 73] L0    SETTABLE   A=26 B=268 C=10 Bx=137226 sBx=6155  ; B=K12="/services/:service_name"  C=R10
+  [ 74] L0    SETTABLE   A=26 B=269 C=19 Bx=137747 sBx=6676  ; B=K13="/services/:service_name/token"  C=R19
+  [ 75] L0    SETTABLE   A=26 B=270 C=9 Bx=138249 sBx=7178  ; B=K14="/services"  C=R9
+  [ 76] L0    SETTABLE   A=25 B=267 C=26 Bx=136730 sBx=5659  ; B=K11="GET"  C=R26
+  [ 77] L0    NEWTABLE   A=26 B=0 C=3 Bx=3 sBx=-131068
+  [ 78] L0    SETTABLE   A=26 B=272 C=14 Bx=139278 sBx=8207  ; B=K16="/install/:service_name"  C=R14
+  [ 79] L0    SETTABLE   A=26 B=273 C=16 Bx=139792 sBx=8721  ; B=K17="/uninstall/:service_name"  C=R16
+  [ 80] L0    SETTABLE   A=26 B=274 C=15 Bx=140303 sBx=9232  ; B=K18="/services/:service_name/state"  C=R15
+  [ 81] L0    SETTABLE   A=25 B=271 C=26 Bx=138778 sBx=7707  ; B=K15="POST"  C=R26
+  [ 82] L0    CALL       A=23 B=3 C=1 Bx=1537 sBx=-129534
+  [ 83] L0    GETTABLE   A=23 B=1 C=265 Bx=777 sBx=-130294  ; B=R1  C=K9="new"
+  [ 84] L0    CALL       A=23 B=1 C=2 Bx=514 sBx=-130557
+  [ 85] L0    SELF       A=24 B=23 C=266 Bx=12042 sBx=-119029  ; B=R23  C=K10="match"
+  [ 86] L0    NEWTABLE   A=26 B=0 C=2 Bx=2 sBx=-131069
+  [ 87] L0    NEWTABLE   A=27 B=0 C=2 Bx=2 sBx=-131069
+  [ 88] L0    SETTABLE   A=27 B=275 C=13 Bx=140813 sBx=9742  ; B=K19="/services/:service_name/webapp/:webapp_version"  C=R13
+  [ 89] L0    SETTABLE   A=27 B=276 C=13 Bx=141325 sBx=10254  ; B=K20="/services/:service_name/webapp"  C=R13
+  [ 90] L0    SETTABLE   A=26 B=267 C=27 Bx=136731 sBx=5660  ; B=K11="GET"  C=R27
+  [ 91] L0    NEWTABLE   A=27 B=0 C=2 Bx=2 sBx=-131069
+  [ 92] L0    SETTABLE   A=27 B=277 C=20 Bx=141844 sBx=10773  ; B=K21="/services/:service_name/validateToken"  C=R20
+  [ 93] L0    SETTABLE   A=27 B=278 C=17 Bx=142353 sBx=11282  ; B=K22="/enable_ssh"  C=R17
+  [ 94] L0    SETTABLE   A=26 B=271 C=27 Bx=138779 sBx=7708  ; B=K15="POST"  C=R27
+  [ 95] L0    CALL       A=24 B=3 C=1 Bx=1537 sBx=-129534
+  [ 96] L0    NEWTABLE   A=24 B=0 C=9 Bx=9 sBx=-131062
+  [ 97] L0    GETGLOBAL  A=25 B=0 C=24 Bx=24 sBx=-131047  ; K24="os"
+  [ 98] L0    GETTABLE   A=25 B=25 C=281 Bx=13081 sBx=-117990  ; B=R25  C=K25="getenv"
+  [ 99] L0    LOADK      A=26 B=0 C=26 Bx=26 sBx=-131045  ; K26="DOCUMENT_ROOT"
+  [100] L0    CALL       A=25 B=2 C=2 Bx=1026 sBx=-130045
+  [101] L0    SETTABLE   A=24 B=279 C=25 Bx=142873 sBx=11802  ; B=K23="Root"  C=R25
+  [102] L0    GETGLOBAL  A=25 B=0 C=24 Bx=24 sBx=-131047  ; K24="os"
+  [103] L0    GETTABLE   A=25 B=25 C=281 Bx=13081 sBx=-117990  ; B=R25  C=K25="getenv"
+  [104] L0    LOADK      A=26 B=0 C=28 Bx=28 sBx=-131043  ; K28="REQUEST_METHOD"
+  [105] L0    CALL       A=25 B=2 C=2 Bx=1026 sBx=-130045
+  [106] L0    SETTABLE   A=24 B=283 C=25 Bx=144921 sBx=13850  ; B=K27="Method"  C=R25
+  [107] L0    GETGLOBAL  A=25 B=0 C=24 Bx=24 sBx=-131047  ; K24="os"
+  [108] L0    GETTABLE   A=25 B=25 C=281 Bx=13081 sBx=-117990  ; B=R25  C=K25="getenv"
+  [109] L0    LOADK      A=26 B=0 C=30 Bx=30 sBx=-131041  ; K30="REQUEST_URI"
+  [110] L0    CALL       A=25 B=2 C=2 Bx=1026 sBx=-130045
+  [111] L0    SETTABLE   A=24 B=285 C=25 Bx=145945 sBx=14874  ; B=K29="Uri"  C=R25
+  [112] L0    GETGLOBAL  A=25 B=0 C=32 Bx=32 sBx=-131039  ; K32="tonumber"
+  [113] L0    GETGLOBAL  A=26 B=0 C=24 Bx=24 sBx=-131047  ; K24="os"
+  [114] L0    GETTABLE   A=26 B=26 C=281 Bx=13593 sBx=-117478  ; B=R26  C=K25="getenv"
+  [115] L0    LOADK      A=27 B=0 C=33 Bx=33 sBx=-131038  ; K33="HTTP_CONTENT_LENGTH"
+  [116] L0    CALL       A=26 B=2 C=2 Bx=1026 sBx=-130045
+  [117] L0    TEST       A=26 B=0 C=1 Bx=1 sBx=-131070
+  [118] L0    JMP        A=0 B=256 C=0 Bx=131072 sBx=1
+  [119] L0    LOADK      A=26 B=0 C=34 Bx=34 sBx=-131037  ; K34="0"
+  [120] L0    CALL       A=25 B=2 C=2 Bx=1026 sBx=-130045
+  [121] L0    SETTABLE   A=24 B=287 C=25 Bx=146969 sBx=15898  ; B=K31="ContentLength"  C=R25
+  [122] L0    GETGLOBAL  A=25 B=0 C=24 Bx=24 sBx=-131047  ; K24="os"
+  [123] L0    GETTABLE   A=25 B=25 C=281 Bx=13081 sBx=-117990  ; B=R25  C=K25="getenv"
+  [124] L0    LOADK      A=26 B=0 C=36 Bx=36 sBx=-131035  ; K36="HTTP_CONTENT"
+  [125] L0    CALL       A=25 B=2 C=2 Bx=1026 sBx=-130045
+  [126] L0    TEST       A=25 B=0 C=1 Bx=1 sBx=-131070
+  [127] L0    JMP        A=0 B=256 C=0 Bx=131072 sBx=1
+  [128] L0    LOADK      A=25 B=0 C=37 Bx=37 sBx=-131034  ; K37=""
+  [129] L0    SETTABLE   A=24 B=291 C=25 Bx=149017 sBx=17946  ; B=K35="RawContent"  C=R25
+  [130] L0    GETGLOBAL  A=25 B=0 C=24 Bx=24 sBx=-131047  ; K24="os"
+  [131] L0    GETTABLE   A=25 B=25 C=281 Bx=13081 sBx=-117990  ; B=R25  C=K25="getenv"
+  [132] L0    LOADK      A=26 B=0 C=39 Bx=39 sBx=-131032  ; K39="HTTP_X_SEAL_INTERNAL"
+  [133] L0    CALL       A=25 B=2 C=2 Bx=1026 sBx=-130045
+  [134] L0    TEST       A=25 B=0 C=1 Bx=1 sBx=-131070
+  [135] L0    JMP        A=0 B=256 C=0 Bx=131072 sBx=1
+  [136] L0    LOADK      A=25 B=0 C=37 Bx=37 sBx=-131034  ; K37=""
+  [137] L0    SETTABLE   A=24 B=294 C=25 Bx=150553 sBx=19482  ; B=K38="ProxyInternal"  C=R25
+  [138] L0    MOVE       A=25 B=12 C=0 Bx=6144 sBx=-124927
+  [139] L0    GETGLOBAL  A=26 B=0 C=24 Bx=24 sBx=-131047  ; K24="os"
+  [140] L0    GETTABLE   A=26 B=26 C=281 Bx=13593 sBx=-117478  ; B=R26  C=K25="getenv"
+  [141] L0    LOADK      A=27 B=0 C=41 Bx=41 sBx=-131030  ; K41="QUERY_STRING"
+  [142] L0    CALL       A=26 B=2 C=2 Bx=1026 sBx=-130045
+  [143] L0    TEST       A=26 B=0 C=1 Bx=1 sBx=-131070
+  [144] L0    JMP        A=0 B=256 C=0 Bx=131072 sBx=1
+  [145] L0    LOADK      A=26 B=0 C=37 Bx=37 sBx=-131034  ; K37=""
+  [146] L0    CALL       A=25 B=2 C=2 Bx=1026 sBx=-130045
+  [147] L0    SETTABLE   A=24 B=296 C=25 Bx=151577 sBx=20506  ; B=K40="query"  C=R25
+  [148] L0    SETTABLE   A=24 B=298 C=299 Bx=152875 sBx=21804  ; B=K42="RelativeUri"  C=K43=None
+  [149] L0    SETTABLE   A=24 B=300 C=299 Bx=153899 sBx=22828  ; B=K44="ApiVersion"  C=K43=None
+  [150] L0    GETTABLE   A=25 B=24 C=283 Bx=12571 sBx=-118500  ; B=R24  C=K27="Method"
+  [151] L0    EQ         A=0 B=25 C=299 Bx=13099 sBx=-117972  ; B=R25  C=K43=None
+  [152] L0    JMP        A=0 B=256 C=10 Bx=131082 sBx=11
+  [153] L0    GETGLOBAL  A=25 B=0 C=45 Bx=45 sBx=-131026  ; K45="print"
+  [154] L0    LOADK      A=26 B=0 C=46 Bx=46 sBx=-131025  ; K46="Running in local test mode..."
+  [155] L0    CALL       A=25 B=2 C=1 Bx=1025 sBx=-130046
+  [156] L0    GETGLOBAL  A=25 B=0 C=45 Bx=45 sBx=-131026  ; K45="print"
+  [157] L0    LOADK      A=26 B=0 C=47 Bx=47 sBx=-131024  ; K47="To test this code in a remote context, run the test script located in seal/bootstrap/scripts/test-rest-api.sh"
+  [158] L0    CALL       A=25 B=2 C=1 Bx=1025 sBx=-130046
+  [159] L0    SETTABLE   A=24 B=279 C=304 Bx=143152 sBx=12081  ; B=K23="Root"  C=K48="/www-seal"
+  [160] L0    SETTABLE   A=24 B=283 C=267 Bx=145163 sBx=14092  ; B=K27="Method"  C=K11="GET"
+  [161] L0    SETTABLE   A=24 B=285 C=305 Bx=146225 sBx=15154  ; B=K29="Uri"  C=K49="/api/v1/services/armor-bd/webapp/"
+  [162] L0    SETTABLE   A=24 B=287 C=306 Bx=147250 sBx=16179  ; B=K31="ContentLength"  C=K50=0
+  [163] L0    SETTABLE   A=24 B=291 C=293 Bx=149285 sBx=18214  ; B=K35="RawContent"  C=K37=""
+  [164] L0    GETGLOBAL  A=25 B=0 C=51 Bx=51 sBx=-131020  ; K51="string"
+  [165] L0    GETTABLE   A=25 B=25 C=308 Bx=13108 sBx=-117963  ; B=R25  C=K52="gsub"
+  [166] L0    GETTABLE   A=26 B=24 C=285 Bx=12573 sBx=-118498  ; B=R24  C=K29="Uri"
+  [167] L0    LOADK      A=27 B=0 C=53 Bx=53 sBx=-131018  ; K53="^"
+  [168] L0    MOVE       A=28 B=21 C=0 Bx=10752 sBx=-120319
+  [169] L0    CONCAT     A=27 B=27 C=28 Bx=13852 sBx=-117219  ; B=R27  C=R28
+  [170] L0    LOADK      A=28 B=0 C=54 Bx=54 sBx=-131017  ; K54="/"
+  [171] L0    CALL       A=25 B=4 C=2 Bx=2050 sBx=-129021
+  [172] L0    SETTABLE   A=24 B=298 C=25 Bx=152601 sBx=21530  ; B=K42="RelativeUri"  C=R25
+  [173] L0    GETGLOBAL  A=25 B=0 C=51 Bx=51 sBx=-131020  ; K51="string"
+  [174] L0    GETTABLE   A=25 B=25 C=308 Bx=13108 sBx=-117963  ; B=R25  C=K52="gsub"
+  [175] L0    GETTABLE   A=26 B=24 C=298 Bx=12586 sBx=-118485  ; B=R24  C=K42="RelativeUri"
+  [176] L0    LOADK      A=27 B=0 C=55 Bx=55 sBx=-131016  ; K55="^//"
+  [177] L0    LOADK      A=28 B=0 C=54 Bx=54 sBx=-131017  ; K54="/"
+  [178] L0    CALL       A=25 B=4 C=2 Bx=2050 sBx=-129021
+  [179] L0    SETTABLE   A=24 B=298 C=25 Bx=152601 sBx=21530  ; B=K42="RelativeUri"  C=R25
+  [180] L0    GETGLOBAL  A=25 B=0 C=51 Bx=51 sBx=-131020  ; K51="string"
+  [181] L0    GETTABLE   A=25 B=25 C=308 Bx=13108 sBx=-117963  ; B=R25  C=K52="gsub"
+  [182] L0    GETTABLE   A=26 B=24 C=298 Bx=12586 sBx=-118485  ; B=R24  C=K42="RelativeUri"
+  [183] L0    LOADK      A=27 B=0 C=56 Bx=56 sBx=-131015  ; K56="?.*"
+  [184] L0    LOADK      A=28 B=0 C=37 Bx=37 sBx=-131034  ; K37=""
+  [185] L0    CALL       A=25 B=4 C=2 Bx=2050 sBx=-129021
+  [186] L0    SETTABLE   A=24 B=298 C=25 Bx=152601 sBx=21530  ; B=K42="RelativeUri"  C=R25
+  [187] L0    GETGLOBAL  A=25 B=0 C=51 Bx=51 sBx=-131020  ; K51="string"
+  [188] L0    GETTABLE   A=25 B=25 C=308 Bx=13108 sBx=-117963  ; B=R25  C=K52="gsub"
+  [189] L0    GETTABLE   A=26 B=24 C=285 Bx=12573 sBx=-118498  ; B=R24  C=K29="Uri"
+  [190] L0    LOADK      A=27 B=0 C=57 Bx=57 sBx=-131014  ; K57="^/api/(v%d)/.+"
+  [191] L0    LOADK      A=28 B=0 C=58 Bx=58 sBx=-131013  ; K58="%1"
+  [192] L0    CALL       A=25 B=4 C=2 Bx=2050 sBx=-129021
+  [193] L0    SETTABLE   A=24 B=300 C=25 Bx=153625 sBx=22554  ; B=K44="ApiVersion"  C=R25
+  [194] L0    GETTABLE   A=25 B=24 C=287 Bx=12575 sBx=-118496  ; B=R24  C=K31="ContentLength"
+  [195] L0    LT         A=0 B=306 C=25 Bx=156697 sBx=25626  ; B=K50=0  C=R25
+  [196] L0    JMP        A=0 B=256 C=17 Bx=131089 sBx=18
+  [197] L0    GETGLOBAL  A=25 B=0 C=59 Bx=59 sBx=-131012  ; K59="io"
+  [198] L0    GETTABLE   A=25 B=25 C=316 Bx=13116 sBx=-117955  ; B=R25  C=K60="read"
+  [199] L0    GETTABLE   A=26 B=24 C=287 Bx=12575 sBx=-118496  ; B=R24  C=K31="ContentLength"
+  [200] L0    CALL       A=25 B=2 C=2 Bx=1026 sBx=-130045
+  [201] L0    SETTABLE   A=24 B=291 C=25 Bx=149017 sBx=17946  ; B=K35="RawContent"  C=R25
+  [202] L0    CLOSURE    A=25 B=0 C=14 Bx=14 sBx=-131057  ; K14=proto
+  [203] L0    MOVE       A=0 B=0 C=0 Bx=0 sBx=-131071
+  [204] L0    MOVE       A=0 B=24 C=0 Bx=12288 sBx=-118783
+  [205] L0    GETGLOBAL  A=26 B=0 C=61 Bx=61 sBx=-131010  ; K61="pcall"
+  [206] L0    MOVE       A=27 B=25 C=0 Bx=12800 sBx=-118271
+  [207] L0    CALL       A=26 B=2 C=2 Bx=1026 sBx=-130045
+  [208] L0    TEST       A=26 B=0 C=1 Bx=1 sBx=-131070
+  [209] L0    JMP        A=0 B=256 C=4 Bx=131076 sBx=5
+  [210] L0    MOVE       A=26 B=8 C=0 Bx=4096 sBx=-126975
+  [211] L0    LOADK      A=27 B=0 C=62 Bx=62 sBx=-131009  ; K62=400
+  [212] L0    LOADK      A=28 B=0 C=63 Bx=63 sBx=-131008  ; K63="Bad Request - Message body is not valid JSON"
+  [213] L0    CALL       A=26 B=3 C=1 Bx=1537 sBx=-129534
+  [214] L0    RETURN     A=0 B=1 C=0 Bx=512 sBx=-130559
+  [215] L0    GETTABLE   A=25 B=6 C=320 Bx=3392 sBx=-127679  ; B=R6  C=K64="getbool"
+  [216] L0    LOADK      A=26 B=0 C=65 Bx=65 sBx=-131006  ; K65="SDE_LIGHTTPD_APIS"
+  [217] L0    CALL       A=25 B=2 C=2 Bx=1026 sBx=-130045
+  [218] L0    TEST       A=25 B=0 C=1 Bx=1 sBx=-131070
+  [219] L0    JMP        A=0 B=256 C=2 Bx=131074 sBx=3
+  [220] L0    GETTABLE   A=25 B=3 C=322 Bx=1858 sBx=-129213  ; B=R3  C=K66="file_exists"
+  [221] L0    LOADK      A=26 B=0 C=67 Bx=67 sBx=-131004  ; K67="/debugEnable"
+  [222] L0    CALL       A=25 B=2 C=2 Bx=1026 sBx=-130045
+  [223] L0    GETTABLE   A=26 B=24 C=294 Bx=12582 sBx=-118489  ; B=R24  C=K38="ProxyInternal"
+  [224] L0    EQ         A=1 B=26 C=324 Bx=13636 sBx=-117435  ; B=R26  C=K68="1"
+  [225] L0    JMP        A=0 B=256 C=0 Bx=131072 sBx=1
+  [226] L0    LOADBOOL   A=26 B=0 C=1 Bx=1 sBx=-131070
+  [227] L0    LOADBOOL   A=26 B=1 C=0 Bx=512 sBx=-130559
+  [228] L0    TESTSET    A=27 B=25 C=1 Bx=12801 sBx=-118270
+  [229] L0    JMP        A=0 B=256 C=0 Bx=131072 sBx=1
+  [230] L0    MOVE       A=27 B=26 C=0 Bx=13312 sBx=-117759
+  [231] L0    CLOSURE    A=28 B=0 C=15 Bx=15 sBx=-131056  ; K15=proto
+  [232] L0    MOVE       A=0 B=24 C=0 Bx=12288 sBx=-118783
+  [233] L0    MOVE       A=0 B=11 C=0 Bx=5632 sBx=-125439
+  [234] L0    MOVE       A=0 B=8 C=0 Bx=4096 sBx=-126975
+  [235] L0    MOVE       A=0 B=23 C=0 Bx=11776 sBx=-119295
+  [236] L0    MOVE       A=0 B=27 C=0 Bx=13824 sBx=-117247
+  [237] L0    MOVE       A=0 B=22 C=0 Bx=11264 sBx=-119807
+  [238] L0    GETGLOBAL  A=29 B=0 C=61 Bx=61 sBx=-131010  ; K61="pcall"
+  [239] L0    MOVE       A=30 B=28 C=0 Bx=14336 sBx=-116735
+  [240] L0    CALL       A=29 B=2 C=3 Bx=1027 sBx=-130044
+  [241] L0    TEST       A=29 B=0 C=1 Bx=1 sBx=-131070
+  [242] L0    JMP        A=0 B=256 C=24 Bx=131096 sBx=25
+  [243] L0    MOVE       A=31 B=8 C=0 Bx=4096 sBx=-126975
+  [244] L0    LOADK      A=32 B=0 C=69 Bx=69 sBx=-131002  ; K69=404
+  [245] L0    LOADK      A=33 B=0 C=70 Bx=70 sBx=-131001  ; K70="Bad Request"
+  [246] L0    CALL       A=31 B=3 C=1 Bx=1537 sBx=-129534
+  [247] L0    TEST       A=30 B=0 C=1 Bx=1 sBx=-131070
+  [248] L0    JMP        A=0 B=256 C=0 Bx=131072 sBx=1
+  [249] L0    LOADK      A=30 B=0 C=37 Bx=37 sBx=-131034  ; K37=""
+  [250] L0    GETTABLE   A=31 B=5 C=327 Bx=2887 sBx=-128184  ; B=R5  C=K71="log"
+  [251] L0    GETTABLE   A=32 B=5 C=328 Bx=2888 sBx=-128183  ; B=R5  C=K72="LogLevel"
+  [252] L0    GETTABLE   A=32 B=32 C=329 Bx=16713 sBx=-114358  ; B=R32  C=K73="Error"
+  [253] L0    LOADK      A=33 B=0 C=74 Bx=74 sBx=-130997  ; K74="rest.lua"
+  [254] L0    LOADK      A=34 B=0 C=75 Bx=75 sBx=-130996  ; K75="Lua error in rest.lua. Message was:"
+  [255] L0    CALL       A=31 B=4 C=1 Bx=2049 sBx=-129022
+  [256] L0    GETTABLE   A=31 B=5 C=327 Bx=2887 sBx=-128184  ; B=R5  C=K71="log"
+  [257] L0    GETTABLE   A=32 B=5 C=328 Bx=2888 sBx=-128183  ; B=R5  C=K72="LogLevel"
+  [258] L0    GETTABLE   A=32 B=32 C=329 Bx=16713 sBx=-114358  ; B=R32  C=K73="Error"
+  [259] L0    LOADK      A=33 B=0 C=74 Bx=74 sBx=-130997  ; K74="rest.lua"
+  [260] L0    MOVE       A=34 B=30 C=0 Bx=15360 sBx=-115711
+  [261] L0    CALL       A=31 B=4 C=1 Bx=2049 sBx=-129022
+  [262] L0    GETGLOBAL  A=31 B=0 C=76 Bx=76 sBx=-130995  ; K76="debug"
+  [263] L0    TEST       A=31 B=0 C=0 Bx=0 sBx=-131071
+  [264] L0    JMP        A=0 B=256 C=2 Bx=131074 sBx=3
+  [265] L0    GETGLOBAL  A=31 B=0 C=45 Bx=45 sBx=-131026  ; K45="print"
+  [266] L0    MOVE       A=32 B=30 C=0 Bx=15360 sBx=-115711
+  [267] L0    CALL       A=31 B=2 C=1 Bx=1025 sBx=-130046
+  [268] L0    RETURN     A=0 B=1 C=0 Bx=512 sBx=-130559
+
+  == fn MAIN/proto0  line 27-50  nparams=1 nups=0 vararg=0 maxstack=4 nconst=8 nproto=0 ==
+  constants:
+    K0  str  'type'
+    K1  str  'string'
+    K2  str  ''
+    K3  int  32
+    K4  str  'match'
+    K5  str  '^[A-Za-z0-9_-]+$'
+    K6  str  'find'
+    K7  str  '%.%.'
+  code:
+    [  0] L0    GETGLOBAL  A=1 B=0 C=0 Bx=0 sBx=-131071  ; K0="type"
+    [  1] L0    MOVE       A=2 B=0 C=0 Bx=0 sBx=-131071
+    [  2] L0    CALL       A=1 B=2 C=2 Bx=1026 sBx=-130045
+    [  3] L0    EQ         A=1 B=1 C=257 Bx=769 sBx=-130302  ; B=R1  C=K1="string"
+    [  4] L0    JMP        A=0 B=256 C=1 Bx=131073 sBx=2
+    [  5] L0    LOADBOOL   A=1 B=0 C=0 Bx=0 sBx=-131071
+    [  6] L0    RETURN     A=1 B=2 C=0 Bx=1024 sBx=-130047
+    [  7] L0    EQ         A=0 B=0 C=258 Bx=258 sBx=-130813  ; B=R0  C=K2=""
+    [  8] L0    JMP        A=0 B=256 C=1 Bx=131073 sBx=2
+    [  9] L0    LOADBOOL   A=1 B=0 C=0 Bx=0 sBx=-131071
+    [ 10] L0    RETURN     A=1 B=2 C=0 Bx=1024 sBx=-130047
+    [ 11] L0    LEN        A=1 B=0 C=0 Bx=0 sBx=-131071
+    [ 12] L0    LT         A=0 B=259 C=1 Bx=132609 sBx=1538  ; B=K3=32  C=R1
+    [ 13] L0    JMP        A=0 B=256 C=1 Bx=131073 sBx=2
+    [ 14] L0    LOADBOOL   A=1 B=0 C=0 Bx=0 sBx=-131071
+    [ 15] L0    RETURN     A=1 B=2 C=0 Bx=1024 sBx=-130047
+    [ 16] L0    SELF       A=1 B=0 C=260 Bx=260 sBx=-130811  ; B=R0  C=K4="match"
+    [ 17] L0    LOADK      A=3 B=0 C=5 Bx=5 sBx=-131066  ; K5="^[A-Za-z0-9_-]+$"
+    [ 18] L0    CALL       A=1 B=3 C=2 Bx=1538 sBx=-129533
+    [ 19] L0    TEST       A=1 B=0 C=1 Bx=1 sBx=-131070
+    [ 20] L0    JMP        A=0 B=256 C=1 Bx=131073 sBx=2
+    [ 21] L0    LOADBOOL   A=1 B=0 C=0 Bx=0 sBx=-131071
+    [ 22] L0    RETURN     A=1 B=2 C=0 Bx=1024 sBx=-130047
+    [ 23] L0    SELF       A=1 B=0 C=262 Bx=262 sBx=-130809  ; B=R0  C=K6="find"
+    [ 24] L0    LOADK      A=3 B=0 C=7 Bx=7 sBx=-131064  ; K7="%.%."
+    [ 25] L0    CALL       A=1 B=3 C=2 Bx=1538 sBx=-129533
+    [ 26] L0    TEST       A=1 B=0 C=0 Bx=0 sBx=-131071
+    [ 27] L0    JMP        A=0 B=256 C=1 Bx=131073 sBx=2
+    [ 28] L0    LOADBOOL   A=1 B=0 C=0 Bx=0 sBx=-131071
+    [ 29] L0    RETURN     A=1 B=2 C=0 Bx=1024 sBx=-130047
+    [ 30] L0    LOADBOOL   A=1 B=1 C=0 Bx=512 sBx=-130559
+    [ 31] L0    RETURN     A=1 B=2 C=0 Bx=1024 sBx=-130047
+    [ 32] L0    RETURN     A=0 B=1 C=0 Bx=512 sBx=-130559
+
+  == fn MAIN/proto1  line 52-61  nparams=2 nups=0 vararg=0 maxstack=6 nconst=11 nproto=0 ==
+  constants:
+    K0  str  'type'
+    K1  str  'string'
+    K2  str  ''
+    K3  str  'number'
+    K4  int  500
+    K5  str  'Error sending return code: ('
+    K6  str  'tostring'
+    K7  str  ') '
+    K8  str  'print'
+    K9  str  'Status: '
+    K10  str  '\r'
+  code:
+    [  0] L0    GETGLOBAL  A=2 B=0 C=0 Bx=0 sBx=-131071  ; K0="type"
+    [  1] L0    MOVE       A=3 B=1 C=0 Bx=512 sBx=-130559
+    [  2] L0    CALL       A=2 B=2 C=2 Bx=1026 sBx=-130045
+    [  3] L0    EQ         A=1 B=2 C=257 Bx=1281 sBx=-129790  ; B=R2  C=K1="string"
+    [  4] L0    JMP        A=0 B=256 C=0 Bx=131072 sBx=1
+    [  5] L0    LOADK      A=1 B=0 C=2 Bx=2 sBx=-131069  ; K2=""
+    [  6] L0    GETGLOBAL  A=2 B=0 C=0 Bx=0 sBx=-131071  ; K0="type"
+    [  7] L0    MOVE       A=3 B=0 C=0 Bx=0 sBx=-131071
+    [  8] L0    CALL       A=2 B=2 C=2 Bx=1026 sBx=-130045
+    [  9] L0    EQ         A=1 B=2 C=259 Bx=1283 sBx=-129788  ; B=R2  C=K3="number"
+    [ 10] L0    JMP        A=0 B=256 C=7 Bx=131079 sBx=8
+    [ 11] L0    LOADK      A=0 B=0 C=4 Bx=4 sBx=-131067  ; K4=500
+    [ 12] L0    LOADK      A=2 B=0 C=5 Bx=5 sBx=-131066  ; K5="Error sending return code: ("
+    [ 13] L0    GETGLOBAL  A=3 B=0 C=6 Bx=6 sBx=-131065  ; K6="tostring"
+    [ 14] L0    MOVE       A=4 B=0 C=0 Bx=0 sBx=-131071
+    [ 15] L0    CALL       A=3 B=2 C=2 Bx=1026 sBx=-130045
+    [ 16] L0    LOADK      A=4 B=0 C=7 Bx=7 sBx=-131064  ; K7=") "
+    [ 17] L0    MOVE       A=5 B=1 C=0 Bx=512 sBx=-130559
+    [ 18] L0    CONCAT     A=1 B=2 C=5 Bx=1029 sBx=-130042  ; B=R2  C=R5
+    [ 19] L0    GETGLOBAL  A=2 B=0 C=8 Bx=8 sBx=-131063  ; K8="print"
+    [ 20] L0    LOADK      A=3 B=0 C=9 Bx=9 sBx=-131062  ; K9="Status: "
+    [ 21] L0    GETGLOBAL  A=4 B=0 C=6 Bx=6 sBx=-131065  ; K6="tostring"
+    [ 22] L0    MOVE       A=5 B=0 C=0 Bx=0 sBx=-131071
+    [ 23] L0    CALL       A=4 B=2 C=2 Bx=1026 sBx=-130045
+    [ 24] L0    CONCAT     A=3 B=3 C=4 Bx=1540 sBx=-129531  ; B=R3  C=R4
+    [ 25] L0    CALL       A=2 B=2 C=1 Bx=1025 sBx=-130046
+    [ 26] L0    GETGLOBAL  A=2 B=0 C=8 Bx=8 sBx=-131063  ; K8="print"
+    [ 27] L0    LOADK      A=3 B=0 C=10 Bx=10 sBx=-131061  ; K10=""
+    [ 28] L0    CALL       A=2 B=2 C=1 Bx=1025 sBx=-130046
+    [ 29] L0    GETGLOBAL  A=2 B=0 C=8 Bx=8 sBx=-131063  ; K8="print"
+    [ 30] L0    TESTSET    A=3 B=1 C=1 Bx=513 sBx=-130558
+    [ 31] L0    JMP        A=0 B=256 C=0 Bx=131072 sBx=1
+    [ 32] L0    LOADK      A=3 B=0 C=2 Bx=2 sBx=-131069  ; K2=""
+    [ 33] L0    CALL       A=2 B=2 C=1 Bx=1025 sBx=-130046
+    [ 34] L0    RETURN     A=0 B=1 C=0 Bx=512 sBx=-130559
+
+  == fn MAIN/proto2  line 64-67  nparams=1 nups=2 vararg=0 maxstack=5 nconst=3 nproto=0 ==
+  constants:
+    K0  str  'list'
+    K1  str  'print'
+    K2  str  'encode'
+  code:
+    [  0] L0    GETUPVAL   A=1 B=0 C=0 Bx=0 sBx=-131071
+    [  1] L0    GETTABLE   A=1 B=1 C=256 Bx=768 sBx=-130303  ; B=R1  C=K0="list"
+    [  2] L0    CALL       A=1 B=1 C=2 Bx=514 sBx=-130557
+    [  3] L0    GETGLOBAL  A=2 B=0 C=1 Bx=1 sBx=-131070  ; K1="print"
+    [  4] L0    GETUPVAL   A=3 B=1 C=0 Bx=512 sBx=-130559
+    [  5] L0    GETTABLE   A=3 B=3 C=258 Bx=1794 sBx=-129277  ; B=R3  C=K2="encode"
+    [  6] L0    MOVE       A=4 B=1 C=0 Bx=512 sBx=-130559
+    [  7] L0    CALL       A=3 B=2 C=0 Bx=1024 sBx=-130047
+    [  8] L0    CALL       A=2 B=0 C=1 Bx=1 sBx=-131070
+    [  9] L0    RETURN     A=0 B=1 C=0 Bx=512 sBx=-130559
+
+  == fn MAIN/proto3  line 73-81  nparams=1 nups=4 vararg=0 maxstack=5 nconst=6 nproto=0 ==
+  constants:
+    K0  str  'service_name'
+    K1  int  400
+    K2  str  'Invalid request'
+    K3  str  'details'
+    K4  str  'encode'
+    K5  str  'print'
+  code:
+    [  0] L0    GETUPVAL   A=1 B=0 C=0 Bx=0 sBx=-131071
+    [  1] L0    GETTABLE   A=2 B=0 C=256 Bx=256 sBx=-130815  ; B=R0  C=K0="service_name"
+    [  2] L0    CALL       A=1 B=2 C=2 Bx=1026 sBx=-130045
+    [  3] L0    TEST       A=1 B=0 C=1 Bx=1 sBx=-131070
+    [  4] L0    JMP        A=0 B=256 C=4 Bx=131076 sBx=5
+    [  5] L0    GETUPVAL   A=1 B=1 C=0 Bx=512 sBx=-130559
+    [  6] L0    LOADK      A=2 B=0 C=1 Bx=1 sBx=-131070  ; K1=400
+    [  7] L0    LOADK      A=3 B=0 C=2 Bx=2 sBx=-131069  ; K2="Invalid request"
+    [  8] L0    CALL       A=1 B=3 C=1 Bx=1537 sBx=-129534
+    [  9] L0    RETURN     A=0 B=1 C=0 Bx=512 sBx=-130559
+    [ 10] L0    GETUPVAL   A=1 B=2 C=0 Bx=1024 sBx=-130047
+    [ 11] L0    GETTABLE   A=1 B=1 C=259 Bx=771 sBx=-130300  ; B=R1  C=K3="details"
+    [ 12] L0    GETTABLE   A=2 B=0 C=256 Bx=256 sBx=-130815  ; B=R0  C=K0="service_name"
+    [ 13] L0    CALL       A=1 B=2 C=2 Bx=1026 sBx=-130045
+    [ 14] L0    GETUPVAL   A=2 B=3 C=0 Bx=1536 sBx=-129535
+    [ 15] L0    GETTABLE   A=2 B=2 C=260 Bx=1284 sBx=-129787  ; B=R2  C=K4="encode"
+    [ 16] L0    MOVE       A=3 B=1 C=0 Bx=512 sBx=-130559
+    [ 17] L0    CALL       A=2 B=2 C=2 Bx=1026 sBx=-130045
+    [ 18] L0    GETGLOBAL  A=3 B=0 C=5 Bx=5 sBx=-131066  ; K5="print"
+    [ 19] L0    MOVE       A=4 B=2 C=0 Bx=1024 sBx=-130047
+    [ 20] L0    CALL       A=3 B=2 C=1 Bx=1025 sBx=-130046
+    [ 21] L0    RETURN     A=0 B=1 C=0 Bx=512 sBx=-130559
+
+  == fn MAIN/proto4  line 84-94  nparams=1 nups=2 vararg=0 maxstack=6 nconst=5 nproto=0 ==
+  constants:
+    K0  str  '1.0'
+    K1  str  'api_versions'
+    K2  str  'seal_version'
+    K3  str  'encode'
+    K4  str  'print'
+  code:
+    [  0] L0    NEWTABLE   A=1 B=1 C=0 Bx=512 sBx=-130559
+    [  1] L0    LOADK      A=2 B=0 C=0 Bx=0 sBx=-131071  ; K0="1.0"
+    [  2] L0    SETLIST    A=1 B=1 C=1 Bx=513 sBx=-130558
+    [  3] L0    NEWTABLE   A=2 B=0 C=2 Bx=2 sBx=-131069
+    [  4] L0    SETTABLE   A=2 B=257 C=1 Bx=131585 sBx=514  ; B=K1="api_versions"  C=R1
+    [  5] L0    GETUPVAL   A=3 B=0 C=0 Bx=0 sBx=-131071
+    [  6] L0    GETTABLE   A=3 B=3 C=258 Bx=1794 sBx=-129277  ; B=R3  C=K2="seal_version"
+    [  7] L0    CALL       A=3 B=1 C=2 Bx=514 sBx=-130557
+    [  8] L0    SETTABLE   A=2 B=258 C=3 Bx=132099 sBx=1028  ; B=K2="seal_version"  C=R3
+    [  9] L0    GETUPVAL   A=3 B=1 C=0 Bx=512 sBx=-130559
+    [ 10] L0    GETTABLE   A=3 B=3 C=259 Bx=1795 sBx=-129276  ; B=R3  C=K3="encode"
+    [ 11] L0    MOVE       A=4 B=2 C=0 Bx=1024 sBx=-130047
+    [ 12] L0    CALL       A=3 B=2 C=2 Bx=1026 sBx=-130045
+    [ 13] L0    GETGLOBAL  A=4 B=0 C=4 Bx=4 sBx=-131067  ; K4="print"
+    [ 14] L0    MOVE       A=5 B=3 C=0 Bx=1536 sBx=-129535
+    [ 15] L0    CALL       A=4 B=2 C=1 Bx=1025 sBx=-130046
+    [ 16] L0    RETURN     A=0 B=1 C=0 Bx=512 sBx=-130559
+
+  == fn MAIN/proto5  line 96-102  nparams=1 nups=0 vararg=0 maxstack=8 nconst=2 nproto=0 ==
+  constants:
+    K0  str  'gmatch'
+    K1  str  '([^&=?]-)=([^&=?]+)'
+  code:
+    [  0] L0    NEWTABLE   A=1 B=0 C=0 Bx=0 sBx=-131071
+    [  1] L0    SELF       A=2 B=0 C=256 Bx=256 sBx=-130815  ; B=R0  C=K0="gmatch"
+    [  2] L0    LOADK      A=4 B=0 C=1 Bx=1 sBx=-131070  ; K1="([^&=?]-)=([^&=?]+)"
+    [  3] L0    CALL       A=2 B=3 C=4 Bx=1540 sBx=-129531
+    [  4] L0    JMP        A=0 B=256 C=0 Bx=131072 sBx=1
+    [  5] L0    SETTABLE   A=1 B=5 C=6 Bx=2566 sBx=-128505  ; B=R5  C=R6
+    [  6] L0    TFORLOOP   A=2 B=0 C=2 Bx=2 sBx=-131069
+    [  7] L0    JMP        A=0 B=255 C=508 Bx=131068 sBx=-3
+    [  8] L0    RETURN     A=1 B=2 C=0 Bx=1024 sBx=-130047
+    [  9] L0    RETURN     A=0 B=1 C=0 Bx=512 sBx=-130559
+
+  == fn MAIN/proto6  line 105-127  nparams=2 nups=3 vararg=0 maxstack=11 nconst=24 nproto=0 ==
+  constants:
+    K0  str  'service_name'
+    K1  int  400
+    K2  str  'Invalid request'
+    K3  str  'get_webapp'
+    K4  str  'query'
+    K5  str  'service_version'
+    K6  str  'webapp_version'
+    K7  int  200
+    K8  str  'io'
+    K9  str  'open'
+    K10  str  'r'
+    K11  str  'read'
+    K12  str  '*a'
+    K13  str  'close'
+    K14  str  'print'
+    K15  str  'Content-Type: application/octet-stream'
+    K16  str  'Content-Disposition: '
+    K17  str  'attachment;filename="'
+    K18  str  '"'
+    K19  str  'Content-Length: '
+    K20  str  '\r'
+    K21  str  'stdout'
+    K22  str  'write'
+    K23  str  'flush'
+  code:
+    [  0] L0    GETUPVAL   A=2 B=0 C=0 Bx=0 sBx=-131071
+    [  1] L0    GETTABLE   A=3 B=0 C=256 Bx=256 sBx=-130815  ; B=R0  C=K0="service_name"
+    [  2] L0    CALL       A=2 B=2 C=2 Bx=1026 sBx=-130045
+    [  3] L0    TEST       A=2 B=0 C=1 Bx=1 sBx=-131070
+    [  4] L0    JMP        A=0 B=256 C=4 Bx=131076 sBx=5
+    [  5] L0    GETUPVAL   A=2 B=1 C=0 Bx=512 sBx=-130559
+    [  6] L0    LOADK      A=3 B=0 C=1 Bx=1 sBx=-131070  ; K1=400
+    [  7] L0    LOADK      A=4 B=0 C=2 Bx=2 sBx=-131069  ; K2="Invalid request"
+    [  8] L0    CALL       A=2 B=3 C=1 Bx=1537 sBx=-129534
+    [  9] L0    RETURN     A=0 B=1 C=0 Bx=512 sBx=-130559
+    [ 10] L0    GETUPVAL   A=2 B=2 C=0 Bx=1024 sBx=-130047
+    [ 11] L0    GETTABLE   A=2 B=2 C=259 Bx=1283 sBx=-129788  ; B=R2  C=K3="get_webapp"
+    [ 12] L0    GETTABLE   A=3 B=0 C=256 Bx=256 sBx=-130815  ; B=R0  C=K0="service_name"
+    [ 13] L0    GETTABLE   A=4 B=0 C=260 Bx=260 sBx=-130811  ; B=R0  C=K4="query"
+    [ 14] L0    GETTABLE   A=4 B=4 C=261 Bx=2309 sBx=-128762  ; B=R4  C=K5="service_version"
+    [ 15] L0    GETTABLE   A=5 B=0 C=260 Bx=260 sBx=-130811  ; B=R0  C=K4="query"
+    [ 16] L0    GETTABLE   A=5 B=5 C=262 Bx=2822 sBx=-128249  ; B=R5  C=K6="webapp_version"
+    [ 17] L0    CALL       A=2 B=4 C=3 Bx=2051 sBx=-129020
+    [ 18] L0    EQ         A=1 B=2 C=263 Bx=1287 sBx=-129784  ; B=R2  C=K7=200
+    [ 19] L0    JMP        A=0 B=256 C=3 Bx=131075 sBx=4
+    [ 20] L0    GETUPVAL   A=4 B=1 C=0 Bx=512 sBx=-130559
+    [ 21] L0    MOVE       A=5 B=2 C=0 Bx=1024 sBx=-130047
+    [ 22] L0    CALL       A=4 B=2 C=1 Bx=1025 sBx=-130046
+    [ 23] L0    RETURN     A=0 B=1 C=0 Bx=512 sBx=-130559
+    [ 24] L0    GETGLOBAL  A=4 B=0 C=8 Bx=8 sBx=-131063  ; K8="io"
+    [ 25] L0    GETTABLE   A=4 B=4 C=265 Bx=2313 sBx=-128758  ; B=R4  C=K9="open"
+    [ 26] L0    MOVE       A=5 B=3 C=0 Bx=1536 sBx=-129535
+    [ 27] L0    LOADK      A=6 B=0 C=10 Bx=10 sBx=-131061  ; K10="r"
+    [ 28] L0    CALL       A=4 B=3 C=2 Bx=1538 sBx=-129533
+    [ 29] L0    SELF       A=5 B=4 C=267 Bx=2315 sBx=-128756  ; B=R4  C=K11="read"
+    [ 30] L0    LOADK      A=7 B=0 C=12 Bx=12 sBx=-131059  ; K12="*a"
+    [ 31] L0    CALL       A=5 B=3 C=2 Bx=1538 sBx=-129533
+    [ 32] L0    SELF       A=6 B=4 C=269 Bx=2317 sBx=-128754  ; B=R4  C=K13="close"
+    [ 33] L0    CALL       A=6 B=2 C=1 Bx=1025 sBx=-130046
+    [ 34] L0    GETGLOBAL  A=6 B=0 C=14 Bx=14 sBx=-131057  ; K14="print"
+    [ 35] L0    LOADK      A=7 B=0 C=15 Bx=15 sBx=-131056  ; K15="Content-Type: application/octet-stream"
+    [ 36] L0    CALL       A=6 B=2 C=1 Bx=1025 sBx=-130046
+    [ 37] L0    GETGLOBAL  A=6 B=0 C=14 Bx=14 sBx=-131057  ; K14="print"
+    [ 38] L0    LOADK      A=7 B=0 C=16 Bx=16 sBx=-131055  ; K16="Content-Disposition: "
+    [ 39] L0    LOADK      A=8 B=0 C=17 Bx=17 sBx=-131054  ; K17="attachment;filename=""
+    [ 40] L0    MOVE       A=9 B=3 C=0 Bx=1536 sBx=-129535
+    [ 41] L0    LOADK      A=10 B=0 C=18 Bx=18 sBx=-131053  ; K18="""
+    [ 42] L0    CONCAT     A=7 B=7 C=10 Bx=3594 sBx=-127477  ; B=R7  C=R10
+    [ 43] L0    CALL       A=6 B=2 C=1 Bx=1025 sBx=-130046
+    [ 44] L0    GETGLOBAL  A=6 B=0 C=14 Bx=14 sBx=-131057  ; K14="print"
+    [ 45] L0    LOADK      A=7 B=0 C=19 Bx=19 sBx=-131052  ; K19="Content-Length: "
+    [ 46] L0    LEN        A=8 B=5 C=0 Bx=2560 sBx=-128511
+    [ 47] L0    CONCAT     A=7 B=7 C=8 Bx=3592 sBx=-127479  ; B=R7  C=R8
+    [ 48] L0    CALL       A=6 B=2 C=1 Bx=1025 sBx=-130046
+    [ 49] L0    GETGLOBAL  A=6 B=0 C=14 Bx=14 sBx=-131057  ; K14="print"
+    [ 50] L0    LOADK      A=7 B=0 C=20 Bx=20 sBx=-131051  ; K20=""
+    [ 51] L0    CALL       A=6 B=2 C=1 Bx=1025 sBx=-130046
+    [ 52] L0    GETGLOBAL  A=6 B=0 C=8 Bx=8 sBx=-131063  ; K8="io"
+    [ 53] L0    GETTABLE   A=6 B=6 C=277 Bx=3349 sBx=-127722  ; B=R6  C=K21="stdout"
+    [ 54] L0    SELF       A=6 B=6 C=278 Bx=3350 sBx=-127721  ; B=R6  C=K22="write"
+    [ 55] L0    MOVE       A=8 B=5 C=0 Bx=2560 sBx=-128511
+    [ 56] L0    CALL       A=6 B=3 C=1 Bx=1537 sBx=-129534
+    [ 57] L0    GETGLOBAL  A=6 B=0 C=8 Bx=8 sBx=-131063  ; K8="io"
+    [ 58] L0    GETTABLE   A=6 B=6 C=277 Bx=3349 sBx=-127722  ; B=R6  C=K21="stdout"
+    [ 59] L0    SELF       A=6 B=6 C=279 Bx=3351 sBx=-127720  ; B=R6  C=K23="flush"
+    [ 60] L0    CALL       A=6 B=2 C=1 Bx=1025 sBx=-130046
+    [ 61] L0    RETURN     A=0 B=1 C=0 Bx=512 sBx=-130559
+
+  == fn MAIN/proto7  line 131-141  nparams=1 nups=3 vararg=0 maxstack=4 nconst=8 nproto=0 ==
+  constants:
+    K0  str  'service_name'
+    K1  int  400
+    K2  str  'Invalid request'
+    K3  str  'encode'
+    K4  str  'received'
+    K5  str  'action'
+    K6  str  'password'
+    K7  str  'print'
+  code:
+    [  0] L0    GETUPVAL   A=1 B=0 C=0 Bx=0 sBx=-131071
+    [  1] L0    GETTABLE   A=2 B=0 C=256 Bx=256 sBx=-130815  ; B=R0  C=K0="service_name"
+    [  2] L0    CALL       A=1 B=2 C=2 Bx=1026 sBx=-130045
+    [  3] L0    TEST       A=1 B=0 C=1 Bx=1 sBx=-131070
+    [  4] L0    JMP        A=0 B=256 C=4 Bx=131076 sBx=5
+    [  5] L0    GETUPVAL   A=1 B=1 C=0 Bx=512 sBx=-130559
+    [  6] L0    LOADK      A=2 B=0 C=1 Bx=1 sBx=-131070  ; K1=400
+    [  7] L0    LOADK      A=3 B=0 C=2 Bx=2 sBx=-131069  ; K2="Invalid request"
+    [  8] L0    CALL       A=1 B=3 C=1 Bx=1537 sBx=-129534
+    [  9] L0    RETURN     A=0 B=1 C=0 Bx=512 sBx=-130559
+    [ 10] L0    GETUPVAL   A=1 B=2 C=0 Bx=1024 sBx=-130047
+    [ 11] L0    GETTABLE   A=1 B=1 C=259 Bx=771 sBx=-130300  ; B=R1  C=K3="encode"
+    [ 12] L0    NEWTABLE   A=2 B=0 C=2 Bx=2 sBx=-131069
+    [ 13] L0    GETTABLE   A=3 B=0 C=261 Bx=261 sBx=-130810  ; B=R0  C=K5="action"
+    [ 14] L0    SETTABLE   A=2 B=260 C=3 Bx=133123 sBx=2052  ; B=K4="received"  C=R3
+    [ 15] L0    GETTABLE   A=3 B=0 C=262 Bx=262 sBx=-130809  ; B=R0  C=K6="password"
+    [ 16] L0    SETTABLE   A=2 B=262 C=3 Bx=134147 sBx=3076  ; B=K6="password"  C=R3
+    [ 17] L0    CALL       A=1 B=2 C=2 Bx=1026 sBx=-130045
+    [ 18] L0    GETGLOBAL  A=2 B=0 C=7 Bx=7 sBx=-131064  ; K7="print"
+    [ 19] L0    MOVE       A=3 B=1 C=0 Bx=512 sBx=-130559
+    [ 20] L0    CALL       A=2 B=2 C=1 Bx=1025 sBx=-130046
+    [ 21] L0    RETURN     A=0 B=1 C=0 Bx=512 sBx=-130559
+
+  == fn MAIN/proto8  line 145-153  nparams=1 nups=4 vararg=0 maxstack=6 nconst=8 nproto=0 ==
+  constants:
+    K0  str  'service_name'
+    K1  int  400
+    K2  str  'Invalid request'
+    K3  str  'state'
+    K4  str  ''
+    K5  str  'service_action_handler'
+    K6  str  'print'
+    K7  str  'encode'
+  code:
+    [  0] L0    GETUPVAL   A=1 B=0 C=0 Bx=0 sBx=-131071
+    [  1] L0    GETTABLE   A=2 B=0 C=256 Bx=256 sBx=-130815  ; B=R0  C=K0="service_name"
+    [  2] L0    CALL       A=1 B=2 C=2 Bx=1026 sBx=-130045
+    [  3] L0    TEST       A=1 B=0 C=1 Bx=1 sBx=-131070
+    [  4] L0    JMP        A=0 B=256 C=4 Bx=131076 sBx=5
+    [  5] L0    GETUPVAL   A=1 B=1 C=0 Bx=512 sBx=-130559
+    [  6] L0    LOADK      A=2 B=0 C=1 Bx=1 sBx=-131070  ; K1=400
+    [  7] L0    LOADK      A=3 B=0 C=2 Bx=2 sBx=-131069  ; K2="Invalid request"
+    [  8] L0    CALL       A=1 B=3 C=1 Bx=1537 sBx=-129534
+    [  9] L0    RETURN     A=0 B=1 C=0 Bx=512 sBx=-130559
+    [ 10] L0    GETTABLE   A=1 B=0 C=259 Bx=259 sBx=-130812  ; B=R0  C=K3="state"
+    [ 11] L0    TEST       A=1 B=0 C=1 Bx=1 sBx=-131070
+    [ 12] L0    JMP        A=0 B=256 C=0 Bx=131072 sBx=1
+    [ 13] L0    LOADK      A=1 B=0 C=4 Bx=4 sBx=-131067  ; K4=""
+    [ 14] L0    GETUPVAL   A=2 B=2 C=0 Bx=1024 sBx=-130047
+    [ 15] L0    GETTABLE   A=2 B=2 C=261 Bx=1285 sBx=-129786  ; B=R2  C=K5="service_action_handler"
+    [ 16] L0    GETTABLE   A=3 B=0 C=256 Bx=256 sBx=-130815  ; B=R0  C=K0="service_name"
+    [ 17] L0    MOVE       A=4 B=1 C=0 Bx=512 sBx=-130559
+    [ 18] L0    CALL       A=2 B=3 C=2 Bx=1538 sBx=-129533
+    [ 19] L0    GETGLOBAL  A=3 B=0 C=6 Bx=6 sBx=-131065  ; K6="print"
+    [ 20] L0    GETUPVAL   A=4 B=3 C=0 Bx=1536 sBx=-129535
+    [ 21] L0    GETTABLE   A=4 B=4 C=263 Bx=2311 sBx=-128760  ; B=R4  C=K7="encode"
+    [ 22] L0    MOVE       A=5 B=2 C=0 Bx=1024 sBx=-130047
+    [ 23] L0    CALL       A=4 B=2 C=0 Bx=1024 sBx=-130047
+    [ 24] L0    CALL       A=3 B=0 C=1 Bx=1 sBx=-131070
+    [ 25] L0    RETURN     A=0 B=1 C=0 Bx=512 sBx=-130559
+
+  == fn MAIN/proto9  line 157-167  nparams=1 nups=3 vararg=0 maxstack=5 nconst=10 nproto=0 ==
+  constants:
+    K0  str  'service_name'
+    K1  int  400
+    K2  str  'Invalid request'
+    K3  str  'io'
+    K4  str  'read'
+    K5  str  '*a'
+    K6  str  ''
+    K7  str  'encode'
+    K8  str  'received'
+    K9  str  'print'
+  code:
+    [  0] L0    GETUPVAL   A=1 B=0 C=0 Bx=0 sBx=-131071
+    [  1] L0    GETTABLE   A=2 B=0 C=256 Bx=256 sBx=-130815  ; B=R0  C=K0="service_name"
+    [  2] L0    CALL       A=1 B=2 C=2 Bx=1026 sBx=-130045
+    [  3] L0    TEST       A=1 B=0 C=1 Bx=1 sBx=-131070
+    [  4] L0    JMP        A=0 B=256 C=4 Bx=131076 sBx=5
+    [  5] L0    GETUPVAL   A=1 B=1 C=0 Bx=512 sBx=-130559
+    [  6] L0    LOADK      A=2 B=0 C=1 Bx=1 sBx=-131070  ; K1=400
+    [  7] L0    LOADK      A=3 B=0 C=2 Bx=2 sBx=-131069  ; K2="Invalid request"
+    [  8] L0    CALL       A=1 B=3 C=1 Bx=1537 sBx=-129534
+    [  9] L0    RETURN     A=0 B=1 C=0 Bx=512 sBx=-130559
+    [ 10] L0    GETGLOBAL  A=1 B=0 C=3 Bx=3 sBx=-131068  ; K3="io"
+    [ 11] L0    GETTABLE   A=1 B=1 C=260 Bx=772 sBx=-130299  ; B=R1  C=K4="read"
+    [ 12] L0    LOADK      A=2 B=0 C=5 Bx=5 sBx=-131066  ; K5="*a"
+    [ 13] L0    CALL       A=1 B=2 C=2 Bx=1026 sBx=-130045
+    [ 14] L0    TEST       A=1 B=0 C=1 Bx=1 sBx=-131070
+    [ 15] L0    JMP        A=0 B=256 C=0 Bx=131072 sBx=1
+    [ 16] L0    LOADK      A=1 B=0 C=6 Bx=6 sBx=-131065  ; K6=""
+    [ 17] L0    GETUPVAL   A=2 B=2 C=0 Bx=1024 sBx=-130047
+    [ 18] L0    GETTABLE   A=2 B=2 C=263 Bx=1287 sBx=-129784  ; B=R2  C=K7="encode"
+    [ 19] L0    NEWTABLE   A=3 B=0 C=1 Bx=1 sBx=-131070
+    [ 20] L0    SETTABLE   A=3 B=264 C=1 Bx=135169 sBx=4098  ; B=K8="received"  C=R1
+    [ 21] L0    CALL       A=2 B=2 C=2 Bx=1026 sBx=-130045
+    [ 22] L0    GETGLOBAL  A=3 B=0 C=9 Bx=9 sBx=-131062  ; K9="print"
+    [ 23] L0    MOVE       A=4 B=2 C=0 Bx=1024 sBx=-130047
+    [ 24] L0    CALL       A=3 B=2 C=1 Bx=1025 sBx=-130046
+    [ 25] L0    RETURN     A=0 B=1 C=0 Bx=512 sBx=-130559
+
+  == fn MAIN/proto10  line 169-182  nparams=1 nups=2 vararg=0 maxstack=8 nconst=9 nproto=0 ==
+  constants:
+    K0  str  'username'
+    K1  str  ''
+    K2  str  'password'
+    K3  str  'pubkey'
+    K4  str  'enable_ssh'
+    K5  int  200
+    K6  str  'OK'
+    K7  int  418
+    K8  str  "I'm a teapot"
+  code:
+    [  0] L0    GETTABLE   A=1 B=0 C=256 Bx=256 sBx=-130815  ; B=R0  C=K0="username"
+    [  1] L0    TEST       A=1 B=0 C=1 Bx=1 sBx=-131070
+    [  2] L0    JMP        A=0 B=256 C=0 Bx=131072 sBx=1
+    [  3] L0    LOADK      A=1 B=0 C=1 Bx=1 sBx=-131070  ; K1=""
+    [  4] L0    GETTABLE   A=2 B=0 C=258 Bx=258 sBx=-130813  ; B=R0  C=K2="password"
+    [  5] L0    TEST       A=2 B=0 C=1 Bx=1 sBx=-131070
+    [  6] L0    JMP        A=0 B=256 C=0 Bx=131072 sBx=1
+    [  7] L0    LOADK      A=2 B=0 C=1 Bx=1 sBx=-131070  ; K1=""
+    [  8] L0    GETTABLE   A=3 B=0 C=259 Bx=259 sBx=-130812  ; B=R0  C=K3="pubkey"
+    [  9] L0    TEST       A=3 B=0 C=1 Bx=1 sBx=-131070
+    [ 10] L0    JMP        A=0 B=256 C=0 Bx=131072 sBx=1
+    [ 11] L0    LOADK      A=3 B=0 C=1 Bx=1 sBx=-131070  ; K1=""
+    [ 12] L0    GETUPVAL   A=4 B=0 C=0 Bx=0 sBx=-131071
+    [ 13] L0    GETTABLE   A=4 B=4 C=260 Bx=2308 sBx=-128763  ; B=R4  C=K4="enable_ssh"
+    [ 14] L0    MOVE       A=5 B=1 C=0 Bx=512 sBx=-130559
+    [ 15] L0    MOVE       A=6 B=2 C=0 Bx=1024 sBx=-130047
+    [ 16] L0    MOVE       A=7 B=3 C=0 Bx=1536 sBx=-129535
+    [ 17] L0    CALL       A=4 B=4 C=2 Bx=2050 sBx=-129021
+    [ 18] L0    TEST       A=4 B=0 C=0 Bx=0 sBx=-131071
+    [ 19] L0    JMP        A=0 B=256 C=4 Bx=131076 sBx=5
+    [ 20] L0    GETUPVAL   A=4 B=1 C=0 Bx=512 sBx=-130559
+    [ 21] L0    LOADK      A=5 B=0 C=5 Bx=5 sBx=-131066  ; K5=200
+    [ 22] L0    LOADK      A=6 B=0 C=6 Bx=6 sBx=-131065  ; K6="OK"
+    [ 23] L0    CALL       A=4 B=3 C=1 Bx=1537 sBx=-129534
+    [ 24] L0    JMP        A=0 B=256 C=3 Bx=131075 sBx=4
+    [ 25] L0    GETUPVAL   A=4 B=1 C=0 Bx=512 sBx=-130559
+    [ 26] L0    LOADK      A=5 B=0 C=7 Bx=7 sBx=-131064  ; K7=418
+    [ 27] L0    LOADK      A=6 B=0 C=8 Bx=8 sBx=-131063  ; K8="I'm a teapot"
+    [ 28] L0    CALL       A=4 B=3 C=1 Bx=1537 sBx=-129534
+    [ 29] L0    RETURN     A=0 B=1 C=0 Bx=512 sBx=-130559
+
+  == fn MAIN/proto11  line 185-205  nparams=0 nups=0 vararg=0 maxstack=9 nconst=24 nproto=1 ==
+  constants:
+    K0  int  48
+    K1  int  57
+    K2  int  1
+    K3  str  'table'
+    K4  str  'insert'
+    K5  str  'string'
+    K6  str  'char'
+    K7  int  65
+    K8  int  90
+    K9  int  97
+    K10  int  122
+    K11  str  'io'
+    K12  str  'popen'
+    K13  str  'head /dev/urandom | tr -dc "0123456789" | head -c8'
+    K14  str  'read'
+    K15  str  '*a'
+    K16  str  'close'
+    K17  str  'math'
+    K18  str  'randomseed'
+    K19  str  'tonumber'
+    K20  str  'os'
+    K21  str  'clock'
+    K22  int  5
+    K23  int  32
+  code:
+    [  0] L0    NEWTABLE   A=0 B=0 C=0 Bx=0 sBx=-131071
+    [  1] L0    LOADK      A=1 B=0 C=0 Bx=0 sBx=-131071  ; K0=48
+    [  2] L0    LOADK      A=2 B=0 C=1 Bx=1 sBx=-131070  ; K1=57
+    [  3] L0    LOADK      A=3 B=0 C=2 Bx=2 sBx=-131069  ; K2=1
+    [  4] L0    FORPREP    A=1 B=256 C=7 Bx=131079 sBx=8
+    [  5] L0    GETGLOBAL  A=5 B=0 C=3 Bx=3 sBx=-131068  ; K3="table"
+    [  6] L0    GETTABLE   A=5 B=5 C=260 Bx=2820 sBx=-128251  ; B=R5  C=K4="insert"
+    [  7] L0    MOVE       A=6 B=0 C=0 Bx=0 sBx=-131071
+    [  8] L0    GETGLOBAL  A=7 B=0 C=5 Bx=5 sBx=-131066  ; K5="string"
+    [  9] L0    GETTABLE   A=7 B=7 C=262 Bx=3846 sBx=-127225  ; B=R7  C=K6="char"
+    [ 10] L0    MOVE       A=8 B=4 C=0 Bx=2048 sBx=-129023
+    [ 11] L0    CALL       A=7 B=2 C=0 Bx=1024 sBx=-130047
+    [ 12] L0    CALL       A=5 B=0 C=1 Bx=1 sBx=-131070
+    [ 13] L0    FORLOOP    A=1 B=255 C=502 Bx=131062 sBx=-9
+    [ 14] L0    LOADK      A=1 B=0 C=7 Bx=7 sBx=-131064  ; K7=65
+    [ 15] L0    LOADK      A=2 B=0 C=8 Bx=8 sBx=-131063  ; K8=90
+    [ 16] L0    LOADK      A=3 B=0 C=2 Bx=2 sBx=-131069  ; K2=1
+    [ 17] L0    FORPREP    A=1 B=256 C=7 Bx=131079 sBx=8
+    [ 18] L0    GETGLOBAL  A=5 B=0 C=3 Bx=3 sBx=-131068  ; K3="table"
+    [ 19] L0    GETTABLE   A=5 B=5 C=260 Bx=2820 sBx=-128251  ; B=R5  C=K4="insert"
+    [ 20] L0    MOVE       A=6 B=0 C=0 Bx=0 sBx=-131071
+    [ 21] L0    GETGLOBAL  A=7 B=0 C=5 Bx=5 sBx=-131066  ; K5="string"
+    [ 22] L0    GETTABLE   A=7 B=7 C=262 Bx=3846 sBx=-127225  ; B=R7  C=K6="char"
+    [ 23] L0    MOVE       A=8 B=4 C=0 Bx=2048 sBx=-129023
+    [ 24] L0    CALL       A=7 B=2 C=0 Bx=1024 sBx=-130047
+    [ 25] L0    CALL       A=5 B=0 C=1 Bx=1 sBx=-131070
+    [ 26] L0    FORLOOP    A=1 B=255 C=502 Bx=131062 sBx=-9
+    [ 27] L0    LOADK      A=1 B=0 C=9 Bx=9 sBx=-131062  ; K9=97
+    [ 28] L0    LOADK      A=2 B=0 C=10 Bx=10 sBx=-131061  ; K10=122
+    [ 29] L0    LOADK      A=3 B=0 C=2 Bx=2 sBx=-131069  ; K2=1
+    [ 30] L0    FORPREP    A=1 B=256 C=7 Bx=131079 sBx=8
+    [ 31] L0    GETGLOBAL  A=5 B=0 C=3 Bx=3 sBx=-131068  ; K3="table"
+    [ 32] L0    GETTABLE   A=5 B=5 C=260 Bx=2820 sBx=-128251  ; B=R5  C=K4="insert"
+    [ 33] L0    MOVE       A=6 B=0 C=0 Bx=0 sBx=-131071
+    [ 34] L0    GETGLOBAL  A=7 B=0 C=5 Bx=5 sBx=-131066  ; K5="string"
+    [ 35] L0    GETTABLE   A=7 B=7 C=262 Bx=3846 sBx=-127225  ; B=R7  C=K6="char"
+    [ 36] L0    MOVE       A=8 B=4 C=0 Bx=2048 sBx=-129023
+    [ 37] L0    CALL       A=7 B=2 C=0 Bx=1024 sBx=-130047
+    [ 38] L0    CALL       A=5 B=0 C=1 Bx=1 sBx=-131070
+    [ 39] L0    FORLOOP    A=1 B=255 C=502 Bx=131062 sBx=-9
+    [ 40] L0    GETGLOBAL  A=1 B=0 C=11 Bx=11 sBx=-131060  ; K11="io"
+    [ 41] L0    GETTABLE   A=1 B=1 C=268 Bx=780 sBx=-130291  ; B=R1  C=K12="popen"
+    [ 42] L0    LOADK      A=2 B=0 C=13 Bx=13 sBx=-131058  ; K13="head /dev/urandom | tr -dc "0123456789" | head -c8"
+    [ 43] L0    CALL       A=1 B=2 C=2 Bx=1026 sBx=-130045
+    [ 44] L0    SELF       A=2 B=1 C=270 Bx=782 sBx=-130289  ; B=R1  C=K14="read"
+    [ 45] L0    LOADK      A=4 B=0 C=15 Bx=15 sBx=-131056  ; K15="*a"
+    [ 46] L0    CALL       A=2 B=3 C=2 Bx=1538 sBx=-129533
+    [ 47] L0    SELF       A=3 B=1 C=272 Bx=784 sBx=-130287  ; B=R1  C=K16="close"
+    [ 48] L0    CALL       A=3 B=2 C=1 Bx=1025 sBx=-130046
+    [ 49] L0    GETGLOBAL  A=3 B=0 C=17 Bx=17 sBx=-131054  ; K17="math"
+    [ 50] L0    GETTABLE   A=3 B=3 C=274 Bx=1810 sBx=-129261  ; B=R3  C=K18="randomseed"
+    [ 51] L0    GETGLOBAL  A=4 B=0 C=19 Bx=19 sBx=-131052  ; K19="tonumber"
+    [ 52] L0    MOVE       A=5 B=2 C=0 Bx=1024 sBx=-130047
+    [ 53] L0    CALL       A=4 B=2 C=2 Bx=1026 sBx=-130045
+    [ 54] L0    GETGLOBAL  A=5 B=0 C=20 Bx=20 sBx=-131051  ; K20="os"
+    [ 55] L0    GETTABLE   A=5 B=5 C=277 Bx=2837 sBx=-128234  ; B=R5  C=K21="clock"
+    [ 56] L0    CALL       A=5 B=1 C=2 Bx=514 sBx=-130557
+    [ 57] L0    POW        A=5 B=5 C=278 Bx=2838 sBx=-128233  ; B=R5  C=K22=5
+    [ 58] L0    ADD        A=4 B=4 C=5 Bx=2053 sBx=-129018  ; B=R4  C=R5
+    [ 59] L0    CALL       A=3 B=2 C=1 Bx=1025 sBx=-130046
+    [ 60] L0    CLOSURE    A=3 B=0 C=0 Bx=0 sBx=-131071  ; K0=proto
+    [ 61] L0    MOVE       A=0 B=3 C=0 Bx=1536 sBx=-129535
+    [ 62] L0    MOVE       A=0 B=0 C=0 Bx=0 sBx=-131071
+    [ 63] L0    MOVE       A=4 B=3 C=0 Bx=1536 sBx=-129535
+    [ 64] L0    LOADK      A=5 B=0 C=23 Bx=23 sBx=-131048  ; K23=32
+    [ 65] L0    TAILCALL   A=4 B=2 C=0 Bx=1024 sBx=-130047
+    [ 66] L0    RETURN     A=4 B=0 C=0 Bx=0 sBx=-131071
+    [ 67] L0    RETURN     A=0 B=1 C=0 Bx=512 sBx=-130559
+
+    == fn MAIN/proto11/proto0  line 198-203  nparams=1 nups=2 vararg=0 maxstack=6 nconst=5 nproto=0 ==
+    constants:
+      K0  int  0
+      K1  str  ''
+      K2  int  1
+      K3  str  'math'
+      K4  str  'random'
+    code:
+      [  0] L0    TEST       A=0 B=0 C=0 Bx=0 sBx=-131071
+      [  1] L0    JMP        A=0 B=256 C=1 Bx=131073 sBx=2
+      [  2] L0    LE         A=0 B=0 C=256 Bx=256 sBx=-130815  ; B=R0  C=K0=0
+      [  3] L0    JMP        A=0 B=256 C=1 Bx=131073 sBx=2
+      [  4] L0    LOADK      A=1 B=0 C=1 Bx=1 sBx=-131070  ; K1=""
+      [  5] L0    RETURN     A=1 B=2 C=0 Bx=1024 sBx=-130047
+      [  6] L0    GETUPVAL   A=1 B=0 C=0 Bx=0 sBx=-131071
+      [  7] L0    SUB        A=2 B=0 C=258 Bx=258 sBx=-130813  ; B=R0  C=K2=1
+      [  8] L0    CALL       A=1 B=2 C=2 Bx=1026 sBx=-130045
+      [  9] L0    GETUPVAL   A=2 B=1 C=0 Bx=512 sBx=-130559
+      [ 10] L0    GETGLOBAL  A=3 B=0 C=3 Bx=3 sBx=-131068  ; K3="math"
+      [ 11] L0    GETTABLE   A=3 B=3 C=260 Bx=1796 sBx=-129275  ; B=R3  C=K4="random"
+      [ 12] L0    LOADK      A=4 B=0 C=2 Bx=2 sBx=-131069  ; K2=1
+      [ 13] L0    GETUPVAL   A=5 B=1 C=0 Bx=512 sBx=-130559
+      [ 14] L0    LEN        A=5 B=5 C=0 Bx=2560 sBx=-128511
+      [ 15] L0    CALL       A=3 B=3 C=2 Bx=1538 sBx=-129533
+      [ 16] L0    GETTABLE   A=2 B=2 C=3 Bx=1027 sBx=-130044  ; B=R2  C=R3
+      [ 17] L0    CONCAT     A=1 B=1 C=2 Bx=514 sBx=-130557  ; B=R1  C=R2
+      [ 18] L0    RETURN     A=1 B=2 C=0 Bx=1024 sBx=-130047
+      [ 19] L0    RETURN     A=0 B=1 C=0 Bx=512 sBx=-130559
+
+  == fn MAIN/proto12  line 209-243  nparams=1 nups=5 vararg=0 maxstack=8 nconst=18 nproto=0 ==
+  constants:
+    K0  str  'service_name'
+    K1  int  400
+    K2  str  'Invalid request'
+    K3  str  '/var/media/reserved2/service_uppers/'
+    K4  str  '/upper/'
+    K5  str  'service-token'
+    K6  str  'is_directory'
+    K7  int  404
+    K8  str  'message'
+    K9  str  'Service Not Found'
+    K10  str  'status'
+    K11  str  'errorCode'
+    K12  int  5347404
+    K13  str  'encode'
+    K14  str  'print'
+    K15  str  'file_exists'
+    K16  str  'read_all_from_file'
+    K17  str  'write_to_file'
+  code:
+    [  0] L0    GETUPVAL   A=1 B=0 C=0 Bx=0 sBx=-131071
+    [  1] L0    GETTABLE   A=2 B=0 C=256 Bx=256 sBx=-130815  ; B=R0  C=K0="service_name"
+    [  2] L0    CALL       A=1 B=2 C=2 Bx=1026 sBx=-130045
+    [  3] L0    TEST       A=1 B=0 C=1 Bx=1 sBx=-131070
+    [  4] L0    JMP        A=0 B=256 C=4 Bx=131076 sBx=5
+    [  5] L0    GETUPVAL   A=1 B=1 C=0 Bx=512 sBx=-130559
+    [  6] L0    LOADK      A=2 B=0 C=1 Bx=1 sBx=-131070  ; K1=400
+    [  7] L0    LOADK      A=3 B=0 C=2 Bx=2 sBx=-131069  ; K2="Invalid request"
+    [  8] L0    CALL       A=1 B=3 C=1 Bx=1537 sBx=-129534
+    [  9] L0    RETURN     A=0 B=1 C=0 Bx=512 sBx=-130559
+    [ 10] L0    LOADK      A=1 B=0 C=3 Bx=3 sBx=-131068  ; K3="/var/media/reserved2/service_uppers/"
+    [ 11] L0    GETTABLE   A=2 B=0 C=256 Bx=256 sBx=-130815  ; B=R0  C=K0="service_name"
+    [ 12] L0    LOADK      A=3 B=0 C=4 Bx=4 sBx=-131067  ; K4="/upper/"
+    [ 13] L0    CONCAT     A=1 B=1 C=3 Bx=515 sBx=-130556  ; B=R1  C=R3
+    [ 14] L0    MOVE       A=2 B=1 C=0 Bx=512 sBx=-130559
+    [ 15] L0    LOADK      A=3 B=0 C=5 Bx=5 sBx=-131066  ; K5="service-token"
+    [ 16] L0    CONCAT     A=2 B=2 C=3 Bx=1027 sBx=-130044  ; B=R2  C=R3
+    [ 17] L0    GETUPVAL   A=3 B=2 C=0 Bx=1024 sBx=-130047
+    [ 18] L0    GETTABLE   A=3 B=3 C=262 Bx=1798 sBx=-129273  ; B=R3  C=K6="is_directory"
+    [ 19] L0    MOVE       A=4 B=1 C=0 Bx=512 sBx=-130559
+    [ 20] L0    CALL       A=3 B=2 C=2 Bx=1026 sBx=-130045
+    [ 21] L0    TEST       A=3 B=0 C=1 Bx=1 sBx=-131070
+    [ 22] L0    JMP        A=0 B=256 C=14 Bx=131086 sBx=15
+    [ 23] L0    GETUPVAL   A=3 B=1 C=0 Bx=512 sBx=-130559
+    [ 24] L0    LOADK      A=4 B=0 C=7 Bx=7 sBx=-131064  ; K7=404
+    [ 25] L0    CALL       A=3 B=2 C=1 Bx=1025 sBx=-130046
+    [ 26] L0    NEWTABLE   A=3 B=0 C=3 Bx=3 sBx=-131068
+    [ 27] L0    SETTABLE   A=3 B=264 C=265 Bx=135433 sBx=4362  ; B=K8="message"  C=K9="Service Not Found"
+    [ 28] L0    SETTABLE   A=3 B=266 C=263 Bx=136455 sBx=5384  ; B=K10="status"  C=K7=404
+    [ 29] L0    SETTABLE   A=3 B=267 C=268 Bx=136972 sBx=5901  ; B=K11="errorCode"  C=K12=5347404
+    [ 30] L0    GETUPVAL   A=4 B=3 C=0 Bx=1536 sBx=-129535
+    [ 31] L0    GETTABLE   A=4 B=4 C=269 Bx=2317 sBx=-128754  ; B=R4  C=K13="encode"
+    [ 32] L0    MOVE       A=5 B=3 C=0 Bx=1536 sBx=-129535
+    [ 33] L0    CALL       A=4 B=2 C=2 Bx=1026 sBx=-130045
+    [ 34] L0    GETGLOBAL  A=5 B=0 C=14 Bx=14 sBx=-131057  ; K14="print"
+    [ 35] L0    MOVE       A=6 B=4 C=0 Bx=2048 sBx=-129023
+    [ 36] L0    CALL       A=5 B=2 C=1 Bx=1025 sBx=-130046
+    [ 37] L0    RETURN     A=0 B=1 C=0 Bx=512 sBx=-130559
+    [ 38] L0    LOADNIL    A=3 B=3 C=0 Bx=1536 sBx=-129535
+    [ 39] L0    GETUPVAL   A=4 B=2 C=0 Bx=1024 sBx=-130047
+    [ 40] L0    GETTABLE   A=4 B=4 C=271 Bx=2319 sBx=-128752  ; B=R4  C=K15="file_exists"
+    [ 41] L0    MOVE       A=5 B=2 C=0 Bx=1024 sBx=-130047
+    [ 42] L0    CALL       A=4 B=2 C=2 Bx=1026 sBx=-130045
+    [ 43] L0    TEST       A=4 B=0 C=0 Bx=0 sBx=-131071
+    [ 44] L0    JMP        A=0 B=256 C=5 Bx=131077 sBx=6
+    [ 45] L0    GETUPVAL   A=4 B=2 C=0 Bx=1024 sBx=-130047
+    [ 46] L0    GETTABLE   A=4 B=4 C=272 Bx=2320 sBx=-128751  ; B=R4  C=K16="read_all_from_file"
+    [ 47] L0    MOVE       A=5 B=2 C=0 Bx=1024 sBx=-130047
+    [ 48] L0    CALL       A=4 B=2 C=2 Bx=1026 sBx=-130045
+    [ 49] L0    MOVE       A=3 B=4 C=0 Bx=2048 sBx=-129023
+    [ 50] L0    JMP        A=0 B=256 C=7 Bx=131079 sBx=8
+    [ 51] L0    GETUPVAL   A=4 B=4 C=0 Bx=2048 sBx=-129023
+    [ 52] L0    CALL       A=4 B=1 C=2 Bx=514 sBx=-130557
+    [ 53] L0    MOVE       A=3 B=4 C=0 Bx=2048 sBx=-129023
+    [ 54] L0    GETUPVAL   A=4 B=2 C=0 Bx=1024 sBx=-130047
+    [ 55] L0    GETTABLE   A=4 B=4 C=273 Bx=2321 sBx=-128750  ; B=R4  C=K17="write_to_file"
+    [ 56] L0    MOVE       A=5 B=2 C=0 Bx=1024 sBx=-130047
+    [ 57] L0    MOVE       A=6 B=3 C=0 Bx=1536 sBx=-129535
+    [ 58] L0    CALL       A=4 B=3 C=1 Bx=1537 sBx=-129534
+    [ 59] L0    NEWTABLE   A=4 B=0 C=1 Bx=1 sBx=-131070
+    [ 60] L0    SETTABLE   A=4 B=261 C=3 Bx=133635 sBx=2564  ; B=K5="service-token"  C=R3
+    [ 61] L0    GETUPVAL   A=5 B=3 C=0 Bx=1536 sBx=-129535
+    [ 62] L0    GETTABLE   A=5 B=5 C=269 Bx=2829 sBx=-128242  ; B=R5  C=K13="encode"
+    [ 63] L0    MOVE       A=6 B=4 C=0 Bx=2048 sBx=-129023
+    [ 64] L0    CALL       A=5 B=2 C=2 Bx=1026 sBx=-130045
+    [ 65] L0    GETGLOBAL  A=6 B=0 C=14 Bx=14 sBx=-131057  ; K14="print"
+    [ 66] L0    MOVE       A=7 B=5 C=0 Bx=2560 sBx=-128511
+    [ 67] L0    CALL       A=6 B=2 C=1 Bx=1025 sBx=-130046
+    [ 68] L0    RETURN     A=0 B=1 C=0 Bx=512 sBx=-130559
+
+  == fn MAIN/proto13  line 246-291  nparams=1 nups=4 vararg=0 maxstack=11 nconst=21 nproto=1 ==
+  constants:
+    K0  str  'service_name'
+    K1  int  400
+    K2  str  'Invalid request'
+    K3  str  ''
+    K4  str  'service-token'
+    K5  str  '/var/media/reserved2/service_uppers/'
+    K6  str  '/upper/'
+    K7  str  '404'
+    K8  str  'Missing service-token in JSON payload'
+    K9  str  'is_directory'
+    K10  str  'Service Not Found'
+    K11  str  'file_exists'
+    K12  str  'Token Not Found'
+    K13  str  'read_all_from_file'
+    K14  str  'string'
+    K15  str  'gsub'
+    K16  str  '\n'
+    K17  str  'tostring'
+    K18  str  '200'
+    K19  str  'Invalid'
+    K20  str  'Valid'
+  code:
+    [  0] L0    GETUPVAL   A=1 B=0 C=0 Bx=0 sBx=-131071
+    [  1] L0    GETTABLE   A=2 B=0 C=256 Bx=256 sBx=-130815  ; B=R0  C=K0="service_name"
+    [  2] L0    CALL       A=1 B=2 C=2 Bx=1026 sBx=-130045
+    [  3] L0    TEST       A=1 B=0 C=1 Bx=1 sBx=-131070
+    [  4] L0    JMP        A=0 B=256 C=4 Bx=131076 sBx=5
+    [  5] L0    GETUPVAL   A=1 B=1 C=0 Bx=512 sBx=-130559
+    [  6] L0    LOADK      A=2 B=0 C=1 Bx=1 sBx=-131070  ; K1=400
+    [  7] L0    LOADK      A=3 B=0 C=2 Bx=2 sBx=-131069  ; K2="Invalid request"
+    [  8] L0    CALL       A=1 B=3 C=1 Bx=1537 sBx=-129534
+    [  9] L0    RETURN     A=0 B=1 C=0 Bx=512 sBx=-130559
+    [ 10] L0    CLOSURE    A=1 B=0 C=0 Bx=0 sBx=-131071  ; K0=proto
+    [ 11] L0    GETUPVAL   A=0 B=2 C=0 Bx=1024 sBx=-130047
+    [ 12] L0    GETTABLE   A=2 B=0 C=256 Bx=256 sBx=-130815  ; B=R0  C=K0="service_name"
+    [ 13] L0    TEST       A=2 B=0 C=1 Bx=1 sBx=-131070
+    [ 14] L0    JMP        A=0 B=256 C=0 Bx=131072 sBx=1
+    [ 15] L0    LOADK      A=2 B=0 C=3 Bx=3 sBx=-131068  ; K3=""
+    [ 16] L0    GETTABLE   A=3 B=0 C=260 Bx=260 sBx=-130811  ; B=R0  C=K4="service-token"
+    [ 17] L0    TEST       A=3 B=0 C=1 Bx=1 sBx=-131070
+    [ 18] L0    JMP        A=0 B=256 C=0 Bx=131072 sBx=1
+    [ 19] L0    LOADK      A=3 B=0 C=3 Bx=3 sBx=-131068  ; K3=""
+    [ 20] L0    LOADK      A=4 B=0 C=5 Bx=5 sBx=-131066  ; K5="/var/media/reserved2/service_uppers/"
+    [ 21] L0    MOVE       A=5 B=2 C=0 Bx=1024 sBx=-130047
+    [ 22] L0    LOADK      A=6 B=0 C=6 Bx=6 sBx=-131065  ; K6="/upper/"
+    [ 23] L0    CONCAT     A=4 B=4 C=6 Bx=2054 sBx=-129017  ; B=R4  C=R6
+    [ 24] L0    MOVE       A=5 B=4 C=0 Bx=2048 sBx=-129023
+    [ 25] L0    LOADK      A=6 B=0 C=4 Bx=4 sBx=-131067  ; K4="service-token"
+    [ 26] L0    CONCAT     A=5 B=5 C=6 Bx=2566 sBx=-128505  ; B=R5  C=R6
+    [ 27] L0    LOADNIL    A=6 B=6 C=0 Bx=3072 sBx=-127999
+    [ 28] L0    EQ         A=0 B=3 C=259 Bx=1795 sBx=-129276  ; B=R3  C=K3=""
+    [ 29] L0    JMP        A=0 B=256 C=4 Bx=131076 sBx=5
+    [ 30] L0    MOVE       A=7 B=1 C=0 Bx=512 sBx=-130559
+    [ 31] L0    LOADK      A=8 B=0 C=7 Bx=7 sBx=-131064  ; K7="404"
+    [ 32] L0    LOADK      A=9 B=0 C=8 Bx=8 sBx=-131063  ; K8="Missing service-token in JSON payload"
+    [ 33] L0    CALL       A=7 B=3 C=1 Bx=1537 sBx=-129534
+    [ 34] L0    RETURN     A=0 B=1 C=0 Bx=512 sBx=-130559
+    [ 35] L0    GETUPVAL   A=7 B=3 C=0 Bx=1536 sBx=-129535
+    [ 36] L0    GETTABLE   A=7 B=7 C=265 Bx=3849 sBx=-127222  ; B=R7  C=K9="is_directory"
+    [ 37] L0    MOVE       A=8 B=4 C=0 Bx=2048 sBx=-129023
+    [ 38] L0    CALL       A=7 B=2 C=2 Bx=1026 sBx=-130045
+    [ 39] L0    TEST       A=7 B=0 C=1 Bx=1 sBx=-131070
+    [ 40] L0    JMP        A=0 B=256 C=4 Bx=131076 sBx=5
+    [ 41] L0    MOVE       A=7 B=1 C=0 Bx=512 sBx=-130559
+    [ 42] L0    LOADK      A=8 B=0 C=7 Bx=7 sBx=-131064  ; K7="404"
+    [ 43] L0    LOADK      A=9 B=0 C=10 Bx=10 sBx=-131061  ; K10="Service Not Found"
+    [ 44] L0    CALL       A=7 B=3 C=1 Bx=1537 sBx=-129534
+    [ 45] L0    RETURN     A=0 B=1 C=0 Bx=512 sBx=-130559
+    [ 46] L0    GETUPVAL   A=7 B=3 C=0 Bx=1536 sBx=-129535
+    [ 47] L0    GETTABLE   A=7 B=7 C=267 Bx=3851 sBx=-127220  ; B=R7  C=K11="file_exists"
+    [ 48] L0    MOVE       A=8 B=5 C=0 Bx=2560 sBx=-128511
+    [ 49] L0    CALL       A=7 B=2 C=2 Bx=1026 sBx=-130045
+    [ 50] L0    TEST       A=7 B=0 C=1 Bx=1 sBx=-131070
+    [ 51] L0    JMP        A=0 B=256 C=4 Bx=131076 sBx=5
+    [ 52] L0    MOVE       A=7 B=1 C=0 Bx=512 sBx=-130559
+    [ 53] L0    LOADK      A=8 B=0 C=7 Bx=7 sBx=-131064  ; K7="404"
+    [ 54] L0    LOADK      A=9 B=0 C=12 Bx=12 sBx=-131059  ; K12="Token Not Found"
+    [ 55] L0    CALL       A=7 B=3 C=1 Bx=1537 sBx=-129534
+    [ 56] L0    RETURN     A=0 B=1 C=0 Bx=512 sBx=-130559
+    [ 57] L0    GETUPVAL   A=7 B=3 C=0 Bx=1536 sBx=-129535
+    [ 58] L0    GETTABLE   A=7 B=7 C=269 Bx=3853 sBx=-127218  ; B=R7  C=K13="read_all_from_file"
+    [ 59] L0    MOVE       A=8 B=5 C=0 Bx=2560 sBx=-128511
+    [ 60] L0    CALL       A=7 B=2 C=2 Bx=1026 sBx=-130045
+    [ 61] L0    MOVE       A=6 B=7 C=0 Bx=3584 sBx=-127487
+    [ 62] L0    GETGLOBAL  A=7 B=0 C=14 Bx=14 sBx=-131057  ; K14="string"
+    [ 63] L0    GETTABLE   A=7 B=7 C=271 Bx=3855 sBx=-127216  ; B=R7  C=K15="gsub"
+    [ 64] L0    MOVE       A=8 B=6 C=0 Bx=3072 sBx=-127999
+    [ 65] L0    LOADK      A=9 B=0 C=16 Bx=16 sBx=-131055  ; K16="
+"
+    [ 66] L0    LOADK      A=10 B=0 C=3 Bx=3 sBx=-131068  ; K3=""
+    [ 67] L0    CALL       A=7 B=4 C=2 Bx=2050 sBx=-129021
+    [ 68] L0    MOVE       A=6 B=7 C=0 Bx=3584 sBx=-127487
+    [ 69] L0    GETGLOBAL  A=7 B=0 C=17 Bx=17 sBx=-131054  ; K17="tostring"
+    [ 70] L0    MOVE       A=8 B=3 C=0 Bx=1536 sBx=-129535
+    [ 71] L0    CALL       A=7 B=2 C=2 Bx=1026 sBx=-130045
+    [ 72] L0    GETGLOBAL  A=8 B=0 C=17 Bx=17 sBx=-131054  ; K17="tostring"
+    [ 73] L0    MOVE       A=9 B=6 C=0 Bx=3072 sBx=-127999
+    [ 74] L0    CALL       A=8 B=2 C=2 Bx=1026 sBx=-130045
+    [ 75] L0    EQ         A=1 B=7 C=8 Bx=3592 sBx=-127479  ; B=R7  C=R8
+    [ 76] L0    JMP        A=0 B=256 C=4 Bx=131076 sBx=5
+    [ 77] L0    MOVE       A=7 B=1 C=0 Bx=512 sBx=-130559
+    [ 78] L0    LOADK      A=8 B=0 C=18 Bx=18 sBx=-131053  ; K18="200"
+    [ 79] L0    LOADK      A=9 B=0 C=19 Bx=19 sBx=-131052  ; K19="Invalid"
+    [ 80] L0    CALL       A=7 B=3 C=1 Bx=1537 sBx=-129534
+    [ 81] L0    RETURN     A=0 B=1 C=0 Bx=512 sBx=-130559
+    [ 82] L0    MOVE       A=7 B=1 C=0 Bx=512 sBx=-130559
+    [ 83] L0    LOADK      A=8 B=0 C=18 Bx=18 sBx=-131053  ; K18="200"
+    [ 84] L0    LOADK      A=9 B=0 C=20 Bx=20 sBx=-131051  ; K20="Valid"
+    [ 85] L0    CALL       A=7 B=3 C=1 Bx=1537 sBx=-129534
+    [ 86] L0    RETURN     A=0 B=1 C=0 Bx=512 sBx=-130559
+    [ 87] L0    RETURN     A=0 B=1 C=0 Bx=512 sBx=-130559
+
+    == fn MAIN/proto13/proto0  line 252-259  nparams=2 nups=1 vararg=0 maxstack=5 nconst=4 nproto=0 ==
+    constants:
+      K0  str  'encode'
+      K1  str  'Status'
+      K2  str  'validationStatus'
+      K3  str  'print'
+    code:
+      [  0] L0    GETUPVAL   A=2 B=0 C=0 Bx=0 sBx=-131071
+      [  1] L0    GETTABLE   A=2 B=2 C=256 Bx=1280 sBx=-129791  ; B=R2  C=K0="encode"
+      [  2] L0    NEWTABLE   A=3 B=0 C=2 Bx=2 sBx=-131069
+      [  3] L0    SETTABLE   A=3 B=257 C=0 Bx=131584 sBx=513  ; B=K1="Status"  C=R0
+      [  4] L0    SETTABLE   A=3 B=258 C=1 Bx=132097 sBx=1026  ; B=K2="validationStatus"  C=R1
+      [  5] L0    CALL       A=2 B=2 C=2 Bx=1026 sBx=-130045
+      [  6] L0    GETGLOBAL  A=3 B=0 C=3 Bx=3 sBx=-131068  ; K3="print"
+      [  7] L0    MOVE       A=4 B=2 C=0 Bx=1024 sBx=-130047
+      [  8] L0    CALL       A=3 B=2 C=1 Bx=1025 sBx=-130046
+      [  9] L0    RETURN     A=0 B=1 C=0 Bx=512 sBx=-130559
+      [ 10] L0    RETURN     A=0 B=1 C=0 Bx=512 sBx=-130559
+
+  == fn MAIN/proto14  line 385-392  nparams=0 nups=2 vararg=0 maxstack=7 nconst=4 nproto=0 ==
+  constants:
+    K0  str  'decode'
+    K1  str  'RawContent'
+    K2  str  'pairs'
+    K3  nil  None
+  code:
+    [  0] L0    GETUPVAL   A=0 B=0 C=0 Bx=0 sBx=-131071
+    [  1] L0    GETTABLE   A=0 B=0 C=256 Bx=256 sBx=-130815  ; B=R0  C=K0="decode"
+    [  2] L0    GETUPVAL   A=1 B=1 C=0 Bx=512 sBx=-130559
+    [  3] L0    GETTABLE   A=1 B=1 C=257 Bx=769 sBx=-130302  ; B=R1  C=K1="RawContent"
+    [  4] L0    CALL       A=0 B=2 C=2 Bx=1026 sBx=-130045
+    [  5] L0    GETGLOBAL  A=1 B=0 C=2 Bx=2 sBx=-131069  ; K2="pairs"
+    [  6] L0    MOVE       A=2 B=0 C=0 Bx=0 sBx=-131071
+    [  7] L0    CALL       A=1 B=2 C=4 Bx=1028 sBx=-130043
+    [  8] L0    JMP        A=0 B=256 C=5 Bx=131077 sBx=6
+    [  9] L0    GETUPVAL   A=6 B=1 C=0 Bx=512 sBx=-130559
+    [ 10] L0    GETTABLE   A=6 B=6 C=4 Bx=3076 sBx=-127995  ; B=R6  C=R4
+    [ 11] L0    EQ         A=0 B=6 C=259 Bx=3331 sBx=-127740  ; B=R6  C=K3=None
+    [ 12] L0    JMP        A=0 B=256 C=1 Bx=131073 sBx=2
+    [ 13] L0    GETUPVAL   A=6 B=1 C=0 Bx=512 sBx=-130559
+    [ 14] L0    SETTABLE   A=6 B=4 C=5 Bx=2053 sBx=-129018  ; B=R4  C=R5
+    [ 15] L0    TFORLOOP   A=1 B=0 C=2 Bx=2 sBx=-131069
+    [ 16] L0    JMP        A=0 B=255 C=503 Bx=131063 sBx=-8
+    [ 17] L0    RETURN     A=0 B=1 C=0 Bx=512 sBx=-130559
+
+  == fn MAIN/proto15  line 441-464  nparams=0 nups=6 vararg=0 maxstack=6 nconst=14 nproto=0 ==
+  constants:
+    K0  str  'Uri'
+    K1  str  '/api/meta/'
+    K2  str  '/api/meta'
+    K3  str  'v1'
+    K4  str  'ApiVersion'
+    K5  int  400
+    K6  str  'print'
+    K7  str  'Unexpected API version: '
+    K8  str  'Expected: '
+    K9  str  'execute'
+    K10  str  'Method'
+    K11  str  'RelativeUri'
+    K12  int  404
+    K13  str  'Invalid request - API endpoint not found: '
+  code:
+    [  0] L0    GETUPVAL   A=0 B=0 C=0 Bx=0 sBx=-131071
+    [  1] L0    GETTABLE   A=0 B=0 C=256 Bx=256 sBx=-130815  ; B=R0  C=K0="Uri"
+    [  2] L0    EQ         A=1 B=0 C=257 Bx=257 sBx=-130814  ; B=R0  C=K1="/api/meta/"
+    [  3] L0    JMP        A=0 B=256 C=3 Bx=131075 sBx=4
+    [  4] L0    GETUPVAL   A=0 B=0 C=0 Bx=0 sBx=-131071
+    [  5] L0    GETTABLE   A=0 B=0 C=256 Bx=256 sBx=-130815  ; B=R0  C=K0="Uri"
+    [  6] L0    EQ         A=0 B=0 C=258 Bx=258 sBx=-130813  ; B=R0  C=K2="/api/meta"
+    [  7] L0    JMP        A=0 B=256 C=3 Bx=131075 sBx=4
+    [  8] L0    GETUPVAL   A=0 B=1 C=0 Bx=512 sBx=-130559
+    [  9] L0    GETUPVAL   A=1 B=0 C=0 Bx=0 sBx=-131071
+    [ 10] L0    CALL       A=0 B=2 C=1 Bx=1025 sBx=-130046
+    [ 11] L0    RETURN     A=0 B=1 C=0 Bx=512 sBx=-130559
+    [ 12] L0    LOADK      A=0 B=0 C=3 Bx=3 sBx=-131068  ; K3="v1"
+    [ 13] L0    GETUPVAL   A=1 B=0 C=0 Bx=0 sBx=-131071
+    [ 14] L0    GETTABLE   A=1 B=1 C=260 Bx=772 sBx=-130299  ; B=R1  C=K4="ApiVersion"
+    [ 15] L0    EQ         A=1 B=1 C=0 Bx=512 sBx=-130559  ; B=R1  C=R0
+    [ 16] L0    JMP        A=0 B=256 C=14 Bx=131086 sBx=15
+    [ 17] L0    GETUPVAL   A=1 B=2 C=0 Bx=1024 sBx=-130047
+    [ 18] L0    LOADK      A=2 B=0 C=5 Bx=5 sBx=-131066  ; K5=400
+    [ 19] L0    CALL       A=1 B=2 C=1 Bx=1025 sBx=-130046
+    [ 20] L0    GETGLOBAL  A=1 B=0 C=6 Bx=6 sBx=-131065  ; K6="print"
+    [ 21] L0    LOADK      A=2 B=0 C=7 Bx=7 sBx=-131064  ; K7="Unexpected API version: "
+    [ 22] L0    GETUPVAL   A=3 B=0 C=0 Bx=0 sBx=-131071
+    [ 23] L0    GETTABLE   A=3 B=3 C=260 Bx=1796 sBx=-129275  ; B=R3  C=K4="ApiVersion"
+    [ 24] L0    CONCAT     A=2 B=2 C=3 Bx=1027 sBx=-130044  ; B=R2  C=R3
+    [ 25] L0    CALL       A=1 B=2 C=1 Bx=1025 sBx=-130046
+    [ 26] L0    GETGLOBAL  A=1 B=0 C=6 Bx=6 sBx=-131065  ; K6="print"
+    [ 27] L0    LOADK      A=2 B=0 C=8 Bx=8 sBx=-131063  ; K8="Expected: "
+    [ 28] L0    MOVE       A=3 B=0 C=0 Bx=0 sBx=-131071
+    [ 29] L0    CONCAT     A=2 B=2 C=3 Bx=1027 sBx=-130044  ; B=R2  C=R3
+    [ 30] L0    CALL       A=1 B=2 C=1 Bx=1025 sBx=-130046
+    [ 31] L0    RETURN     A=0 B=1 C=0 Bx=512 sBx=-130559
+    [ 32] L0    GETUPVAL   A=1 B=3 C=0 Bx=1536 sBx=-129535
+    [ 33] L0    SELF       A=1 B=1 C=265 Bx=777 sBx=-130294  ; B=R1  C=K9="execute"
+    [ 34] L0    GETUPVAL   A=3 B=0 C=0 Bx=0 sBx=-131071
+    [ 35] L0    GETTABLE   A=3 B=3 C=266 Bx=1802 sBx=-129269  ; B=R3  C=K10="Method"
+    [ 36] L0    GETUPVAL   A=4 B=0 C=0 Bx=0 sBx=-131071
+    [ 37] L0    GETTABLE   A=4 B=4 C=267 Bx=2315 sBx=-128756  ; B=R4  C=K11="RelativeUri"
+    [ 38] L0    GETUPVAL   A=5 B=0 C=0 Bx=0 sBx=-131071
+    [ 39] L0    CALL       A=1 B=5 C=2 Bx=2562 sBx=-128509
+    [ 40] L0    TEST       A=1 B=0 C=1 Bx=1 sBx=-131070
+    [ 41] L0    JMP        A=0 B=256 C=19 Bx=131091 sBx=20
+    [ 42] L0    GETUPVAL   A=1 B=4 C=0 Bx=2048 sBx=-129023
+    [ 43] L0    TEST       A=1 B=0 C=0 Bx=0 sBx=-131071
+    [ 44] L0    JMP        A=0 B=256 C=9 Bx=131081 sBx=10
+    [ 45] L0    GETUPVAL   A=1 B=5 C=0 Bx=2560 sBx=-128511
+    [ 46] L0    SELF       A=1 B=1 C=265 Bx=777 sBx=-130294  ; B=R1  C=K9="execute"
+    [ 47] L0    GETUPVAL   A=3 B=0 C=0 Bx=0 sBx=-131071
+    [ 48] L0    GETTABLE   A=3 B=3 C=266 Bx=1802 sBx=-129269  ; B=R3  C=K10="Method"
+    [ 49] L0    GETUPVAL   A=4 B=0 C=0 Bx=0 sBx=-131071
+    [ 50] L0    GETTABLE   A=4 B=4 C=267 Bx=2315 sBx=-128756  ; B=R4  C=K11="RelativeUri"
+    [ 51] L0    GETUPVAL   A=5 B=0 C=0 Bx=0 sBx=-131071
+    [ 52] L0    CALL       A=1 B=5 C=2 Bx=2562 sBx=-128509
+    [ 53] L0    TEST       A=1 B=0 C=1 Bx=1 sBx=-131070
+    [ 54] L0    JMP        A=0 B=256 C=6 Bx=131078 sBx=7
+    [ 55] L0    GETUPVAL   A=1 B=2 C=0 Bx=1024 sBx=-130047
+    [ 56] L0    LOADK      A=2 B=0 C=12 Bx=12 sBx=-131059  ; K12=404
+    [ 57] L0    LOADK      A=3 B=0 C=13 Bx=13 sBx=-131058  ; K13="Invalid request - API endpoint not found: "
+    [ 58] L0    GETUPVAL   A=4 B=0 C=0 Bx=0 sBx=-131071
+    [ 59] L0    GETTABLE   A=4 B=4 C=267 Bx=2315 sBx=-128756  ; B=R4  C=K11="RelativeUri"
+    [ 60] L0    CONCAT     A=3 B=3 C=4 Bx=1540 sBx=-129531  ; B=R3  C=R4
+    [ 61] L0    CALL       A=1 B=3 C=1 Bx=1537 sBx=-129534
+    [ 62] L0    RETURN     A=0 B=1 C=0 Bx=512 sBx=-130559

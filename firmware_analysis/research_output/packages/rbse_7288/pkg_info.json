@@ -1,0 +1,4619 @@
+{
+  "464xlat": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, kmod-nat46",
+    "description": "464xlat CLAT support",
+    "files_count": 2,
+    "installed_size": "4495",
+    "name": "464xlat",
+    "version": "6"
+  },
+  "6rd": {
+    "architecture": "all",
+    "depends": "libc, libssp, kmod-ipv6, kmod-sit",
+    "description": "Provides support for 6rd tunnels in /etc/config/network.\nRefer to http://wiki.openwrt.org/doc/uci/network for\nconfiguration details.",
+    "files_count": 2,
+    "installed_size": "3478",
+    "name": "6rd",
+    "version": "9-2"
+  },
+  "alsa": {
+    "architecture": "all",
+    "depends": "libc, libssp, alsa-utils",
+    "description": "UCI based sound configuration module for OpenWrt",
+    "files_count": 2,
+    "installed_size": "1025",
+    "name": "alsa",
+    "version": "1"
+  },
+  "alsa-lib": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, kmod-sound-core, libpthread, librt",
+    "description": "This is the library package for alsa, needed by some userspace programs.\nYou must have enabled the ALSA support in the kernel.",
+    "files_count": 79,
+    "installed_size": "282252",
+    "name": "alsa-lib",
+    "version": "1.0.28-1"
+  },
+  "alsa-utils": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, alsa-lib, libncurses, libpthread",
+    "description": "ALSA (Advanced Linux Sound Architecture) utilities",
+    "files_count": 12,
+    "installed_size": "137508",
+    "name": "alsa-utils",
+    "version": "1.0.28-2"
+  },
+  "arptables": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, kmod-arptables",
+    "description": "ARP firewalling software",
+    "files_count": 1,
+    "installed_size": "22090",
+    "name": "arptables",
+    "version": "0.0.4-1"
+  },
+  "athdiag": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "athdiag command support for ath10k",
+    "files_count": 1,
+    "installed_size": "32639",
+    "name": "athdiag",
+    "version": "g6d1a719c82-dirty-1"
+  },
+  "athtestcmd-lith": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "qcatestcmd command support for lithium",
+    "files_count": 4,
+    "installed_size": "72870",
+    "name": "athtestcmd-lith",
+    "version": "g6d1a719c82-dirty-1"
+  },
+  "base-files": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, netifd, procd, jsonfilter, usign, libstdcpp",
+    "description": "This package contains a base filesystem and system scripts for OpenWrt.",
+    "files_count": 247,
+    "installed_size": "7383415",
+    "name": "base-files",
+    "version": "157.2-6d1a719c82+r49254"
+  },
+  "breakpad": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libstdcpp",
+    "description": "breakpad",
+    "files_count": 1,
+    "installed_size": "12652",
+    "name": "breakpad",
+    "version": "0.1-1"
+  },
+  "breakpad-wrapper": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, breakpad, libstdcpp",
+    "description": "Breakpad Wrapper Shared Library for QSDK.",
+    "files_count": 4,
+    "installed_size": "49629",
+    "name": "breakpad-wrapper",
+    "version": "1.0-1"
+  },
+  "bridge": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "Manage ethernet bridging: a way to connect networks together to\nform a larger network.",
+    "files_count": 1,
+    "installed_size": "10464",
+    "name": "bridge",
+    "version": "1.5-3"
+  },
+  "busybox": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, librpc, jsonfilter",
+    "description": "The Swiss Army Knife of embedded Linux.\nIt slices, it dices, it makes Julian Fries.",
+    "files_count": 154,
+    "installed_size": "314924",
+    "name": "busybox",
+    "version": "1.30.1-5"
+  },
+  "ca-bundle": {
+    "architecture": "all",
+    "depends": "libc, libssp",
+    "description": "System CA certificates as a bundle",
+    "files_count": 2,
+    "installed_size": "111869",
+    "name": "ca-bundle",
+    "version": "20211016-1"
+  },
+  "ca-certificates": {
+    "architecture": "all",
+    "depends": "libc, libssp",
+    "description": "System CA certificates",
+    "files_count": 251,
+    "installed_size": "128478",
+    "name": "ca-certificates",
+    "version": "20211016-1"
+  },
+  "cnssdiag": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, qca-diag, libnl",
+    "description": "QCA cnssdiag utils",
+    "files_count": 3,
+    "installed_size": "57353",
+    "name": "cnssdiag",
+    "version": "g6d1a719c82-dirty"
+  },
+  "coreutils": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "Full versions of standard GNU utilities. Normally, you would not use this\npackage, since the functionality in BusyBox is more than sufficient and\nsmaller.",
+    "files_count": 0,
+    "installed_size": "105",
+    "name": "coreutils",
+    "version": "8.23-1"
+  },
+  "coreutils-sleep": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, coreutils",
+    "description": "Full version of standard GNU sleep utility. Normally, you would not use this\npackage, since the functionality in BusyBox is more than sufficient.",
+    "files_count": 1,
+    "installed_size": "18385",
+    "name": "coreutils-sleep",
+    "version": "8.23-1"
+  },
+  "curl": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libcurl",
+    "description": "A client-side URL transfer utility",
+    "files_count": 1,
+    "installed_size": "55909",
+    "name": "curl",
+    "version": "7.73.0-2"
+  },
+  "d2": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libpthread, librt",
+    "description": "Netgear Data Abstraction Layer 2",
+    "files_count": 11,
+    "installed_size": "45051",
+    "name": "d2",
+    "version": "0.1.0-1"
+  },
+  "dashboard": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "This package contains a shell script which can be used\ninternally by QCA to print the system information\nquickly without accessing system entries one by one",
+    "files_count": 1,
+    "installed_size": "4244",
+    "name": "dashboard",
+    "version": "1"
+  },
+  "ddns-scripts": {
+    "architecture": "all",
+    "depends": "",
+    "description": "Dynamic DNS Client scripts (with IPv6 support) - Info: http://wiki.openwrt.org/doc/howto/ddns.client",
+    "files_count": 9,
+    "installed_size": "15149",
+    "name": "ddns-scripts",
+    "version": "2.7.6-13"
+  },
+  "dnsmasq-dhcpv6": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libubox, libubus",
+    "description": "It is intended to provide coupled DNS and DHCP service to a LAN.\n\nThis is a variant with DHCPv6 support",
+    "files_count": 10,
+    "installed_size": "144498",
+    "name": "dnsmasq-dhcpv6",
+    "version": "2.80-16.2"
+  },
+  "dropbear": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "A small SSH2 server/client designed for small memory environments.",
+    "files_count": 8,
+    "installed_size": "87781",
+    "name": "dropbear",
+    "version": "2019.78-2"
+  },
+  "ds-lite": {
+    "architecture": "all",
+    "depends": "libc, libssp, kmod-ipv6, kmod-ip6-tunnel, resolveip",
+    "description": "Provides support for Dual-Stack Lite in /etc/config/network.\nRefer to http://wiki.openwrt.org/doc/uci/network for\nconfiguration details.",
+    "files_count": 1,
+    "installed_size": "1058",
+    "name": "ds-lite",
+    "version": "7-1"
+  },
+  "ebtables": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, kmod-ebtables",
+    "description": "The ebtables program is a filtering tool for a bridging firewall. The\nfiltering is focussed on the Link Layer Ethernet frame fields. Apart\nfrom filtering, it also gives the ability to alter the Ethernet MAC\naddresses and implement a brouter.",
+    "files_count": 24,
+    "installed_size": "69846",
+    "name": "ebtables",
+    "version": "2.0.10-4-5"
+  },
+  "ebtables-utils": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, kmod-ebtables, ebtables",
+    "description": "The ebtables program is a filtering tool for a bridging firewall. The\nfiltering is focussed on the Link Layer Ethernet frame fields. Apart\nfrom filtering, it also gives the ability to alter the Ethernet MAC\naddresses and implement a brouter.",
+    "files_count": 2,
+    "installed_size": "3937",
+    "name": "ebtables-utils",
+    "version": "2.0.10-4-5"
+  },
+  "ethtool": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "ethtool is a small utility for examining and tuning your ethernet-based\nnetwork interface",
+    "files_count": 1,
+    "installed_size": "91204",
+    "name": "ethtool",
+    "version": "3.18-1"
+  },
+  "f2fs-tools": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libuuid, libf2fs",
+    "description": "Tools for Flash-Friendly File System (F2FS)",
+    "files_count": 5,
+    "installed_size": "35607",
+    "name": "f2fs-tools",
+    "version": "1.4.0-1"
+  },
+  "file": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libmagic",
+    "description": "utility",
+    "files_count": 3,
+    "installed_size": "128056",
+    "name": "file",
+    "version": "5.25-1"
+  },
+  "firewall": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libubox, libubus, libuci, libip4tc, libip6tc, libxtables, kmod-ipt-core, kmod-ipt-conntrack, kmod-ipt-nat",
+    "description": "This package provides a config-compatible C implementation of the UCI firewall.",
+    "files_count": 5,
+    "installed_size": "52912",
+    "name": "firewall",
+    "version": "2019-11-22"
+  },
+  "flock": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "manages flock locks from within shell scripts or the command line",
+    "files_count": 1,
+    "installed_size": "7568",
+    "name": "flock",
+    "version": "2.25.2-5"
+  },
+  "fstools": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, ubox, ubi-utils",
+    "description": "OpenWrt filesystem tools",
+    "files_count": 4,
+    "installed_size": "15847",
+    "name": "fstools",
+    "version": "2016-01-10-96415afecef35766332067f4205ef3b2c7561d21"
+  },
+  "ftm": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libnl, libtcmd, qca-diag, librt, qti-mfg-provision",
+    "description": "QCA ftm utils",
+    "files_count": 3,
+    "installed_size": "13127",
+    "name": "ftm",
+    "version": "g6d1a719c82-dirty-1"
+  },
+  "fwupgrade-tools": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, losetup",
+    "description": "U-boot images tools (dumpimage, mkimage)",
+    "files_count": 2,
+    "installed_size": "120744",
+    "name": "fwupgrade-tools",
+    "version": "g6d1a719c82-dirty-1"
+  },
+  "gdbserver": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, zlib",
+    "description": "GDBSERVER is a program that allows you to run GDB on a different machine than the\none which is running the program being debugged.",
+    "files_count": 1,
+    "installed_size": "115731",
+    "name": "gdbserver",
+    "version": "7.8-2"
+  },
+  "hyfi-son": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, kmod-qca-hyfi-bridge, qca-libhyfi-bridge, qca-hyctl, libwpa2, libhyficommon, libstorage, libieee1905, qca-wifison-ext-lib, qca-hyd-son, qca-wsplcd-son",
+    "description": "Meta package which selects all Hy-Fi SON components require for build",
+    "files_count": 0,
+    "installed_size": "105",
+    "name": "hyfi-son",
+    "version": "1"
+  },
+  "hyfi-ui": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, luci-hyfi, luci-hyfi-advanced, luci-wsplc, luci-wsplc-advanced",
+    "description": "Meta package which selects all Hy-Fi web interfaces",
+    "files_count": 0,
+    "installed_size": "105",
+    "name": "hyfi-ui",
+    "version": "1"
+  },
+  "i2c-tools": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "This package contains an heterogeneous set of I2C tools for Linux. These tools\nwere originally part of the lm-sensors package.",
+    "files_count": 4,
+    "installed_size": "18508",
+    "name": "i2c-tools",
+    "version": "3.1.2-1"
+  },
+  "ip": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libnl-tiny",
+    "description": "Routing control utility (Minimal)",
+    "files_count": 2,
+    "installed_size": "135237",
+    "name": "ip",
+    "version": "4.0.0-1"
+  },
+  "ip-bridge": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libnl-tiny",
+    "description": "Bridge configuration utility from iproute2",
+    "files_count": 1,
+    "installed_size": "20081",
+    "name": "ip-bridge",
+    "version": "4.0.0-1"
+  },
+  "ip-full": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libnl-tiny",
+    "description": "Routing control utility (Full)",
+    "files_count": 0,
+    "installed_size": "135238",
+    "name": "ip-full",
+    "version": "4.0.0-1"
+  },
+  "ip6tables": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, kmod-ip6tables, iptables",
+    "description": "IPv6 firewall administration tool",
+    "files_count": 4,
+    "installed_size": "290",
+    "name": "ip6tables",
+    "version": "1.6.2-1"
+  },
+  "ip6tables-extra": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, ip6tables, kmod-ip6tables-extra",
+    "description": "IPv6 header matching modules",
+    "files_count": 7,
+    "installed_size": "12023",
+    "name": "ip6tables-extra",
+    "version": "1.6.2-1"
+  },
+  "ip6tables-mod-nat": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, ip6tables, kmod-ipt-nat6",
+    "description": "iptables extensions for IPv6-NAT targets.",
+    "files_count": 2,
+    "installed_size": "2063",
+    "name": "ip6tables-mod-nat",
+    "version": "1.6.2-1"
+  },
+  "iperf-mt": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, uclibcxx, libpthread",
+    "description": "Iperf is a modern alternative for measuring TCP and UDP bandwidth\nperformance, allowing the tuning of various parameters and\ncharacteristics.\nThis package is built with multithread support.",
+    "files_count": 1,
+    "installed_size": "75589",
+    "name": "iperf-mt",
+    "version": "2.1.3-1"
+  },
+  "ipset": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, kmod-ipt-ipset, libmnl",
+    "description": "IPset administration utility",
+    "files_count": 4,
+    "installed_size": "76850",
+    "name": "ipset",
+    "version": "7.6-1"
+  },
+  "iptables": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, kmod-ipt-core, libip4tc, libip6tc, libxtables",
+    "description": "IP firewall administration tool.\n\nMatches:\n- icmp\n- tcp\n- udp\n- comment\n- conntrack\n- limit\n- mac\n- mark\n- multiport\n- set\n- state\n- time\n\nTargets:\n- ACCEPT\n- CT\n- DNAT\n- DROP\n- REJECT\n- LOG\n- MARK\n- MASQUERADE\n- REDIRECT\n- SET\n- SNAT\n- TCPMSS\n\nTables:\n- filter\n- mangle\n- nat\n- raw\n",
+    "files_count": 6,
+    "installed_size": "28184",
+    "name": "iptables",
+    "version": "1.6.2-1"
+  },
+  "iptables-mod-conntrack-extra": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, iptables, kmod-ipt-conntrack-extra",
+    "description": "Extra iptables extensions for connection tracking.\n\nMatches:\n- connbytes\n- connlimit\n- connmark\n- recent\n- helper\n\nTargets:\n- CONNMARK\n",
+    "files_count": 6,
+    "installed_size": "10839",
+    "name": "iptables-mod-conntrack-extra",
+    "version": "1.6.2-1"
+  },
+  "iptables-mod-extra": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, iptables, kmod-ipt-extra",
+    "description": "Other extra iptables extensions.\n\nMatches:\n- addrtype\n- condition\n- owner\n- physdev (if ebtables is enabled)\n- pkttype\n- quota\n",
+    "files_count": 5,
+    "installed_size": "9580",
+    "name": "iptables-mod-extra",
+    "version": "1.6.2-1"
+  },
+  "iptables-mod-filter": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, iptables, kmod-ipt-filter",
+    "description": "iptables extensions for packet content inspection.\nIncludes support for:\n\nMatches:\n- string\n",
+    "files_count": 1,
+    "installed_size": "3331",
+    "name": "iptables-mod-filter",
+    "version": "1.6.2-1"
+  },
+  "iptables-mod-ipopt": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, iptables, kmod-ipt-ipopt",
+    "description": "iptables extensions for matching/changing IP packet options.\n\nMatches:\n- dscp\n- ecn\n- length\n- statistic\n- tcpmss\n- unclean\n- hl\n\nTargets:\n- DSCP\n- CLASSIFY\n- ECN\n- HL\n",
+    "files_count": 14,
+    "installed_size": "15241",
+    "name": "iptables-mod-ipopt",
+    "version": "1.6.2-1"
+  },
+  "iptables-mod-iprange": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, iptables, kmod-ipt-iprange",
+    "description": "iptables extensions for matching ip ranges.\n\nMatches:\n- iprange\n",
+    "files_count": 1,
+    "installed_size": "3631",
+    "name": "iptables-mod-iprange",
+    "version": "1.6.2-1"
+  },
+  "iptables-mod-ipsec": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, iptables, kmod-ipt-ipsec",
+    "description": "iptables extensions for matching ipsec traffic.\n\nMatches:\n- ah\n- esp\n- policy\n",
+    "files_count": 3,
+    "installed_size": "6327",
+    "name": "iptables-mod-ipsec",
+    "version": "1.6.2-1"
+  },
+  "iptables-mod-nfqueue": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, iptables, kmod-nfnetlink-queue, kmod-ipt-nfqueue",
+    "description": "iptables extension for user-space queuing via NFNETLINK.\n\nIncludes:\n- libxt_NFQUEUE\n",
+    "files_count": 1,
+    "installed_size": "2933",
+    "name": "iptables-mod-nfqueue",
+    "version": "1.6.2-1"
+  },
+  "iptables-mod-u32": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, iptables, kmod-ipt-u32",
+    "description": "U32 iptables extensions.\n\nMatches:\n- u32\n",
+    "files_count": 0,
+    "installed_size": "162",
+    "name": "iptables-mod-u32",
+    "version": "1.6.2-1"
+  },
+  "iputils-tracepath": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "Program tracepath from iputils.\nTraces path to a network host discovering MTU along this path (IPv4).",
+    "files_count": 1,
+    "installed_size": "4862",
+    "name": "iputils-tracepath",
+    "version": "20101006-1"
+  },
+  "iputils-tracepath6": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "Program tracepath6 from iputils.\nTraces path to a network host discovering MTU along this path (IPv6).",
+    "files_count": 1,
+    "installed_size": "5552",
+    "name": "iputils-tracepath6",
+    "version": "20101006-1"
+  },
+  "isc-dhcp-relay-ipv6": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "provides a means for relaying DHCP and BOOTP requests from a subnet to which\nno DHCP server is directly connected to one or more DHCP servers on other\nsubnets.\nThis package is compiled with IPv4 and IPv6 support.",
+    "files_count": 4,
+    "installed_size": "652451",
+    "name": "isc-dhcp-relay-ipv6",
+    "version": "4.3.6-1"
+  },
+  "iw": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libnl-tiny",
+    "description": "cfg80211 interface configuration utility",
+    "files_count": 1,
+    "installed_size": "72027",
+    "name": "iw",
+    "version": "5.9-1"
+  },
+  "jansson": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "Jansson is a C library for encoding, decoding and manipulating JSON data",
+    "files_count": 3,
+    "installed_size": "17200",
+    "name": "jansson",
+    "version": "2.7-1"
+  },
+  "jshn": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libjson-c, libubox, libblobmsg-json",
+    "description": "Library for parsing and generating JSON from shell scripts",
+    "files_count": 2,
+    "installed_size": "6759",
+    "name": "jshn",
+    "version": "2020-05-25-66195aee-1"
+  },
+  "jsonfilter": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libubox, libjson-c",
+    "description": "OpenWrt JSON filter utility",
+    "files_count": 1,
+    "installed_size": "8432",
+    "name": "jsonfilter",
+    "version": "2014-06-19-cdc760c58077f44fc40adbbe41e1556a67c1b9a9"
+  },
+  "kernel": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "Virtual kernel package",
+    "files_count": 0,
+    "installed_size": "105",
+    "name": "kernel",
+    "version": "4.4.60-1-c75115263ae7d1796de2a387d774f3b5"
+  },
+  "kmod-ac97": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-sound-core",
+    "description": "The ac97 controller",
+    "files_count": 0,
+    "installed_size": "104",
+    "name": "kmod-ac97",
+    "version": "4.4.60-1"
+  },
+  "kmod-arptables": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-ipt-core",
+    "description": "Kernel modules for ARP firewalling",
+    "files_count": 4,
+    "installed_size": "8812",
+    "name": "kmod-arptables",
+    "version": "4.4.60-1"
+  },
+  "kmod-ata-ahci": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-ata-core",
+    "description": "Support for AHCI Serial ATA controllers",
+    "files_count": 4,
+    "installed_size": "18005",
+    "name": "kmod-ata-ahci",
+    "version": "4.4.60-1"
+  },
+  "kmod-ata-ahci-platform": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-ata-core, kmod-ata-ahci",
+    "description": "Platform support for AHCI Serial ATA controllers",
+    "files_count": 4,
+    "installed_size": "5724",
+    "name": "kmod-ata-ahci-platform",
+    "version": "4.4.60-1"
+  },
+  "kmod-ata-core": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-scsi-core",
+    "description": "Serial and Parallel ATA support",
+    "files_count": 1,
+    "installed_size": "72577",
+    "name": "kmod-ata-core",
+    "version": "4.4.60-1"
+  },
+  "kmod-bonding": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5)",
+    "description": "Kernel module for NIC bonding.",
+    "files_count": 2,
+    "installed_size": "66061",
+    "name": "kmod-bonding",
+    "version": "4.4.60-1"
+  },
+  "kmod-bootconfig": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5)",
+    "description": "Bootconfig partition for failsafe",
+    "files_count": 3,
+    "installed_size": "3435",
+    "name": "kmod-bootconfig",
+    "version": "4.4.60+1-1"
+  },
+  "kmod-bridge": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-stp",
+    "description": "Kernel module for Ethernet bridging.",
+    "files_count": 1,
+    "installed_size": "187",
+    "name": "kmod-bridge",
+    "version": "4.4.60-1"
+  },
+  "kmod-button-hotplug": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-input-core",
+    "description": "Kernel module to generate button uevent-s from input subsystem events.\nIf your device uses GPIO buttons, see gpio-button-hotplug.",
+    "files_count": 3,
+    "installed_size": "2892",
+    "name": "kmod-button-hotplug",
+    "version": "4.4.60-3"
+  },
+  "kmod-cfg80211-linux": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), iw",
+    "description": "cfg80211 is the Linux wireless LAN (802.11) configuration API.",
+    "files_count": 2,
+    "installed_size": "107716",
+    "name": "kmod-cfg80211-linux",
+    "version": "4.4.60-1"
+  },
+  "kmod-crypto-aead": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-crypto-core",
+    "description": "CryptoAPI AEAD support",
+    "files_count": 2,
+    "installed_size": "234",
+    "name": "kmod-crypto-aead",
+    "version": "4.4.60-1"
+  },
+  "kmod-crypto-arc4": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-crypto-core",
+    "description": "ARC4 (RC4) cipher CryptoAPI module",
+    "files_count": 1,
+    "installed_size": "192",
+    "name": "kmod-crypto-arc4",
+    "version": "4.4.60-1"
+  },
+  "kmod-crypto-authenc": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-crypto-manager, kmod-crypto-core",
+    "description": "Combined mode wrapper for IPsec",
+    "files_count": 2,
+    "installed_size": "3385",
+    "name": "kmod-crypto-authenc",
+    "version": "4.4.60-1"
+  },
+  "kmod-crypto-cbc": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-crypto-manager, kmod-crypto-core",
+    "description": "Cipher Block Chaining CryptoAPI module",
+    "files_count": 2,
+    "installed_size": "2293",
+    "name": "kmod-crypto-cbc",
+    "version": "4.4.60-1"
+  },
+  "kmod-crypto-core": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5)",
+    "description": "Core CryptoAPI modules",
+    "files_count": 0,
+    "installed_size": "105",
+    "name": "kmod-crypto-core",
+    "version": "4.4.60-1"
+  },
+  "kmod-crypto-crc32c": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-crypto-hash, kmod-crypto-core",
+    "description": "CRC32c CRC module",
+    "files_count": 2,
+    "installed_size": "244",
+    "name": "kmod-crypto-crc32c",
+    "version": "4.4.60-1"
+  },
+  "kmod-crypto-deflate": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-lib-zlib, kmod-crypto-core",
+    "description": "Deflate compression CryptoAPI module",
+    "files_count": 1,
+    "installed_size": "194",
+    "name": "kmod-crypto-deflate",
+    "version": "4.4.60-1"
+  },
+  "kmod-crypto-des": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-crypto-core",
+    "description": "DES/3DES cipher CryptoAPI module",
+    "files_count": 2,
+    "installed_size": "7717",
+    "name": "kmod-crypto-des",
+    "version": "4.4.60-1"
+  },
+  "kmod-crypto-ecb": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-crypto-manager, kmod-crypto-core",
+    "description": "Electronic CodeBook CryptoAPI module",
+    "files_count": 2,
+    "installed_size": "1878",
+    "name": "kmod-crypto-ecb",
+    "version": "4.4.60-1"
+  },
+  "kmod-crypto-hash": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-crypto-core",
+    "description": "CryptoAPI hash support",
+    "files_count": 2,
+    "installed_size": "240",
+    "name": "kmod-crypto-hash",
+    "version": "4.4.60-1"
+  },
+  "kmod-crypto-hmac": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-crypto-manager, kmod-crypto-core",
+    "description": "HMAC digest CryptoAPI module",
+    "files_count": 1,
+    "installed_size": "192",
+    "name": "kmod-crypto-hmac",
+    "version": "4.4.60-1"
+  },
+  "kmod-crypto-iv": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-crypto-manager, kmod-crypto-rng, kmod-crypto-wq, kmod-crypto-core",
+    "description": "CryptoAPI initialization vectors",
+    "files_count": 1,
+    "installed_size": "203",
+    "name": "kmod-crypto-iv",
+    "version": "4.4.60-1"
+  },
+  "kmod-crypto-manager": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-crypto-aead, kmod-crypto-hash, kmod-crypto-pcompress, kmod-crypto-core",
+    "description": "CryptoAPI algorithm manager",
+    "files_count": 0,
+    "installed_size": "104",
+    "name": "kmod-crypto-manager",
+    "version": "4.4.60-1"
+  },
+  "kmod-crypto-md5": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-crypto-hash, kmod-crypto-core",
+    "description": "MD5 digest CryptoAPI module",
+    "files_count": 2,
+    "installed_size": "1654",
+    "name": "kmod-crypto-md5",
+    "version": "4.4.60-1"
+  },
+  "kmod-crypto-ocf": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-crypto-manager, kmod-crypto-core",
+    "description": "OCF modules",
+    "files_count": 4,
+    "installed_size": "25761",
+    "name": "kmod-crypto-ocf",
+    "version": "4.4.60-1"
+  },
+  "kmod-crypto-pcompress": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-crypto-core",
+    "description": "CryptoAPI Partial (de)compression operations",
+    "files_count": 1,
+    "installed_size": "198",
+    "name": "kmod-crypto-pcompress",
+    "version": "4.4.60-1"
+  },
+  "kmod-crypto-rng": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-crypto-core",
+    "description": "CryptoAPI random number generation",
+    "files_count": 1,
+    "installed_size": "191",
+    "name": "kmod-crypto-rng",
+    "version": "4.4.60-1"
+  },
+  "kmod-crypto-sha1": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-crypto-hash, kmod-crypto-core",
+    "description": "SHA1 digest CryptoAPI module",
+    "files_count": 2,
+    "installed_size": "1993",
+    "name": "kmod-crypto-sha1",
+    "version": "4.4.60-1"
+  },
+  "kmod-crypto-wq": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-crypto-core",
+    "description": "CryptoAPI work queue handling",
+    "files_count": 1,
+    "installed_size": "194",
+    "name": "kmod-crypto-wq",
+    "version": "4.4.60-1"
+  },
+  "kmod-dhcpnet": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5)",
+    "description": "DHCP NET",
+    "files_count": 3,
+    "installed_size": "2372",
+    "name": "kmod-dhcpnet",
+    "version": "4.4.60-1"
+  },
+  "kmod-diag-char": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-lib-crc-ccitt, kmod-usb-f-diag, kmod-usb-core",
+    "description": "CHAR DIAG",
+    "files_count": 2,
+    "installed_size": "83034",
+    "name": "kmod-diag-char",
+    "version": "4.4.60+1-1"
+  },
+  "kmod-ebtables": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-ipt-core, kmod-bridge",
+    "description": "ebtables is a general, extensible frame/packet identification\nframework. It provides you to do Ethernet\nfiltering/NAT/brouting on the Ethernet bridge.",
+    "files_count": 14,
+    "installed_size": "18549",
+    "name": "kmod-ebtables",
+    "version": "4.4.60-1"
+  },
+  "kmod-ebtables-watchers": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-ebtables",
+    "description": "This option adds the log watchers, that you can use in any rule\nin any ebtables table.",
+    "files_count": 3,
+    "installed_size": "3309",
+    "name": "kmod-ebtables-watchers",
+    "version": "4.4.60-1"
+  },
+  "kmod-emesh-sp": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5)",
+    "description": "This is the kernel module for Service Prioritization in EasyMesh",
+    "files_count": 2,
+    "installed_size": "4913",
+    "name": "kmod-emesh-sp",
+    "version": "4.4.60+g6d1a719c82-dirty-1"
+  },
+  "kmod-fs-configfs": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5)",
+    "description": "Kernel module for configfs support",
+    "files_count": 1,
+    "installed_size": "191",
+    "name": "kmod-fs-configfs",
+    "version": "4.4.60-1"
+  },
+  "kmod-fs-f2fs": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5)",
+    "description": "Kernel module for F2FS filesystem support",
+    "files_count": 3,
+    "installed_size": "84234",
+    "name": "kmod-fs-f2fs",
+    "version": "4.4.60-1"
+  },
+  "kmod-fuse": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5)",
+    "description": "Kernel module for userspace filesystem support",
+    "files_count": 2,
+    "installed_size": "41740",
+    "name": "kmod-fuse",
+    "version": "4.4.60-1"
+  },
+  "kmod-gpio-button-hotplug": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5)",
+    "description": "This is a replacement for the following in-kernel drivers:\n1) gpio_keys (KEYBOARD_GPIO)\n2) gpio_keys_polled (KEYBOARD_GPIO_POLLED)\n\nInstead of generating input events (like in-kernel drivers do) it generates\nuevent-s and broadcasts them. This allows disabling input subsystem which is\nan overkill for OpenWrt simple needs.",
+    "files_count": 1,
+    "installed_size": "5130",
+    "name": "kmod-gpio-button-hotplug",
+    "version": "4.4.60-3"
+  },
+  "kmod-gre": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-iptunnel",
+    "description": "Generic Routing Encapsulation support",
+    "files_count": 3,
+    "installed_size": "8586",
+    "name": "kmod-gre",
+    "version": "4.4.60-1"
+  },
+  "kmod-gre6": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-iptunnel, kmod-ip6-tunnel",
+    "description": "Generic Routing Encapsulation support over IPv6",
+    "files_count": 2,
+    "installed_size": "11543",
+    "name": "kmod-gre6",
+    "version": "4.4.60-1"
+  },
+  "kmod-i2c-core": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5)",
+    "description": "Kernel modules for I2C support",
+    "files_count": 1,
+    "installed_size": "194",
+    "name": "kmod-i2c-core",
+    "version": "4.4.60-1"
+  },
+  "kmod-ifb": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5)",
+    "description": "The Intermediate Functional Block",
+    "files_count": 2,
+    "installed_size": "3578",
+    "name": "kmod-ifb",
+    "version": "4.4.60-1"
+  },
+  "kmod-ikconfig": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5)",
+    "description": "Kernel configuration via /proc/config.gz",
+    "files_count": 1,
+    "installed_size": "189",
+    "name": "kmod-ikconfig",
+    "version": "4.4.60-1"
+  },
+  "kmod-input-core": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5)",
+    "description": "Kernel modules for support of input device",
+    "files_count": 1,
+    "installed_size": "17127",
+    "name": "kmod-input-core",
+    "version": "4.4.60-1"
+  },
+  "kmod-ip6-tunnel": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-iptunnel6",
+    "description": "Kernel modules for IPv6-in-IPv6 and IPv4-in-IPv6 tunnelling",
+    "files_count": 2,
+    "installed_size": "13542",
+    "name": "kmod-ip6-tunnel",
+    "version": "4.4.60-1"
+  },
+  "kmod-ip6tables": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-nf-ipt6, kmod-ipt-core, kmod-ipt-conntrack",
+    "description": "Netfilter IPv6 firewalling support",
+    "files_count": 5,
+    "installed_size": "8446",
+    "name": "kmod-ip6tables",
+    "version": "4.4.60-1"
+  },
+  "kmod-ip6tables-extra": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-ip6tables",
+    "description": "Netfilter IPv6 extra header matching modules",
+    "files_count": 8,
+    "installed_size": "10110",
+    "name": "kmod-ip6tables-extra",
+    "version": "4.4.60-1"
+  },
+  "kmod-ipsec": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-crypto-authenc, kmod-crypto-iv, kmod-crypto-des, kmod-crypto-hmac, kmod-crypto-md5, kmod-crypto-sha1, kmod-crypto-deflate, kmod-crypto-cbc",
+    "description": "Kernel modules for IPsec support in both IPv4 and IPv6.\nIncludes:\n- af_key\n- xfrm_ipcomp\n- xfrm_user",
+    "files_count": 5,
+    "installed_size": "31762",
+    "name": "kmod-ipsec",
+    "version": "4.4.60-1"
+  },
+  "kmod-ipsec4": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-ipsec, kmod-iptunnel4",
+    "description": "Kernel modules for IPsec support in IPv4.\nIncludes:\n- ah4\n- esp4\n- ipcomp4\n- xfrm4_mode_beet\n- xfrm4_mode_transport\n- xfrm4_mode_tunnel\n- xfrm4_tunnel",
+    "files_count": 8,
+    "installed_size": "13296",
+    "name": "kmod-ipsec4",
+    "version": "4.4.60-1"
+  },
+  "kmod-ipsec6": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-ipsec, kmod-iptunnel6",
+    "description": "Kernel modules for IPsec support in IPv6.\nIncludes:\n- ah6\n- esp6\n- ipcomp6\n- xfrm6_mode_beet\n- xfrm6_mode_transport\n- xfrm6_mode_tunnel\n- xfrm6_tunnel",
+    "files_count": 8,
+    "installed_size": "14706",
+    "name": "kmod-ipsec6",
+    "version": "4.4.60-1"
+  },
+  "kmod-ipt-conntrack": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-ipt-core, kmod-nf-conntrack",
+    "description": "Netfilter (IPv4) kernel modules for connection tracking\nIncludes:\n- conntrack\n- defrag\n- iptables_raw\n- NOTRACK\n- state",
+    "files_count": 5,
+    "installed_size": "5833",
+    "name": "kmod-ipt-conntrack",
+    "version": "4.4.60-1"
+  },
+  "kmod-ipt-conntrack-extra": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-ipt-core, kmod-ipt-conntrack",
+    "description": "Netfilter (IPv4) extra kernel modules for connection tracking\nIncludes:\n- connbytes\n- connmark/CONNMARK\n- conntrack\n- helper\n- recent",
+    "files_count": 6,
+    "installed_size": "11189",
+    "name": "kmod-ipt-conntrack-extra",
+    "version": "4.4.60-1"
+  },
+  "kmod-ipt-core": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-nf-ipt",
+    "description": "Netfilter core kernel modules\nIncludes:\n- comment\n- limit\n- LOG\n- mac\n- multiport\n- REJECT\n- TCPMSS",
+    "files_count": 13,
+    "installed_size": "14307",
+    "name": "kmod-ipt-core",
+    "version": "4.4.60-1"
+  },
+  "kmod-ipt-ct-sctp": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-ipt-core, kmod-ipt-conntrack",
+    "description": "Kernel modules for sctp conntrack",
+    "files_count": 2,
+    "installed_size": "6144",
+    "name": "kmod-ipt-ct-sctp",
+    "version": "4.4.60-1"
+  },
+  "kmod-ipt-extra": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-ipt-core",
+    "description": "Other Netfilter (IPv4) kernel modules\nIncludes:\n- addrtype\n- owner\n- physdev (if bridge support was enabled in kernel)\n- pkttype\n- quota",
+    "files_count": 6,
+    "installed_size": "5343",
+    "name": "kmod-ipt-extra",
+    "version": "4.4.60-1"
+  },
+  "kmod-ipt-filter": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-ipt-core, kmod-lib-textsearch, kmod-ipt-conntrack",
+    "description": "Netfilter (IPv4) kernel modules for packet content inspection\nIncludes:\n- string",
+    "files_count": 2,
+    "installed_size": "1385",
+    "name": "kmod-ipt-filter",
+    "version": "4.4.60-1"
+  },
+  "kmod-ipt-ipopt": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-ipt-core, kmod-ipt-conntrack",
+    "description": "Netfilter (IPv4) modules for matching/changing IP packet options\nIncludes:\n- CLASSIFY\n- dscp/DSCP\n- ecn/ECN\n- hl/HL\n- length\n- mark/MARK\n- statistic\n- tcpmss\n- time\n- ttl/TTL\n- unclean",
+    "files_count": 11,
+    "installed_size": "7998",
+    "name": "kmod-ipt-ipopt",
+    "version": "4.4.60-1"
+  },
+  "kmod-ipt-iprange": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-ipt-core",
+    "description": "Netfilter (IPv4) module for matching ip ranges\nIncludes:\n- iprange",
+    "files_count": 2,
+    "installed_size": "2045",
+    "name": "kmod-ipt-iprange",
+    "version": "4.4.60-1"
+  },
+  "kmod-ipt-ipsec": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-ipt-core",
+    "description": "Netfilter (IPv4) modules for matching IPSec packets\nIncludes:\n- ah\n- esp\n- policy",
+    "files_count": 4,
+    "installed_size": "3805",
+    "name": "kmod-ipt-ipsec",
+    "version": "4.4.60-1"
+  },
+  "kmod-ipt-ipset": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-ipt-core, kmod-nfnetlink",
+    "description": "IPset netfilter modules",
+    "files_count": 18,
+    "installed_size": "140785",
+    "name": "kmod-ipt-ipset",
+    "version": "4.4.60-1"
+  },
+  "kmod-ipt-nat": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-ipt-core, kmod-nf-nat",
+    "description": "Netfilter (IPv4) kernel modules for basic NAT targets\nIncludes:\n- MASQUERADE",
+    "files_count": 6,
+    "installed_size": "5935",
+    "name": "kmod-ipt-nat",
+    "version": "4.4.60-1"
+  },
+  "kmod-ipt-nat6": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-ipt-core, kmod-nf-nat6, kmod-ipt-core, kmod-ipt-conntrack, kmod-ipt-core, kmod-ipt-nat, kmod-ipt-core, kmod-ip6tables",
+    "description": "Netfilter (IPv6) kernel modules for NAT targets",
+    "files_count": 4,
+    "installed_size": "5092",
+    "name": "kmod-ipt-nat6",
+    "version": "4.4.60-1"
+  },
+  "kmod-ipt-nathelper-rtsp": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-ipt-core, kmod-ipt-conntrack-extra, kmod-ipt-nat",
+    "description": "RTSP Conntrack and NAT netfilter module",
+    "files_count": 3,
+    "installed_size": "8966",
+    "name": "kmod-ipt-nathelper-rtsp",
+    "version": "4.4.60+2.10-1"
+  },
+  "kmod-ipt-nfqueue": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-ipt-core, kmod-nfnetlink-queue",
+    "description": "Netfilter module for user-space packet queuing\nIncludes:\n- NFQUEUE",
+    "files_count": 2,
+    "installed_size": "2122",
+    "name": "kmod-ipt-nfqueue",
+    "version": "4.4.60-1"
+  },
+  "kmod-ipt-u32": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-ipt-core",
+    "description": "Kernel modules for U32",
+    "files_count": 1,
+    "installed_size": "189",
+    "name": "kmod-ipt-u32",
+    "version": "4.4.60-1"
+  },
+  "kmod-iptunnel": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5)",
+    "description": "Kernel module for generic IP tunnel support",
+    "files_count": 2,
+    "installed_size": "8695",
+    "name": "kmod-iptunnel",
+    "version": "4.4.60-1"
+  },
+  "kmod-iptunnel4": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5)",
+    "description": "Kernel modules for IPv4 tunneling",
+    "files_count": 2,
+    "installed_size": "2027",
+    "name": "kmod-iptunnel4",
+    "version": "4.4.60-1"
+  },
+  "kmod-iptunnel6": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5)",
+    "description": "Kernel modules for IPv6 tunneling",
+    "files_count": 2,
+    "installed_size": "2094",
+    "name": "kmod-iptunnel6",
+    "version": "4.4.60-1"
+  },
+  "kmod-l2tp": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-udptunnel4, kmod-udptunnel6",
+    "description": "Kernel modules for L2TP V3 Support",
+    "files_count": 3,
+    "installed_size": "15621",
+    "name": "kmod-l2tp",
+    "version": "4.4.60-1"
+  },
+  "kmod-leds-gpio": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5)",
+    "description": "Kernel module for LEDs on GPIO lines",
+    "files_count": 3,
+    "installed_size": "2878",
+    "name": "kmod-leds-gpio",
+    "version": "4.4.60-1"
+  },
+  "kmod-lib-crc-ccitt": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5)",
+    "description": "Kernel module for CRC-CCITT support",
+    "files_count": 2,
+    "installed_size": "1571",
+    "name": "kmod-lib-crc-ccitt",
+    "version": "4.4.60-1"
+  },
+  "kmod-lib-crc32c": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-crypto-crc32c",
+    "description": "Kernel module for CRC32 support",
+    "files_count": 2,
+    "installed_size": "1422",
+    "name": "kmod-lib-crc32c",
+    "version": "4.4.60-1"
+  },
+  "kmod-lib-lzo": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5)",
+    "description": "Kernel module for LZO compression/decompression support",
+    "files_count": 1,
+    "installed_size": "202",
+    "name": "kmod-lib-lzo",
+    "version": "4.4.60-1"
+  },
+  "kmod-lib-textsearch": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5)",
+    "description": "Textsearch support",
+    "files_count": 4,
+    "installed_size": "3955",
+    "name": "kmod-lib-textsearch",
+    "version": "4.4.60-1"
+  },
+  "kmod-lib-zlib": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5)",
+    "description": "Zlib support",
+    "files_count": 1,
+    "installed_size": "200",
+    "name": "kmod-lib-zlib",
+    "version": "4.4.60-1"
+  },
+  "kmod-llc": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5)",
+    "description": "Kernel module for ANSI/IEEE 802.2 LLC support.",
+    "files_count": 1,
+    "installed_size": "194",
+    "name": "kmod-llc",
+    "version": "4.4.60-1"
+  },
+  "kmod-loop": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5)",
+    "description": "Kernel module for loopback device support",
+    "files_count": 2,
+    "installed_size": "10731",
+    "name": "kmod-loop",
+    "version": "4.4.60-1"
+  },
+  "kmod-macvlan": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5)",
+    "description": "A kernel module which allows one to create virtual interfaces that\nmap packets to or from specific MAC addresses to a particular interface",
+    "files_count": 1,
+    "installed_size": "8800",
+    "name": "kmod-macvlan",
+    "version": "4.4.60-1"
+  },
+  "kmod-mppe": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-ppp, kmod-crypto-core, kmod-crypto-arc4, kmod-crypto-sha1, kmod-crypto-ecb",
+    "description": "Kernel modules for Microsoft PPP compression/encryption",
+    "files_count": 2,
+    "installed_size": "4211",
+    "name": "kmod-mppe",
+    "version": "4.4.60-1"
+  },
+  "kmod-nat-sctp": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-ipt-core, kmod-ipt-ct-sctp, kmod-ipt-nat, kmod-lib-crc32c",
+    "description": "Kernel modules for sctp nat",
+    "files_count": 2,
+    "installed_size": "1624",
+    "name": "kmod-nat-sctp",
+    "version": "4.4.60-1"
+  },
+  "kmod-nat46": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-nf-conntrack6",
+    "description": "Stateless NAT46 translation kernel module",
+    "files_count": 2,
+    "installed_size": "17635",
+    "name": "kmod-nat46",
+    "version": "4.4.60+6-1"
+  },
+  "kmod-nf-conntrack": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5)",
+    "description": "Netfilter connection tracking",
+    "files_count": 4,
+    "installed_size": "9585",
+    "name": "kmod-nf-conntrack",
+    "version": "4.4.60-1"
+  },
+  "kmod-nf-conntrack-netlink": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-nfnetlink, kmod-ipt-conntrack",
+    "description": "Kernel modules support for a netlink-based connection tracking\nuserspace interface",
+    "files_count": 2,
+    "installed_size": "13544",
+    "name": "kmod-nf-conntrack-netlink",
+    "version": "4.4.60-1"
+  },
+  "kmod-nf-conntrack6": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-ipv6, kmod-nf-conntrack",
+    "description": "Netfilter IPv6 connection tracking",
+    "files_count": 3,
+    "installed_size": "11751",
+    "name": "kmod-nf-conntrack6",
+    "version": "4.4.60-1"
+  },
+  "kmod-nf-nat": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-nf-conntrack, kmod-nf-ipt",
+    "description": "Netfilter NAT",
+    "files_count": 3,
+    "installed_size": "11893",
+    "name": "kmod-nf-nat",
+    "version": "4.4.60-1"
+  },
+  "kmod-nf-nat6": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-nf-conntrack6, kmod-nf-ipt6, kmod-nf-nat",
+    "description": "Netfilter IPV6-NAT",
+    "files_count": 2,
+    "installed_size": "4531",
+    "name": "kmod-nf-nat6",
+    "version": "4.4.60-1"
+  },
+  "kmod-nf-nathelper": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-nf-nat",
+    "description": "Default Netfilter (IPv4) Conntrack and NAT helpers\nIncludes:\n- ftp\n- irc\n- tftp",
+    "files_count": 3,
+    "installed_size": "7445",
+    "name": "kmod-nf-nathelper",
+    "version": "4.4.60-1"
+  },
+  "kmod-nf-nathelper-extra": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-nf-nat, kmod-lib-textsearch, kmod-pptp",
+    "description": "Extra Netfilter (IPv4) Conntrack and NAT helpers\nIncludes:\n- amanda\n- h323\n- mms\n- pptp\n- proto_gre\n- sip\n- snmp_basic\n- broadcast",
+    "files_count": 18,
+    "installed_size": "62527",
+    "name": "kmod-nf-nathelper-extra",
+    "version": "4.4.60-1"
+  },
+  "kmod-nft-core": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-nfnetlink, kmod-nf-conntrack6, kmod-ipt-core, kmod-ipt-nat",
+    "description": "Kernel module support for nftables",
+    "files_count": 23,
+    "installed_size": "53134",
+    "name": "kmod-nft-core",
+    "version": "4.4.60-1"
+  },
+  "kmod-nft-nat": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-nft-core, kmod-nf-nat",
+    "description": "Netfilter nf_tables NAT support",
+    "files_count": 8,
+    "installed_size": "6758",
+    "name": "kmod-nft-nat",
+    "version": "4.4.60-1"
+  },
+  "kmod-nft-nat6": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-nft-core, kmod-nf-nat6",
+    "description": "Netfilter nf_tables IPv6-NAT support",
+    "files_count": 2,
+    "installed_size": "1459",
+    "name": "kmod-nft-nat6",
+    "version": "4.4.60-1"
+  },
+  "kmod-nls-base": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5)",
+    "description": "Kernel module for NLS (Native Language Support)",
+    "files_count": 1,
+    "installed_size": "3330",
+    "name": "kmod-nls-base",
+    "version": "4.4.60-1"
+  },
+  "kmod-nls-cp437": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-nls-base",
+    "description": "Kernel module for NLS Codepage 437 (United States, Canada)",
+    "files_count": 2,
+    "installed_size": "2398",
+    "name": "kmod-nls-cp437",
+    "version": "4.4.60-1"
+  },
+  "kmod-nls-iso8859-1": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-nls-base",
+    "description": "Kernel module for NLS ISO 8859-1 (Latin 1)",
+    "files_count": 2,
+    "installed_size": "2083",
+    "name": "kmod-nls-iso8859-1",
+    "version": "4.4.60-1"
+  },
+  "kmod-openswan": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-crypto-ocf",
+    "description": "Openswan is an IPsec implementation for Linux.\nThis package contains the Openswan kernel module.",
+    "files_count": 1,
+    "installed_size": "163787",
+    "name": "kmod-openswan",
+    "version": "4.4.60+2.6.51.3-1"
+  },
+  "kmod-openvswitch": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-lib-crc32c, kmod-nf-nat, kmod-nf-nat6, kmod-nf-conntrack, kmod-nf-conntrack6, kmod-ipt-conntrack-extra",
+    "description": "Open vSwitch kernel datapath (upstream)",
+    "files_count": 2,
+    "installed_size": "42904",
+    "name": "kmod-openvswitch",
+    "version": "4.4.60+2.11.1-2"
+  },
+  "kmod-pktgen": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5)",
+    "description": "Kernel modules for the Network Packet Generator",
+    "files_count": 2,
+    "installed_size": "22157",
+    "name": "kmod-pktgen",
+    "version": "4.4.60-1"
+  },
+  "kmod-ppp": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-lib-crc-ccitt, kmod-slhc",
+    "description": "Kernel modules for PPP support",
+    "files_count": 3,
+    "installed_size": "20411",
+    "name": "kmod-ppp",
+    "version": "4.4.60-1"
+  },
+  "kmod-pppoe": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-ppp, kmod-pppox",
+    "description": "Kernel module for PPPoE (PPP over Ethernet) support",
+    "files_count": 2,
+    "installed_size": "7266",
+    "name": "kmod-pppoe",
+    "version": "4.4.60-1"
+  },
+  "kmod-pppol2tp": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-ppp, kmod-pppox, kmod-l2tp",
+    "description": "Kernel modules for PPPoL2TP (PPP over L2TP) support",
+    "files_count": 2,
+    "installed_size": "10209",
+    "name": "kmod-pppol2tp",
+    "version": "4.4.60-1"
+  },
+  "kmod-pppox": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-ppp",
+    "description": "Kernel helper module for PPPoE and PPTP support",
+    "files_count": 1,
+    "installed_size": "1806",
+    "name": "kmod-pppox",
+    "version": "4.4.60-1"
+  },
+  "kmod-pptp": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-ppp, kmod-gre, kmod-pppox",
+    "description": "PPtP support",
+    "files_count": 2,
+    "installed_size": "6575",
+    "name": "kmod-pptp",
+    "version": "4.4.60-1"
+  },
+  "kmod-qca-hyfi-bridge": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-emesh-sp",
+    "description": "This package installs the Hy-Fi bridging Netfilter Module",
+    "files_count": 3,
+    "installed_size": "59296",
+    "name": "kmod-qca-hyfi-bridge",
+    "version": "4.4.60+g6d1a719c82-dirty-1"
+  },
+  "kmod-qca-mcs": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-qca-ovsmgr",
+    "description": "This package installs the IGMP/MLD Snooping Module",
+    "files_count": 2,
+    "installed_size": "26391",
+    "name": "kmod-qca-mcs",
+    "version": "4.4.60+g6d1a719c82-dirty-1"
+  },
+  "kmod-qca-nss-cfi-cryptoapi": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-qca-nss-crypto, kmod-crypto-authenc",
+    "description": "Kernel driver for NSS cfi",
+    "files_count": 2,
+    "installed_size": "12822",
+    "name": "kmod-qca-nss-cfi-cryptoapi",
+    "version": "4.4.60+g6d1a719c82-dirty-2"
+  },
+  "kmod-qca-nss-cfi-ocf": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-qca-nss-crypto, kmod-crypto-ocf",
+    "description": "Kernel driver for NSS cfi",
+    "files_count": 2,
+    "installed_size": "5211",
+    "name": "kmod-qca-nss-cfi-ocf",
+    "version": "4.4.60+g6d1a719c82-dirty-2"
+  },
+  "kmod-qca-nss-crypto": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-qca-nss-drv",
+    "description": "Kernel driver for NSS crypto driver",
+    "files_count": 3,
+    "installed_size": "24067",
+    "name": "kmod-qca-nss-crypto",
+    "version": "4.4.60+g6d1a719c82-dirty-1"
+  },
+  "kmod-qca-nss-dp": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-qca-ssdk-nohnat",
+    "description": "Kernel driver for NSS data plane",
+    "files_count": 2,
+    "installed_size": "23855",
+    "name": "kmod-qca-nss-dp",
+    "version": "4.4.60+g6d1a719c82-dirty-1"
+  },
+  "kmod-qca-nss-drv": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-qca-nss-dp",
+    "description": "Kernel driver for NSS (core driver)",
+    "files_count": 7,
+    "installed_size": "324803",
+    "name": "kmod-qca-nss-drv",
+    "version": "4.4.60+g6d1a719c82-dirty-2"
+  },
+  "kmod-qca-nss-drv-bridge-mgr": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-qca-nss-drv-vlan-mgr, kmod-bonding, kmod-qca-ovsmgr",
+    "description": "Kernel driver for NSS bridge manager",
+    "files_count": 2,
+    "installed_size": "13138",
+    "name": "kmod-qca-nss-drv-bridge-mgr",
+    "version": "4.4.60+g6d1a719c82-dirty-2"
+  },
+  "kmod-qca-nss-drv-gre": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-qca-nss-drv, kmod-gre6",
+    "description": "Kernel driver for NSS (connection manager) - GRE",
+    "files_count": 3,
+    "installed_size": "19114",
+    "name": "kmod-qca-nss-drv-gre",
+    "version": "4.4.60+g6d1a719c82-dirty-2"
+  },
+  "kmod-qca-nss-drv-igs": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-qca-nss-drv, kmod-sched-core, kmod-ifb, kmod-qca-nss-drv-qdisc",
+    "description": "Action for offloading traffic to an IFB interface to perform ingress shaping.",
+    "files_count": 2,
+    "installed_size": "7894",
+    "name": "kmod-qca-nss-drv-igs",
+    "version": "4.4.60+g6d1a719c82-dirty-2"
+  },
+  "kmod-qca-nss-drv-ipsecmgr": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-qca-nss-drv, kmod-qca-nss-cfi-cryptoapi, kmod-qca-nss-cfi-ocf, kmod-qca-nss-drv-l2tpv2",
+    "description": "Kernel driver for NSS (ipsec manager) - ipsecmgr",
+    "files_count": 2,
+    "installed_size": "23193",
+    "name": "kmod-qca-nss-drv-ipsecmgr",
+    "version": "4.4.60+g6d1a719c82-dirty-2"
+  },
+  "kmod-qca-nss-drv-ipsecmgr-klips": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-qca-nss-drv-ipsecmgr, kmod-qca-nss-ecm, kmod-qca-nss-cfi-ocf, kmod-qca-nss-drv-vxlanmgr",
+    "description": "Kernel driver for NSS (ipsec klips)",
+    "files_count": 2,
+    "installed_size": "14321",
+    "name": "kmod-qca-nss-drv-ipsecmgr-klips",
+    "version": "4.4.60+g6d1a719c82-dirty-2"
+  },
+  "kmod-qca-nss-drv-l2tpv2": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-qca-nss-drv, kmod-ppp, kmod-l2tp",
+    "description": "Kernel driver for NSS (connection manager) - l2tp",
+    "files_count": 2,
+    "installed_size": "9922",
+    "name": "kmod-qca-nss-drv-l2tpv2",
+    "version": "4.4.60+g6d1a719c82-dirty-2"
+  },
+  "kmod-qca-nss-drv-lag-mgr": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-qca-nss-drv, kmod-qca-nss-drv-vlan-mgr, kmod-bonding",
+    "description": "Kernel driver for NSS LAG manager",
+    "files_count": 2,
+    "installed_size": "2667",
+    "name": "kmod-qca-nss-drv-lag-mgr",
+    "version": "4.4.60+g6d1a719c82-dirty-2"
+  },
+  "kmod-qca-nss-drv-map-t": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-qca-nss-drv, kmod-nat46",
+    "description": "Kernel driver for NSS (connection manager) - MAP-T",
+    "files_count": 2,
+    "installed_size": "7285",
+    "name": "kmod-qca-nss-drv-map-t",
+    "version": "4.4.60+g6d1a719c82-dirty-2"
+  },
+  "kmod-qca-nss-drv-match": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-qca-nss-drv",
+    "description": "NSS Match for QCA NSS driver",
+    "files_count": 1,
+    "installed_size": "19435",
+    "name": "kmod-qca-nss-drv-match",
+    "version": "4.4.60+g6d1a719c82-dirty-2"
+  },
+  "kmod-qca-nss-drv-mirror": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-qca-nss-drv",
+    "description": "Module for mirroring packets from NSS to host.",
+    "files_count": 1,
+    "installed_size": "13321",
+    "name": "kmod-qca-nss-drv-mirror",
+    "version": "4.4.60+g6d1a719c82-dirty-2"
+  },
+  "kmod-qca-nss-drv-mscs": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-qca-nss-drv, kmod-qca-nss-ecm-premium, kmod-qca-wifi",
+    "description": "NSS Module to interface between wlan host driver and ECM MSCS classifier.",
+    "files_count": 1,
+    "installed_size": "1863",
+    "name": "kmod-qca-nss-drv-mscs",
+    "version": "4.4.60+g6d1a719c82-dirty-2"
+  },
+  "kmod-qca-nss-drv-netlink": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-qca-nss-drv, kmod-qca-nss-drv-ipsecmgr",
+    "description": "NSS NETLINK Manager for QCA NSS driver",
+    "files_count": 1,
+    "installed_size": "40106",
+    "name": "kmod-qca-nss-drv-netlink",
+    "version": "4.4.60+g6d1a719c82-dirty-2"
+  },
+  "kmod-qca-nss-drv-ovpn-link": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-qca-nss-drv-ovpn-mgr, kmod-qca-nss-ecm-premium",
+    "description": "Kernel driver for interfacing NSS OpenVPN manager with ECM",
+    "files_count": 1,
+    "installed_size": "2316",
+    "name": "kmod-qca-nss-drv-ovpn-link",
+    "version": "4.4.60+g6d1a719c82-dirty-2"
+  },
+  "kmod-qca-nss-drv-ovpn-mgr": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-qca-nss-drv, kmod-qca-nss-cfi-cryptoapi, kmod-tun, kmod-ipt-conntrack",
+    "description": "Kernel driver for NSS OpenVPN manager",
+    "files_count": 2,
+    "installed_size": "25337",
+    "name": "kmod-qca-nss-drv-ovpn-mgr",
+    "version": "4.4.60+g6d1a719c82-dirty-2"
+  },
+  "kmod-qca-nss-drv-pppoe": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-qca-nss-drv, kmod-pppoe, kmod-bonding",
+    "description": "Kernel driver for NSS (connection manager) - PPPoE",
+    "files_count": 2,
+    "installed_size": "4933",
+    "name": "kmod-qca-nss-drv-pppoe",
+    "version": "4.4.60+g6d1a719c82-dirty-2"
+  },
+  "kmod-qca-nss-drv-pptp": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-qca-nss-drv, kmod-pptp",
+    "description": "Kernel driver for NSS (connection manager) - PPTP",
+    "files_count": 2,
+    "installed_size": "7812",
+    "name": "kmod-qca-nss-drv-pptp",
+    "version": "4.4.60+g6d1a719c82-dirty-2"
+  },
+  "kmod-qca-nss-drv-qdisc": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-qca-nss-drv",
+    "description": "Qdisc for configuring shapers in NSS",
+    "files_count": 2,
+    "installed_size": "64052",
+    "name": "kmod-qca-nss-drv-qdisc",
+    "version": "4.4.60+g6d1a719c82-dirty-2"
+  },
+  "kmod-qca-nss-drv-tun6rd": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-qca-nss-drv, kmod-sit",
+    "description": "Kernel driver for NSS (connection manager) - tun6rd",
+    "files_count": 2,
+    "installed_size": "4311",
+    "name": "kmod-qca-nss-drv-tun6rd",
+    "version": "4.4.60+g6d1a719c82-dirty-2"
+  },
+  "kmod-qca-nss-drv-tunipip6": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-qca-nss-drv, kmod-iptunnel6, kmod-ip6-tunnel",
+    "description": "Kernel driver for NSS (connection manager) - DS-lite and ipip6 Tunnel",
+    "files_count": 2,
+    "installed_size": "12681",
+    "name": "kmod-qca-nss-drv-tunipip6",
+    "version": "4.4.60+g6d1a719c82-dirty-2"
+  },
+  "kmod-qca-nss-drv-vlan-mgr": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-qca-nss-drv, kmod-bonding",
+    "description": "Kernel driver for NSS vlan manager",
+    "files_count": 2,
+    "installed_size": "12646",
+    "name": "kmod-qca-nss-drv-vlan-mgr",
+    "version": "4.4.60+g6d1a719c82-dirty-2"
+  },
+  "kmod-qca-nss-drv-vxlanmgr": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-qca-nss-drv, kmod-vxlan",
+    "description": "NSS VxLAN Manager for QCA NSS driver",
+    "files_count": 2,
+    "installed_size": "12323",
+    "name": "kmod-qca-nss-drv-vxlanmgr",
+    "version": "4.4.60+g6d1a719c82-dirty-2"
+  },
+  "kmod-qca-nss-ecm-premium": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-qca-nss-drv, iptables-mod-extra, kmod-ipt-conntrack, kmod-pppoe, kmod-qca-ovsmgr, kmod-qca-hyfi-bridge, kmod-qca-mcs, kmod-nat46, kmod-l2tp, kmod-pppol2tp, kmod-pptp, kmod-shortcut-fe-drv, kmod-bonding, kmod-emesh-sp",
+    "description": "QCA NSS Enhanced Connection Manager (ECM) (with premium features)",
+    "files_count": 11,
+    "installed_size": "400957",
+    "name": "kmod-qca-nss-ecm-premium",
+    "version": "4.4.60+g6d1a719c82-dirty-1"
+  },
+  "kmod-qca-nss-macsec": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), libpthread, libc",
+    "description": "Kernel driver for NSS macsec",
+    "files_count": 4,
+    "installed_size": "98787",
+    "name": "kmod-qca-nss-macsec",
+    "version": "4.4.60+g6d1a719c82-dirty-1"
+  },
+  "kmod-qca-ovsmgr": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-openvswitch",
+    "description": "Kernel driver for NSS OpenVSwitch manager",
+    "files_count": 2,
+    "installed_size": "18638",
+    "name": "kmod-qca-ovsmgr",
+    "version": "4.4.60+g6d1a719c82-dirty-2"
+  },
+  "kmod-qca-ssdk-nohnat": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5)",
+    "description": "Kernel driver for QCA SSDK",
+    "files_count": 3,
+    "installed_size": "813424",
+    "name": "kmod-qca-ssdk-nohnat",
+    "version": "4.4.60+g6d1a719c82-dirty-1"
+  },
+  "kmod-qca-wifi-unified-profile": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), libgcc, libc, wireless-tools, librt, kmod-cfg80211-linux, libroxml, libnl, qca-cfg80211, kmod-msm-mproc, qca-qrtr, kmod-qca-nss-drv",
+    "description": "QCA Wireless LAN Driver",
+    "files_count": 92,
+    "installed_size": "3827526",
+    "name": "kmod-qca-wifi-unified-profile",
+    "version": "4.4.60+g6d1a719c82-dirty-1"
+  },
+  "kmod-qpic_panel_ertft": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5)",
+    "description": "Kernel support for qpic_panel_ertft  lcd panel",
+    "files_count": 0,
+    "installed_size": "105",
+    "name": "kmod-qpic_panel_ertft",
+    "version": "4.4.60+1-1"
+  },
+  "kmod-regmap": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-lib-lzo, kmod-i2c-core",
+    "description": "Generic register map support",
+    "files_count": 1,
+    "installed_size": "202",
+    "name": "kmod-regmap",
+    "version": "4.4.60-1"
+  },
+  "kmod-rmnet-nss": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-qca-nss-drv",
+    "description": "RMNET NSS interface module",
+    "files_count": 2,
+    "installed_size": "3303",
+    "name": "kmod-rmnet-nss",
+    "version": "4.4.60+g6d1a719c82-dirty-1"
+  },
+  "kmod-sched": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-sched-core, kmod-ipt-core",
+    "description": "Extra kernel schedulers modules for IP traffic",
+    "files_count": 19,
+    "installed_size": "56602",
+    "name": "kmod-sched",
+    "version": "4.4.60-1"
+  },
+  "kmod-sched-connmark": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-sched-core, kmod-ipt-core, kmod-ipt-conntrack-extra",
+    "description": "Traffic shaper conntrack mark support",
+    "files_count": 2,
+    "installed_size": "2337",
+    "name": "kmod-sched-connmark",
+    "version": "4.4.60-1"
+  },
+  "kmod-sched-core": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5)",
+    "description": "Core kernel scheduler support for IP traffic",
+    "files_count": 11,
+    "installed_size": "31549",
+    "name": "kmod-sched-core",
+    "version": "4.4.60-1"
+  },
+  "kmod-scsi-core": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5)",
+    "description": "SCSI device support",
+    "files_count": 4,
+    "installed_size": "72506",
+    "name": "kmod-scsi-core",
+    "version": "4.4.60-1"
+  },
+  "kmod-shortcut-fe": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5)",
+    "description": "Kernel driver for SFE",
+    "files_count": 5,
+    "installed_size": "28790",
+    "name": "kmod-shortcut-fe",
+    "version": "4.4.60+g6d1a719c82-dirty-1"
+  },
+  "kmod-shortcut-fe-cm": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-ipt-conntrack, kmod-shortcut-fe",
+    "description": "Kernel driver for SFE",
+    "files_count": 1,
+    "installed_size": "7730",
+    "name": "kmod-shortcut-fe-cm",
+    "version": "4.4.60+g6d1a719c82-dirty-1"
+  },
+  "kmod-shortcut-fe-drv": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-shortcut-fe",
+    "description": "Simulated sfe driver for ECM",
+    "files_count": 2,
+    "installed_size": "6164",
+    "name": "kmod-shortcut-fe-drv",
+    "version": "4.4.60+g6d1a719c82-dirty-1"
+  },
+  "kmod-sit": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-iptunnel, kmod-iptunnel4",
+    "description": "Kernel modules for IPv6-in-IPv4 tunnelling",
+    "files_count": 2,
+    "installed_size": "10802",
+    "name": "kmod-sit",
+    "version": "4.4.60-1"
+  },
+  "kmod-slhc": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-lib-crc-ccitt",
+    "description": "Serial Line Header Compression",
+    "files_count": 1,
+    "installed_size": "3580",
+    "name": "kmod-slhc",
+    "version": "4.4.60-1"
+  },
+  "kmod-sound-core": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-input-core",
+    "description": "Kernel modules for sound support",
+    "files_count": 7,
+    "installed_size": "49268",
+    "name": "kmod-sound-core",
+    "version": "4.4.60-1"
+  },
+  "kmod-sound-soc-core": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-regmap, kmod-ac97, kmod-sound-core",
+    "description": "SoC sound support",
+    "files_count": 1,
+    "installed_size": "192",
+    "name": "kmod-sound-soc-core",
+    "version": "4.4.60-1"
+  },
+  "kmod-sound-soc-ipq": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-sound-soc-core, kmod-sound-core",
+    "description": "This enables sound card support for Qualcomm-Atheros IPQ board",
+    "files_count": 0,
+    "installed_size": "105",
+    "name": "kmod-sound-soc-ipq",
+    "version": "4.4.60+1-1"
+  },
+  "kmod-stp": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-llc",
+    "description": "Kernel module for Ethernet Spanning Tree Protocol support.",
+    "files_count": 1,
+    "installed_size": "182",
+    "name": "kmod-stp",
+    "version": "4.4.60-1"
+  },
+  "kmod-tun": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5)",
+    "description": "Kernel support for the TUN/TAP tunneling device",
+    "files_count": 2,
+    "installed_size": "11940",
+    "name": "kmod-tun",
+    "version": "4.4.60-1"
+  },
+  "kmod-udptunnel4": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5)",
+    "description": "IPv4 UDP tunneling support",
+    "files_count": 2,
+    "installed_size": "2153",
+    "name": "kmod-udptunnel4",
+    "version": "4.4.60-1"
+  },
+  "kmod-udptunnel6": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5)",
+    "description": "IPv6 UDP tunneling support",
+    "files_count": 2,
+    "installed_size": "1925",
+    "name": "kmod-udptunnel6",
+    "version": "4.4.60-1"
+  },
+  "kmod-usb-core": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-nls-base",
+    "description": "Kernel support for USB",
+    "files_count": 4,
+    "installed_size": "92377",
+    "name": "kmod-usb-core",
+    "version": "4.4.60-1"
+  },
+  "kmod-usb-dwc3": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-usb-gadget, kmod-usb-core",
+    "description": "This driver provides support for the Dual Role SuperSpeed\nUSB Controller based on the Synopsys DesignWare USB3 IP Core",
+    "files_count": 3,
+    "installed_size": "29614",
+    "name": "kmod-usb-dwc3",
+    "version": "4.4.60-1"
+  },
+  "kmod-usb-dwc3-of-simple": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-usb-dwc3, kmod-usb-core",
+    "description": "This driver provides generic platform glue for the integrated DesignWare USB3 IP Core.",
+    "files_count": 4,
+    "installed_size": "9354",
+    "name": "kmod-usb-dwc3-of-simple",
+    "version": "4.4.60-1"
+  },
+  "kmod-usb-f-diag": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-usb-lib-composite, kmod-usb-configfs, kmod-usb-core",
+    "description": "USB DIAG",
+    "files_count": 2,
+    "installed_size": "5813",
+    "name": "kmod-usb-f-diag",
+    "version": "4.4.60+1-1"
+  },
+  "kmod-usb-f-qdss": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-usb-lib-composite, kmod-usb-configfs, kmod-lib-crc-ccitt, kmod-usb-dwc3, kmod-usb-dwc3-of-simple, kmod-usb-core",
+    "description": "USB QDSS",
+    "files_count": 3,
+    "installed_size": "8654",
+    "name": "kmod-usb-f-qdss",
+    "version": "4.4.60+1-1"
+  },
+  "kmod-usb-gadget": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-usb-core",
+    "description": "Kernel support for USB Gadget mode",
+    "files_count": 2,
+    "installed_size": "5685",
+    "name": "kmod-usb-gadget",
+    "version": "4.4.60-1"
+  },
+  "kmod-usb-lib-composite": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-usb-gadget, kmod-fs-configfs, kmod-usb-core",
+    "description": "Lib Composite",
+    "files_count": 2,
+    "installed_size": "20090",
+    "name": "kmod-usb-lib-composite",
+    "version": "4.4.60-1"
+  },
+  "kmod-usb-phy-ipq807x": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-usb-core",
+    "description": "Support for USB PHY drivers in IPQ807x based SoCs.",
+    "files_count": 4,
+    "installed_size": "11704",
+    "name": "kmod-usb-phy-ipq807x",
+    "version": "4.4.60+1-1"
+  },
+  "kmod-usb-storage": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-scsi-core, kmod-usb-core",
+    "description": "Kernel support for USB Mass Storage devices",
+    "files_count": 3,
+    "installed_size": "22888",
+    "name": "kmod-usb-storage",
+    "version": "4.4.60-1"
+  },
+  "kmod-usb-uas": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-scsi-core, kmod-usb-storage, kmod-usb-core",
+    "description": "Kernel support for USB Attached SCSI devices (UAS)",
+    "files_count": 3,
+    "installed_size": "7954",
+    "name": "kmod-usb-uas",
+    "version": "4.4.60+1-1"
+  },
+  "kmod-usb2": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-usb-core",
+    "description": "Kernel support for USB2 (EHCI) controllers",
+    "files_count": 4,
+    "installed_size": "36775",
+    "name": "kmod-usb2",
+    "version": "4.4.60-1"
+  },
+  "kmod-usb3": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-usb-core",
+    "description": "Kernel support for USB3 (XHCI) controllers",
+    "files_count": 5,
+    "installed_size": "72934",
+    "name": "kmod-usb3",
+    "version": "4.4.60-1"
+  },
+  "kmod-veth": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5)",
+    "description": "This device is a local ethernet tunnel. Devices are created in pairs.\nWhen one end receives the packet it appears on its pair and vice\nversa.",
+    "files_count": 2,
+    "installed_size": "3623",
+    "name": "kmod-veth",
+    "version": "4.4.60-1"
+  },
+  "kmod-vxlan": {
+    "architecture": "ipq",
+    "depends": "kernel (=4.4.60-1-c75115263ae7d1796de2a387d774f3b5), kmod-iptunnel, kmod-udptunnel4, kmod-udptunnel6",
+    "description": "Kernel module for supporting VXLAN in the Kernel.\nRequires Kernel 3.12 or newer.",
+    "files_count": 2,
+    "installed_size": "20961",
+    "name": "kmod-vxlan",
+    "version": "4.4.60-1"
+  },
+  "libacl": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libattr",
+    "description": "Access control list support\nThis package provides libacl",
+    "files_count": 3,
+    "installed_size": "11365",
+    "name": "libacl",
+    "version": "20140812-1"
+  },
+  "libatomic": {
+    "architecture": "ipq",
+    "depends": "libgcc",
+    "description": "Atomic support library",
+    "files_count": 2,
+    "installed_size": "4545",
+    "name": "libatomic",
+    "version": "5.2.0-1"
+  },
+  "libattr": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "Extended attributes support\nThis package provides libattr",
+    "files_count": 4,
+    "installed_size": "6433",
+    "name": "libattr",
+    "version": "20150220-1"
+  },
+  "libblobmsg-json": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libjson-c, libubox",
+    "description": "blobmsg <-> json conversion library",
+    "files_count": 1,
+    "installed_size": "3907",
+    "name": "libblobmsg-json",
+    "version": "2020-05-25-66195aee-1"
+  },
+  "libbz2": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "bzip2 is a freely available, patent free, high-quality\ndata compressor. This packages provides libbz2 library.",
+    "files_count": 2,
+    "installed_size": "24715",
+    "name": "libbz2",
+    "version": "1.0.6-2"
+  },
+  "libc": {
+    "architecture": "ipq",
+    "depends": "libgcc",
+    "description": "C library",
+    "files_count": 3,
+    "installed_size": "235919",
+    "name": "libc",
+    "version": "1.1.16-1"
+  },
+  "libcap": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "Linux capabilities library",
+    "files_count": 3,
+    "installed_size": "5434",
+    "name": "libcap",
+    "version": "2.24-1"
+  },
+  "libcurl": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libopenssl, libnghttp2, ca-bundle",
+    "description": "A client-side URL transfer library",
+    "files_count": 2,
+    "installed_size": "149351",
+    "name": "libcurl",
+    "version": "7.73.0-2"
+  },
+  "libevent2": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "The libevent API provides a mechanism to execute a callback function\nwhen a specific event occurs on a file descriptor or after a timeout\nhas been reached. Furthermore, libevent also support callbacks due\nto signals or regular timeouts.\n\nlibevent is meant to replace the event loop found in event driven\nnetwork servers. An application just needs to call event_dispatch()\nand then add or remove events dynamically without having to change\nthe event loop.\n\nThis package contains the libevent shared library historically\ncontaining both the core & extra libraries.",
+    "files_count": 2,
+    "installed_size": "80727",
+    "name": "libevent2",
+    "version": "2.1.11-1"
+  },
+  "libevent2-core": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "The libevent API provides a mechanism to execute a callback function\nwhen a specific event occurs on a file descriptor or after a timeout\nhas been reached. Furthermore, libevent also support callbacks due\nto signals or regular timeouts.\n\nlibevent is meant to replace the event loop found in event driven\nnetwork servers. An application just needs to call event_dispatch()\nand then add or remove events dynamically without having to change\nthe event loop.\n\nThis package contains the libevent core shared library for the event,\nbuffer & utility functions.",
+    "files_count": 2,
+    "installed_size": "45690",
+    "name": "libevent2-core",
+    "version": "2.1.11-1"
+  },
+  "libevent2-openssl": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libopenssl, libevent2-core",
+    "description": "The libevent API provides a mechanism to execute a callback function\nwhen a specific event occurs on a file descriptor or after a timeout\nhas been reached. Furthermore, libevent also support callbacks due\nto signals or regular timeouts.\n\nlibevent is meant to replace the event loop found in event driven\nnetwork servers. An application just needs to call event_dispatch()\nand then add or remove events dynamically without having to change\nthe event loop.\n\nThis package contains the libevent OpenSSL shared library for encrypted\nbufferevents.",
+    "files_count": 2,
+    "installed_size": "7366",
+    "name": "libevent2-openssl",
+    "version": "2.1.11-1"
+  },
+  "libext2fs": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "libext2fs is a library which can access ext2, ext3 and ext4 filesystems.",
+    "files_count": 4,
+    "installed_size": "110704",
+    "name": "libext2fs",
+    "version": "1.42.12-1"
+  },
+  "libf2fs": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "Library for Flash-Friendly File System (F2FS) tools",
+    "files_count": 3,
+    "installed_size": "4533",
+    "name": "libf2fs",
+    "version": "1.4.0-1"
+  },
+  "libgcc": {
+    "architecture": "ipq",
+    "depends": "",
+    "description": "GCC support library",
+    "files_count": 1,
+    "installed_size": "19073",
+    "name": "libgcc",
+    "version": "5.2.0-1"
+  },
+  "libgmp": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "GMP is a free library for arbitrary precision arithmetic, operating on\nsigned integers, rational numbers, and floating point numbers.",
+    "files_count": 2,
+    "installed_size": "177802",
+    "name": "libgmp",
+    "version": "6.0.0-1"
+  },
+  "libhyficommon": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, qca-son-mem-debug",
+    "description": "This Package contains the Hy-Fi Common Functionality Library",
+    "files_count": 1,
+    "installed_size": "28889",
+    "name": "libhyficommon",
+    "version": "g6d1a719c82-dirty-1"
+  },
+  "libieee1905": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libhyficommon, qca-son-mem-debug",
+    "description": "This Package contains the IEEE1905.1 library",
+    "files_count": 1,
+    "installed_size": "8415",
+    "name": "libieee1905",
+    "version": "g6d1a719c82-dirty-1"
+  },
+  "libip4tc": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libxtables",
+    "description": "IPv4 firewall - shared libiptc library",
+    "files_count": 4,
+    "installed_size": "20477",
+    "name": "libip4tc",
+    "version": "1.6.2-1"
+  },
+  "libip6tc": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libxtables",
+    "description": "IPv6 firewall - shared libiptc library",
+    "files_count": 4,
+    "installed_size": "20182",
+    "name": "libip6tc",
+    "version": "1.6.2-1"
+  },
+  "libiwinfo": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libuci, libubus",
+    "description": "Wireless information library with consistent interface for proprietary Broadcom,\nmadwifi, nl80211 and wext driver interfaces.",
+    "files_count": 2,
+    "installed_size": "17683",
+    "name": "libiwinfo",
+    "version": "2018-12-25-dd508af4"
+  },
+  "libiwinfo-lua": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libiwinfo, liblua",
+    "description": "This is the Lua binding for the iwinfo library. It provides access to all enabled\nbackends.",
+    "files_count": 1,
+    "installed_size": "7112",
+    "name": "libiwinfo-lua",
+    "version": "2018-12-25-dd508af4"
+  },
+  "libjson-c": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "This package contains a library for javascript object notation backends.",
+    "files_count": 2,
+    "installed_size": "13979",
+    "name": "libjson-c",
+    "version": "0.12.1-3.1"
+  },
+  "libjson-script": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libubox",
+    "description": "Minimalistic JSON based scripting engine",
+    "files_count": 1,
+    "installed_size": "4799",
+    "name": "libjson-script",
+    "version": "2020-05-25-66195aee-1"
+  },
+  "liblua": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "Lua is a powerful light-weight programming language designed for extending\napplications. Lua is also frequently used as a general-purpose, stand-alone\nlanguage. Lua is free software.\nThis package contains the Lua shared libraries, needed by other programs.",
+    "files_count": 1,
+    "installed_size": "60218",
+    "name": "liblua",
+    "version": "5.1.5-1"
+  },
+  "liblxc": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, lxc, libcap, libpthread, libopenssl",
+    "description": "LXC userspace library",
+    "files_count": 3,
+    "installed_size": "330714",
+    "name": "liblxc",
+    "version": "4.0.2-4"
+  },
+  "liblzma": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libpthread",
+    "description": "liblzma library from XZ Utils",
+    "files_count": 2,
+    "installed_size": "46492",
+    "name": "liblzma",
+    "version": "5.2.1-2"
+  },
+  "liblzo": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "LZO is a data compression library which is suitable for data de-/compression\nin real-time. This means it favours speed over compression ratio.",
+    "files_count": 3,
+    "installed_size": "34391",
+    "name": "liblzo",
+    "version": "2.10-1"
+  },
+  "libmagic": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, zlib",
+    "description": "library",
+    "files_count": 2,
+    "installed_size": "101602",
+    "name": "libmagic",
+    "version": "5.25-1"
+  },
+  "libmnl": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "libmnl is a minimalistic user-space library oriented to Netlink developers.\nThere are a lot of common tasks in parsing, validating, constructing of\nboth the Netlink header and TLVs that are repetitive and easy to get wrong.\nThis library aims to provide simple helpers that allows you to re-use code\nand to avoid re-inventing the wheel. The main features of this library are:\n.\n* Small: the shared library requires around 30KB for an x86-based computer.\n.\n* Simple: this library avoids complexity and elaborated abstractions that\ntend to hide Netlink details.\n.\n* Easy to use: the library simplifies the work for Netlink-wise developers.\nIt provides functions to make socket handling, message building, validating,\nparsing and sequence tracking, easier.\n.\n* Easy to re-use: you can use the library to build your own abstraction layer\non top of this library.\n.\n* Decoupling: the interdependency of the main bricks that compose the library\nis reduced, i.e. the library provides many helpers, but the programmer is not\nforced to use them.",
+    "files_count": 2,
+    "installed_size": "5365",
+    "name": "libmnl",
+    "version": "1.0.3-2"
+  },
+  "libncurses": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, terminfo",
+    "description": "Terminal handling library (Unicode)",
+    "files_count": 16,
+    "installed_size": "150128",
+    "name": "libncurses",
+    "version": "6.1-5"
+  },
+  "libnetfilter-conntrack": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libnfnetlink, kmod-nf-conntrack-netlink, libmnl",
+    "description": "libnetfilter_conntrack is a userspace library providing a programming\ninterface (API) to the in-kernel connection tracking state table. The\nlibrary libnetfilter_conntrack has been previously known as\nlibnfnetlink_conntrack and libctnetlink. This library is currently\nused by conntrack-tools among many other applications.",
+    "files_count": 2,
+    "installed_size": "31365",
+    "name": "libnetfilter-conntrack",
+    "version": "1.0.4-1"
+  },
+  "libnfnetlink": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "libnfnetlink is is the low-level library for netfilter related kernel/userspace communication.\nIt provides a generic messaging infrastructure for in-kernel netfilter subsystems\n(such as nfnetlink_log, nfnetlink_queue, nfnetlink_conntrack) and their respective users\nand/or management tools in userspace.",
+    "files_count": 2,
+    "installed_size": "9790",
+    "name": "libnfnetlink",
+    "version": "1.0.1-1"
+  },
+  "libnftnl": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libmnl",
+    "description": "libnftnl is a userspace library providing a low-level netlink\nprogramming interface (API) to the in-kernel nf_tables subsystem.",
+    "files_count": 2,
+    "installed_size": "30952",
+    "name": "libnftnl",
+    "version": "1.0.3-1"
+  },
+  "libnghttp2": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "C library implementing the framing layer of the HTTP/2 protocol. It can be used to build a HTTP/2-capable HTTP client or server",
+    "files_count": 3,
+    "installed_size": "164624",
+    "name": "libnghttp2",
+    "version": "1.29.0-1"
+  },
+  "libnl": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libpthread",
+    "description": "This package contains a library for applications dealing with netlink sockets",
+    "files_count": 8,
+    "installed_size": "162012",
+    "name": "libnl",
+    "version": "3.2.21-1"
+  },
+  "libnl-tiny": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "This package contains a stripped down version of libnl",
+    "files_count": 1,
+    "installed_size": "12106",
+    "name": "libnl-tiny",
+    "version": "0.1-4"
+  },
+  "libopenssl": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "The OpenSSL Project is a collaborative effort to develop a robust,\ncommercial-grade, full-featured, and Open Source toolkit implementing the\nTransport Layer Security (TLS) protocol as well as a full-strength\ngeneral-purpose cryptography library.\nThis package contains the OpenSSL shared libraries, needed by other programs.",
+    "files_count": 2,
+    "installed_size": "1065375",
+    "name": "libopenssl",
+    "version": "1.1.1n-1"
+  },
+  "libopenssl-conf": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libopenssl",
+    "description": "The OpenSSL Project is a collaborative effort to develop a robust,\ncommercial-grade, full-featured, and Open Source toolkit implementing the\nTransport Layer Security (TLS) protocol as well as a full-strength\ngeneral-purpose cryptography library.\nThis package installs the OpenSSL configuration file /etc/ssl/openssl.cnf.",
+    "files_count": 1,
+    "installed_size": "4786",
+    "name": "libopenssl-conf",
+    "version": "1.1.1n-1"
+  },
+  "liboping": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "C library to generate ICMP echo requests.",
+    "files_count": 2,
+    "installed_size": "7618",
+    "name": "liboping",
+    "version": "1.10.0-1"
+  },
+  "libpcap": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "This package contains a system-independent library for user-level network packet\ncapture.",
+    "files_count": 2,
+    "installed_size": "85802",
+    "name": "libpcap",
+    "version": "1.8.1-1"
+  },
+  "libpcre": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "A Perl Compatible Regular Expression library",
+    "files_count": 5,
+    "installed_size": "80651",
+    "name": "libpcre",
+    "version": "8.39-1"
+  },
+  "libpopt": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "A command line option parsing library",
+    "files_count": 2,
+    "installed_size": "17373",
+    "name": "libpopt",
+    "version": "1.16-1"
+  },
+  "libpthread": {
+    "architecture": "ipq",
+    "depends": "libgcc",
+    "description": "POSIX thread library",
+    "files_count": 0,
+    "installed_size": "125",
+    "name": "libpthread",
+    "version": "1.1.16-1"
+  },
+  "libroxml": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "Minimum, easy-to-use, C implementation for xml file parsing",
+    "files_count": 2,
+    "installed_size": "17905",
+    "name": "libroxml",
+    "version": "2.3.0-2"
+  },
+  "librpc": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "uClibc RPC library",
+    "files_count": 1,
+    "installed_size": "30685",
+    "name": "librpc",
+    "version": "2015-11-04-a921e3ded051746f9f7cd5e5a312fb6771716aac"
+  },
+  "librt": {
+    "architecture": "ipq",
+    "depends": "libpthread",
+    "description": "POSIX.1b RealTime extension library",
+    "files_count": 0,
+    "installed_size": "125",
+    "name": "librt",
+    "version": "1.1.16-1"
+  },
+  "libsmartcols": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "The smartcols library is used to print tables and trees in a pretty way.",
+    "files_count": 3,
+    "installed_size": "49520",
+    "name": "libsmartcols",
+    "version": "2.25.2-5"
+  },
+  "libssp": {
+    "architecture": "ipq",
+    "depends": "",
+    "description": "GCC support library",
+    "files_count": 2,
+    "installed_size": "3142",
+    "name": "libssp",
+    "version": "5.2.0-1"
+  },
+  "libstdcpp": {
+    "architecture": "ipq",
+    "depends": "",
+    "description": "GNU Standard C++ Library v3",
+    "files_count": 3,
+    "installed_size": "294890",
+    "name": "libstdcpp",
+    "version": "5.2.0-1"
+  },
+  "libstorage": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libhyficommon, libuci, libwifisoncfg, qca-son-mem-debug",
+    "description": "This Package installs the Storage Abstration Library",
+    "files_count": 1,
+    "installed_size": "22614",
+    "name": "libstorage",
+    "version": "g6d1a719c82-dirty-1"
+  },
+  "libtcmd": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libpthread, libnl",
+    "description": "QCA libtcmd utils",
+    "files_count": 1,
+    "installed_size": "4585",
+    "name": "libtcmd",
+    "version": "g6d1a719c82-dirty-1"
+  },
+  "libubox": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "Basic utility library",
+    "files_count": 1,
+    "installed_size": "18401",
+    "name": "libubox",
+    "version": "2020-05-25-66195aee-1"
+  },
+  "libubus": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libubox",
+    "description": "OpenWrt RPC client library",
+    "files_count": 1,
+    "installed_size": "8594",
+    "name": "libubus",
+    "version": "2015-05-25-f361bfa5fcb2daadf3b160583ce665024f8d108e"
+  },
+  "libubus-lua": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libubus, liblua",
+    "description": "Lua binding for the OpenWrt RPC client",
+    "files_count": 1,
+    "installed_size": "5504",
+    "name": "libubus-lua",
+    "version": "2015-05-25-f361bfa5fcb2daadf3b160583ce665024f8d108e"
+  },
+  "libuci": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libubox",
+    "description": "C library for the Unified Configuration Interface (UCI)",
+    "files_count": 1,
+    "installed_size": "15286",
+    "name": "libuci",
+    "version": "2019-09-01-415f9e48-4"
+  },
+  "libuci-lua": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libuci, liblua",
+    "description": "Lua plugin for UCI",
+    "files_count": 1,
+    "installed_size": "6216",
+    "name": "libuci-lua",
+    "version": "2019-09-01-415f9e48-4"
+  },
+  "libuclient": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libubox",
+    "description": "HTTP/1.1 client library",
+    "files_count": 1,
+    "installed_size": "8670",
+    "name": "libuclient",
+    "version": "2015-04-14-81fdb8fdf1470e1c7bf3124ff20d17feaeb519ee"
+  },
+  "libunbound-light": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libopenssl",
+    "description": "This package contains the Unbound shared library with basic includes\nnecessary to meet the needs of UCI/LuCI configuration optoins.",
+    "files_count": 2,
+    "installed_size": "338039",
+    "name": "libunbound-light",
+    "version": "1.9.6-3"
+  },
+  "libustream-openssl": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libubox, libopenssl",
+    "description": "ustream SSL Library (openssl)",
+    "files_count": 1,
+    "installed_size": "4374",
+    "name": "libustream-openssl",
+    "version": "2020-03-13-5e1bc342-1"
+  },
+  "libuuid": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "The UUID library is used to generate unique identifiers for objects\nthat may be accessible beyond the local system. This library\ngenerates UUIDs compatible with those created by the Open Software\nFoundation (OSF) Distributed Computing Environment (DCE) utility.",
+    "files_count": 3,
+    "installed_size": "5613",
+    "name": "libuuid",
+    "version": "2.25.2-5"
+  },
+  "libwifisoncfg": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, qca-cfg80211, libhyficommon, libnl, qca-son-mem-debug",
+    "description": "This Package contains the WiFi-SON Configuration layer support",
+    "files_count": 1,
+    "installed_size": "13290",
+    "name": "libwifisoncfg",
+    "version": "g6d1a719c82-dirty-1"
+  },
+  "libwpa2": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, qca-son-mem-debug",
+    "description": "This Package contains the wpa2 library",
+    "files_count": 1,
+    "installed_size": "38524",
+    "name": "libwpa2",
+    "version": "g6d1a719c82-dirty-1"
+  },
+  "libxtables": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "IPv4/IPv6 firewall - shared xtables library",
+    "files_count": 5,
+    "installed_size": "46105",
+    "name": "libxtables",
+    "version": "1.6.2-1"
+  },
+  "lighttpd": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libopenssl, libpcre, libpthread",
+    "description": "A flexible and lightweight web server",
+    "files_count": 13,
+    "installed_size": "196124",
+    "name": "lighttpd",
+    "version": "1.4.58-1"
+  },
+  "lighttpd-mod-cgi": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, lighttpd",
+    "description": "CGI module",
+    "files_count": 2,
+    "installed_size": "7129",
+    "name": "lighttpd-mod-cgi",
+    "version": "1.4.58-1"
+  },
+  "lighttpd-mod-proxy": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, lighttpd",
+    "description": "Proxy module",
+    "files_count": 2,
+    "installed_size": "9645",
+    "name": "lighttpd-mod-proxy",
+    "version": "1.4.58-1"
+  },
+  "lighttpd-mod-redirect": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, lighttpd, libpcre",
+    "description": "URL redirection module",
+    "files_count": 2,
+    "installed_size": "3098",
+    "name": "lighttpd-mod-redirect",
+    "version": "1.4.58-1"
+  },
+  "lighttpd-mod-rewrite": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, lighttpd, libpcre",
+    "description": "URL rewriting module",
+    "files_count": 2,
+    "installed_size": "3867",
+    "name": "lighttpd-mod-rewrite",
+    "version": "1.4.58-1"
+  },
+  "lk-ipq807x": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "lk bootloader for IPQ807x based platforms",
+    "files_count": 0,
+    "installed_size": "105",
+    "name": "lk-ipq807x",
+    "version": "g6d1a719c82-dirty-1"
+  },
+  "lldpd": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libevent2",
+    "description": "LLDP (Link Layer Discovery Protocol) is an industry standard protocol designed\nto supplant proprietary Link-Layer protocols such as\nExtreme's EDP (Extreme Discovery Protocol) and\nCDP (Cisco Discovery Protocol).\nThe goal of LLDP is to provide an inter-vendor compatible mechanism to deliver\nLink-Layer notifications to adjacent network devices.",
+    "files_count": 9,
+    "installed_size": "111582",
+    "name": "lldpd",
+    "version": "0.7.15-1"
+  },
+  "logd": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libubox, libubus, libblobmsg-json",
+    "description": "OpenWrt system log implementation",
+    "files_count": 3,
+    "installed_size": "10694",
+    "name": "logd",
+    "version": "2015-11-22-c086167a0154745c677f8730a336ea9cf7d71031"
+  },
+  "logrotate": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libpopt, libacl",
+    "description": "logrotate is designed to ease administration of systems that generate large numbers of log files.\nIt allows automatic rotation, compression, removal, and mailing of log files. Each log file may\nbe handled daily, weekly, monthly, or when it grows too large.",
+    "files_count": 1,
+    "installed_size": "28424",
+    "name": "logrotate",
+    "version": "3.15.0"
+  },
+  "losetup": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libsmartcols",
+    "description": "losetup is used to associate loop devices with regular files or block devices,\nto detach loop devices and to query the status of a loop device",
+    "files_count": 1,
+    "installed_size": "23103",
+    "name": "losetup",
+    "version": "2.25.2-5"
+  },
+  "lua": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, liblua",
+    "description": "Lua is a powerful light-weight programming language designed for extending\napplications. Lua is also frequently used as a general-purpose, stand-alone\nlanguage. Lua is free software.\nThis package contains the Lua language interpreter.",
+    "files_count": 1,
+    "installed_size": "4840",
+    "name": "lua",
+    "version": "5.1.5-1"
+  },
+  "luci": {
+    "architecture": "all",
+    "depends": "libc, libssp, uhttpd, uhttpd-mod-ubus, luci-mod-admin-full, luci-theme-bootstrap, luci-app-firewall, luci-proto-ppp, libiwinfo-lua, luci-proto-ipv6",
+    "description": "Standard OpenWrt set including full admin with ppp support and the default Bootstrap theme",
+    "files_count": 0,
+    "installed_size": "105",
+    "name": "luci",
+    "version": "git-26.056.23873-6d1a719c82-1"
+  },
+  "luci-app-ddns": {
+    "architecture": "all",
+    "depends": "libc, libssp, luci-mod-admin-full, ddns-scripts",
+    "description": "LuCI Support for Dynamic DNS Client (ddns-scripts)",
+    "files_count": 17,
+    "installed_size": "23508",
+    "name": "luci-app-ddns",
+    "version": "2.2.5-1"
+  },
+  "luci-app-firewall": {
+    "architecture": "all",
+    "depends": "libc, libssp, firewall",
+    "description": "Firewall and Portforwarding application",
+    "files_count": 12,
+    "installed_size": "10538",
+    "name": "luci-app-firewall",
+    "version": "git-26.056.23873-6d1a719c82-1"
+  },
+  "luci-app-multiwan": {
+    "architecture": "all",
+    "depends": "libc, libssp, multiwan",
+    "description": "LuCI Support for the OpenWrt MultiWAN agent",
+    "files_count": 5,
+    "installed_size": "3160",
+    "name": "luci-app-multiwan",
+    "version": "git-26.056.23873-6d1a719c82-1"
+  },
+  "luci-app-openvpn": {
+    "architecture": "all",
+    "depends": "libc, libssp",
+    "description": "LuCI Support for OpenVPN",
+    "files_count": 7,
+    "installed_size": "8749",
+    "name": "luci-app-openvpn",
+    "version": "git-26.056.23873-6d1a719c82-1"
+  },
+  "luci-app-upnp": {
+    "architecture": "all",
+    "depends": "libc, libssp, miniupnpd",
+    "description": "Universal Plug & Play configuration module",
+    "files_count": 4,
+    "installed_size": "3244",
+    "name": "luci-app-upnp",
+    "version": "git-26.056.23873-6d1a719c82-1"
+  },
+  "luci-base": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, lua, libuci-lua, luci-lib-nixio, luci-lib-ip, rpcd, libubus-lua",
+    "description": "LuCI core libraries",
+    "files_count": 130,
+    "installed_size": "122643",
+    "name": "luci-base",
+    "version": "git-26.056.23873-6d1a719c82-1"
+  },
+  "luci-hyfi": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, luci, luci-mod-admin-full",
+    "description": "Luci WebUI for Hy-Fi",
+    "files_count": 3,
+    "installed_size": "3476",
+    "name": "luci-hyfi",
+    "version": "1"
+  },
+  "luci-hyfi-advanced": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, luci, luci-mod-admin-full, luci-hyfi",
+    "description": "Luci WebUI for Hy-Fi - Advanced",
+    "files_count": 2,
+    "installed_size": "4492",
+    "name": "luci-hyfi-advanced",
+    "version": "1"
+  },
+  "luci-lib-ip": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, liblua, libnl-tiny",
+    "description": "Lua library for IP calculation and routing information",
+    "files_count": 1,
+    "installed_size": "9553",
+    "name": "luci-lib-ip",
+    "version": "git-26.056.23873-6d1a719c82-1"
+  },
+  "luci-lib-nixio": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, liblua",
+    "description": "NIXIO POSIX library",
+    "files_count": 4,
+    "installed_size": "29387",
+    "name": "luci-lib-nixio",
+    "version": "git-26.056.23873-6d1a719c82-1"
+  },
+  "luci-mod-admin-full": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, luci-base",
+    "description": "LuCI Administration - full-featured for full control",
+    "files_count": 64,
+    "installed_size": "71882",
+    "name": "luci-mod-admin-full",
+    "version": "git-26.056.23873-6d1a719c82-1"
+  },
+  "luci-proto-ipv6": {
+    "architecture": "all",
+    "depends": "libc, libssp",
+    "description": "Support for DHCPv6/6in4/6to4/6rd/DS-Lite/aiccu",
+    "files_count": 12,
+    "installed_size": "4403",
+    "name": "luci-proto-ipv6",
+    "version": "git-26.056.23873-6d1a719c82-1"
+  },
+  "luci-proto-ppp": {
+    "architecture": "all",
+    "depends": "libc, libssp",
+    "description": "Support for PPP/PPPoE/PPPoA/PPtP",
+    "files_count": 6,
+    "installed_size": "2625",
+    "name": "luci-proto-ppp",
+    "version": "git-26.056.23873-6d1a719c82-1"
+  },
+  "luci-theme-bootstrap": {
+    "architecture": "all",
+    "depends": "libc, libssp",
+    "description": "Bootstrap Theme (default)",
+    "files_count": 7,
+    "installed_size": "13085",
+    "name": "luci-theme-bootstrap",
+    "version": "git-26.056.23873-6d1a719c82-1"
+  },
+  "luci-whc": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, luci, luci-mod-admin-full",
+    "description": "Luci WebUI for Whole Home Coverage",
+    "files_count": 1,
+    "installed_size": "596",
+    "name": "luci-whc",
+    "version": "1"
+  },
+  "luci-whc-lbd": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, luci-whc",
+    "description": "Luci WebUI for Whole Home Coverage - Load Balancing",
+    "files_count": 2,
+    "installed_size": "4110",
+    "name": "luci-whc-lbd",
+    "version": "1"
+  },
+  "luci-whc-lbd-advanced": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, luci-whc-lbd",
+    "description": "Luci WebUI for Whole Home Coverage - Load Balancing Daemon Advanced Settings",
+    "files_count": 2,
+    "installed_size": "4064",
+    "name": "luci-whc-lbd-advanced",
+    "version": "1"
+  },
+  "luci-whc-lbd-diaglog": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, luci-whc-lbd",
+    "description": "Luci WebUI for Whole Home Coverage - Load Balancing Daemon Diagnostic Logging Settings",
+    "files_count": 2,
+    "installed_size": "1042",
+    "name": "luci-whc-lbd-diaglog",
+    "version": "1"
+  },
+  "luci-whc-repacd": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, luci-whc",
+    "description": "Luci WebUI for Whole Home Coverage RE Placement and Auto-Configuration Daemon",
+    "files_count": 2,
+    "installed_size": "2865",
+    "name": "luci-whc-repacd",
+    "version": "1"
+  },
+  "luci-whc-repacd-advanced": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, luci-whc-repacd",
+    "description": "Luci WebUI for Whole Home Coverage - RE Placement and Auto-Configuration Daemon Advanced Settings",
+    "files_count": 2,
+    "installed_size": "2533",
+    "name": "luci-whc-repacd-advanced",
+    "version": "1"
+  },
+  "luci-wsplc": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, luci, luci-mod-admin-full",
+    "description": "Luci WebUI for 1905.1 AP Auto Configuration and Security",
+    "files_count": 3,
+    "installed_size": "2949",
+    "name": "luci-wsplc",
+    "version": "1"
+  },
+  "luci-wsplc-advanced": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, luci, luci-mod-admin-full, luci-wsplc",
+    "description": "Luci WebUI for 1905.1 AP Auto Configuration and Security - Advanced",
+    "files_count": 2,
+    "installed_size": "1460",
+    "name": "luci-wsplc-advanced",
+    "version": "1"
+  },
+  "lxc": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "LXC is the userspace control package for Linux Containers, a lightweight\nvirtual system mechanism sometimes described as \"chroot on steroids\".",
+    "files_count": 0,
+    "installed_size": "105",
+    "name": "lxc",
+    "version": "4.0.2-4"
+  },
+  "lxc-attach": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, lxc, lxc-common, libpthread, libcap, liblxc",
+    "description": "Utility lxc-attach from the LXC userspace tools",
+    "files_count": 1,
+    "installed_size": "13469",
+    "name": "lxc-attach",
+    "version": "4.0.2-4"
+  },
+  "lxc-autostart": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, lxc, lxc-common, libpthread, libcap, liblxc",
+    "description": "Utility lxc-autostart from the LXC userspace tools",
+    "files_count": 1,
+    "installed_size": "11009",
+    "name": "lxc-autostart",
+    "version": "4.0.2-4"
+  },
+  "lxc-cgroup": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, lxc, lxc-common, libpthread, libcap, liblxc",
+    "description": "Utility lxc-cgroup from the LXC userspace tools",
+    "files_count": 1,
+    "installed_size": "9350",
+    "name": "lxc-cgroup",
+    "version": "4.0.2-4"
+  },
+  "lxc-checkconfig": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, lxc, lxc-common",
+    "description": "Utility lxc-checkconfig from the LXC userspace tools",
+    "files_count": 1,
+    "installed_size": "2823",
+    "name": "lxc-checkconfig",
+    "version": "4.0.2-4"
+  },
+  "lxc-common": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, lxc",
+    "description": "LXC common files",
+    "files_count": 4,
+    "installed_size": "753",
+    "name": "lxc-common",
+    "version": "4.0.2-4"
+  },
+  "lxc-config": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, lxc, lxc-common, libpthread, libcap, liblxc",
+    "description": "Utility lxc-config from the LXC userspace tools",
+    "files_count": 1,
+    "installed_size": "8178",
+    "name": "lxc-config",
+    "version": "4.0.2-4"
+  },
+  "lxc-configs": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, lxc",
+    "description": "LXC virtual machine common config files",
+    "files_count": 6,
+    "installed_size": "1538",
+    "name": "lxc-configs",
+    "version": "4.0.2-4"
+  },
+  "lxc-console": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, lxc, lxc-common, libpthread, libcap, liblxc",
+    "description": "Utility lxc-console from the LXC userspace tools",
+    "files_count": 1,
+    "installed_size": "9199",
+    "name": "lxc-console",
+    "version": "4.0.2-4"
+  },
+  "lxc-copy": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, lxc, lxc-common, libpthread, libcap, liblxc",
+    "description": "Utility lxc-copy from the LXC userspace tools",
+    "files_count": 1,
+    "installed_size": "17840",
+    "name": "lxc-copy",
+    "version": "4.0.2-4"
+  },
+  "lxc-create": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, lxc, lxc-common, libpthread, libcap, liblxc, lxc-configs, lxc-hooks, lxc-templates, flock",
+    "description": "Utility lxc-create from the LXC userspace tools",
+    "files_count": 1,
+    "installed_size": "15706",
+    "name": "lxc-create",
+    "version": "4.0.2-4"
+  },
+  "lxc-device": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, lxc, lxc-common, libpthread, libcap, liblxc",
+    "description": "Utility lxc-device from the LXC userspace tools",
+    "files_count": 1,
+    "installed_size": "9693",
+    "name": "lxc-device",
+    "version": "4.0.2-4"
+  },
+  "lxc-execute": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, lxc, lxc-common, libpthread, libcap, liblxc",
+    "description": "Utility lxc-execute from the LXC userspace tools",
+    "files_count": 1,
+    "installed_size": "9895",
+    "name": "lxc-execute",
+    "version": "4.0.2-4"
+  },
+  "lxc-freeze": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, lxc, lxc-common, libpthread, libcap, liblxc",
+    "description": "Utility lxc-freeze from the LXC userspace tools",
+    "files_count": 1,
+    "installed_size": "8990",
+    "name": "lxc-freeze",
+    "version": "4.0.2-4"
+  },
+  "lxc-hooks": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, lxc",
+    "description": "LXC virtual machine hooks",
+    "files_count": 7,
+    "installed_size": "10819",
+    "name": "lxc-hooks",
+    "version": "4.0.2-4"
+  },
+  "lxc-info": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, lxc, lxc-common, libpthread, libcap, liblxc",
+    "description": "Utility lxc-info from the LXC userspace tools",
+    "files_count": 1,
+    "installed_size": "11222",
+    "name": "lxc-info",
+    "version": "4.0.2-4"
+  },
+  "lxc-init": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, lxc, liblxc",
+    "description": "LXC Lua bindings",
+    "files_count": 1,
+    "installed_size": "18622",
+    "name": "lxc-init",
+    "version": "4.0.2-4"
+  },
+  "lxc-ls": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, lxc, lxc-common, libpthread, libcap, liblxc",
+    "description": "Utility lxc-ls from the LXC userspace tools",
+    "files_count": 1,
+    "installed_size": "15126",
+    "name": "lxc-ls",
+    "version": "4.0.2-4"
+  },
+  "lxc-monitor": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, lxc, lxc-common, libpthread, libcap, liblxc",
+    "description": "Utility lxc-monitor from the LXC userspace tools",
+    "files_count": 1,
+    "installed_size": "10980",
+    "name": "lxc-monitor",
+    "version": "4.0.2-4"
+  },
+  "lxc-monitord": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, lxc, lxc-common, libpthread, libcap, liblxc",
+    "description": "Utility lxc-monitord from the LXC userspace tools",
+    "files_count": 1,
+    "installed_size": "38676",
+    "name": "lxc-monitord",
+    "version": "4.0.2-4"
+  },
+  "lxc-snapshot": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, lxc, lxc-common, libpthread, libcap, liblxc",
+    "description": "Utility lxc-snapshot from the LXC userspace tools",
+    "files_count": 1,
+    "installed_size": "10035",
+    "name": "lxc-snapshot",
+    "version": "4.0.2-4"
+  },
+  "lxc-start": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, lxc, lxc-common, libpthread, libcap, liblxc",
+    "description": "Utility lxc-start from the LXC userspace tools",
+    "files_count": 1,
+    "installed_size": "10590",
+    "name": "lxc-start",
+    "version": "4.0.2-4"
+  },
+  "lxc-stop": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, lxc, lxc-common, libpthread, libcap, liblxc",
+    "description": "Utility lxc-stop from the LXC userspace tools",
+    "files_count": 1,
+    "installed_size": "9630",
+    "name": "lxc-stop",
+    "version": "4.0.2-4"
+  },
+  "lxc-templates": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, lxc",
+    "description": "LXC virtual machine templates",
+    "files_count": 4,
+    "installed_size": "10603",
+    "name": "lxc-templates",
+    "version": "4.0.2-4"
+  },
+  "lxc-top": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, lxc, lxc-common, libpthread, libcap, liblxc",
+    "description": "Utility lxc-top from the LXC userspace tools",
+    "files_count": 1,
+    "installed_size": "12518",
+    "name": "lxc-top",
+    "version": "4.0.2-4"
+  },
+  "lxc-unfreeze": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, lxc, lxc-common, libpthread, libcap, liblxc",
+    "description": "Utility lxc-unfreeze from the LXC userspace tools",
+    "files_count": 1,
+    "installed_size": "8997",
+    "name": "lxc-unfreeze",
+    "version": "4.0.2-4"
+  },
+  "lxc-unprivileged": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, lxc, shadow-utils, shadow-newuidmap, shadow-newgidmap",
+    "description": "Support for unprivileged containers requires newuidmap and newguidmap.\nThis package makes sure they are available & have correct permissions.",
+    "files_count": 1,
+    "installed_size": "238",
+    "name": "lxc-unprivileged",
+    "version": "4.0.2-4"
+  },
+  "lxc-unshare": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, lxc, lxc-common, libpthread, libcap, liblxc",
+    "description": "Utility lxc-unshare from the LXC userspace tools",
+    "files_count": 1,
+    "installed_size": "12454",
+    "name": "lxc-unshare",
+    "version": "4.0.2-4"
+  },
+  "lxc-user-nic": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, lxc, lxc-common, libpthread, libcap, liblxc",
+    "description": "Utility lxc-user-nic from the LXC userspace tools",
+    "files_count": 1,
+    "installed_size": "59982",
+    "name": "lxc-user-nic",
+    "version": "4.0.2-4"
+  },
+  "lxc-usernsexec": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, lxc, lxc-common, libpthread, libcap, liblxc",
+    "description": "Utility lxc-usernsexec from the LXC userspace tools",
+    "files_count": 1,
+    "installed_size": "78357",
+    "name": "lxc-usernsexec",
+    "version": "4.0.2-4"
+  },
+  "lxc-wait": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, lxc, lxc-common, libpthread, libcap, liblxc",
+    "description": "Utility lxc-wait from the LXC userspace tools",
+    "files_count": 1,
+    "installed_size": "9232",
+    "name": "lxc-wait",
+    "version": "4.0.2-4"
+  },
+  "map": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, kmod-ipv6, kmod-ip6-tunnel, libubox, libubus, iptables-mod-conntrack-extra",
+    "description": "Provides support for MAP-E (draft-ietf-softwire-map) and\nLightweight 4over6 (draft-ietf-softwire-lw4over6) in /etc/config/network.\nRefer to http://wiki.openwrt.org/doc/uci/network for\nconfiguration details.",
+    "files_count": 4,
+    "installed_size": "8718",
+    "name": "map",
+    "version": "4-2"
+  },
+  "map-t": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, map, kmod-nat46",
+    "description": "MAP-T configuration support",
+    "files_count": 0,
+    "installed_size": "105",
+    "name": "map-t",
+    "version": "6"
+  },
+  "mcproxy": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libpthread, libstdcpp",
+    "description": "mcproxy is a free & open source implementation of the IGMP/MLD proxy function (see  RFC 4605) for Linux systems.\nIt operates on the kernel tables for multicast routing and allows for multiple instantiations,\nas well as dynamically changing downstream interfaces.",
+    "files_count": 5,
+    "installed_size": "120249",
+    "name": "mcproxy",
+    "version": "2014-12-31-b7bd2d0809a0d1f177181c361b9a6c83e193b79a-2"
+  },
+  "minidump": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "QTI minidump",
+    "files_count": 3,
+    "installed_size": "4205",
+    "name": "minidump",
+    "version": "g6d1a719c82-dirty-1"
+  },
+  "miniupnpd": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, iptables, libip4tc, libip6tc, ip6tables, libuuid, libcap",
+    "description": "Lightweight UPnP IGD, NAT-PMP & PCP daemon",
+    "files_count": 6,
+    "installed_size": "58509",
+    "name": "miniupnpd",
+    "version": "2.2.2-5"
+  },
+  "monit-nossl": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libpthread, zlib",
+    "description": "An utility for monitoring services on a Unix system\nThis package is built without SSL support.",
+    "files_count": 4,
+    "installed_size": "271932",
+    "name": "monit-nossl",
+    "version": "5.26.0-1"
+  },
+  "mtd": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libubox",
+    "description": "This package contains an utility useful to upgrade from other firmware or\nolder OpenWrt releases.",
+    "files_count": 1,
+    "installed_size": "12834",
+    "name": "mtd",
+    "version": "21"
+  },
+  "multiwan": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, iptables, kmod-ipt-conntrack, iptables-mod-conntrack-extra, iptables-mod-ipopt",
+    "description": "An agent script that makes Multi-WAN configuration simple,\neasy and manageable. Complete with load balancing, failover and an easy\nto manage traffic ruleset.",
+    "files_count": 3,
+    "installed_size": "7680",
+    "name": "multiwan",
+    "version": "1.0.22-2"
+  },
+  "mxml": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "A small xml library.",
+    "files_count": 2,
+    "installed_size": "17280",
+    "name": "mxml",
+    "version": "3.0-1"
+  },
+  "nand-utils": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, zlib",
+    "description": "Utilities for manipulating memory technology devices.",
+    "files_count": 6,
+    "installed_size": "77111",
+    "name": "nand-utils",
+    "version": "1.5.1-2"
+  },
+  "netifd": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libuci, libnl-tiny, libubus, ubus, ubusd, jshn, libubox",
+    "description": "OpenWrt Network Interface Configuration Daemon",
+    "files_count": 14,
+    "installed_size": "70201",
+    "name": "netifd",
+    "version": "2015-12-16-245527193e90906451be35c2b8e972b8712ea6ab"
+  },
+  "nftables": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, kmod-nft-core, kmod-nft-nat, libnftnl",
+    "description": "nftables packet filtering userspace utility",
+    "files_count": 1,
+    "installed_size": "114809",
+    "name": "nftables",
+    "version": "0.4+2015-04-09-1"
+  },
+  "ntfs-3g": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, kmod-fuse, libpthread",
+    "description": "Ntfs-3g is a NTFS driver, which can create, remove, rename,\nmove files, directories, hard links, and streams. It can read\nand write files, including streams and sparse files. It can\nhandle special files like symbolic links, devices, and FIFOs.\nMoreover it can also read transparently compressed files.\n\nContains:\n- ntfs-3g\n- ntfs-3g.probe\n- mount.ntfs-3g (symlink to ntfs-3g)\n",
+    "files_count": 5,
+    "installed_size": "174895",
+    "name": "ntfs-3g",
+    "version": "2014.2.15-1-fuseint"
+  },
+  "ntgr_board_data": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, ntgr_ss_lib, ntgr_wrapper_debug",
+    "description": "This package contains an utility to read and write the manufacturing data information.",
+    "files_count": 15,
+    "installed_size": "10753",
+    "name": "ntgr_board_data",
+    "version": "1"
+  },
+  "ntgr_configd": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, librpc, ntgr_nvram, libuci, libubox, ntgr_wrapper_debug, kmod-qca-wifi-unified-profile, qca-wifison-ext-lib, libubus, d2, libopenssl, libcrypto, libcurl, ntgr_pot, libpcap, rpcd, ntgr_ss_lib, libjson-c, libevent2, libevent2-openssl, jansson, ntgr_platform_json",
+    "description": "NETGEAR configuration daemon to apply/retrive configuration, to get status\nand statistics",
+    "files_count": 71,
+    "installed_size": "377808",
+    "name": "ntgr_configd",
+    "version": "1"
+  },
+  "ntgr_dal_monitor": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libcurl, librpc, ntgr_nvram, libuci, libubox, qca-wifison-ext-lib, kmod-qca-wifi-unified-profile, d2, ntgr_wrapper_debug, libopenssl, libcrypto, ntgr_pot",
+    "description": "NETGEAR DAL monitor binary for monitoring of table member value changes",
+    "files_count": 2,
+    "installed_size": "9290",
+    "name": "ntgr_dal_monitor",
+    "version": "1"
+  },
+  "ntgr_firmware_partition": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, ntgr_wrapper_debug",
+    "description": "NETGEAR utility to validate the firmware image before flashing",
+    "files_count": 1,
+    "installed_size": "4971",
+    "name": "ntgr_firmware_partition",
+    "version": "1"
+  },
+  "ntgr_fwrules": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, ntgr_wrapper_debug",
+    "description": "NETGEAR FiREWALL Rules",
+    "files_count": 17,
+    "installed_size": "25457",
+    "name": "ntgr_fwrules",
+    "version": "1"
+  },
+  "ntgr_ledctrl": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "NETGEAR LED control binary to control LED colours amber, blue, magenta and white.",
+    "files_count": 2,
+    "installed_size": "5714",
+    "name": "ntgr_ledctrl",
+    "version": "1"
+  },
+  "ntgr_nvram": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, ntgr_wrapper_debug, librpc, ntgr_ss_lib, libuci, libjson-c, ntgr_platform_json",
+    "description": "NETGEAR NVRAM utility to get, set, unset and commit the config parameters in NVRAM partition",
+    "files_count": 10,
+    "installed_size": "17972",
+    "name": "ntgr_nvram",
+    "version": "1"
+  },
+  "ntgr_platform_json": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libjson-c, ntgr_wrapper_debug",
+    "description": "NETGEAR NVRAM utility to get, set, unset and commit the config parameters in NVRAM partition",
+    "files_count": 2,
+    "installed_size": "5638",
+    "name": "ntgr_platform_json",
+    "version": "1"
+  },
+  "ntgr_pot": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, ntgr_wrapper_debug, ntgr_nvram, librpc",
+    "description": "NETGEAR POT utility to parameters in POT partition",
+    "files_count": 7,
+    "installed_size": "10599",
+    "name": "ntgr_pot",
+    "version": "1"
+  },
+  "ntgr_satpos": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, lighttpd, jansson, libevent2, ntgr_wrapper_debug, libjson-c, libopenssl, libcrypto",
+    "description": "NETGEAR Satellite positioning",
+    "files_count": 4,
+    "installed_size": "27469",
+    "name": "ntgr_satpos",
+    "version": "1.0.0-1"
+  },
+  "ntgr_sec_storage": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, ntgr_configd, ntgr_wrapper_debug",
+    "description": "NETGEAR secure storage utility",
+    "files_count": 5,
+    "installed_size": "20547",
+    "name": "ntgr_sec_storage",
+    "version": "1"
+  },
+  "ntgr_soapagent": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, librpc, mxml, d2, libopenssl, libcrypto, ntgr_ss_lib, ntgr_platform_json, libjson-c",
+    "description": "NETGEAR Soap Agent to process and respond to router soap requests",
+    "files_count": 3,
+    "installed_size": "36373",
+    "name": "ntgr_soapagent",
+    "version": "1"
+  },
+  "ntgr_ss_lib": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, ntgr_wrapper_debug, libqcasonmemdebug, d2",
+    "description": "This package contains library for UI api calls",
+    "files_count": 2,
+    "installed_size": "11893",
+    "name": "ntgr_ss_lib",
+    "version": "1"
+  },
+  "ntgr_thermal_otpd": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libcurl, librpc, ntgr_nvram, libuci, libubox, qca-wifison-ext-lib, kmod-qca-wifi-unified-profile, d2, ntgr_wrapper_debug, libopenssl, libcrypto, ntgr_pot, ntgr_ss_lib",
+    "description": "NETGEAR over temperature protection module to monitor on-board temperature sensor value and limits the CPU dutycycle.",
+    "files_count": 2,
+    "installed_size": "12187",
+    "name": "ntgr_thermal_otpd",
+    "version": "1"
+  },
+  "ntgr_uci2nvram": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, librpc, ntgr_nvram, libubox, ntgr_configd, ntgr_platform_json, libjson-c",
+    "description": "NETGEAR configuration daemon",
+    "files_count": 1,
+    "installed_size": "6184",
+    "name": "ntgr_uci2nvram",
+    "version": "1"
+  },
+  "ntgr_ui_api_lib": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, ntgr_wrapper_debug, ntgr_nvram, librpc, liboping, ntgr_pot, libntgrwifinvram, ntgr_configd, d2, ntgr_ss_lib, ntgr_platform_json",
+    "description": "This package contains library for UI api calls",
+    "files_count": 1,
+    "installed_size": "11525",
+    "name": "ntgr_ui_api_lib",
+    "version": "1"
+  },
+  "ntgr_ui_debug_log": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, rpcd, libubox, libubus, ntgr_ui_api_lib",
+    "description": "Provides ubus rpc plugin for debug log",
+    "files_count": 1,
+    "installed_size": "4921",
+    "name": "ntgr_ui_debug_log",
+    "version": "20200328"
+  },
+  "ntgr_ui_file_upload": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libubox, libubus, ntgr_ss_lib",
+    "description": "Provides a CGI multicall executable to handle large binary up/download tasks.",
+    "files_count": 3,
+    "installed_size": "6390",
+    "name": "ntgr_ui_file_upload",
+    "version": "20200301"
+  },
+  "ntgr_ui_firmware_upgrade": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, rpcd, libubox, libubus, ntgr_ui_api_lib, ntgr_wrapper_debug",
+    "description": "Provides ubus rpc plugin for firmware upgrade",
+    "files_count": 1,
+    "installed_size": "3211",
+    "name": "ntgr_ui_firmware_upgrade",
+    "version": "20200301"
+  },
+  "ntgr_ui_page_request": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, rpcd, libubox, libubus, ntgr_ui_api_lib, ntgr_pot",
+    "description": "Provides ubus rpc plugin for ui page request apis",
+    "files_count": 2,
+    "installed_size": "4610",
+    "name": "ntgr_ui_page_request",
+    "version": "20200328"
+  },
+  "ntgr_ui_web_content": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "Provides acl and web application in binary code",
+    "files_count": 138,
+    "installed_size": "4934275",
+    "name": "ntgr_ui_web_content",
+    "version": "20200312"
+  },
+  "ntgr_upgrade_check": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, ntgr_wrapper, ntgr_nvram, librpc, d2",
+    "description": "NETGEAR utility to validate the firmware image before flashing",
+    "files_count": 1,
+    "installed_size": "4781",
+    "name": "ntgr_upgrade_check",
+    "version": "1"
+  },
+  "ntgr_vendor_circle": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, d2",
+    "description": "Netgear-Circle libvendor.so iface API between Circle and platform",
+    "files_count": 3,
+    "installed_size": "13790",
+    "name": "ntgr_vendor_circle",
+    "version": "1"
+  },
+  "odhcp6c": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, kmod-ipv6",
+    "description": "Embedded DHCPv6-client for OpenWrt",
+    "files_count": 3,
+    "installed_size": "24957",
+    "name": "odhcp6c",
+    "version": "2016-02-08-dc186d6d2b0dd4ad23ca5fc69c00e81f796ff6d9"
+  },
+  "odhcpd": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libubox, libuci, libubus",
+    "description": "odhcpd is a daemon for serving and relaying IP management protocols to\nconfigure clients and downstream routers. It tries to follow the RFC 6204\nrequirements for IPv6 home routers.\n\nodhcpd provides server services for DHCP, RA, stateless and stateful DHCPv6,\nprefix delegation and can be used to relay RA, DHCPv6 and NDP between routed\n(non-bridged) interfaces in case no delegated prefixes are available.",
+    "files_count": 4,
+    "installed_size": "32732",
+    "name": "odhcpd",
+    "version": "2016-10-09-801cfeea100ca7b211c9841f0fcb757b17f47860"
+  },
+  "openssh-keygen": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libopenssl, zlib",
+    "description": "OpenSSH keygen.",
+    "files_count": 1,
+    "installed_size": "151326",
+    "name": "openssh-keygen",
+    "version": "7.9p1-1"
+  },
+  "openssh-server": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libopenssl, zlib, openssh-keygen",
+    "description": "OpenSSH server.",
+    "files_count": 5,
+    "installed_size": "285396",
+    "name": "openssh-server",
+    "version": "7.9p1-1"
+  },
+  "openssl-util": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libopenssl, libopenssl-conf",
+    "description": "The OpenSSL Project is a collaborative effort to develop a robust,\ncommercial-grade, full-featured, and Open Source toolkit implementing the\nTransport Layer Security (TLS) protocol as well as a full-strength\ngeneral-purpose cryptography library.\nThis package contains the OpenSSL command-line utility.",
+    "files_count": 2,
+    "installed_size": "250838",
+    "name": "openssl-util",
+    "version": "1.1.1n-1"
+  },
+  "openswan": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libgmp, kmod-openswan",
+    "description": "Openswan is an IPsec implementation for Linux.\nThis package contains the Openswan user-land daemon.",
+    "files_count": 59,
+    "installed_size": "988995",
+    "name": "openswan",
+    "version": "2.6.51.3-1"
+  },
+  "openvpn-easy-rsa": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, openssl-util",
+    "description": "Simple shell scripts to manage a Certificate Authority",
+    "files_count": 20,
+    "installed_size": "10113",
+    "name": "openvpn-easy-rsa",
+    "version": "2013-01-30-2"
+  },
+  "openvpn-openssl": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, kmod-tun, liblzo, libopenssl",
+    "description": "Open source VPN solution using OpenSSL",
+    "files_count": 5,
+    "installed_size": "197421",
+    "name": "openvpn-openssl",
+    "version": "2.4.7-2"
+  },
+  "openvswitch": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, librt, coreutils, coreutils-sleep, uuidgen, openvswitch-common, openvswitch-vswitchd, openvswitch-ovsdb, kmod-openvswitch, libatomic, libunbound-light",
+    "description": "Open vSwitch",
+    "files_count": 1,
+    "installed_size": "2357",
+    "name": "openvswitch",
+    "version": "2.11.1-2"
+  },
+  "openvswitch-common": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, librt, openvswitch-libopenvswitch, openvswitch-libofproto, openvswitch-libovsdb, libatomic, libunbound-light",
+    "description": "Open vSwitch (common files)",
+    "files_count": 16,
+    "installed_size": "105040",
+    "name": "openvswitch-common",
+    "version": "2.11.1-2"
+  },
+  "openvswitch-libofproto": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, librt, libatomic, libunbound-light",
+    "description": "Open vSwitch (libofproto.so libsflow.so)",
+    "files_count": 6,
+    "installed_size": "174350",
+    "name": "openvswitch-libofproto",
+    "version": "2.11.1-2"
+  },
+  "openvswitch-libopenvswitch": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libopenssl, librt, libatomic, libunbound-light",
+    "description": "Open vSwitch (libopenvswitch.so)",
+    "files_count": 3,
+    "installed_size": "728295",
+    "name": "openvswitch-libopenvswitch",
+    "version": "2.11.1-2"
+  },
+  "openvswitch-libovsdb": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, librt, libatomic, libunbound-light",
+    "description": "Open vSwitch (libovsdb.so)",
+    "files_count": 3,
+    "installed_size": "79878",
+    "name": "openvswitch-libovsdb",
+    "version": "2.11.1-2"
+  },
+  "openvswitch-ovsdb": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, librt, openvswitch-libopenvswitch, openvswitch-libovsdb, libatomic, libunbound-light",
+    "description": "Open vSwitch (ovsdb-server)",
+    "files_count": 1,
+    "installed_size": "14884",
+    "name": "openvswitch-ovsdb",
+    "version": "2.11.1-2"
+  },
+  "openvswitch-vswitchd": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, librt, openvswitch-libopenvswitch, openvswitch-libofproto, libatomic, libunbound-light",
+    "description": "Open vSwitch (ovs-vswitchd)",
+    "files_count": 1,
+    "installed_size": "36553",
+    "name": "openvswitch-vswitchd",
+    "version": "2.11.1-2"
+  },
+  "opkg": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, uclient-fetch, libpthread, libubox",
+    "description": "Lightweight package management system\nopkg is the opkg Package Management System, for handling\ninstallation and removal of packages on a system. It can\nrecursively follow dependencies and download all packages\nnecessary to install a particular package.\n\nopkg knows how to install both .ipk and .deb packages.",
+    "files_count": 6,
+    "installed_size": "68869",
+    "name": "opkg",
+    "version": "2021-01-31-c5dccea9-1"
+  },
+  "pm-utils": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, flock",
+    "description": "Power Managment Utilities is a small collection of scripts to\nsuspend/hibernate system that can be used to run user supplied\nscripts on suspend and resume",
+    "files_count": 10,
+    "installed_size": "13381",
+    "name": "pm-utils",
+    "version": "1.4.1-1"
+  },
+  "ppp": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, kmod-ppp",
+    "description": "This package contains the PPP (Point-to-Point Protocol) daemon.",
+    "files_count": 10,
+    "installed_size": "122766",
+    "name": "ppp",
+    "version": "2.4.9.git-2021-01-04-3"
+  },
+  "ppp-mod-pppoe": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, kmod-pppoe",
+    "description": "This package contains a PPPoE (PPP over Ethernet) plugin for ppp.",
+    "files_count": 1,
+    "installed_size": "10505",
+    "name": "ppp-mod-pppoe",
+    "version": "2.4.9.git-2021-01-04-3"
+  },
+  "ppp-mod-pptp": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, kmod-pptp, kmod-mppe, resolveip",
+    "description": "This package contains a PPtP plugin for ppp.",
+    "files_count": 2,
+    "installed_size": "17121",
+    "name": "ppp-mod-pptp",
+    "version": "2.4.9.git-2021-01-04-3"
+  },
+  "procd": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, ubusd, ubus, libjson-script, ubox, libubox, libubus, procd-nand",
+    "description": "OpenWrt system process manager",
+    "files_count": 9,
+    "installed_size": "38558",
+    "name": "procd",
+    "version": "2015-10-29.1-d5fddd91b966424bb63e943e789704d52382cc18"
+  },
+  "procd-nand": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, ubi-utils",
+    "description": "OpenWrt sysupgrade nand helper",
+    "files_count": 2,
+    "installed_size": "34160",
+    "name": "procd-nand",
+    "version": "2015-10-29.1-d5fddd91b966424bb63e943e789704d52382cc18"
+  },
+  "qca-acfg": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libgcc, wireless-tools, librt, kmod-cfg80211-linux, libnl, qca-cfg80211",
+    "description": "QCA configuration utility provides a set of library\nAPI's through which user applications can configure\nand register events for wifi driver and hostap",
+    "files_count": 5,
+    "installed_size": "172796",
+    "name": "qca-acfg",
+    "version": "g6d1a719c82-dirty-1"
+  },
+  "qca-cfg80211": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libnl, libpthread, iw",
+    "description": "QCA cfg80211 utils",
+    "files_count": 1,
+    "installed_size": "6584",
+    "name": "qca-cfg80211",
+    "version": "g6d1a719c82-dirty-1"
+  },
+  "qca-cfg80211tool": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libnl, libpthread, libroxml, iw",
+    "description": "QCA cfg80211 utils",
+    "files_count": 1,
+    "installed_size": "26501",
+    "name": "qca-cfg80211tool",
+    "version": "g6d1a719c82-dirty-1"
+  },
+  "qca-cnss-daemon": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libnl, libpthread, qca-qmi-framework",
+    "description": "QCA Linux QMI sotware",
+    "files_count": 2,
+    "installed_size": "26295",
+    "name": "qca-cnss-daemon",
+    "version": "g6d1a719c82-dirty-1"
+  },
+  "qca-diag": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libpthread",
+    "description": "QCA Linux diag software",
+    "files_count": 7,
+    "installed_size": "73373",
+    "name": "qca-diag",
+    "version": "g6d1a719c82-dirty-1"
+  },
+  "qca-hostap": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libnl, libopenssl, breakpad-wrapper",
+    "description": "This package contains the IEEE 802.1x/WPA/EAP/RADIUS Authenticator.",
+    "files_count": 3,
+    "installed_size": "659387",
+    "name": "qca-hostap",
+    "version": "g6d1a719c82-dirty-1"
+  },
+  "qca-hostap-macsec": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libnl, libopenssl, breakpad-wrapper, kmod-qca-nss-macsec",
+    "description": "Hostap authenticator (MACSEC)",
+    "files_count": 1,
+    "installed_size": "622654",
+    "name": "qca-hostap-macsec",
+    "version": "g6d1a719c82-dirty-1"
+  },
+  "qca-hostapd-cli": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, librt, libnl, libopenssl, breakpad-wrapper, kmod-qca-nss-macsec",
+    "description": "This package contains a command line utility to control the\nIEEE 802.1x/WPA/EAP/RADIUS Authenticator.",
+    "files_count": 12,
+    "installed_size": "33564",
+    "name": "qca-hostapd-cli",
+    "version": "g6d1a719c82-dirty-1"
+  },
+  "qca-hyctl": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, kmod-qca-hyfi-bridge, qca-libhyfi-bridge, qca-son-mem-debug",
+    "description": "This package installs the Hy-Fi control command line utility",
+    "files_count": 1,
+    "installed_size": "13511",
+    "name": "qca-hyctl",
+    "version": "g6d1a719c82-dirty-1"
+  },
+  "qca-hyd-init": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, qca-ieee1905-init, kmod-qca-hyfi-bridge, qca-libhyfi-bridge, libieee1905, libubus, libubox, qca-hyctl, libhyficommon, qca-wifison-ext-lib, libwifisoncfg, libpthread, libuci, libwpa2, qca-whc-lbd, jansson, breakpad-wrapper, qca-son-mem-debug",
+    "description": "This package installs the Hy-Fi Path-Selection daemon init package files for SON and MAP execution\nsupport.",
+    "files_count": 10,
+    "installed_size": "38723",
+    "name": "qca-hyd-init",
+    "version": "g9bd29ac-1"
+  },
+  "qca-hyd-son": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, qca-ieee1905-init, kmod-qca-hyfi-bridge, qca-libhyfi-bridge, libieee1905, libubus, libubox, qca-hyctl, libhyficommon, qca-wifison-ext-lib, libwifisoncfg, libpthread, libuci, libwpa2, qca-whc-lbd, jansson, breakpad-wrapper, qca-son-mem-debug, qca-hyd-init",
+    "description": "This package installs the Hy-Fi Path-Selection daemon build with SON",
+    "files_count": 1,
+    "installed_size": "215209",
+    "name": "qca-hyd-son",
+    "version": "g9bd29ac-1"
+  },
+  "qca-icm": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, kmod-qca-wifi, libpthread, qca-spectral, libnl",
+    "description": "QCA Intelligent channel manager",
+    "files_count": 3,
+    "installed_size": "107438",
+    "name": "qca-icm",
+    "version": "g6d1a719c82-dirty-1"
+  },
+  "qca-ieee1905-init": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "This Package contains the script helper files for the IEEE1905.1 init scripts",
+    "files_count": 3,
+    "installed_size": "6035",
+    "name": "qca-ieee1905-init",
+    "version": "1"
+  },
+  "qca-iface-mgr-10.4": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libpthread, libnl, libwifisoncfg",
+    "description": "User Space application to manage interfaces",
+    "files_count": 2,
+    "installed_size": "35939",
+    "name": "qca-iface-mgr-10.4",
+    "version": "g6d1a719c82-dirty-1"
+  },
+  "qca-libhyfi-bridge": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, kmod-qca-hyfi-bridge, qca-son-mem-debug",
+    "description": "This package installs the Hy-Fi Bridging API Library",
+    "files_count": 1,
+    "installed_size": "5499",
+    "name": "qca-libhyfi-bridge",
+    "version": "g6d1a719c82-dirty-1"
+  },
+  "qca-lowi": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, librt, libpthread, libnl, libroxml, uclibcxx",
+    "description": "QCA Location WiFi Interface",
+    "files_count": 7,
+    "installed_size": "471349",
+    "name": "qca-lowi",
+    "version": "g6d1a719c82-dirty-1"
+  },
+  "qca-mcs-apps": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, kmod-qca-mcs, libhyficommon, libpthread",
+    "description": "This package installs the IGMP/MLD snooping daemon and tools",
+    "files_count": 8,
+    "installed_size": "39724",
+    "name": "qca-mcs-apps",
+    "version": "g6d1a719c82-dirty-1"
+  },
+  "qca-nss-fw-hk-retail": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "This package contains the NSS firmwares (retail) for QTI chipset",
+    "files_count": 2,
+    "installed_size": "415708",
+    "name": "qca-nss-fw-hk-retail",
+    "version": "557-1"
+  },
+  "qca-qmi-framework": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libpthread",
+    "description": "QCA Linux QMI framework software",
+    "files_count": 3,
+    "installed_size": "56784",
+    "name": "qca-qmi-framework",
+    "version": "g6d1a719c82-dirty-1"
+  },
+  "qca-qrtr": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libpthread",
+    "description": "QCA Linux QMI framework software",
+    "files_count": 4,
+    "installed_size": "11998",
+    "name": "qca-qrtr",
+    "version": "g6d1a719c82-dirty-1"
+  },
+  "qca-son-cli": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libpthread, libnl, libnl-genl, libhyficommon, qca-cfg80211",
+    "description": "This package installs the SON_CLI Tool",
+    "files_count": 2,
+    "installed_size": "13865",
+    "name": "qca-son-cli",
+    "version": "g6d1a719c82-dirty-1"
+  },
+  "qca-son-mem-debug": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "This Package contains the QCA son memory debug",
+    "files_count": 1,
+    "installed_size": "13066",
+    "name": "qca-son-mem-debug",
+    "version": "g6d1a719c82-dirty-1"
+  },
+  "qca-spectral": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libpthread, libnl, qca-cfg80211",
+    "description": "QCA Spectral Analysis",
+    "files_count": 1,
+    "installed_size": "33486",
+    "name": "qca-spectral",
+    "version": "g6d1a719c82-dirty-1"
+  },
+  "qca-ssdk-shell": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "Shell application for QCA SSDK",
+    "files_count": 1,
+    "installed_size": "185749",
+    "name": "qca-ssdk-shell",
+    "version": "g6d1a719c82-dirty-1"
+  },
+  "qca-thermald-10.4": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libpthread",
+    "description": "This package is IPQ Thermal Mitigation daemon.",
+    "files_count": 6,
+    "installed_size": "19169",
+    "name": "qca-thermald-10.4",
+    "version": "g6d1a719c82-dirty-1"
+  },
+  "qca-time-services": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libpthread, qca-qmi-framework",
+    "description": "QCA Time Services software",
+    "files_count": 2,
+    "installed_size": "11656",
+    "name": "qca-time-services",
+    "version": "g6d1a719c82-dirty-1"
+  },
+  "qca-whc-init": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "This Package contains the script helper files for the Whole Home Coverage init scripts",
+    "files_count": 3,
+    "installed_size": "2615",
+    "name": "qca-whc-init",
+    "version": "1"
+  },
+  "qca-whc-lbd": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, qca-whc-init, libhyficommon, libpthread, jansson, libwifisoncfg, qca-wifison-ext-lib, libieee1905, qca-son-mem-debug",
+    "description": "This package installs the Whole Home Coverage Load Balancing daemon",
+    "files_count": 6,
+    "installed_size": "166782",
+    "name": "qca-whc-lbd",
+    "version": "g6d1a719c82-dirty-1"
+  },
+  "qca-whc-repacd-init": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libnl, qca-cfg80211, qca-whc-init, qca-ieee1905-init, qca-ssdk-shell",
+    "description": "This package installs the Whole Home Coverage Range Extender Placement and\nAuto-configuration SON and MAP init scripts",
+    "files_count": 17,
+    "installed_size": "43100",
+    "name": "qca-whc-repacd-init",
+    "version": "g6d1a719c82-dirty-1"
+  },
+  "qca-whc-repacd-son": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libnl, qca-cfg80211, qca-whc-init, qca-ieee1905-init, qca-ssdk-shell, lldpd, bridge, qca-wsplcd-son",
+    "description": "This package installs the Whole Home Coverage Range Extender Placement and\nAuto-configuration scripts (with SON Features)",
+    "files_count": 5,
+    "installed_size": "61542",
+    "name": "qca-whc-repacd-son",
+    "version": "g6d1a719c82-dirty-1"
+  },
+  "qca-wifi-fw-hw3-10.4-asic": {
+    "architecture": "all",
+    "depends": "libc, libssp",
+    "description": "This package contains the qca-wifi firmware(-hw3-10.4-asic) used in 10.x drivers",
+    "files_count": 8,
+    "installed_size": "379876",
+    "name": "qca-wifi-fw-hw3-10.4-asic",
+    "version": "CNSS.PS.3.16-00018-S-1-1"
+  },
+  "qca-wifi-fw-hw4-10.4-asic": {
+    "architecture": "all",
+    "depends": "libc, libssp",
+    "description": "This package contains the qca-wifi firmware used in 10.x drivers",
+    "files_count": 31,
+    "installed_size": "1080890",
+    "name": "qca-wifi-fw-hw4-10.4-asic",
+    "version": "WLAN.BL.3.16-00035-S-1-1"
+  },
+  "qca-wifi-hk-fw-hw1-10.4-asic": {
+    "architecture": "all",
+    "depends": "libc, libssp",
+    "description": "This package contains the qca-wifi firmware(-hw1-10.4-asic) used in 10.x drivers",
+    "files_count": 0,
+    "installed_size": "104",
+    "name": "qca-wifi-hk-fw-hw1-10.4-asic",
+    "version": "WLAN.HK.2.6-02451-QCAHKSWPL_SILICONZ-1.492809.1.496220.2-1"
+  },
+  "qca-wifison-ext-lib": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libnl",
+    "description": "Wifison Event Functionality Library",
+    "files_count": 4,
+    "installed_size": "11526",
+    "name": "qca-wifison-ext-lib",
+    "version": "g6d1a719c82-dirty-1"
+  },
+  "qca-wlanfw-upgrade": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, squashfs4",
+    "description": "This package contains a wlan firmware upgrade script which can be used\ninternally by QCA to update the wlan firmware components like q6 and m3 images.",
+    "files_count": 1,
+    "installed_size": "1825",
+    "name": "qca-wlanfw-upgrade",
+    "version": "1"
+  },
+  "qca-wpa-cli": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, librt, libopenssl, libnl, breakpad-wrapper",
+    "description": "WPA Supplicant command line interface",
+    "files_count": 3,
+    "installed_size": "43965",
+    "name": "qca-wpa-cli",
+    "version": "g6d1a719c82-dirty-1"
+  },
+  "qca-wpa-supplicant": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libopenssl, libnl, breakpad-wrapper",
+    "description": "WPA Supplicant",
+    "files_count": 3,
+    "installed_size": "864759",
+    "name": "qca-wpa-supplicant",
+    "version": "g6d1a719c82-dirty-1"
+  },
+  "qca-wpa-supplicant-macsec": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libopenssl, libnl, breakpad-wrapper, kmod-qca-nss-macsec",
+    "description": "WPA Supplicant (MACSEC)",
+    "files_count": 3,
+    "installed_size": "810268",
+    "name": "qca-wpa-supplicant-macsec",
+    "version": "g6d1a719c82-dirty-1"
+  },
+  "qca-wpc": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libpthread, librt",
+    "description": "QCA Wifi Positioning",
+    "files_count": 2,
+    "installed_size": "16574",
+    "name": "qca-wpc",
+    "version": "g6d1a719c82-dirty-1"
+  },
+  "qca-wrapd": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libpthread, libnl, qca-cfg80211",
+    "description": "User Space application to support QWRAP feature",
+    "files_count": 5,
+    "installed_size": "40543",
+    "name": "qca-wrapd",
+    "version": "g6d1a719c82-dirty-1"
+  },
+  "qca-wsplcd-init": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, qca-ieee1905-init, libhyficommon, libstorage, libwpa2, libieee1905, libuci, libpthread, libwifisoncfg, qca-son-mem-debug",
+    "description": "This package installs the IEEE 1905.1 AP Auto-Configuration daemon init package files for SON and MAP execution",
+    "files_count": 6,
+    "installed_size": "16811",
+    "name": "qca-wsplcd-init",
+    "version": "g6d1a719c82-dirty-1"
+  },
+  "qca-wsplcd-son": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, qca-ieee1905-init, libhyficommon, libstorage, libwpa2, libieee1905, libuci, libpthread, libwifisoncfg, qca-son-mem-debug, qca-wsplcd-init",
+    "description": "This package installs the IEEE 1905.1 AP Auto-Configuration SON daemon: Wi-Fi credential cloning over backbone network (e.g. HomePlugAV, Ethernet, Wi-Fi)",
+    "files_count": 1,
+    "installed_size": "88449",
+    "name": "qca-wsplcd-son",
+    "version": "g6d1a719c82-dirty-1"
+  },
+  "qcmbr-10.4": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libpthread, librt",
+    "description": "- QCA ART Driver & tools",
+    "files_count": 2,
+    "installed_size": "16631",
+    "name": "qcmbr-10.4",
+    "version": "g6d1a719c82-dirty-1"
+  },
+  "qmsct_client": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "QCA qmsct_client utils",
+    "files_count": 1,
+    "installed_size": "4799",
+    "name": "qmsct_client",
+    "version": "g6d1a719c82-dirty-1"
+  },
+  "qti-mfg-provision": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libjson-c, qti-encrypt",
+    "description": "QTI MFG PROVISIONING",
+    "files_count": 1,
+    "installed_size": "3176",
+    "name": "qti-mfg-provision",
+    "version": "1.0-1"
+  },
+  "remoteshellenable": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libjson-c",
+    "description": "unlocking the utelnetd.",
+    "files_count": 4,
+    "installed_size": "12050",
+    "name": "remoteshellenable",
+    "version": "1"
+  },
+  "resolveip": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "This package contains the small resolveip utility which\ncan be used by scripts to turn host names into numeric\nIP addresses. It supports IPv4 and IPv6 resolving and\nhas a configurable timeout to guarantee a certain maximum\nruntime in case of slow or defunct DNS servers.",
+    "files_count": 1,
+    "installed_size": "2228",
+    "name": "resolveip",
+    "version": "2"
+  },
+  "rng-tools": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "Daemon for adding entropy to kernel entropy pool",
+    "files_count": 4,
+    "installed_size": "34987",
+    "name": "rng-tools",
+    "version": "5-1"
+  },
+  "rp-pppoe-relay": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, ppp",
+    "description": "Dubbed RP-PPPoE, this open-source product is ideal for Linux users with\na DSL \"modem\" whose Internet service provider uses PPPoE.\n.\nThis package contains pppoe-relay.",
+    "files_count": 5,
+    "installed_size": "13392",
+    "name": "rp-pppoe-relay",
+    "version": "3.11-1"
+  },
+  "rpcd": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libubus, libubox, libuci, libblobmsg-json",
+    "description": "This package provides the UBUS RPC backend server to expose various\nfunctionality to frontend programs via JSON-RPC.",
+    "files_count": 4,
+    "installed_size": "19918",
+    "name": "rpcd",
+    "version": "2016-06-30-23417e94d25570e6d62542bac46edd51e8e0243a"
+  },
+  "rstp": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, kmod-qca-ssdk-nohnat",
+    "description": "This package installs the RSTP daemon and tools",
+    "files_count": 7,
+    "installed_size": "51087",
+    "name": "rstp",
+    "version": "2011-10-11-434d24bae108dbb21461a13a4abcf014afa8b029"
+  },
+  "shadow-utils": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "Full versions of standard shadow utilities. Normally, you would not\nuse this package, since the functionality in BusyBox is more than\nsufficient and much smaller.",
+    "files_count": 0,
+    "installed_size": "104",
+    "name": "shadow-utils",
+    "version": "4.2.1-4"
+  },
+  "squashfs4": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, liblzma, zlib",
+    "description": "squashfs tools",
+    "files_count": 2,
+    "installed_size": "90402",
+    "name": "squashfs4",
+    "version": "4.2"
+  },
+  "strace": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "A useful diagnostic, instructional, and debugging tool. Allows you to track what\nsystem calls a program makes while it is running.",
+    "files_count": 1,
+    "installed_size": "115309",
+    "name": "strace",
+    "version": "4.8-1"
+  },
+  "swconfig": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libuci, libnl-tiny",
+    "description": "Switch configuration utility",
+    "files_count": 2,
+    "installed_size": "8603",
+    "name": "swconfig",
+    "version": "10"
+  },
+  "sysstat": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "The sysstat utilities are a collection of performance monitoring tools for\nLinux. These include sar, sadf, mpstat, iostat, pidstat and sa tools.",
+    "files_count": 12,
+    "installed_size": "188891",
+    "name": "sysstat",
+    "version": "11.0.4-2"
+  },
+  "tayga": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, ip, kmod-tun",
+    "description": "TAYGA is an out-of-kernel stateless NAT64 implementation for\nLinux.  It uses the TUN driver to exchange packets with the\nkernel, which is the same driver used by OpenVPN and QEMU/KVM.",
+    "files_count": 2,
+    "installed_size": "19857",
+    "name": "tayga",
+    "version": "0.9.2-2"
+  },
+  "tc": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, kmod-sched-core",
+    "description": "Traffic control utility",
+    "files_count": 3,
+    "installed_size": "121545",
+    "name": "tc",
+    "version": "4.0.0-1"
+  },
+  "tcpdump": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libpcap, librpc",
+    "description": "Network monitoring and data acquisition tool",
+    "files_count": 1,
+    "installed_size": "421873",
+    "name": "tcpdump",
+    "version": "4.9.3-3"
+  },
+  "terminfo": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "Terminal Info Database (ncurses)",
+    "files_count": 11,
+    "installed_size": "6308",
+    "name": "terminfo",
+    "version": "6.1-5"
+  },
+  "trace-cmd": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "Linux trace command line utility",
+    "files_count": 5,
+    "installed_size": "101964",
+    "name": "trace-cmd",
+    "version": "v2.4.2-1"
+  },
+  "ubi-utils": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "Utilities for manipulating memory technology devices.",
+    "files_count": 12,
+    "installed_size": "94218",
+    "name": "ubi-utils",
+    "version": "1.5.1-2"
+  },
+  "uboot-2016-ipq807x": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "U-boot for IPQ807x based platforms",
+    "files_count": 0,
+    "installed_size": "104",
+    "name": "uboot-2016-ipq807x",
+    "version": "g6d1a719c82-dirty-1"
+  },
+  "uboot-2016-ipq807x_tiny": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "U-boot (tiny) for IPQ807x based platforms",
+    "files_count": 0,
+    "installed_size": "105",
+    "name": "uboot-2016-ipq807x_tiny",
+    "version": "g6d1a719c82-dirty-1"
+  },
+  "uboot-envtools": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "This package includes tools to read and modify U-Boot bootloader environment.",
+    "files_count": 5,
+    "installed_size": "13024",
+    "name": "uboot-envtools",
+    "version": "2014.10-2"
+  },
+  "ubox": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libubox, ubusd, ubus, libubus, libuci",
+    "description": "OpenWrt system helper toolbox",
+    "files_count": 8,
+    "installed_size": "14833",
+    "name": "ubox",
+    "version": "2015-11-22-c086167a0154745c677f8730a336ea9cf7d71031"
+  },
+  "ubus": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libubus, libblobmsg-json, ubusd",
+    "description": "OpenWrt RPC client utility",
+    "files_count": 1,
+    "installed_size": "4517",
+    "name": "ubus",
+    "version": "2015-05-25-f361bfa5fcb2daadf3b160583ce665024f8d108e"
+  },
+  "ubusd": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libubox",
+    "description": "OpenWrt RPC daemon",
+    "files_count": 1,
+    "installed_size": "8082",
+    "name": "ubusd",
+    "version": "2015-05-25-f361bfa5fcb2daadf3b160583ce665024f8d108e"
+  },
+  "uci": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libuci",
+    "description": "Utility for the Unified Configuration Interface (UCI)",
+    "files_count": 2,
+    "installed_size": "7620",
+    "name": "uci",
+    "version": "2019-09-01-415f9e48-4"
+  },
+  "uclibcxx": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "C++ library for embedded systems",
+    "files_count": 2,
+    "installed_size": "56662",
+    "name": "uclibcxx",
+    "version": "0.2.4-1"
+  },
+  "uclient-fetch": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libuclient",
+    "description": "Tiny wget replacement using libuclient",
+    "files_count": 1,
+    "installed_size": "4562",
+    "name": "uclient-fetch",
+    "version": "2015-04-14-81fdb8fdf1470e1c7bf3124ff20d17feaeb519ee"
+  },
+  "uhttpd": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libubox, libblobmsg-json, libjson-script, libjson-c",
+    "description": "uHTTPd is a tiny single threaded HTTP server with TLS, CGI and Lua\nsupport. It is intended as a drop-in replacement for the Busybox\nHTTP daemon.",
+    "files_count": 4,
+    "installed_size": "26206",
+    "name": "uhttpd",
+    "version": "2020-10-01-3abcc891-1"
+  },
+  "uhttpd-mod-ubus": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, uhttpd, libubus, libblobmsg-json",
+    "description": "The ubus plugin adds a HTTP/JSON RPC proxy for ubus and publishes the\nsession.* namespace and procedures.",
+    "files_count": 2,
+    "installed_size": "6932",
+    "name": "uhttpd-mod-ubus",
+    "version": "2020-10-01-3abcc891-1"
+  },
+  "usign": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libubox",
+    "description": "OpenWrt signature verification utility",
+    "files_count": 2,
+    "installed_size": "11927",
+    "name": "usign",
+    "version": "2020-05-23-f1f65026-1"
+  },
+  "utelnetd": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "utelnetd for CLI",
+    "files_count": 1,
+    "installed_size": "5411",
+    "name": "utelnetd",
+    "version": "0.1.9-1"
+  },
+  "uuidgen": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libuuid",
+    "description": "The uuidgen program creates (and prints) a new universally unique identifier\n(UUID) using the libuuid library. The new UUID can reasonably be considered\nunique among all UUIDs created on the local system, and among UUIDs created on\nother systems in the past and in the future.",
+    "files_count": 1,
+    "installed_size": "2949",
+    "name": "uuidgen",
+    "version": "2.25.2-5"
+  },
+  "wget": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, libpcre, zlib, libopenssl, librt",
+    "description": "Wget is a network utility to retrieve files from the Web using http\nand ftp, the two most widely used Internet protocols. It works\nnon-interactively, so it will work in the background, after having\nlogged off. The program supports recursive retrieval of web-authoring\npages as well as ftp sites -- you can use wget to make mirrors of\narchives and home pages or to travel the Web like a WWW robot.\nThis package is built with SSL support.",
+    "files_count": 2,
+    "installed_size": "209475",
+    "name": "wget",
+    "version": "1.20.3-3"
+  },
+  "whc-son": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, qca-whc-lbd, qca-whc-repacd-son, qca-whc-repacd-init",
+    "description": "Meta package which selects all Whole Home Coverage SON components required for build",
+    "files_count": 0,
+    "installed_size": "105",
+    "name": "whc-son",
+    "version": "1"
+  },
+  "whc-ui": {
+    "architecture": "ipq",
+    "depends": "libc, libssp, luci-whc-lbd, luci-whc-lbd-advanced, luci-whc-lbd-diaglog, luci-whc-repacd, luci-whc-repacd-advanced",
+    "description": "Meta package which selects all Whole Home Coverage web interface components",
+    "files_count": 0,
+    "installed_size": "105",
+    "name": "whc-ui",
+    "version": "1"
+  },
+  "wififw_mount_script": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "This package contains a  wifi fw mount  script which can be used\nto mount WIFIFE partition in to RFS.",
+    "files_count": 3,
+    "installed_size": "3028",
+    "name": "wififw_mount_script",
+    "version": "1"
+  },
+  "wireless-tools": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "This package contains a collection of tools for configuring wireless\nadapters implementing the \"Linux Wireless Extensions\".",
+    "files_count": 3,
+    "installed_size": "25448",
+    "name": "wireless-tools",
+    "version": "29-5"
+  },
+  "zip": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "This is InfoZIP's zip program. It produces files that are fully\ncompatible with the popular PKZIP program; however, the command line\noptions are not identical. In other words, the end result is the same,\nbut the methods differ.",
+    "files_count": 4,
+    "installed_size": "237217",
+    "name": "zip",
+    "version": "3.0-1"
+  },
+  "zlib": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "zlib is a lossless data-compression library.\nThis package includes the shared library.",
+    "files_count": 3,
+    "installed_size": "40439",
+    "name": "zlib",
+    "version": "1.2.11-1"
+  },
+  "zoneinfo-africa": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "Zone Information (Africa)",
+    "files_count": 54,
+    "installed_size": "8403",
+    "name": "zoneinfo-africa",
+    "version": "2019c-1"
+  },
+  "zoneinfo-asia": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "Zone Information (Asia)",
+    "files_count": 102,
+    "installed_size": "31546",
+    "name": "zoneinfo-asia",
+    "version": "2019c-1"
+  },
+  "zoneinfo-atlantic": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "Zone Information (Atlantic)",
+    "files_count": 13,
+    "installed_size": "6093",
+    "name": "zoneinfo-atlantic",
+    "version": "2019c-1"
+  },
+  "zoneinfo-australia-nz": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "Zone Information (Australia-NZ)",
+    "files_count": 25,
+    "installed_size": "7400",
+    "name": "zoneinfo-australia-nz",
+    "version": "2019c-1"
+  },
+  "zoneinfo-core": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "Zone Information (core)",
+    "files_count": 54,
+    "installed_size": "22129",
+    "name": "zoneinfo-core",
+    "version": "2019c-1"
+  },
+  "zoneinfo-europe": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "Zone Information (Europe)",
+    "files_count": 65,
+    "installed_size": "23659",
+    "name": "zoneinfo-europe",
+    "version": "2019c-1"
+  },
+  "zoneinfo-india": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "Zone Information (India)",
+    "files_count": 11,
+    "installed_size": "957",
+    "name": "zoneinfo-india",
+    "version": "2019c-1"
+  },
+  "zoneinfo-northamerica": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "Zone Information (NorthAmerica)",
+    "files_count": 179,
+    "installed_size": "81838",
+    "name": "zoneinfo-northamerica",
+    "version": "2019c-1"
+  },
+  "zoneinfo-pacific": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "Zone Information (Pacific)",
+    "files_count": 44,
+    "installed_size": "7336",
+    "name": "zoneinfo-pacific",
+    "version": "2019c-1"
+  },
+  "zoneinfo-poles": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "Zone Information (Arctic, Antarctic)",
+    "files_count": 13,
+    "installed_size": "4653",
+    "name": "zoneinfo-poles",
+    "version": "2019c-1"
+  },
+  "zoneinfo-simple": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "Zone Information (simple)",
+    "files_count": 23,
+    "installed_size": "16464",
+    "name": "zoneinfo-simple",
+    "version": "2019c-1"
+  },
+  "zoneinfo-southamerica": {
+    "architecture": "ipq",
+    "depends": "libc, libssp",
+    "description": "Zone Information (SouthAmerica)",
+    "files_count": 19,
+    "installed_size": "4878",
+    "name": "zoneinfo-southamerica",
+    "version": "2019c-1"
+  }
+}

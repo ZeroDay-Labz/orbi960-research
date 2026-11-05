@@ -1,0 +1,332 @@
+{
+  "binary": "firmware_analysis/extracted/rbre_7215/rootfs/usr/sbin/soapc",
+  "sha256": "531b932b0488a4d60d38cd575d0d1b44f7f4285f40eafe5593a3c8d975f74a7b",
+  "md5": "f7184993ca7e5d52a887b32c479ad1bf",
+  "md5_matches_live_master": true,
+  "architecture": "ARM 32-bit EABI5, stripped, dynamically linked (musl)",
+  "image_base": "0x10000",
+  "sections": {
+    ".text": {
+      "start": "0x14810",
+      "end": "0x2be28",
+      "size": 95768
+    },
+    ".rodata": {
+      "start": "0x1be34",
+      "end": "0x22b6a",
+      "size": 27958
+    },
+    ".data": {
+      "start": "0x33000",
+      "end": "0x4d680",
+      "size": 108160
+    }
+  },
+  "procedure_count_ghidra": 508,
+  "evidence_scale": [
+    "Confirmed",
+    "Strongly supported",
+    "Unverified assumption",
+    "Ruled out"
+  ],
+  "reverse_engineered_functions": [
+    {
+      "address": "0x14810",
+      "name": "main",
+      "role": "argv parse, daemonize, per-sat iteration loop",
+      "classification": "Confirmed"
+    },
+    {
+      "address": "0x27a90",
+      "recovered_name": "soap_main",
+      "role": "per-sat per-top-event dispatcher; iterates all_events, delegates to soap_action",
+      "classification": "Confirmed"
+    },
+    {
+      "address": "0x25fb8",
+      "recovered_name": "soap_action",
+      "role": "per-method iterator; handles model/support gating; calls soap_startConnection",
+      "classification": "Confirmed"
+    },
+    {
+      "address": "0x25c60",
+      "recovered_name": "soap_startConnection",
+      "role": "read XML body (max 4KB) and hand to soapc_sendRequest",
+      "classification": "Confirmed"
+    },
+    {
+      "address": "0x2332c",
+      "recovered_name": "soapc_sendRequest",
+      "role": "build HTTP headers, open TCP/TLS without peer verify, send body, parse response, write response-code NVRAM",
+      "classification": "Confirmed"
+    },
+    {
+      "address": "0x2b924",
+      "recovered_name": "connect_ip",
+      "role": "TCP reachability probe (getaddrinfo+socket+connect+close); no TLS",
+      "classification": "Confirmed"
+    },
+    {
+      "address": "0x2a1c0",
+      "recovered_name": "get_event_name",
+      "role": "linear scan s_Event[239] returning method name for event id",
+      "classification": "Confirmed"
+    },
+    {
+      "address": "0x2a234",
+      "recovered_name": "get_service_name",
+      "role": "service-type name lookup; Ghidra pseudocode empty \u2014 small tail-call helper",
+      "classification": "Strongly supported"
+    },
+    {
+      "address": "0x25ebc",
+      "recovered_name": "build_xml_filename",
+      "role": "snprintf \"/tmp/soap/xml/<method>_<idx>.xml\" with auto-incrementing counter",
+      "classification": "Confirmed"
+    },
+    {
+      "address": "0x22e88",
+      "recovered_name": "open_socket_to_host",
+      "role": "outbound TCP connect to sat; invoked from soapc_sendRequest with retry",
+      "classification": "Strongly supported"
+    },
+    {
+      "address": "0x22fb4",
+      "recovered_name": "append_header_line",
+      "role": "sprintf-style append-with-CRLF for HTTP header building",
+      "classification": "Confirmed"
+    },
+    {
+      "address": "0x16ef4",
+      "recovered_name": "extract_response_code",
+      "role": "parses <ResponseCode> from SOAP response",
+      "classification": "Confirmed"
+    },
+    {
+      "address": "0x17224",
+      "recovered_name": "process_response_fields",
+      "role": "parses M1:Get* responses; writes soapc_sat_<n>_<svc>_<method>_<field> NVRAM",
+      "classification": "Confirmed"
+    },
+    {
+      "address": "0x17c14",
+      "recovered_name": "process_response_tput",
+      "role": "specialized parser for TputMeasure/Speed test responses (events 0xec, 0xf8)",
+      "classification": "Strongly supported"
+    },
+    {
+      "address": "0x29674",
+      "recovered_name": "expand_soap_template",
+      "role": "template engine \u2014 expands <%getSessionID();%>, <%getAuthPassword();%>, etc. in SOAP bodies",
+      "classification": "Strongly supported"
+    },
+    {
+      "address": "0x1f228",
+      "recovered_name": "getAuthPassword",
+      "role": "handler for <%getAuthPassword();%>; computes MD5(NETGEAR_Orbi_<g_soapc_mac1>_<g_soapc_mac2>_password)",
+      "classification": "Confirmed",
+      "writes_nvram": [
+        "soap_Authenticate_old_password"
+      ],
+      "reads_globals": [
+        "g_soapc_mac1",
+        "g_soapc_mac2"
+      ]
+    },
+    {
+      "address": "0x29ce4",
+      "recovered_name": "md5_hex",
+      "role": "MD5Init+MD5Update+MD5Final \u2192 32-char lowercase hex via snprintf",
+      "classification": "Confirmed",
+      "imports": [
+        "MD5Init",
+        "MD5Update",
+        "MD5Final"
+      ]
+    },
+    {
+      "address": "0x2864c",
+      "recovered_name": "compute_g_soapc_mac2",
+      "role": "read NVRAM soapc_sat_<idx>_mac, sscanf, format last 3 bytes as 'XX_XX_XX', write to g_soapc_mac2",
+      "classification": "Confirmed",
+      "reads_nvram": [
+        "soapc_sat_%d_mac"
+      ]
+    },
+    {
+      "address": "0x14468",
+      "name": "__libc_start_main (thunk)",
+      "role": "libc start",
+      "classification": "Confirmed"
+    }
+  ],
+  "credential_provenance": {
+    "username_field": {
+      "value": "orbi",
+      "source": "hardcoded literal in M1:Authenticate body template",
+      "classification": "Confirmed"
+    },
+    "password_field": {
+      "value_formula": "md5_hex_lowercase('NETGEAR_Orbi_' + g_soapc_mac1 + '_' + g_soapc_mac2 + '_password')",
+      "input_sources": [
+        "NVRAM 'soapc_sat_<idx>_mac' only (sat's LAN MAC)"
+      ],
+      "transformation": "MD5 \u2192 32 chars lowercase hex",
+      "handler_function": "FUN_0001f228 (0x1f228)",
+      "hash_helper": "FUN_00029ce4 (0x29ce4)",
+      "mac_compose_helper": "FUN_0002864c (0x2864c)",
+      "template_directive": "<%getAuthPassword();%>",
+      "post_compute_nvram_write": "soap_Authenticate_old_password",
+      "classification": "Confirmed"
+    },
+    "soapc_pass_string": {
+      "appears_in_soapc": false,
+      "appears_in_check_fw": true,
+      "soapc_reads_it": false,
+      "classification_of_populated_claim": "Unverified assumption"
+    }
+  },
+  "tls_posture": {
+    "method": "TLS_client_method",
+    "ctx_options_bits": 0,
+    "peer_verification_setup_calls_present": [],
+    "peer_verification_setup_calls_absent": [
+      "SSL_CTX_set_verify",
+      "SSL_CTX_load_verify_locations",
+      "SSL_CTX_set_default_verify_paths",
+      "SSL_CTX_set_cert_store",
+      "SSL_get_verify_result",
+      "SSL_get_peer_certificate"
+    ],
+    "effective_posture": "SSL_VERIFY_NONE (OpenSSL default)",
+    "classification": "Confirmed"
+  },
+  "data_tables": {
+    "all_events": {
+      "address": "0x36ccc",
+      "size": 1408,
+      "entry_size": 16,
+      "entry_count": 88,
+      "layout": "(service_idx u32, event_id u32, flag u32, next_offset u32)",
+      "terminator": "event_id=0xFFFFFFFF",
+      "classification": "Confirmed"
+    },
+    "s_Event": {
+      "address": "0x403c8",
+      "size": 1912,
+      "entry_size": 8,
+      "entry_count": 239,
+      "layout": "(event_id u32, name_ptr u32\u2192rodata)",
+      "classification": "Confirmed"
+    },
+    "events_array": {
+      "address": "0x36a68",
+      "size": 612,
+      "entry_size": 12,
+      "entry_count": 51,
+      "layout": "(pre u32, event_id u32, flag u32)",
+      "terminator": "event_id=9999",
+      "classification": "Confirmed"
+    },
+    "HTTP_ERROR_CODE": {
+      "address": "0x3f48c",
+      "size": 192,
+      "entry_size": 8,
+      "entry_count": 23,
+      "layout": "(code u32, needle u32\u2192rodata)",
+      "classification": "Confirmed"
+    },
+    "service_type_database": {
+      "address": "0x3f315",
+      "size": 360,
+      "note": "odd starting offset; layout not cleanly decoded via naive 8-byte stride",
+      "classification": "Strongly supported"
+    }
+  },
+  "dynamic_imports_important": {
+    "network": [
+      "socket",
+      "connect",
+      "send",
+      "recv",
+      "getaddrinfo",
+      "freeaddrinfo",
+      "setsockopt",
+      "select",
+      "close",
+      "daemon"
+    ],
+    "openssl_present": [
+      "OPENSSL_init_crypto",
+      "OPENSSL_init_ssl",
+      "TLS_client_method",
+      "SSL_CTX_new",
+      "SSL_CTX_set_options",
+      "SSL_CTX_free",
+      "SSL_new",
+      "SSL_free",
+      "SSL_set_fd",
+      "SSL_connect",
+      "SSL_read",
+      "SSL_write"
+    ],
+    "openssl_verification_absent": [
+      "SSL_CTX_set_verify",
+      "SSL_CTX_load_verify_locations",
+      "SSL_CTX_set_default_verify_paths",
+      "SSL_CTX_set_cert_store",
+      "SSL_get_peer_certificate",
+      "SSL_get_verify_result"
+    ],
+    "nvram": [
+      "acosNvramConfig_get",
+      "acosNvramConfig_set",
+      "acosNvramConfig_match",
+      "acosNvramConfig_invmatch",
+      "acosNvramConfig_unset",
+      "acosNvramConfig_save"
+    ],
+    "acos_dil": [
+      "dil_init",
+      "dil_uninit",
+      "dil_getDeviceModelByPriority",
+      "dil_getDeviceNameByPriority",
+      "dil_getDeviceTypeByPriority"
+    ],
+    "shell_exec": [
+      "system",
+      "daemon"
+    ],
+    "crypto_misc": [
+      "MD5Init",
+      "MD5Update",
+      "MD5Final",
+      "StringEncDec",
+      "encrypt",
+      "setkey"
+    ],
+    "sunrpc_absent": [
+      "clnt_create",
+      "clnt_call",
+      "svc_run",
+      "svc_register",
+      "xdr_string",
+      "xdr_bytes",
+      "xdr_opaque",
+      "xdr_authunix_parms",
+      "pmap_unset",
+      "svcunix_create"
+    ]
+  },
+  "owner_ssh_provisioning_capability": {
+    "answer": "Ruled out",
+    "basis": [
+      "Full method inventory enumerated (s_Event 239 entries, all_events 88 entries, every M1:* body template in .rodata)",
+      "No EnableSSH/StartDropbear/InstallAuthorizedKey/EnableTelnet/RemoteShellEnable/WriteFile/ExecCommand method or synonym",
+      "No DAL table in configd (per report 31) controls SSH/Dropbear/Telnet/authorized_keys",
+      "UpdateNewFirmware2 is the only method that writes executable content to flash; project ROE prohibits its use for owner SSH injection",
+      "soapc's only system() use is 'acos_service restart_qca_wlan' after flagged events; never with sat-controlled argv"
+    ],
+    "scope_of_negative": "Confirmed for 7.2.7.15 and 7.2.8.8; function-unchanged across those versions. Re-verification required against any future version that modifies the soapc method set."
+  }
+}

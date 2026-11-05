@@ -10,7 +10,7 @@ stock firmware.
 
 **Keywords:** NETGEAR Orbi, RBRE960, RBSE960, Qualcomm IPQ807x, OpenWrt, Dropbear,
 OpenSSH, Seal REST API, enable_ssh, remoteshellenable, ubus, UCI, SOAP, Wi-Fi 6E
-mesh, firmware reverse engineering, router security research.
+mesh, firmware reverse engineering, router security research, CVE-2026-0415.
 
 ## Abstract
 
@@ -57,6 +57,8 @@ to devices or networks you are not authorized to test. See `SECURITY.md`.
 | 5 | VLANs already cross the wireless backhaul as an 802.1Q trunk; more VLANs are not hardware-blocked but are constrained by the vendor config layer. | VERIFIED (runtime) |
 | 6 | `uci apply/confirm/rollback` is built into rpcd with an in-RAM timer; it does not survive a pre-confirm reboot and does not cover the firewall. | STRONGLY INDICATED |
 | 7 | The kernel/rootfs image is not cryptographically signed; secure boot, if fused, covers the bootloader only, and whether a modified image boots is not established. | STRONGLY INDICATED (components VERIFIED; boot enforcement UNKNOWN) |
+| 8 | CVE-2026-0415 is localized to the master `seal-services.lua` `service_action_handler` (five `popen`/`execute` sinks reachable as uid 0 via an authenticated REST path); fixed in 7.2.8.5+. The RBSE960 satellite has no Seal/Lua equivalent, so the kit-level advisory does not represent a separate sat code path. | VERIFIED (reports 37, 38) |
+| 9 | A source-complete OpenWrt `orbi-owner-agent` package (rpcd exec-plugin, 9-method ACL-gated allowlist, `arch: all`) is reproducible against an OpenWrt Chaos Calmer 15.05.1 SDK. `vlan_create` is scoped to the kernel 802.1Q sub-interface layer only; HPPE/SSDK/NSS programming, SSID-to-VLAN wiring, routing, firewall, and DHCP are explicitly deferred to Phase B. The package has not been built into a binary `.ipk` or installed on a device. | VERIFIED source + offline tests; UNVERIFIED runtime |
 
 ## 4. Methodology (summary)
 
@@ -80,7 +82,10 @@ firmware flash was performed as part of the analysis. Full detail is in
 | `RBRE960_ROOT_ACCESS_RESEARCH.md` | Router root access: mechanism, evidence, roadmap |
 | `RBRE960_ROOT_ACCESS_WRITEUP.md` | Narrative write-up of the router root method |
 | `README_orbi_satellite_ssh.md` | Guide to the satellite SSH utility |
-| `firmware_analysis/reports/` | Per-topic reports (discovery, comparison, satellite analysis, signing, management-plane map, remote-shell analysis, owner-control, consolidated dossier) |
+| `firmware_analysis/reports/` | Per-topic reports: discovery, comparison, satellite analysis, signing, management-plane map, remote-shell analysis, owner-control, consolidated dossier, plus the CVE-2026-0415 localization/reconciliation reports (31–38) and the OpenWrt-package engineering report (39) |
+| `firmware_analysis/research_output/` | Supporting firmware-inventory CSV/JSONL, per-binary analyses, Seal-Lua bytecode listings, reconciliation evidence — produced by the toolkit |
+| `openwrt/orbi-owner-agent/` | Source-complete OpenWrt rpcd/ubus owner-agent package (shell plugin, ACL, UCI defaults, procd init, offline tests, docs). Phase A — not yet built into a binary `.ipk`; not yet installed on a device; see its `docs/known-limitations.md` |
+| `tools/orbi_fw_research/` | Reusable offline firmware toolkit (inventory, package maps, source/sink scans, SOAP/RPC analysis, Ghidra headless driver) |
 | `*.py`, `test_*.py` | Approved research tooling and its unit tests |
 
 ## 6. Tooling

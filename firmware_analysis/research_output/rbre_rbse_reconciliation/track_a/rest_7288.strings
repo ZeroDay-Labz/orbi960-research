@@ -1,0 +1,206 @@
+#!/usr/bin/env lua
+LuaQ
+	$E
+AF	
+AF	
+require
+third_party/rxi-json-lua
+third_party/router
+seal-development
+seal-io
+seal-services
+seal-log
+seal-environ
+/api/v1
+new
+match
+GET
+/services/:service_name
+/services/:service_name/token
+/services
+POST
+/install/:service_name
+/uninstall/:service_name
+/services/:service_name/state
+/services/:service_name/webapp/:webapp_version
+/services/:service_name/webapp
+/services/:service_name/validateToken
+/enable_ssh
+Root
+getenv
+DOCUMENT_ROOT
+Method
+REQUEST_METHOD
+Uri
+REQUEST_URI
+ContentLength
+tonumber
+HTTP_CONTENT_LENGTH
+RawContent
+HTTP_CONTENT
+ProxyInternal
+HTTP_X_SEAL_INTERNAL
+query
+QUERY_STRING
+RelativeUri
+ApiVersion
+print
+Running in local test mode...
+To test this code in a remote context, run the test script located in seal/bootstrap/scripts/test-rest-api.sh
+/www-seal
+/api/v1/services/armor-bd/webapp/
+string
+gsub
+^//
+?.*
+^/api/(v%d)/.+
+read
+pcall
+Bad Request - Message body is not valid JSON
+getbool
+SDE_LIGHTTPD_APIS
+file_exists
+/debugEnable
+Bad Request
+log
+LogLevel
+Error
+rest.lua
+Lua error in rest.lua. Message was:
+debug
+type
+string
+match
+^[A-Za-z0-9_-]+$
+find
+%.%.
+W@@
+type
+string
+number
+Error sending return code: (
+tostring
+print
+Status: 
+list
+print
+encode
+service_name
+Invalid request
+details
+encode
+print
+1.0
+api_versions
+seal_version
+encode
+print
+gmatch
+([^&=?]-)=([^&=?]+)
+service_name
+Invalid request
+get_webapp
+query
+service_version
+webapp_version
+open
+read
+close
+print
+Content-Type: application/octet-stream
+Content-Disposition: 
+attachment;filename="
+Content-Length: 
+stdout
+write
+flush
+service_name
+Invalid request
+encode
+received
+action
+password
+print
+service_name
+Invalid request
+state
+service_action_handler
+print
+encode
+service_name
+Invalid request
+read
+encode
+received
+print
+username
+password
+pubkey
+enable_ssh
+I'm a teapot
+table
+insert
+string
+char
+popen
+head /dev/urandom | tr -dc "0123456789" | head -c8
+read
+close
+math
+randomseed
+tonumber
+clock
+math
+random
+service_name
+Invalid request
+/var/media/reserved2/service_uppers/
+/upper/
+service-token
+is_directory
+message
+Service Not Found
+status
+errorCode
+encode
+print
+file_exists
+read_all_from_file
+write_to_file
+service_name
+Invalid request
+service-token
+/var/media/reserved2/service_uppers/
+/upper/
+404
+Missing service-token in JSON payload
+is_directory
+Service Not Found
+file_exists
+Token Not Found
+read_all_from_file
+string
+gsub
+tostring
+200
+Invalid
+Valid
+encode
+Status
+validationStatus
+print
+decode
+RawContent
+pairs
+W@@
+Uri
+/api/meta/
+/api/meta
+ApiVersion
+print
+Unexpected API version: 
+Expected: 
+execute
+Method
+RelativeUri
+Invalid request - API endpoint not found: 

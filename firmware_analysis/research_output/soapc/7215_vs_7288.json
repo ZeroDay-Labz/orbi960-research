@@ -1,0 +1,31 @@
+{
+  "pair": {
+    "a": "rbre_7215/usr/sbin/soapc",
+    "b": "rbre_7288/usr/sbin/soapc"
+  },
+  "size_bytes": {
+    "a": 252772,
+    "b": 252772
+  },
+  "sha256": {
+    "a": "531b932b0488a4d60d38cd575d0d1b44f7f4285f40eafe5593a3c8d975f74a7b",
+    "b": "6c4e4004fcfb21bd73a5a4c0382d54a70b83c28f1c20fd2cefa5fa848ee26b2d"
+  },
+  "needed_dynamic_libs_changed": false,
+  "dynamic_imports_added": [],
+  "dynamic_imports_removed": [],
+  "dynamic_exports_added": [],
+  "dynamic_exports_removed": [],
+  "strings_added": [],
+  "strings_removed": [],
+  "strings_changed": [
+    {
+      "old": "GCC: (OpenWrt GCC 5.2.0 ca0b32a+r49254) 5.2.0",
+      "new": "GCC: (OpenWrt GCC 5.2.0 bda89f4+r49254) 5.2.0",
+      "where": ".comment section",
+      "meaning": "pure rebuild from different git commit of the same OpenWrt GCC 5.2.0 toolchain"
+    }
+  ],
+  "conclusion": "soapc is FUNCTIONALLY UNCHANGED 7.2.7.15\u21927.2.8.8. The only observable difference is the embedded GCC build-id string (.comment). Zero logic/data-table/API change. soapc is RULED OUT as the CVE-2026-0415 fix location.",
+  "classification": "VERIFIED"
+}

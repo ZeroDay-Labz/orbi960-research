@@ -1,0 +1,14 @@
+{
+  "debuglog.so": {
+    "method_candidates_count": 78
+  },
+  "setrequest.so": {
+    "method_candidates_count": 26
+  },
+  "uirequest.so": {
+    "method_candidates_count": 72
+  },
+  "upgrade.so": {
+    "method_candidates_count": 49
+  }
+}

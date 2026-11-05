@@ -1,0 +1,86 @@
+{
+  "netgear": {
+    "netgear.get": {
+      "read": [
+        "connected_device",
+        "get_language",
+        "pot_details",
+        "satellite_status"
+      ],
+      "write": []
+    },
+    "netgear.log": {
+      "read": [
+        "cpu_load",
+        "firmware_version",
+        "hop_count",
+        "log_boot_status",
+        "ntgrlog_status",
+        "packet_capture_status",
+        "telnet_status"
+      ],
+      "write": [
+        "log_boot_disable",
+        "log_boot_enable",
+        "ntgrlog_start",
+        "ntgrlog_stop",
+        "packet_capture_start",
+        "packet_capture_stop",
+        "telnet_disable",
+        "telnet_enable"
+      ]
+    },
+    "netgear.set": {
+      "read": [],
+      "write": [
+        "set_language"
+      ]
+    },
+    "netgear.upgrade": {
+      "read": [
+        "upgrade_status",
+        "upgrade_version"
+      ],
+      "write": [
+        "upgrade_start"
+      ]
+    },
+    "session": {
+      "read": [
+        "access",
+        "destroy",
+        "get"
+      ],
+      "write": []
+    },
+    "system": {
+      "read": [
+        "info"
+      ],
+      "write": []
+    },
+    "uci": {
+      "read": [
+        "*"
+      ],
+      "write": []
+    },
+    "webui-io": {
+      "read": [
+        "download"
+      ],
+      "write": [
+        "upload"
+      ]
+    }
+  },
+  "unauthenticated": {
+    "session": {
+      "read": [
+        "access",
+        "login"
+      ],
+      "write": []
+    }
+  }
+}

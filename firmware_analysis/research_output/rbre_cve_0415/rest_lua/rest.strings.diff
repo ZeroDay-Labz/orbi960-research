@@ -1,0 +1,309 @@
+--- firmware_analysis/research_output/rbre_cve_0415/rest_lua/rest.7215.strings.txt	2026-11-04 21:12:24.301128911 -0700
++++ firmware_analysis/research_output/rbre_cve_0415/rest_lua/rest.7288.strings.txt	2026-11-04 21:12:24.304128938 -0700
+@@ -32,150 +32,160 @@
+     32	HTTP_CONTENT_LENGTH
+     33	RawContent
+     34	HTTP_CONTENT
+-    35	HostAddr
+-    36	HTTP_X_HOST
+-    37	HttpXForwardedFor
+-    38	HTTP_X_FORWARDED_FOR
+-    39	query
+-    40	QUERY_STRING
+-    41	RelativeUri
+-    42	ApiVersion
+-    43	print
+-    44	Running in local test mode...
+-    45	To test this code in a remote context, run the test script located in seal/bootstrap/scripts/test-rest-api.sh
+-    46	/www-seal
+-    47	/api/v1/services/armor-bd/webapp/
+-    48	string
+-    49	gsub
+-    50	^/api/(v%d)/.+
+-    51	read
+-    52	pcall
+-    53	Bad Request - Message body is not valid JSON
+-    54	getbool
+-    55	SDE_LIGHTTPD_APIS
+-    56	file_exists
+-    57	/debugEnable
+-    58	127.0.0.1
+-    59	localhost
+-    60	ServerAddr
+-    61	Server Error
+-    62	LogLevel
+-    63	Error
+-    64	rest.lua
+-    65	Lua error in rest.lua. Message was:
+-    66	debug
+-    67	list
+-    68	print
+-    69	encode
+-    70	details
+-    71	service_name
+-    72	encode
++    35	ProxyInternal
++    36	HTTP_X_SEAL_INTERNAL
++    37	query
++    38	QUERY_STRING
++    39	RelativeUri
++    40	ApiVersion
++    41	print
++    42	Running in local test mode...
++    43	To test this code in a remote context, run the test script located in seal/bootstrap/scripts/test-rest-api.sh
++    44	/www-seal
++    45	/api/v1/services/armor-bd/webapp/
++    46	string
++    47	gsub
++    48	^/api/(v%d)/.+
++    49	read
++    50	pcall
++    51	Bad Request - Message body is not valid JSON
++    52	getbool
++    53	SDE_LIGHTTPD_APIS
++    54	file_exists
++    55	/debugEnable
++    56	Bad Request
++    57	LogLevel
++    58	Error
++    59	rest.lua
++    60	Lua error in rest.lua. Message was:
++    61	debug
++    62	type
++    63	string
++    64	match
++    65	^[A-Za-z0-9_-]+$
++    66	find
++    67	%.%.
++    68	type
++    69	string
++    70	number
++    71	Error sending return code: (
++    72	tostring
+     73	print
+-    74	api_versions
+-    75	seal_version
+-    76	encode
+-    77	print
+-    78	type
+-    79	string
+-    80	number
+-    81	Error sending return code: (
+-    82	tostring
+-    83	print
+-    84	Status: 
+-    85	gmatch
+-    86	([^&=?]-)=([^&=?]+)
+-    87	get_webapp
+-    88	service_name
+-    89	query
+-    90	service_version
+-    91	webapp_version
+-    92	open
+-    93	read
+-    94	close
+-    95	print
+-    96	Content-Type: application/octet-stream
+-    97	Content-Disposition: 
+-    98	attachment;filename="
+-    99	Content-Length: 
+-   100	stdout
+-   101	write
+-   102	flush
+-   103	encode
+-   104	received
+-   105	action
+-   106	password
+-   107	print
+-   108	state
+-   109	service_action_handler
+-   110	service_name
+-   111	print
+-   112	encode
+-   113	read
+-   114	encode
+-   115	received
+-   116	print
+-   117	username
+-   118	password
+-   119	pubkey
+-   120	enable_ssh
+-   121	I'm a teapot
+-   122	table
+-   123	insert
+-   124	string
+-   125	char
+-   126	popen
+-   127	head /dev/urandom | tr -dc "0123456789" | head -c8
+-   128	read
+-   129	close
+-   130	math
+-   131	randomseed
+-   132	tonumber
+-   133	clock
+-   134	math
+-   135	random
+-   136	/var/media/reserved2/service_uppers/
+-   137	service_name
+-   138	/upper/
+-   139	service-token
+-   140	is_directory
+-   141	message
+-   142	Service Not Found
+-   143	status
+-   144	errorCode
+-   145	encode
+-   146	print
+-   147	file_exists
+-   148	read_all_from_file
+-   149	write_to_file
+-   150	service_name
+-   151	service-token
+-   152	/var/media/reserved2/service_uppers/
+-   153	/upper/
+-   154	Missing service-token in JSON payload
+-   155	is_directory
+-   156	Service Not Found
+-   157	file_exists
+-   158	Token Not Found
+-   159	read_all_from_file
+-   160	string
+-   161	gsub
+-   162	tostring
+-   163	Invalid
+-   164	Valid
+-   165	encode
+-   166	Status
+-   167	validationStatus
+-   168	print
+-   169	decode
+-   170	RawContent
+-   171	pairs
+-   172	/api/meta/
+-   173	/api/meta
+-   174	ApiVersion
+-   175	print
+-   176	Unexpected API version: 
+-   177	Expected: 
+-   178	execute
+-   179	Method
+-   180	RelativeUri
+-   181	Invalid request - API endpoint not found: 
++    74	Status: 
++    75	list
++    76	print
++    77	encode
++    78	service_name
++    79	Invalid request
++    80	details
++    81	encode
++    82	print
++    83	api_versions
++    84	seal_version
++    85	encode
++    86	print
++    87	gmatch
++    88	([^&=?]-)=([^&=?]+)
++    89	service_name
++    90	Invalid request
++    91	get_webapp
++    92	query
++    93	service_version
++    94	webapp_version
++    95	open
++    96	read
++    97	close
++    98	print
++    99	Content-Type: application/octet-stream
++   100	Content-Disposition: 
++   101	attachment;filename="
++   102	Content-Length: 
++   103	stdout
++   104	write
++   105	flush
++   106	service_name
++   107	Invalid request
++   108	encode
++   109	received
++   110	action
++   111	password
++   112	print
++   113	service_name
++   114	Invalid request
++   115	state
++   116	service_action_handler
++   117	print
++   118	encode
++   119	service_name
++   120	Invalid request
++   121	read
++   122	encode
++   123	received
++   124	print
++   125	username
++   126	password
++   127	pubkey
++   128	enable_ssh
++   129	I'm a teapot
++   130	table
++   131	insert
++   132	string
++   133	char
++   134	popen
++   135	head /dev/urandom | tr -dc "0123456789" | head -c8
++   136	read
++   137	close
++   138	math
++   139	randomseed
++   140	tonumber
++   141	clock
++   142	math
++   143	random
++   144	service_name
++   145	Invalid request
++   146	/var/media/reserved2/service_uppers/
++   147	/upper/
++   148	service-token
++   149	is_directory
++   150	message
++   151	Service Not Found
++   152	status
++   153	errorCode
++   154	encode
++   155	print
++   156	file_exists
++   157	read_all_from_file
++   158	write_to_file
++   159	service_name
++   160	Invalid request
++   161	service-token
++   162	/var/media/reserved2/service_uppers/
++   163	/upper/
++   164	Missing service-token in JSON payload
++   165	is_directory
++   166	Service Not Found
++   167	file_exists
++   168	Token Not Found
++   169	read_all_from_file
++   170	string
++   171	gsub
++   172	tostring
++   173	Invalid
++   174	Valid
++   175	encode
++   176	Status
++   177	validationStatus
++   178	print
++   179	decode
++   180	RawContent
++   181	pairs
++   182	/api/meta/
++   183	/api/meta
++   184	ApiVersion
++   185	print
++   186	Unexpected API version: 
++   187	Expected: 
++   188	execute
++   189	Method
++   190	RelativeUri
++   191	Invalid request - API endpoint not found: 

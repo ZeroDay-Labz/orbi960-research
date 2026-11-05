@@ -1,0 +1,256 @@
+#!/bin/sh
+# orbi-owner-agent — rpcd exec plugin
+# Namespace: orbi.owner.agent
+# See docs/architecture.md and docs/security-model.md.
+
+set -u
+
+# Allow test harnesses to point at an alternate root. Production path is
+# /usr/share/orbi-owner-agent.
+AGENT_ROOT="${ORBI_OWNER_AGENT_ROOT:-/usr/share/orbi-owner-agent}"
+AGENT_LIB="$AGENT_ROOT/lib"
+AGENT_UCI=orbi-owner-agent
+
+. "$AGENT_LIB/common.sh"
+. "$AGENT_LIB/validate.sh"
+. "$AGENT_LIB/network.sh"
+. "$AGENT_LIB/backup.sh"
+. "$AGENT_LIB/audit.sh"
+. "${ORBI_OWNER_AGENT_JSHN:-/usr/share/libubox/jshn.sh}"
+
+AGENT_VERSION="$(cat "$AGENT_ROOT/VERSION" 2>/dev/null || echo 'unknown')"
+
+emit_list() {
+    cat <<'EOF'
+{
+  "info":         {},
+  "status":       {},
+  "network":      {},
+  "vlan_list":    {},
+  "audit_tail":   { "lines": 0 },
+  "backup":       {},
+  "vlan_create":  { "id": 0, "name": "", "bridge": "" },
+  "vlan_delete":  { "name": "" },
+  "rollback":     {}
+}
+EOF
+}
+
+emit_err() {
+    code="$1"
+    msg="$2"
+    json_init
+    json_add_boolean ok 0
+    json_add_string code "$code"
+    json_add_string message "$msg"
+    json_dump
+    echo
+}
+
+emit_ok() {
+    # Caller has already populated jshn fields and will dump.
+    json_add_boolean ok 1
+    json_dump
+    echo
+}
+
+method_info() {
+    json_init
+    json_add_string agent_version "$AGENT_VERSION"
+    json_add_string build "$(cat /usr/share/orbi-owner-agent/BUILD 2>/dev/null || echo 'source')"
+    json_add_string namespace "orbi.owner.agent"
+    emit_ok
+    audit_log "info" "{}" ok 0
+}
+
+method_status() {
+    model=$(cat /tmp/sysinfo/model 2>/dev/null || echo unknown)
+    board=$(cat /tmp/sysinfo/board_name 2>/dev/null || echo unknown)
+    version=$(cat /etc/version 2>/dev/null || echo unknown)
+    kernel=$(uname -r 2>/dev/null)
+    uptime_s=$(cut -d. -f1 /proc/uptime 2>/dev/null)
+
+    json_init
+    json_add_string model "$model"
+    json_add_string board "$board"
+    json_add_string firmware_version "$version"
+    json_add_string kernel "$kernel"
+    json_add_int uptime_seconds "${uptime_s:-0}"
+    emit_ok
+    audit_log "status" "{}" ok 0
+}
+
+method_network() {
+    json_init
+    network_summary_to_jshn
+    emit_ok
+    audit_log "network" "{}" ok 0
+}
+
+method_vlan_list() {
+    json_init
+    vlan_list_to_jshn
+    emit_ok
+    audit_log "vlan_list" "{}" ok 0
+}
+
+method_audit_tail() {
+    req="$(cat)"
+    json_load "$req"
+    json_get_var req_lines lines
+    cap=$(uci_get_default agent_main_max_tail_lines 500)
+    if ! valid_int "$req_lines"; then
+        req_lines="$cap"
+    fi
+    if [ "$req_lines" -gt "$cap" ]; then
+        req_lines="$cap"
+    fi
+
+    audit_log_path=$(uci_get_default agent_main_audit_log /tmp/orbi-owner-agent.log)
+    if [ ! -r "$audit_log_path" ]; then
+        json_init
+        json_add_array lines
+        json_close_array
+        emit_ok
+        audit_log "audit_tail" '{"lines":'"$req_lines"'}' ok 0
+        return
+    fi
+    json_init
+    json_add_array lines
+    tail -n "$req_lines" "$audit_log_path" 2>/dev/null | while IFS= read -r l; do
+        json_add_string "" "$l"
+    done
+    json_close_array
+    emit_ok
+    audit_log "audit_tail" '{"lines":'"$req_lines"'}' ok 0
+}
+
+method_backup() {
+    out="$(backup_tarball_base64)"
+    rc=$?
+    if [ "$rc" != "0" ] || [ -z "$out" ]; then
+        emit_err "ERR_BACKUP_FAILED" "could not produce tarball"
+        audit_log "backup" "{}" err "ERR_BACKUP_FAILED"
+        return
+    fi
+    json_init
+    json_add_string tarball_base64 "$out"
+    emit_ok
+    audit_log "backup" "{}" ok 0
+}
+
+method_vlan_create() {
+    req="$(cat)"
+    json_load "$req"
+    json_get_var req_id     id
+    json_get_var req_name   name
+    json_get_var req_bridge bridge
+
+    if ! valid_vlan_id "$req_id"; then
+        emit_err "ERR_INVALID_ID" "vlan id must be 2..4094"
+        audit_log "vlan_create" "{\"id\":\"$(sanitize_log "$req_id")\"}" err "ERR_INVALID_ID"
+        return
+    fi
+    if ! valid_vlan_name "$req_name"; then
+        emit_err "ERR_INVALID_NAME" "name must match ^owner_[a-z0-9]{1,8}$"
+        audit_log "vlan_create" "{\"name\":\"$(sanitize_log "$req_name")\"}" err "ERR_INVALID_NAME"
+        return
+    fi
+    if is_reserved_vlan_id "$req_id"; then
+        emit_err "ERR_RESERVED_VLAN" "vlan id is reserved by vendor"
+        audit_log "vlan_create" "{\"id\":$req_id}" err "ERR_RESERVED_VLAN"
+        return
+    fi
+    if ! valid_bridge "$req_bridge"; then
+        emit_err "ERR_INVALID_BRIDGE" "bridge not in allowed_bridge allowlist"
+        audit_log "vlan_create" "{\"bridge\":\"$(sanitize_log "$req_bridge")\"}" err "ERR_INVALID_BRIDGE"
+        return
+    fi
+
+    if ! vlan_create "$req_id" "$req_name" "$req_bridge"; then
+        emit_err "ERR_VLAN_CREATE" "commit failed; changes reverted"
+        audit_log "vlan_create" "{\"id\":$req_id,\"name\":\"$req_name\",\"bridge\":\"$req_bridge\"}" err "ERR_VLAN_CREATE"
+        return
+    fi
+
+    json_init
+    json_add_string name "$req_name"
+    json_add_int id "$req_id"
+    json_add_string bridge "$req_bridge"
+    emit_ok
+    audit_log "vlan_create" "{\"id\":$req_id,\"name\":\"$req_name\",\"bridge\":\"$req_bridge\"}" ok 0
+}
+
+method_vlan_delete() {
+    req="$(cat)"
+    json_load "$req"
+    json_get_var req_name name
+
+    if ! valid_vlan_name "$req_name"; then
+        emit_err "ERR_INVALID_NAME" "name must match ^owner_[a-z0-9]{1,8}$"
+        audit_log "vlan_delete" "{\"name\":\"$(sanitize_log "$req_name")\"}" err "ERR_INVALID_NAME"
+        return
+    fi
+
+    if ! vlan_delete "$req_name"; then
+        emit_err "ERR_VLAN_DELETE" "commit failed; changes reverted"
+        audit_log "vlan_delete" "{\"name\":\"$req_name\"}" err "ERR_VLAN_DELETE"
+        return
+    fi
+
+    json_init
+    json_add_string name "$req_name"
+    emit_ok
+    audit_log "vlan_delete" "{\"name\":\"$req_name\"}" ok 0
+}
+
+method_rollback() {
+    if uci -q revert network >/dev/null 2>&1; then
+        json_init
+        json_add_string scope network
+        emit_ok
+        audit_log "rollback" "{}" ok 0
+    else
+        emit_err "ERR_ROLLBACK_FAILED" "uci revert failed"
+        audit_log "rollback" "{}" err "ERR_ROLLBACK_FAILED"
+    fi
+}
+
+check_enabled() {
+    enabled=$(uci_get_default agent_main_enabled 1)
+    [ "$enabled" = "1" ]
+}
+
+main() {
+    case "$1" in
+        list)
+            emit_list
+            exit 0
+            ;;
+        call)
+            if ! check_enabled; then
+                emit_err "ERR_DISABLED" "agent disabled via /etc/config/orbi-owner-agent"
+                exit 0
+            fi
+            case "$2" in
+                info)         method_info ;;
+                status)       method_status ;;
+                network)      method_network ;;
+                vlan_list)    method_vlan_list ;;
+                audit_tail)   method_audit_tail ;;
+                backup)       method_backup ;;
+                vlan_create)  method_vlan_create ;;
+                vlan_delete)  method_vlan_delete ;;
+                rollback)     method_rollback ;;
+                *)            emit_err "ERR_UNKNOWN_METHOD" "no such method" ;;
+            esac
+            exit 0
+            ;;
+        *)
+            emit_err "ERR_UNKNOWN_VERB" "rpcd verb must be list|call"
+            exit 0
+            ;;
+    esac
+}
+
+main "$@"

@@ -6,6 +6,10 @@ orbi_local_config.json
 info_gather.txt
 *.local.md
 notes_local*
+# AI project-instructions scaffolding - excluded from publication by owner's choice
+CLAUDE.md
+# Local backup files
+*.bak
 
 # ---- SSH keys / certs (defensive; none should ever live here) ----
 *.pem

@@ -1,0 +1,41 @@
+{
+    "orbi-owner-agent-reader": {
+        "description": "Read-only orbi-owner-agent telemetry",
+        "read": {
+            "ubus": {
+                "orbi.owner.agent": [
+                    "info",
+                    "status",
+                    "network",
+                    "vlan_list",
+                    "audit_tail",
+                    "backup"
+                ]
+            }
+        }
+    },
+    "orbi-owner-agent-admin": {
+        "description": "orbi-owner-agent VLAN management (owner-only)",
+        "read": {
+            "ubus": {
+                "orbi.owner.agent": [
+                    "info",
+                    "status",
+                    "network",
+                    "vlan_list",
+                    "audit_tail",
+                    "backup"
+                ]
+            }
+        },
+        "write": {
+            "ubus": {
+                "orbi.owner.agent": [
+                    "vlan_create",
+                    "vlan_delete",
+                    "rollback"
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,144 @@
+Live master SSH recon transcript.
+Device: 10.0.0.1 (RBRE960 master).
+Access path: python3 orbi_root_shell.py (uid 0).
+Recon type: read-only.
+Coordinator-provided; no live commands rerun unless gap exists.
+
+$ uname -a
+Linux RBRE960 4.4.60 #3 SMP PREEMPT Thu Nov 14 21:04:07 UTC 2024 armv7l GNU/Linux
+
+$ cat /etc/openwrt_release
+DISTRIB_ID='OpenWrt'
+DISTRIB_RELEASE='Chaos Calmer'
+DISTRIB_REVISION='rtm-7.2.7.15+r49254'
+DISTRIB_CODENAME='chaos_calmer'
+DISTRIB_TARGET='ipq/ipq807x'
+DISTRIB_DESCRIPTION='OpenWrt Chaos Calmer 15.05.1'
+DISTRIB_TAINTS='no-all busybox override'
+
+$ cat /etc/version
+7.2.7.15
+
+$ cat /module_name
+ORBI_HAWKEYE_ROUTER
+
+$ cat /tmp/sysinfo/model
+Qualcomm Technologies, Inc. IPQ807x/AP-HK01-C6
+
+$ cat /tmp/sysinfo/board_name
+ap-hk01-c6
+
+$ cat /etc/os-release
+(empty — file absent)
+
+$ cat /etc/board.json
+(empty — file absent)
+
+$ ls /
+bin  dev  init  mnt  nvram  proc  run  srv  usr  www
+cfg  etc  ipk  module_name  opt  rom  sbin  sys  var  www-seal
+data ini  lib  ntgr          overlay root share tmp  vendor www-test2
+
+$ cat /init
+#!/bin/sh
+# Copyright (C) 2006 OpenWrt.org
+export INITRAMFS=1
+exec /sbin/init
+
+$ ls -la /www-seal/
+(contains 16666/, rest/, seal/ subdirs)
+/www-seal/rest/rest.lua  7670 bytes
+/www-seal/seal/index.lua 660 bytes
+/www-seal/seal/tests/ contains env.lua, env.sh, logread.lua, magnet.lua, remote_ip.lua, versions.lua
+
+$ ls /www-test2/
+index.htm  (lighttpd test page — stock placeholder)
+
+OPERATIONALLY RELEVANT: live master runs V7.2.7.15 — the UNPATCHED CVE-2026-0415 version.
+DISTRIB_REVISION 'rtm-7.2.7.15+r49254' matches rbre_7215/rootfs/etc/openwrt_release.
+Kernel 4.4.60 SMP PREEMPT, armv7l — matches offline rootfs kmod dir lib/modules/4.4.60/.
+Board: Qualcomm IPQ807x AP-HK01-C6.
+Live rest.lua size 7670B matches rbre_7215/rootfs sha256 59e48af4... — confirms unpatched.
+
+===== Round 2 recon (user-provided) =====
+
+$ opkg print-architecture
+arch all 1
+arch noarch 1
+arch ipq 10
+
+$ cat /etc/opkg.conf
+dest root /
+dest ram /tmp
+lists_dir ext /var/opkg-lists
+option overlay_root /overlay
+option check_signature
+
+/etc/opkg/: customfeeds.conf, customfeeds_gen2.sh, customfeeds_rsu.sh, keys/
+
+$ opkg list-installed (critical excerpt)
+base-files 157.2-rtm-7.2.7.15+r49254
+busybox 1.30.1-5
+dnsmasq-dhcpv6 2.80-16.2
+kernel 4.4.60-1-6cee066ce7e95c3a5ed99210ae956fd9
+libc 1.1.16-1
+libcap 2.24-1
+libcurl 7.66.0-2
+lighttpd 1.4.58-1
+lighttpd-mod-accesslog 1.4.58-1
+lighttpd-mod-cgi 1.4.58-1
+lighttpd-mod-extforward 1.4.58-1
+lighttpd-mod-fastcgi 1.4.58-1
+lighttpd-mod-magnet 1.4.58-1
+lighttpd-mod-proxy 1.4.58-1
+lighttpd-mod-redirect 1.4.58-1
+lighttpd-mod-rewrite 1.4.58-1
+lighttpd-mod-wstunnel 1.4.58-1
+lua 5.1.5-1
+lua-lustache 1.3.1-0
+luafilesystem 1.6.2-1
+luaposix v33.2.1-5
+luasocket 3.0-rc1-20130909-3
+netifd 2015-12-16-245527193e90906451be35c2b8e972b8712ea6ab
+opkg 2021-01-31-c5dccea9-1
+procd 2015-10-29.1-d5fddd91b966424bb63e943e789704d52382cc18
+procd-nand 2015-10-29.1-d5fddd91b966424bb63e943e789704d52382cc18
+rpcd 2016-06-30-23417e94d25570e6d62542bac46edd51e8e0243a
+ubus 2015-05-25-f361bfa5fcb2daadf3b160583ce665024f8d108e
+ubusd 2015-05-25-f361bfa5fcb2daadf3b160583ce665024f8d108e
+
+$ ls /ipk
+qca-hyd-init.ipk  38.4K  Nov 14 2024
+qca-hyd-son.ipk  210.3K  Nov 14 2024
+
+$ mount (summary)
+/rom on ubi_rootfs (squashfs ro) — 47.3M used, 100% full
+/ on overlayfs (lowerdir=/rom, upperdir=/tmp/media/reserved2/overlay/upper) (rw)
+/tmp on tmpfs (rw) — 409MB
+/tmp/media/persistent on ubi1:Persistent (ubifs rw) — 6.2MB total
+/tmp/media/reserved2 on ubi2:Reserved (ubifs rw) — 200MB total, 183MB free
+/tmp/media/reserved1 on ubi1_0 (ubifs rw)
+/opt/cache on ubi2:Reserved
+/opt/persistent on ubi1:Persistent
+/tmp/openvpn on ubi1:Persistent
+
+Writable space: df -h reports 183MB free on /tmp/media/reserved2 — ample for our package.
+
+$ cat /proc/mtd (35 partitions, sensitive to protect: SBL1/MIBIB/QSEE*/APPSBL*/APPSBLENV/ART/ETHPHYFW/board_data/DEVCFG*/APDP*/RPM*/CDT*)
+Writable: rootfs_data (42MB mtd32), Persistent (8.6MB mtd33), Reserved (218MB mtd34),
+         sstorage (10MB mtd25), persistent (10MB mtd26), cache (240MB mtd27).
+
+$ ls /sbin/init /sbin/procd /sbin/ubusd /sbin/netifd (sizes)
+/sbin/init    13532 B  (likely procd)
+/sbin/procd   55456 B
+/sbin/ubusd   17572 B
+/sbin/netifd 129148 B
+
+On-device Lua files are PRECOMPILED BYTECODE (strings-grep for 'service_action_handler' etc. returned nothing).
+Our package will ship Lua source; install-time script may precompile.
+
+ps shows no `soapc` running (lazy-spawn pattern; abFifo tailers open for /tmp/soapc_log but soapc itself not live).
+
+===== Gaps I still need (network capability matrix) =====
+ubus list, swconfig list, swconfig dev <sw> show, ip -d link show, brctl show, iw list.
+Will request from coordinator or fetch via orbi_root_shell.py --connect-only.
