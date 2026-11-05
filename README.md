@@ -12,6 +12,14 @@ stock firmware.
 OpenSSH, Seal REST API, enable_ssh, remoteshellenable, ubus, UCI, SOAP, Wi-Fi 6E
 mesh, firmware reverse engineering, router security research, CVE-2026-0415.
 
+![Illustration: orbi_root_shell.py --connect-only reaching uid 0 on an owner-authorized RBRE960.](images/orbi_root_shell_demo.png)
+
+> Illustration of what `python3 orbi_root_shell.py --connect-only` produces
+> against an owner-authorized RBRE960: the helper verifies `uid=0(root)` over
+> Dropbear and drops into an interactive BusyBox 1.30.1 (Chaos Calmer) ash
+> shell. The image is a synthesized render so no desktop or terminal setup is
+> disclosed; the text content matches the tool's documented behavior.
+
 ## Abstract
 
 Root access on the RBRE960 router is reachable through an existing,
@@ -86,6 +94,7 @@ firmware flash was performed as part of the analysis. Full detail is in
 | `firmware_analysis/research_output/` | Supporting firmware-inventory CSV/JSONL, per-binary analyses, Seal-Lua bytecode listings, reconciliation evidence — produced by the toolkit |
 | `openwrt/orbi-owner-agent/` | Source-complete OpenWrt rpcd/ubus owner-agent package (shell plugin, ACL, UCI defaults, procd init, offline tests, docs). Phase A — not yet built into a binary `.ipk`; not yet installed on a device; see its `docs/known-limitations.md` |
 | `tools/orbi_fw_research/` | Reusable offline firmware toolkit (inventory, package maps, source/sink scans, SOAP/RPC analysis, Ghidra headless driver) |
+| `images/` | Synthesized documentation images (no real desktop capture) |
 | `*.py`, `test_*.py` | Approved research tooling and its unit tests |
 
 ## 6. Tooling
